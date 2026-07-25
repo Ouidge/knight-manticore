@@ -49,6 +49,9 @@ jobs:
       - name: Check types and style
         run: npm run check
 
+      - name: Generate Quartz Configuration
+        run: npx quartz make
+
       - name: Build Quartz
         run: npx quartz build -d docs -v
 
