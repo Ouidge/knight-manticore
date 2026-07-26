@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: github.com/Ouidge/knight-manticore
+  baseUrl: ouidge.github.io/knight-manticore
   ignorePatterns:
     - private
     - templates
