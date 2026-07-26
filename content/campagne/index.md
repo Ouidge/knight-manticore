@@ -6,7 +6,9 @@ cssclasses:
 type: report
 ---
 
-# Campagne
+# [[Campagne]]
+
+Bienvenue dans la Campagne de Manticore.
 
 ```dataview
 TABLE image
