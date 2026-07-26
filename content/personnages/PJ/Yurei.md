@@ -1,0 +1,1 @@
+![[__public/personnages/PJ/Yurei.pdf|Yurei]]
