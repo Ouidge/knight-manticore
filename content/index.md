@@ -10,9 +10,11 @@ Prochaine Session : *à déterminer*
 ## À explorer 
 
 → [[Campagne]] 
-→ [[__public/Personnages/PJ/Coterie Manticore]] 
+→ [[Coterie Manticore]] 
 → [[Bestiaire]]
 → [[Aides de jeu]]
 
 ---
-[https://knight-jdr-systeme.fr/fr/](https://knight-jdr-systeme.fr/fr/ "Knight JDR Système")
+## Liens externes
+
+- Site JDR Systeme [https://knight-jdr-systeme.fr/fr/](https://knight-jdr-systeme.fr/fr/ "Knight JDR Système")

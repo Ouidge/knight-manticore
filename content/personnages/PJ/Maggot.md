@@ -1,1 +1,1 @@
-![[__public/Personnages/PJ/Maggot.pdf]]
+![[Maggot.pdf]]

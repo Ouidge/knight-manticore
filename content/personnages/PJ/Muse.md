@@ -1,1 +1,1 @@
-![[__public/Personnages/PJ/Muse.pdf]]
+![[Muse.pdf]]
