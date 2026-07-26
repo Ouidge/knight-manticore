@@ -229,8 +229,8 @@ plugins:
       category: "Announcements"
       categoryId: "DIC_kwDOTjFy584DB8B7"
       mapping: pathname
-      strict: "0"
-      reactionsEnabled: "1"
+      strict: false
+      reactionsEnabled: true
       inputPosition: top
     layout:
       position: afterBody
