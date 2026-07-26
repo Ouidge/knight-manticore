@@ -20,22 +20,6 @@ Copy-Item `
     -Path "$VaultPublic\*" `
     -Destination $ContentDest `
     -Recurse `
-    -Force `
-    -Exclude "__images"
-
-# Gestion des images
-if (Test-Path $ImagesSource) {
-    if (Test-Path $StaticDest) {
-        Remove-Item "$StaticDest\*" -Recurse -Force
-    } else {
-        New-Item $StaticDest -ItemType Directory | Out-Null
-    }
-
-    Copy-Item `
-        -Path "$ImagesSource\*" `
-        -Destination $StaticDest `
-        -Recurse `
-        -Force
-}
+    -Force
 
 Write-Host "Copie terminée." -ForegroundColor Green
