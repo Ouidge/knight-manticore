@@ -1,1 +1,1 @@
-![[__public/Personnages/PJ/Sarge.pdf]]
+![[Sarge.pdf]]

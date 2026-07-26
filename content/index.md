@@ -6,8 +6,6 @@
 Mission en cours : [[Mission 1]]
 Prochaine Session : *à déterminer* 
 
-![[Mission 1#Ordre de mission]]
-
 ---
 ## À explorer 
 
