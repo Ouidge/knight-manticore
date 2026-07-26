@@ -1,6 +1,20 @@
 # Bienvenue sur le site Knight Manticore!
 
-<center>[https://knight-jdr-systeme.fr/fr/](https://knight-jdr-systeme.fr/fr/ "Knight JDR Système")</center>
+![[Manticore.png|400]]
 
 
-![[Manticore.png]]
+Mission en cours : [[Mission 1]]
+Prochaine Session : *à déterminer* 
+
+![[Mission 1#Ordre de mission]]
+
+---
+## À explorer 
+
+→ [[Campagne]] 
+→ [[Personnages]] 
+→ [[Bestiaire]]
+→ [[Aides de jeu]]
+
+---
+[https://knight-jdr-systeme.fr/fr/](https://knight-jdr-systeme.fr/fr/ "Knight JDR Système")

@@ -1,6 +1,6 @@
 ---
 type: session
-mission:
+mission: M1
 protagonistes: []
 antagonistes: []
 factions: []
@@ -8,11 +8,12 @@ lieux: []
 musique: []
 date:
 PJ: 
-  - "[[Forge]]"
-  - "[[Yurei]]"
-  - "[[Maggot]]"
+  - "[[__public/Personnages/PJ/Forge.pdf|Forge]]"
+  - "[[__public/Personnages/PJ/Yurei.pdf|Yurei]]"
+  - "[[Maggot.pdf]]"
 absents: []
 image:
+ordre: "Chevaliers, Nos satellites ont repéré des mouvements importants de _noctes_ dans le _sud de l’Allemagne_, et une communauté de _rebuts_, située à proximité des vols de ces créatures, ne donne _plus signe de vie depuis 48 heures_. Cette concentration de noctes dépasse tout ce que nous avons déjà observé et est représentative d’un accroissement de l’activité de la [Bête](app://obsidian.md/B%C3%AAte) depuis peu. Si cette masse venait à attaquer en grand nombre, elle pourrait occasionner de graves perturbations dans les communications physiques entre les arches, en prélude à une offensive plus importante. Je souhaite donc que vous vous rendiez sur place, à [Mittenwald](app://obsidian.md/Mittenwald), et que vous vous **assuriez que ces gens sont sains et saufs**. Une équipe médicale du Knight se tiendra prête à intervenir si nécessaire. Une fois le contact établi avec la communauté, vous **déterminerez l’origine** de cet important mouvement de noctes et y **remédierez**. Soyez prompts et sans pitié."
 ---
 
 %%
@@ -37,9 +38,7 @@ Ils ont rejoint la [[Section Kraken]], section d'élite dirigée par le Chevalie
 
 ## Ordre de mission
 
-> [!quote]
-> Chevaliers, Nos satellites ont repéré des mouvements importants de _noctes_ dans le _sud de l’Allemagne_, et une communauté de _rebuts_, située à proximité des vols de ces créatures, ne donne _plus signe de vie depuis 48 heures_. Cette concentration de noctes dépasse tout ce que nous avons déjà observé et est représentative d’un accroissement de l’activité de la [Bête](app://obsidian.md/B%C3%AAte) depuis peu. Si cette masse venait à attaquer en grand nombre, elle pourrait occasionner de graves perturbations dans les communications physiques entre les arches, en prélude à une offensive plus importante. Je souhaite donc que vous vous rendiez sur place, à [Mittenwald](app://obsidian.md/Mittenwald), et que vous vous **assuriez que ces gens sont sains et saufs**. Une équipe médicale du Knight se tiendra prête à intervenir si nécessaire. Une fois le contact établi avec la communauté, vous **déterminerez l’origine** de cet important mouvement de noctes et y **remédierez**.  
-> Soyez prompts et sans pitié.
+`= this.ordre`
 
 
 ## Log
