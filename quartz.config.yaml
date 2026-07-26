@@ -222,17 +222,16 @@ plugins:
       condition: not-index
   - source: "@quartz-community/comments"
     enabled: true
-    repo: "Ouidge/knight-manticore"
-    repoId: "R_kgDOTjFy5w"
-    category: "Announcements"
-    categoryId: "DIC_kwDOTjFy584DB8B7"
-    mapping: pathname
-    strict: "0"
-    reactionsEnabled: "1"
-    inputPosition: top
     options:
       provider: giscus
-      options: {}
+      repo: "Ouidge/knight-manticore"
+      repoId: "R_kgDOTjFy5w"
+      category: "Announcements"
+      categoryId: "DIC_kwDOTjFy584DB8B7"
+      mapping: pathname
+      strict: "0"
+      reactionsEnabled: "1"
+      inputPosition: top
     layout:
       position: afterBody
       priority: 10
@@ -305,4 +304,3 @@ layout:
         right: []
     canvas: {}
     bases: {}
-
