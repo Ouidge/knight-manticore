@@ -224,14 +224,15 @@ plugins:
     enabled: true
     options:
       provider: giscus
-      repo: "Ouidge/knight-manticore"
-      repoId: "R_kgDOTjFy5w"
-      category: "Announcements"
-      categoryId: "DIC_kwDOTjFy584DB8B7"
-      mapping: pathname
-      strict: false
-      reactionsEnabled: true
-      inputPosition: top
+      options:
+        repo: "Ouidge/knight-manticore"
+        repoId: "R_kgDOTjFy5w"
+        category: "Announcements"
+        categoryId: "DIC_kwDOTjFy584DB8B7"
+        mapping: pathname
+        strict: false
+        reactionsEnabled: true
+        inputPosition: top
     layout:
       position: afterBody
       priority: 10
