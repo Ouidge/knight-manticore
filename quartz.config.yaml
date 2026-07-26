@@ -138,8 +138,6 @@ plugins:
       display: all
   - source: "@quartz-community/alias-redirects"
     enabled: true
-    options:
-      enableCaseRedirects: true
   - source: "@quartz-community/content-index"
     enabled: true
     options:
@@ -221,15 +219,7 @@ plugins:
       priority: 5
       condition: not-index
   - source: "@quartz-community/comments"
-    enabled: true
-    repo: "Ouidge/knight-manticore"
-    repoId: "R_kgDOTjFy5w"
-    category: "Announcements"
-    categoryId: "DIC_kwDOTjFy584DB8B7"
-    mapping: pathname
-    strict: "0"
-    reactionsEnabled: "1"
-    inputPosition: top
+    enabled: false
     options:
       provider: giscus
       options: {}
@@ -305,4 +295,3 @@ layout:
         right: []
     canvas: {}
     bases: {}
-

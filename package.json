@@ -21,7 +21,8 @@
     "install-plugins": "npx tsx ./quartz/plugins/loader/install-plugins.ts",
     "prebuild": "npm run install-plugins",
     "clean": "npx quartz build --clean",
-    "sync": "npx quartz sync"
+    "sync": "npx quartz sync",
+    "create": "npx quartz create"
   },
   "engines": {
     "npm": ">=10.9.2",
