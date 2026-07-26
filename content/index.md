@@ -1,6 +1,6 @@
 # Bienvenue sur le site Knight Manticore!
 
-![[Manticore.png|400]]
+![[Manticore.png|300]]
 
 
 Mission en cours : [[Mission 1]]
@@ -12,7 +12,7 @@ Prochaine Session : *à déterminer*
 ## À explorer 
 
 → [[Campagne]] 
-→ [[Coterie Manticore]] 
+→ [[__public/Personnages/PJ/Coterie Manticore]] 
 → [[Bestiaire]]
 → [[Aides de jeu]]
 

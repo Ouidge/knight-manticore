@@ -11,7 +11,7 @@ Au cours de cette mission, ils ont rencontré **la Parole**, un émissaire d’u
 
 Auréolés d’un nouveau statut de héros après cette victoire, les chevaliers ont été décorés par **Arthur** en personne, en présence d’**Ismaël Jhélam**. Ils ont en outre eu l’occasion de fraterniser avec les chevaliers de la Table Ronde et de découvrir la **prophétie** selon laquelle ils pourraient être les élus dont les décisions détermineront l’avenir de l’Humanité.
 
-[[Etoile de Dublin.png]]
+![[__public/__images/Distinctions/Etoile de Dublin.png|200]]
 
 Ils ont rejoint la [[Section Kraken]], section d'élite dirigée par le Chevalier de la Table Ronde [[Bédivère]].
 
@@ -29,14 +29,11 @@ Des gravures ornent les murs, et un espace entre deux épées croisées laisse e
 En sortant du tumulus qui s'effondre, ils ont la vision d'une couronne ornée d'une pierre rouge pulsante et scrutatrice. 
 Ils font la connaissance de [[PNJ/Naomi]], une jeune fille bestiale qui affirment qu'ils sentent "comme papa" et qui suit également la horde de créatures et d'enfants, qu'elle appelle "la Chasse Sauvage".
 
-![[Naomi.webp]]
-
 Plus tard, ils croisent un groupe de survivants, dont un certain [[Ari Gundersen]], qui leur avoue être en partie responsable de la fuite de l'enfant "Prince de la Chasse", [[Joni]], d'un centre de recherches abandonné depuis (projet [[Hive Mind]].
 
 Alors qu'ils recherchent Joni et s'approchent de l'avant-garde de la horde de milliers de créatures, ils reçoivent une communication de Georgio Erosti, annonçant le bombardement immédiat de la horde.
 
 
-![[Histoire_Tumulus.png]]
-
+![[__public/__images/Histoire_Tumulus.png|1024]]
 
 

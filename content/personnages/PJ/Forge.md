@@ -1,1 +1,1 @@
-![[Forge.pdf]]
+![[__public/Personnages/PJ/Forge.pdf]]
