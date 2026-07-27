@@ -1,5 +1,3 @@
-formulas:
-  Portrait: image(portrait)
 views:
   - type: cards
     name: Tableau
@@ -14,4 +12,4 @@ views:
     columnSize:
       note.portrait: 258
     rowHeight: medium
-    image: formula.Portrait
+    image: portrait
