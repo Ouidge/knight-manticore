@@ -1,5 +1,6 @@
 ---
 type: pnj
+visibility: public
 nom: Eva Carpenter
 statut: En vie
 portrait: "[[Eva carpenter-2.png|400]]"

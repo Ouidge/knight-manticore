@@ -1,5 +1,6 @@
 ---
 type: pnj
+visibility: public
 nom: Bédivère
 statut: En vie
 portrait: "[[Bédivère.png]]"

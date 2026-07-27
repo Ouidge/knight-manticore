@@ -1,7 +1,8 @@
 ---
 type: pnj
-nom: 
+nom: Arthur
+visibility: public
 statut: En vie
 portrait: 
-faction: 
+faction: Knight
 ---

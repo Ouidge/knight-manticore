@@ -1,9 +1,10 @@
 ---
 type: pnj
+visibility: public
 nom: Edwin Donobridge
 statut: En vie
 portrait: "[[Edwin Donobridge.webp]]"
-faction: 
+faction: Londres
 ---
 
 # Edwin Donobridge

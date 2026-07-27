@@ -6,7 +6,7 @@ views:
     filters:
       and:
         - type == "pnj"
-        - file.path.contains("Personnages/PNJ")
+        - visibility == "public"
     order:
       - file.name
       - faction

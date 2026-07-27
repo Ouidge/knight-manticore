@@ -1,5 +1,6 @@
 ---
 type: pnj
+visibility: public
 nom: Naomi
 statut: En vie
 portrait: "[[Naomi.png|400]]"
