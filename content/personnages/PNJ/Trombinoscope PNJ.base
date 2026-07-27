@@ -1,0 +1,17 @@
+formulas:
+  Portrait: image(portrait)
+views:
+  - type: cards
+    name: Tableau
+    filters:
+      and:
+        - type == "pnj"
+        - file.folder == "__public/Personnages/PNJ"
+    order:
+      - file.name
+      - faction
+      - statut
+    columnSize:
+      note.portrait: 258
+    rowHeight: medium
+    image: formula.Portrait

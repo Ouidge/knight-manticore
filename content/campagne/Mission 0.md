@@ -4,7 +4,7 @@
 
 ## Ordre de mission
 
-Une onde de choc a eu lieu à [[Dublin]], faisant disparaître la quasi-totalité de ses habitants. La coterie du neveu d’Arthur, un certain [[Gideon McTavish]], était sur place et ce dernier a disparu. 
+Une onde de choc a eu lieu à [[Dublin]], faisant disparaître la quasi-totalité de ses habitants. La coterie du neveu d’Arthur, un certain [[PNJ/Gideon McTavish]], était sur place et ce dernier a disparu. 
 La coterie Manticore est missionnée pour retrouver Gideon et sauver les populations de Dublin.
 
 ## Log
@@ -15,15 +15,15 @@ La coterie Manticore est missionnée pour retrouver Gideon et sauver les populat
 - Les Manticore avertissent le Knight que 2 probables "doubles" des chevaliers de la coterie de Gideon,  [[Cristo]] et [[Snow]], sont au Knight.
 - Les Korrigan prennent leur appel et mettent les 2 sous chevaliers surveillance à l'infirmerie.
 - Les PJ rencontrent une **Triarche de l'Arbitre**, [[#La Parole]], qui les mène au sein du piège du Masque, là où les habitants de [[Dublin]] ont disparu. 
-- [[La Parole]] leur apprend qu’un **jeu** est en cours entre les Seigneurs de l’Anathème et leur propose d’en faire pleinement partie. 
+- [[PNJ/La Parole]] leur apprend qu’un **jeu** est en cours entre les Seigneurs de l’Anathème et leur propose d’en faire pleinement partie. 
 - Le Masque a piégé Dublin en corrompant des monuments historiques.
-- Après avoir mis fin au piège, les Manticore combattent un patron du Masque, l’Ombre, et libèrent [[Gideon McTavish|Gideon]], torturé par la créature.
+- Après avoir mis fin au piège, les Manticore combattent un patron du Masque, l’Ombre, et libèrent [[PNJ/Gideon McTavish|Gideon]], torturé par la créature.
 
 ### Session 2
 
 - Les Manticore sont décorés de l'Etoile de Dublin.
-- Lors du dîner de la cérémonie, [[Palomydès]] interrompt rapidement le groupe de musiciens qui entamaient une mélodie irlandaise qui semble mettre [[Arthur]] et [[Kay]] mal à l'aise.
-- Rencontre avec [[Edwin Donobridge]], chef de la milice d'Humanité, Yurei évite l'incident diplomatique en le calmant.
+- Lors du dîner de la cérémonie, [[PNJ/Palomydès]] interrompt rapidement le groupe de musiciens qui entamaient une mélodie irlandaise qui semble mettre [[PNJ/Arthur]] et [[PNJ/Kay]] mal à l'aise.
+- Rencontre avec [[PNJ/Edwin Donobridge]], chef de la milice d'Humanité, Yurei évite l'incident diplomatique en le calmant.
 - Rencontre avec [[Pendulum]] qui les invite à lui rendre visite dans sa galerie. Il semble avoir quelque chose à leur dire.
 - Padre rencontre une journaliste, [[Susan Anders]], qui lui propose une interview.
 - Padre remonte le moral de Gideon, qui semble préoccupé par sa mémoire disparue. Ce dernier avoue avoir suivi son instinct à Dublin, à la recherche de "elle" (sans savoir qui ou quoi).

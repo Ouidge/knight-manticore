@@ -13,7 +13,7 @@ Auréolés d’un nouveau statut de héros après cette victoire, les chevaliers
 
 ![[Etoile de Dublin.png|200]]
 
-Ils ont rejoint la [[Section Kraken]], section d'élite dirigée par le Chevalier de la Table Ronde [[Bédivère]].
+Ils ont rejoint la [[Section Kraken]], section d'élite dirigée par le Chevalier de la Table Ronde [[PNJ/Bédivère]].
 
 ## Ordre de mission
 
