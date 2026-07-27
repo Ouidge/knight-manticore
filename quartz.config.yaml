@@ -230,7 +230,7 @@ plugins:
         category: "Announcements"
         categoryId: "DIC_kwDOTjFy584DB8B7"
         mapping: pathname
-        strict: false
+        strict: true
         reactionsEnabled: true
         inputPosition: top
     layout:
