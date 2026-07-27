@@ -9,10 +9,12 @@ Prochaine Session : *à déterminer*
 ---
 ## À explorer 
 
-→ [[Campagne]] 
-→ [[Coterie Manticore]] 
-→ [[Bestiaire]]
+→ [[campagne]] 
+→ [[__public/personnages/pj/index]] 
+→ [[Personnages]]
+→ [[__public/bestiaire/index]]
 → [[Aides de jeu]]
+
 
 ---
 ## Liens externes

@@ -1,13 +1,13 @@
 ---
 type: pnj
 visibility: public
-nom: La Parole
+nom: "La Parole"
 statut: En vie
-portrait: "[[Parole.png]]"
+portrait: "[[La Parole.png]]"
 faction: Arbitre
 ---
 # La Parole
 
 Triarche de l'Arbitre, rencontrée dans les ruines de Dublin lors de la [[Mission 0]].
 
-![[Parole.png|1024]]
+![[La Parole.png|1024]]

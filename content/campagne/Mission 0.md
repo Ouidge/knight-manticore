@@ -1,3 +1,9 @@
+---
+type: mission
+visibility: public
+status: done
+image: "[[M0-Gideon.png]]"
+---
 # Mission 0 - Où l'histoire commence
 
 ![[M0-Gideon.png|400]]
@@ -11,7 +17,7 @@ La coterie Manticore est missionnée pour retrouver Gideon et sauver les populat
 
 ### Session 1
 
-- A Dublin, la coterie fait la connaissance du maire, [[Karl Colley]], accompagné de [[Deirdre]], une amie chère de [[Maggot]].
+- A Dublin, la coterie fait la connaissance du maire, [[Karl Colley]], accompagné de [[Deirdre]], une amie chère de [[PJ/Maggot]].
 - Les Manticore avertissent le Knight que 2 probables "doubles" des chevaliers de la coterie de Gideon,  [[Cristo]] et [[Snow]], sont au Knight.
 - Les Korrigan prennent leur appel et mettent les 2 sous chevaliers surveillance à l'infirmerie.
 - Les PJ rencontrent une **Triarche de l'Arbitre**, [[#La Parole]], qui les mène au sein du piège du Masque, là où les habitants de [[Dublin]] ont disparu. 
@@ -24,7 +30,7 @@ La coterie Manticore est missionnée pour retrouver Gideon et sauver les populat
 - Les Manticore sont décorés de l'Etoile de Dublin.
 - Lors du dîner de la cérémonie, [[PNJ/Palomydès]] interrompt rapidement le groupe de musiciens qui entamaient une mélodie irlandaise qui semble mettre [[PNJ/Arthur]] et [[PNJ/Kay]] mal à l'aise.
 - Rencontre avec [[PNJ/Edwin Donobridge]], chef de la milice d'Humanité, Yurei évite l'incident diplomatique en le calmant.
-- Rencontre avec [[__public/Personnages/PNJ/Monsieur Pendulum]] qui les invite à lui rendre visite dans sa galerie. Il semble avoir quelque chose à leur dire.
+- Rencontre avec [[__public/personnages/pnj/Monsieur Pendulum]] qui les invite à lui rendre visite dans sa galerie. Il semble avoir quelque chose à leur dire.
 - Padre rencontre une journaliste, [[Susan Anders]], qui lui propose une interview.
 - Padre remonte le moral de Gideon, qui semble préoccupé par sa mémoire disparue. Ce dernier avoue avoir suivi son instinct à Dublin, à la recherche de "elle" (sans savoir qui ou quoi).
 

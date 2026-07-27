@@ -7,7 +7,7 @@ portrait: "[[Naomi.png|400]]"
 faction: inconnue
 ---
 
-# [[Naomi]]
+# [[__public/personnages/pnj/Naomi]]
 
 
 Une étrange jeune fille bestiale, présentant des signes de corruption.

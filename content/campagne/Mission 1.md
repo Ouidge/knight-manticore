@@ -1,6 +1,9 @@
-%%
-date-session:: 2026-07-24
-%%
+---
+type: mission
+visibility: public
+status: in progress
+image: "[[Svartcrown.webp]]"
+---
 #  Session du 24 juillet 2026
 
 ## Résumé des épisodes précédents

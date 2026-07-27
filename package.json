@@ -22,7 +22,8 @@
     "prebuild": "npm run install-plugins",
     "clean": "npx quartz build --clean",
     "sync": "npx quartz sync",
-    "create": "npx quartz create"
+    "create": "npx quartz create",
+    "serve": "npx quartz build --serve"
   },
   "engines": {
     "npm": ">=10.9.2",
