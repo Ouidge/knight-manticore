@@ -24,7 +24,7 @@ La coterie Manticore est missionnée pour retrouver Gideon et sauver les populat
 - Les Manticore sont décorés de l'Etoile de Dublin.
 - Lors du dîner de la cérémonie, [[PNJ/Palomydès]] interrompt rapidement le groupe de musiciens qui entamaient une mélodie irlandaise qui semble mettre [[PNJ/Arthur]] et [[PNJ/Kay]] mal à l'aise.
 - Rencontre avec [[PNJ/Edwin Donobridge]], chef de la milice d'Humanité, Yurei évite l'incident diplomatique en le calmant.
-- Rencontre avec [[Pendulum]] qui les invite à lui rendre visite dans sa galerie. Il semble avoir quelque chose à leur dire.
+- Rencontre avec [[__public/Personnages/PNJ/Monsieur Pendulum]] qui les invite à lui rendre visite dans sa galerie. Il semble avoir quelque chose à leur dire.
 - Padre rencontre une journaliste, [[Susan Anders]], qui lui propose une interview.
 - Padre remonte le moral de Gideon, qui semble préoccupé par sa mémoire disparue. Ce dernier avoue avoir suivi son instinct à Dublin, à la recherche de "elle" (sans savoir qui ou quoi).
 
