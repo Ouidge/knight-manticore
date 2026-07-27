@@ -1,7 +1,7 @@
 ---
 type: pnj
-nom: 
+nom: Pendulum
 statut: En vie
-portrait: 
-faction: 
+portrait: "[[Pendulum.png]]"
+faction: Pendulum Compagnie
 ---

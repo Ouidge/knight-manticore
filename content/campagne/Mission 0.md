@@ -31,7 +31,7 @@ La coterie Manticore est missionnée pour retrouver Gideon et sauver les populat
 #### La Prophétie
 
 - Dans les quartiers d'Arthur, en présence des Chevaliers de la Table Ronde, Arthur dévoile la **Prophétie de la fin des temps**
-- Les Manticore choisissent [[Eva Carpenter]] comme *page*.
+- Les Manticore choisissent [[PNJ/Eva Carpenter]] comme *page*.
 - Ils rejoignent tous la Section Kraken.
 
 

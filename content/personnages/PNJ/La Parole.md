@@ -1,7 +1,7 @@
 ---
 type: pnj
-nom: 
+nom: La Parole
 statut: En vie
-portrait: 
-faction: 
+portrait: "[[Parole.png]]"
+faction: Arbitre
 ---

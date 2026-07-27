@@ -1,7 +1,13 @@
 ---
 type: pnj
-nom: 
+nom: Edwin Donobridge
 statut: En vie
-portrait: 
+portrait: "[[Edwin Donobridge.webp]]"
 faction: 
 ---
+
+# Edwin Donobridge
+
+Chef de la milice de Londres / Humanité
+
+![[Edwin Donobridge.webp|1024]]

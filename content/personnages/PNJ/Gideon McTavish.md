@@ -2,6 +2,6 @@
 type: pnj
 nom: 
 statut: En vie
-portrait: 
+portrait: "[[Gideon.png]]"
 faction: 
 ---
