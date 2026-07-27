@@ -3,7 +3,6 @@ views:
     name: Tableau
     filters:
       and:
-        - file.path.contains("personnages/pj")
         - type == "pj"
         - visibility == "public"
         - coterie == "manticore"
