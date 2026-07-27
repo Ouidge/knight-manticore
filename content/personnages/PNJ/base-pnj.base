@@ -1,0 +1,17 @@
+views:
+  - type: cards
+    name: Tableau
+    filters:
+      and:
+        - type == "pnj"
+        - visibility == "public"
+    order:
+      - file.name
+      - faction
+      - statut
+    columnSize:
+      portrait: 258
+    image: portrait
+    imageAspectRatio: 1
+    cardSize: 240
+    imageFit: cover

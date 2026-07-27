@@ -1,0 +1,14 @@
+views:
+  - type: cards
+    name: Tableau
+    filters:
+      and:
+        - file.path.contains("personnages/pj")
+        - type == "pj"
+        - visibility == "public"
+        - coterie == "manticore"
+    order:
+      - file.name
+      - type
+      - status
+    image: note.portrait

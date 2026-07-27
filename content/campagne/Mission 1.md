@@ -2,7 +2,7 @@
 type: mission
 visibility: public
 status: in progress
-image: "[[Svartcrown.webp]]"
+image: "[[M1-Svartcrown.webp]]"
 ---
 #  Session du 24 juillet 2026
 
