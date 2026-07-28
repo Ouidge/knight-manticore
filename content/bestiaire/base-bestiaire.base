@@ -9,4 +9,7 @@ views:
     groupBy:
       property: seigneur
       direction: ASC
+    order:
+      - file.name
+      - seigneur
     image: note.image
