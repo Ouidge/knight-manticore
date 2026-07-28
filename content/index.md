@@ -10,8 +10,8 @@ Prochaine Session : *à déterminer*
 ## À explorer 
 
 → [[campagne]] 
-→ [[pj|PJ]]
-→ [[pnj|PNJ]]
+→ [[personnages/pj|PJ]]
+→ [[personnages/pnj|PNJ]]
 → [[bestiaire]]
 → [[aides de jeu]]
 
