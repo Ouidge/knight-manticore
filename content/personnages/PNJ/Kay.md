@@ -3,11 +3,21 @@ type: pnj
 visibility: public
 nom: Helena McTavish
 statut: En vie
-portrait: "[[__public/__images/knight/Kay.png]]"
+portrait: "[[Kay.png]]"
 faction: Knight
+description: "Chevaleresse de la Table Ronde, cheffe de la section Ogre, sœur d'Arthur."
 ---
+<!-- BEGIN PNJ INFOBOX -->
 # Kay
 
-Chevaleresse de la Table Ronde, cheffe de la section Ogre, sœur d'Arthur.
 
-![[__public/__images/knight/Kay.png|1024]]
+<img src="Kay.png" align="right" width="200" style="margin-left: 15px; margin-bottom: 10px;">
+
+Helena McTavish
+Chevaleresse de la Table Ronde, cheffe de la section Ogre, sœur d'Arthur.
+Knight
+
+ 
+ 
+
+<!-- END PNJ INFOBOX -->

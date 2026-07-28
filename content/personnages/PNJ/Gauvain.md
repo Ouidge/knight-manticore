@@ -5,9 +5,17 @@ nom: Gauvain
 statut: En vie
 portrait: "[[Gauvain.png]]"
 faction: Knight
+description: Chevalier de la Table Ronde, chef de la section Giant.
 ---
+<!-- BEGIN PNJ INFOBOX -->
 # Gauvain
 
-Chevalier de la Table Ronde, chef de la section Giant.
 
-![[Gauvain.png|1024]]
+<img src="Gauvain.png" align="right" width="200" style="margin-left: 15px; margin-bottom: 10px;">
+
+Gauvain
+Chevalier de la Table Ronde, chef de la section Giant.
+Knight
+
+ 
+<!-- END PNJ INFOBOX -->

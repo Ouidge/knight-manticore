@@ -5,9 +5,17 @@ nom: Palomydès
 statut: En vie
 portrait: "[[Palomydes.png]]"
 faction: Knight
+description: Chevaleresse de la Table Ronde, cheffe de la section Korrigan.
 ---
+<!-- BEGIN PNJ INFOBOX -->
 # Palomydès
 
-Chevaleresse de la Table Ronde, cheffe de la section Korrigan.
 
-![[Palomydes.png|1024]]
+<img src="Palomydes.png" align="right" width="200" style="margin-left: 15px; margin-bottom: 10px;">
+
+Palomydès
+Chevaleresse de la Table Ronde, cheffe de la section Korrigan.
+Knight
+
+ 
+<!-- END PNJ INFOBOX -->
