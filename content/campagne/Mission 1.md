@@ -2,6 +2,9 @@
 type: mission
 visibility: public
 status: in progress
+name: Svartcrown
+code: M1
+arc: Bête
 image: "[[M1-Svartcrown.webp]]"
 ---
 #  Session du 24 juillet 2026

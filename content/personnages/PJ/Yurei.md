@@ -2,7 +2,7 @@
 type: pj
 visibility: public
 portrait: "[[Yurei-portrait.png]]"
-status: En vie
+statut: En vie
 coterie: manticore
 ---
 # Yurei

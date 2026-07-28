@@ -1,10 +1,16 @@
 views:
   - type: cards
-    name: Tableau
+    name: Campagne
     filters:
       and:
         - type == "mission"
         - status.containsAny("done", "in progress")
         - visibility == "public"
         - file.path.contains("campagne")
+    order:
+      - name
+      - code
+    sort:
+      - property: code
+        direction: ASC
     image: note.image

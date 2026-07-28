@@ -2,6 +2,9 @@
 type: mission
 visibility: public
 status: done
+name: "Où l'histoire commence"
+code: M0
+arc: Bête
 image: "[[M0-Gideon.png]]"
 ---
 # Mission 0 - Où l'histoire commence

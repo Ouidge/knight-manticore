@@ -9,5 +9,5 @@ views:
     order:
       - file.name
       - type
-      - status
+      - statut
     image: note.portrait

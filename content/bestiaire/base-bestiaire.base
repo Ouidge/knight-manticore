@@ -1,0 +1,12 @@
+views:
+  - type: cards
+    name: Bestiaire
+    filters:
+      and:
+        - file.path.contains("bestiaire")
+        - visibility == "public"
+        - type == "creature"
+    groupBy:
+      property: seigneur
+      direction: ASC
+    image: note.image

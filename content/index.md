@@ -10,13 +10,12 @@ Prochaine Session : *à déterminer*
 ## À explorer 
 
 → [[campagne]] 
-→ [[__public/personnages/pj/index]] 
-→ [[Personnages]]
-→ [[__public/bestiaire/index]]
-→ [[Aides de jeu]]
-
+→ [[pj|PJ]]
+→ [[pnj|PNJ]]
+→ [[bestiaire]]
+→ [[aides de jeu]]
 
 ---
 ## Liens externes
 
-- Site JDR Systeme [https://knight-jdr-systeme.fr/fr/](https://knight-jdr-systeme.fr/fr/ "Knight JDR Système")
+- Site JDR Système [https://knight-jdr-systeme.fr/fr/](https://knight-jdr-systeme.fr/fr/ "Knight JDR Système")
