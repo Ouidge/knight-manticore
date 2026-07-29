@@ -1,0 +1,12 @@
+formulas:
+  Sans titre: (file.folder.)
+  f_nom: file.folder.split("/").slice(-1)[0]
+views:
+  - type: cards
+    name: Tableau
+    filters:
+      and:
+        - file.path.contains("aides de jeu")
+        - file.name == "index"
+    order:
+      - formula.f_nom

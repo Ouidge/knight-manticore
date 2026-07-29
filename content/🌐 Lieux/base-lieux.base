@@ -1,0 +1,8 @@
+views:
+  - type: cards
+    name: Tableau
+    filters:
+      and:
+        - type == "lieu"
+        - visibility == "public"
+    image: note.image

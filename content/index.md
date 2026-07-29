@@ -1,7 +1,5 @@
 # Bienvenue sur le site Knight Manticore!
-
 ![[Manticore.png|300]]
-
 
 Mission en cours : [[Mission 1]]
 Prochaine Session : *à déterminer* 
@@ -9,11 +7,11 @@ Prochaine Session : *à déterminer*
 ---
 ## À explorer 
 
-→ [[campagne]] 
-→ [[personnages/pj|PJ]]
-→ [[personnages/pnj|PNJ]]
-→ [[bestiaire]]
-→ [[aides de jeu]]
+→ [[⚜️ campagne]] 
+→ [[👤 personnages/pj|👤PJ]]
+→ [[👤 personnages/pnj|👤 PNJ]]
+→ [[👾 bestiaire]]
+→ [[📐 aides de jeu]]
 
 ---
 ## Liens externes

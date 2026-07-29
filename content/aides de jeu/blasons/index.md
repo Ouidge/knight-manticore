@@ -1,2 +1,0 @@
-# Blasons
-![[base-blasons.base]]

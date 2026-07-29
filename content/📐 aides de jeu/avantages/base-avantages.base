@@ -1,0 +1,9 @@
+views:
+  - type: cards
+    name: Avantages
+    filters:
+      and:
+        - type == "adj"
+        - subtype == "avantage"
+        - visibility == "public"
+    rowHeight: medium

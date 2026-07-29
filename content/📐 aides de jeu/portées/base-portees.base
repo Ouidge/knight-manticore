@@ -1,0 +1,14 @@
+views:
+  - type: cards
+    name: Portées
+    filters:
+      and:
+        - type == "adj"
+        - subtype == "portee"
+        - visibility == "public"
+    order:
+      - file.name
+      - distance
+    sort:
+      - property: order
+        direction: ASC
