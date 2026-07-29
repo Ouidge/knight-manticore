@@ -5,4 +5,7 @@ views:
       and:
         - type == "adj"
         - subtype == "blason"
-    image: note.image
+    order:
+      - file.name
+      - voeu
+    image: note.image-logo

@@ -2,14 +2,15 @@
 type: pj
 visibility: public
 nom: Toshiro Kaiji
+joueur: Lolo
 portrait: "[[Yurei-portrait.png]]"
 statut: En vie
 coterie: manticore
 faction: Knight
-blason: loup
+blason: Loup
 fiche: Yurei.pdf
-section: "Ogre"
-metaarmure: "[[Rogue]]"
+section: Ogre
+metaarmure: [[Rogue]]
 portrait-armure: "![[Yurei-armure.png]]"
 fiche-joueur: "[[Yurei.pdf]]"
 peurs:
@@ -27,22 +28,19 @@ liens:
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Yurei
-
 <img src="Yurei-portrait.png" align="right" width="300" style="margin-left: 15px; margin-bottom: 10px;">
 
-> [!infobox]
-> *Yurei*
-> Blason : loup
-> Section d'origine : **[Ogre](https://knight-jdr-systeme.fr/fr/division/ogre/)**
+>[!tldr] Résumé
+> *Toshiro Kaiji*
+> Joueur : Lolo
+> Méta-armure : **[Rogue](https://knight-jdr-systeme.fr/fr/armour/Rogue/)**
+> Blason : Loup
+> Section d'origine : **[Ogre](https://knight-jdr-systeme.fr/fr/division/Ogre/)**
 > Avantages : Instinct animal,Menteur professionnel
 > Inconvénients : Cauchemars,Marqué par les ténèbres
  
-
-![[loup]]
-
+![[Loup]]
 ![[Instinct animal]]
-![[Menteur professionnel]]
-![[Cauchemars]]
-![[Marqué par les ténèbres]]
-![[Yurei.pdf]]
+![[Menteur professionnel]]![[Cauchemars]]
+![[Marqué par les ténèbres]]![[Yurei.pdf]]
 <!-- END PJ INFOBOX -->

@@ -2,11 +2,13 @@
 type: pj
 visibility: public
 nom: Peter Waitts
+joueur: Rob
+metaarmure: [[Barbarian]]
 portrait: "[[Maggot-portrait.png]]"
 fiche: Maggot.pdf
 statut: En vie
 coterie: manticore
-blason: lion
+blason: Lion
 section: Tarasque
 avantages: 
   - [[Chanceux]]
@@ -16,17 +18,18 @@ inconvenients:
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Maggot
-
 <img src="Maggot-portrait.png" align="right" width="300" style="margin-left: 15px; margin-bottom: 10px;">
 
-> [!infobox]
+>[!tldr] Résumé
 > *Peter Waitts*
-> Blason : lion
-> Section d'origine : **Tarasque**
+> Joueur : Rob
+> Méta-armure : **[Barbarian](https://knight-jdr-systeme.fr/fr/armour/Barbarian/)**
+> Blason : Lion
+> Section d'origine : **[Tarasque](https://knight-jdr-systeme.fr/fr/division/Tarasque/)**
 > Avantages : Chanceux,Dur à cuire
 > Inconvénients : Fou dangereux
  
-![[lion]]
+![[Lion]]
 ![[Chanceux]]
 ![[Dur à cuire]]![[Fou dangereux]]![[Maggot.pdf]]
 <!-- END PJ INFOBOX -->
