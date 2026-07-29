@@ -1,0 +1,8 @@
+views:
+  - type: cards
+    name: Blasons
+    filters:
+      and:
+        - type == "adj"
+        - subtype == "blason"
+    image: note.image

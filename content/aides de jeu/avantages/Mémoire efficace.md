@@ -1,0 +1,4 @@
+---
+type: adj
+subtype: avantage
+---
