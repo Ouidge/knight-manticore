@@ -5,7 +5,7 @@ nom: Salomé Edensmith
 joueur: Wh0
 metaarmure: [[Ranger]]
 portrait: "[[Raptor-portrait.png]]"
-fiche: Raptor.pdf
+fiche: [[Raptor.pdf]]
 statut: En vie
 blason: [[Aigle]]
 coterie: manticore
@@ -16,6 +16,11 @@ inconvenients:
 avantages:
   - [[Forteresse spirituelle]]
   - [[Connaissance secrète occulte]]
+motivationmajeure: Devenir un chevalier de la Table Ronde
+motivations: 
+  - Protéger ses coéquipiers
+  - Promouvoir le Knight
+  - Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Raptor
@@ -29,6 +34,8 @@ avantages:
 > Section d'origine : **[Cyclope](https://knight-jdr-systeme.fr/fr/division/Cyclope/)**
 > Avantages : Forteresse spirituelle,Connaissance secrète occulte
 > Inconvénients : Esprit de contradiction,Sensible à l'Anathème
+> Motivation majeure :  Devenir un chevalier de la Table Ronde
+> Motivations mineures :  Protéger ses coéquipiers,Promouvoir le Knight,Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué
  
 ![[Aigle]]
 ![[Forteresse spirituelle]]

@@ -5,7 +5,7 @@ nom: Rosa Diakité
 joueur: Zidget
 metaarmure: [[Wizard]]
 portrait: "[[Muse-portrait.png]]"
-fiche: Muse.pdf
+fiche: [[Muse.pdf]]
 statut: En vie
 blason: Ours
 coterie: manticore
@@ -16,6 +16,12 @@ inconvenients:
 avantages:
   - [[Créateur-né]]
   - [[Sûr de soi]]
+motivationmajeure: Éliminer le Collectionneur
+motivations: 
+  - Réaliser une œuvre
+  - Empêcher la mort d’un être humain
+  - Aider les nécessiteux
+  - Retrouver des œuvres d’art
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Muse
@@ -29,9 +35,11 @@ avantages:
 > Section d'origine : **[Gargoyle](https://knight-jdr-systeme.fr/fr/division/Gargoyle/)**
 > Avantages : Créateur-né,Sûr de soi
 > Inconvénients : Surprotecteur,Ennemi juré
+> Motivation majeure :  Éliminer le Collectionneur
+> Motivations mineures :  Réaliser une œuvre,Empêcher la mort d’un être humain,Aider les nécessiteux,Retrouver des œuvres d’art
  
 ![[Ours]]
 ![[Créateur-né]]
 ![[Sûr de soi]]![[Surprotecteur]]
-![[Ennemi juré]]![[__public/👤 personnages/pj/Muse.pdf]]
+![[Ennemi juré]]![[Muse.pdf]]
 <!-- END PJ INFOBOX -->

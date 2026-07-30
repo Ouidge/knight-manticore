@@ -9,13 +9,18 @@ statut: En vie
 coterie: manticore
 blason: Corbeau
 section: Giant
-fiche: Forge.pdf
+fiche: [[Forge.pdf]]
 avantages: 
   - [[Bon sens]]
   - [[Mémoire efficace]]
 inconvenients: 
   - [[Trop prudent]]
   - [[Rat d'atelier]]
+motivationmajeure: Mettre au point une nouvelle méta-armure
+motivations: 
+  - Découvrir les secrets de l’Anathème
+  - Participer à la résolution d’un crime
+  - Promouvoir le Knight
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Forge
@@ -29,9 +34,11 @@ inconvenients:
 > Section d'origine : **[Giant](https://knight-jdr-systeme.fr/fr/division/Giant/)**
 > Avantages : Bon sens,Mémoire efficace
 > Inconvénients : Trop prudent,Rat d'atelier
+> Motivation majeure :  Mettre au point une nouvelle méta-armure
+> Motivations mineures :  Découvrir les secrets de l’Anathème,Participer à la résolution d’un crime,Promouvoir le Knight
  
 ![[Corbeau]]
 ![[Bon sens]]
 ![[Mémoire efficace]]![[Trop prudent]]
-![[Rat d'atelier]]![[__public/👤 personnages/pj/Forge.pdf]]
+![[Rat d'atelier]]![[Forge.pdf]]
 <!-- END PJ INFOBOX -->

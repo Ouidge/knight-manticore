@@ -5,7 +5,7 @@ nom: Titus Agamemnon
 joueur: Phaphane
 metaarmure: [[Paladin]]
 portrait: "[[Sarge-portrait.png]]"
-fiche: Sarge.pdf
+fiche: [[Sarge.pdf]]
 statut: En vie
 blason: [[Dragon]]
 coterie: N/A
@@ -16,6 +16,11 @@ inconvenients:
 avantages:
   - [[Guérison rapide]]
   - [[Esprit d’acier]]
+motivationmajeure: Trouver qui a tué sa famille et se venger
+motivations: 
+  - Respecter la loi locale et ne jamais mentir
+  - Empêcher un allié d’être blessé
+  - Donner de l’espoir à un allié
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Sarge
@@ -29,6 +34,8 @@ avantages:
 > Section d'origine : **[Gargoyle](https://knight-jdr-systeme.fr/fr/division/Gargoyle/)**
 > Avantages : Guérison rapide,Esprit d’acier
 > Inconvénients : Colérique,Surprotecteur
+> Motivation majeure :  Trouver qui a tué sa famille et se venger
+> Motivations mineures :  Respecter la loi locale et ne jamais mentir,Empêcher un allié d’être blessé,Donner de l’espoir à un allié
  
 ![[Dragon]]
 ![[Guérison rapide]]

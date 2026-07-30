@@ -5,7 +5,7 @@ nom: Peter Waitts
 joueur: Rob
 metaarmure: [[Barbarian]]
 portrait: "[[Maggot-portrait.png]]"
-fiche: Maggot.pdf
+fiche: [[Maggot.pdf]]
 statut: En vie
 coterie: manticore
 blason: Lion
@@ -15,6 +15,11 @@ avantages:
   - [[Dur à cuire]]
 inconvenients: 
   - [[Fou dangereux]]
+motivationmajeure: Création d'un réseau de leaders rebuts
+motivations: 
+  - Protéger ses coéquipiers
+  - Ne jamais fuir devant un ennemi s’il met des innocents en danger
+  - Apporter une aide significative à un rebut
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Maggot
@@ -28,6 +33,8 @@ inconvenients:
 > Section d'origine : **[Tarasque](https://knight-jdr-systeme.fr/fr/division/Tarasque/)**
 > Avantages : Chanceux,Dur à cuire
 > Inconvénients : Fou dangereux
+> Motivation majeure :  Création d'un réseau de leaders rebuts
+> Motivations mineures :  Protéger ses coéquipiers,Ne jamais fuir devant un ennemi s’il met des innocents en danger,Apporter une aide significative à un rebut
  
 ![[Lion]]
 ![[Chanceux]]

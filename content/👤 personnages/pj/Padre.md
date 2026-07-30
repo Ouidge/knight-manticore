@@ -5,7 +5,7 @@ nom: Marco Orlanda
 joueur: Nolive
 metaarmure: [[Warmaster]]
 portrait: "[[Padre-portrait.png]]"
-fiche: Padre.pdf
+fiche: [[Padre.pdf]]
 statut: En vie
 blason: [[Cerf]]
 coterie: manticore
@@ -16,6 +16,11 @@ inconvenients:
 avantages:
   - [[Rayonnement]]
   - [[Magnétique]]
+motivationmajeure: Répandre la parole de Dieu au sein du Knight
+motivations: 
+  - Obéir aux ordres des chevaliers et d’Arthur
+  - Combattre le désespoir
+  - Apaiser les tensions
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Padre
@@ -29,9 +34,11 @@ avantages:
 > Section d'origine : **[Dragon](https://knight-jdr-systeme.fr/fr/division/Dragon/)**
 > Avantages : Rayonnement,Magnétique
 > Inconvénients : Fanatique,Humaniste
+> Motivation majeure :  Répandre la parole de Dieu au sein du Knight
+> Motivations mineures :  Obéir aux ordres des chevaliers et d’Arthur,Combattre le désespoir,Apaiser les tensions
  
 ![[Cerf]]
 ![[Rayonnement]]
 ![[Magnétique]]![[Fanatique]]
-![[Humaniste]]![[__public/👤 personnages/pj/Padre.pdf]]
+![[Humaniste]]![[Padre.pdf]]
 <!-- END PJ INFOBOX -->
