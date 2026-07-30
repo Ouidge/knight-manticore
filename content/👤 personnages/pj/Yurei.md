@@ -34,9 +34,8 @@ liens:
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Yurei
-<img src="Yurei-portrait.png" align="right" width="300" style="margin-left: 15px; margin-bottom: 10px;">
-
 >[!tldr] Résumé
+> ![[Yurei.webp]]
 > *Toshiro Kaiji*
 > Joueur : Lolo
 > Méta-armure : **[Rogue](https://knight-jdr-systeme.fr/fr/armour/Rogue/)**
@@ -46,9 +45,9 @@ liens:
 > Inconvénients : Cauchemars,Marqué par les ténèbres
 > Motivation majeure :  Eliminer [[Kenji Oda]]
 > Motivations mineures :  Protéger un chevalier en danger,Résoudre un meurtre,Garder son honneur
- 
+
 ![[Loup]]
+![[Yurei.pdf]]
 ![[Instinct animal]]
 ![[Menteur professionnel]]![[Cauchemars]]
-![[Marqué par les ténèbres]]![[Yurei.pdf]]
-<!-- END PJ INFOBOX -->
+![[Marqué par les ténèbres]]<!-- END PJ INFOBOX -->

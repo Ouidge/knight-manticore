@@ -5,7 +5,7 @@ nom: Peter Waitts
 joueur: Rob
 metaarmure: [[Barbarian]]
 portrait: "[[Maggot-portrait.png]]"
-image: "[[Maggot.webp]]"
+image: "[[Maggot-new.png]]"
 fiche: [[Maggot.pdf]]
 statut: En vie
 coterie: manticore
@@ -25,7 +25,7 @@ motivations:
 <!-- BEGIN PJ INFOBOX -->
 # Maggot
 >[!tldr] Résumé
-> ![[Maggot.webp]]
+> ![[Maggot-new.png]]
 > *Peter Waitts*
 > Joueur : Rob
 > Méta-armure : **[Barbarian](https://knight-jdr-systeme.fr/fr/armour/Barbarian/)**

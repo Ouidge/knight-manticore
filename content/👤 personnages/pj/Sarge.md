@@ -5,7 +5,7 @@ nom: Titus Agamemnon
 joueur: Phaphane
 metaarmure: [[Paladin]]
 portrait: "[[Sarge-portrait.png]]"
-image: "[[Sarge.webp]]"
+image: "[[Sarge-portrait.png]]"
 fiche: [[Sarge.pdf]]
 statut: En vie
 blason: [[Dragon]]
@@ -25,9 +25,8 @@ motivations:
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Sarge
-<img src="Sarge-portrait.png" align="right" width="300" style="margin-left: 15px; margin-bottom: 10px;">
-
 >[!tldr] Résumé
+> ![[Sarge-portrait.png]]
 > *Titus Agamemnon*
 > Joueur : Phaphane
 > Méta-armure : **[Paladin](https://knight-jdr-systeme.fr/fr/armour/Paladin/)**
@@ -37,9 +36,9 @@ motivations:
 > Inconvénients : Colérique,Surprotecteur
 > Motivation majeure :  Trouver qui a tué sa famille et se venger
 > Motivations mineures :  Respecter la loi locale et ne jamais mentir,Empêcher un allié d’être blessé,Donner de l’espoir à un allié
- 
+
 ![[Dragon]]
+![[Sarge.pdf]]
 ![[Guérison rapide]]
 ![[Esprit d’acier]]![[Colérique]]
-![[Surprotecteur]]![[Sarge.pdf]]
-<!-- END PJ INFOBOX -->
+![[Surprotecteur]]<!-- END PJ INFOBOX -->
