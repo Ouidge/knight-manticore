@@ -24,8 +24,7 @@ motivations:
   - Donner de l’espoir à un allié
 ---
 <!-- BEGIN PJ INFOBOX -->
-# Sarge
->[!tldr] Résumé
+>[!tldr] Sarge
 > ![[Sarge-portrait.png]]
 > *Titus Agamemnon*
 > Joueur : Phaphane

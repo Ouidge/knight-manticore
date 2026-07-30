@@ -11,6 +11,7 @@ faction: Knight
 blason: Loup
 fiche: [[Yurei.pdf]]
 section: Ogre
+ia: [[Bérénice]]
 metaarmure:
   - [[Rogue]]
 portrait-armure: "![[Yurei-armure.png]]"
@@ -33,12 +34,12 @@ liens:
   - "[[Miko Azumaki]]"
 ---
 <!-- BEGIN PJ INFOBOX -->
-# Yurei
->[!tldr] Résumé
+>[!tldr] Yurei
 > ![[Yurei.webp]]
 > *Toshiro Kaiji*
 > Joueur : Lolo
 > Méta-armure : **[Rogue](https://knight-jdr-systeme.fr/fr/armour/Rogue/)**
+> I.A. : [[Bérénice]]
 > Blason : Loup
 > Section d'origine : **[Ogre](https://knight-jdr-systeme.fr/fr/division/Ogre/)**
 > Avantages : Instinct animal,Menteur professionnel

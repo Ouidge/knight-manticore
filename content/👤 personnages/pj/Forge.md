@@ -4,6 +4,7 @@ visibility: public
 nom: Sergueï Ilianov
 joueur: Jerem
 metaarmure: [[Priest]]
+ia: [[Maman]]
 portrait: "[[Forge-portrait.png]]"
 image: "[[Forge.webp]]"
 statut: En vie
@@ -24,12 +25,12 @@ motivations:
   - Promouvoir le Knight
 ---
 <!-- BEGIN PJ INFOBOX -->
-# Forge
->[!tldr] Résumé
+>[!tldr] Forge
 > ![[Forge.webp]]
 > *Sergueï Ilianov*
 > Joueur : Jerem
 > Méta-armure : **[Priest](https://knight-jdr-systeme.fr/fr/armour/Priest/)**
+> I.A. : [[Maman]]
 > Blason : Corbeau
 > Section d'origine : **[Giant](https://knight-jdr-systeme.fr/fr/division/Giant/)**
 > Avantages : Bon sens,Mémoire efficace

@@ -4,6 +4,7 @@ visibility: public
 nom: Rosa Diakité
 joueur: Zidget
 metaarmure: [[Wizard]]
+ia: [[Goat]]
 portrait: "[[Muse-portrait.png]]"
 image: "[[Muse.webp]]"
 fiche: [[Muse.pdf]]
@@ -25,12 +26,12 @@ motivations:
   - Retrouver des œuvres d’art
 ---
 <!-- BEGIN PJ INFOBOX -->
-# Muse
->[!tldr] Résumé
+>[!tldr] Muse
 > ![[Muse.webp]]
 > *Rosa Diakité*
 > Joueur : Zidget
 > Méta-armure : **[Wizard](https://knight-jdr-systeme.fr/fr/armour/Wizard/)**
+> I.A. : [[Goat]]
 > Blason : Ours
 > Section d'origine : **[Gargoyle](https://knight-jdr-systeme.fr/fr/division/Gargoyle/)**
 > Avantages : Créateur-né,Sûr de soi

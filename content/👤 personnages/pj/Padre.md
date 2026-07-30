@@ -4,6 +4,7 @@ visibility: public
 nom: Marco Orlanda
 joueur: Nolive
 metaarmure: [[Warmaster]]
+ia: [[Gabriel]]
 portrait: "[[Padre-portrait.png]]"
 image: "[[Padre.png]]"
 fiche: [[Padre.pdf]]
@@ -24,12 +25,12 @@ motivations:
   - Apaiser les tensions
 ---
 <!-- BEGIN PJ INFOBOX -->
-# Padre
->[!tldr] Résumé
+>[!tldr] Padre
 > ![[Padre.png]]
 > *Marco Orlanda*
 > Joueur : Nolive
 > Méta-armure : **[Warmaster](https://knight-jdr-systeme.fr/fr/armour/Warmaster/)**
+> I.A. : [[Gabriel]]
 > Blason : Cerf
 > Section d'origine : **[Dragon](https://knight-jdr-systeme.fr/fr/division/Dragon/)**
 > Avantages : Rayonnement,Magnétique

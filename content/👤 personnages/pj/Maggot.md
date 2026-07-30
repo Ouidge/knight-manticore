@@ -4,6 +4,7 @@ visibility: public
 nom: Peter Waitts
 joueur: Rob
 metaarmure: [[Barbarian]]
+ia: [[Nimué]]
 portrait: "[[Maggot-portrait.png]]"
 image: "[[Maggot-new.png]]"
 fiche: [[Maggot.pdf]]
@@ -23,12 +24,12 @@ motivations:
   - Apporter une aide significative à un rebut
 ---
 <!-- BEGIN PJ INFOBOX -->
-# Maggot
->[!tldr] Résumé
+>[!tldr] Maggot
 > ![[Maggot-new.png]]
 > *Peter Waitts*
 > Joueur : Rob
 > Méta-armure : **[Barbarian](https://knight-jdr-systeme.fr/fr/armour/Barbarian/)**
+> I.A. : [[Nimué]]
 > Blason : Lion
 > Section d'origine : **[Tarasque](https://knight-jdr-systeme.fr/fr/division/Tarasque/)**
 > Avantages : Chanceux,Dur à cuire

@@ -6,7 +6,7 @@ views:
     name: Tableau
     filters:
       and:
-        - file.path.contains("aides de jeu")
+        - file.path.contains("personnages")
         - file.name == "index"
     order:
       - formula.f_nom

@@ -4,6 +4,7 @@ visibility: public
 nom: Salomé Edensmith
 joueur: Wh0
 metaarmure: [[Ranger]]
+ia: [[Raimundo]]
 portrait: "[[Raptor-portrait.png]]"
 image: "[[Raptor.webp]]"
 fiche: [[Raptor.pdf]]
@@ -24,12 +25,12 @@ motivations:
   - Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué
 ---
 <!-- BEGIN PJ INFOBOX -->
-# Raptor
->[!tldr] Résumé
+>[!tldr] Raptor
 > ![[Raptor.webp]]
 > *Salomé Edensmith*
 > Joueur : Wh0
 > Méta-armure : **[Ranger](https://knight-jdr-systeme.fr/fr/armour/Ranger/)**
+> I.A. : [[Raimundo]]
 > Blason : Aigle
 > Section d'origine : **[Cyclope](https://knight-jdr-systeme.fr/fr/division/Cyclope/)**
 > Avantages : Forteresse spirituelle,Connaissance secrète occulte
