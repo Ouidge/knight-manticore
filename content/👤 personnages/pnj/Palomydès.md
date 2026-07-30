@@ -1,5 +1,6 @@
 ---
 type: pnj
+subtype: cdltr
 visibility: public
 nom: Palomydès
 statut: En vie

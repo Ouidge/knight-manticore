@@ -5,6 +5,9 @@ views:
       and:
         - type == "pnj"
         - visibility == "public"
+    groupBy:
+      property: subtype
+      direction: ASC
     order:
       - file.name
       - faction

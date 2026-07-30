@@ -1,5 +1,6 @@
 ---
 type: pnj
+subtype: cdltr
 visibility: public
 nom: Raphael McTavish
 statut: En vie

@@ -1,10 +1,12 @@
 ---
 type: pnj
+subtype: cdltr
 visibility: public
+faction: Knight
 nom: Bédivère
 statut: En vie
 portrait: "[[Bédivère.png]]"
-faction: Knight
+musique: "[[Bédivère.mp3]]"
 description: Chevalier de la table Ronde, chef de la Section Kraken.
 ---
 <!-- BEGIN PNJ INFOBOX -->
