@@ -5,6 +5,7 @@ nom: Rosa Diakité
 joueur: Zidget
 metaarmure: [[Wizard]]
 portrait: "[[Muse-portrait.png]]"
+image: "[[Muse.webp]]"
 fiche: [[Muse.pdf]]
 statut: En vie
 blason: Ours
@@ -25,9 +26,8 @@ motivations:
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Muse
-<img src="Muse-portrait.png" align="right" width="300" style="margin-left: 15px; margin-bottom: 10px;">
-
 >[!tldr] Résumé
+> ![[Muse.webp]]
 > *Rosa Diakité*
 > Joueur : Zidget
 > Méta-armure : **[Wizard](https://knight-jdr-systeme.fr/fr/armour/Wizard/)**
@@ -37,9 +37,9 @@ motivations:
 > Inconvénients : Surprotecteur,Ennemi juré
 > Motivation majeure :  Éliminer le Collectionneur
 > Motivations mineures :  Réaliser une œuvre,Empêcher la mort d’un être humain,Aider les nécessiteux,Retrouver des œuvres d’art
- 
+
 ![[Ours]]
+![[Muse.pdf]]
 ![[Créateur-né]]
 ![[Sûr de soi]]![[Surprotecteur]]
-![[Ennemi juré]]![[Muse.pdf]]
-<!-- END PJ INFOBOX -->
+![[Ennemi juré]]<!-- END PJ INFOBOX -->

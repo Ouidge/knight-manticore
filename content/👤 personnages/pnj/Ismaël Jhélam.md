@@ -1,5 +1,6 @@
 ---
 type: pnj
+subtype: immortel
 visibility: public
 statut: En vie
 portrait: "[[Ismaël Jhélam.png]]"

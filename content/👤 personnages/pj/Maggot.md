@@ -5,6 +5,7 @@ nom: Peter Waitts
 joueur: Rob
 metaarmure: [[Barbarian]]
 portrait: "[[Maggot-portrait.png]]"
+image: "[[Maggot.webp]]"
 fiche: [[Maggot.pdf]]
 statut: En vie
 coterie: manticore
@@ -23,9 +24,8 @@ motivations:
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Maggot
-<img src="Maggot-portrait.png" align="right" width="300" style="margin-left: 15px; margin-bottom: 10px;">
-
 >[!tldr] Résumé
+> ![[Maggot.webp]]
 > *Peter Waitts*
 > Joueur : Rob
 > Méta-armure : **[Barbarian](https://knight-jdr-systeme.fr/fr/armour/Barbarian/)**
@@ -35,8 +35,8 @@ motivations:
 > Inconvénients : Fou dangereux
 > Motivation majeure :  Création d'un réseau de leaders rebuts
 > Motivations mineures :  Protéger ses coéquipiers,Ne jamais fuir devant un ennemi s’il met des innocents en danger,Apporter une aide significative à un rebut
- 
+
 ![[Lion]]
+![[Maggot.pdf]]
 ![[Chanceux]]
-![[Dur à cuire]]![[Fou dangereux]]![[Maggot.pdf]]
-<!-- END PJ INFOBOX -->
+![[Dur à cuire]]![[Fou dangereux]]<!-- END PJ INFOBOX -->

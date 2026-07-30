@@ -5,6 +5,7 @@ nom: Marco Orlanda
 joueur: Nolive
 metaarmure: [[Warmaster]]
 portrait: "[[Padre-portrait.png]]"
+image: "[[Padre.png]]"
 fiche: [[Padre.pdf]]
 statut: En vie
 blason: [[Cerf]]
@@ -24,9 +25,8 @@ motivations:
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Padre
-<img src="Padre-portrait.png" align="right" width="300" style="margin-left: 15px; margin-bottom: 10px;">
-
 >[!tldr] Résumé
+> ![[Padre.png]]
 > *Marco Orlanda*
 > Joueur : Nolive
 > Méta-armure : **[Warmaster](https://knight-jdr-systeme.fr/fr/armour/Warmaster/)**
@@ -36,9 +36,9 @@ motivations:
 > Inconvénients : Fanatique,Humaniste
 > Motivation majeure :  Répandre la parole de Dieu au sein du Knight
 > Motivations mineures :  Obéir aux ordres des chevaliers et d’Arthur,Combattre le désespoir,Apaiser les tensions
- 
+
 ![[Cerf]]
+![[Padre.pdf]]
 ![[Rayonnement]]
 ![[Magnétique]]![[Fanatique]]
-![[Humaniste]]![[Padre.pdf]]
-<!-- END PJ INFOBOX -->
+![[Humaniste]]<!-- END PJ INFOBOX -->

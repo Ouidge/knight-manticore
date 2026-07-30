@@ -5,6 +5,7 @@ nom: Salomé Edensmith
 joueur: Wh0
 metaarmure: [[Ranger]]
 portrait: "[[Raptor-portrait.png]]"
+image: "[[Raptor.webp]]"
 fiche: [[Raptor.pdf]]
 statut: En vie
 blason: [[Aigle]]
@@ -24,9 +25,8 @@ motivations:
 ---
 <!-- BEGIN PJ INFOBOX -->
 # Raptor
-<img src="Raptor-portrait.png" align="right" width="300" style="margin-left: 15px; margin-bottom: 10px;">
-
 >[!tldr] Résumé
+> ![[Raptor.webp]]
 > *Salomé Edensmith*
 > Joueur : Wh0
 > Méta-armure : **[Ranger](https://knight-jdr-systeme.fr/fr/armour/Ranger/)**
@@ -36,9 +36,9 @@ motivations:
 > Inconvénients : Esprit de contradiction,Sensible à l'Anathème
 > Motivation majeure :  Devenir un chevalier de la Table Ronde
 > Motivations mineures :  Protéger ses coéquipiers,Promouvoir le Knight,Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué
- 
+
 ![[Aigle]]
+![[Raptor.pdf]]
 ![[Forteresse spirituelle]]
 ![[Connaissance secrète occulte]]![[Esprit de contradiction]]
-![[Sensible à l'Anathème]]![[Raptor.pdf]]
-<!-- END PJ INFOBOX -->
+![[Sensible à l'Anathème]]<!-- END PJ INFOBOX -->

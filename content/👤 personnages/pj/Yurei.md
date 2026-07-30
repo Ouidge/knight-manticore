@@ -4,6 +4,7 @@ visibility: public
 nom: Toshiro Kaiji
 joueur: Lolo
 portrait: "[[Yurei-portrait.png]]"
+image: "[[Yurei.webp]]"
 statut: En vie
 coterie: manticore
 faction: Knight

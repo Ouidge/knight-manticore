@@ -5,6 +5,7 @@ nom: Titus Agamemnon
 joueur: Phaphane
 metaarmure: [[Paladin]]
 portrait: "[[Sarge-portrait.png]]"
+image: "[[Sarge.webp]]"
 fiche: [[Sarge.pdf]]
 statut: En vie
 blason: [[Dragon]]
