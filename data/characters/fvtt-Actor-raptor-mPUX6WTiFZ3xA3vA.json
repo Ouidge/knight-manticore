@@ -243,18 +243,18 @@
       },
       "nods": {
         "soin": {
-          "value": 0,
-          "max": 0,
+          "value": 3,
+          "max": 3,
           "dices": "3D6"
         },
         "armure": {
-          "value": 0,
-          "max": 0,
+          "value": 3,
+          "max": 3,
           "dices": "3D6"
         },
         "energie": {
-          "value": 0,
-          "max": 0,
+          "value": 3,
+          "max": 3,
           "dices": "3D6"
         }
       },
@@ -874,8 +874,8 @@
     "equipements": {
       "modules": {},
       "ia": {
-        "code": "",
-        "surnom": "",
+        "code": "R.M.U.D.G.",
+        "surnom": "Raimundo",
         "caractere": "<p>L&rsquo;IA affectionne les d&eacute;couvertes. Elle est tr&egrave;s curieuse. Elle aime vagabonder avec le chevalier, tant physiquement que dans ses pens&eacute;es. Plut&ocirc;t avenante vis-&agrave;-vis de son porteur tant que celui-ci est en mouvement ou dans l&rsquo;action, son attitude peut devenir moins courtoise s&rsquo;il vient &agrave; stagner et ne rien faire (se reposer et dormir ne sont pas mal consid&eacute;r&eacute;s par l&rsquo;IA, ce sont des moments n&eacute;cessaires pour recharger l&rsquo;&eacute;nergie humaine).</p>"
       },
       "ascension": {
@@ -7149,10 +7149,10 @@
   "flags": {},
   "_stats": {
     "systemId": "knight",
-    "systemVersion": "3.24.8",
+    "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679600481810,
-    "modifiedTime": 1785419643523,
+    "modifiedTime": 1788111214994,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": null,
     "duplicateSource": null,

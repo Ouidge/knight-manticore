@@ -62,6 +62,10 @@ article:has(.knight-sheet-marker) td {
   border: 1px solid #40505f;
 }
 
+article:has(.knight-sheet-marker) tbody tr:nth-child(even) td {
+  background: rgb(112 134 155 / 8%);
+}
+
 .knight-identity {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 116px;
@@ -76,11 +80,19 @@ article:has(.knight-sheet-marker) td {
 }
 
 .knight-profile h1 {
-  margin: 0 0 0.45rem;
+  margin: 0;
+}
+
+.knight-title-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+  align-items: baseline;
+  margin-bottom: 0.7rem;
 }
 
 .knight-profile-lead {
-  margin: 0 0 0.8rem;
+  margin: 0;
   color: var(--knight-muted);
   font-size: 1.05rem;
 }
@@ -100,6 +112,7 @@ article:has(.knight-sheet-marker) td {
 .knight-profile-details dt {
   color: var(--knight-accent);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .knight-profile-details dd {
@@ -122,6 +135,7 @@ article:has(.knight-sheet-marker) td {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 0.8rem;
   align-items: start;
+  margin-top: 1rem;
 }
 
 .knight-stat-table {
@@ -166,12 +180,130 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) {
   table-layout: fixed;
 }
 
+article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]),
+article:has(.knight-sheet-marker) .knight-arsenal-table {
+  overflow: hidden;
+  border: 1px solid #40505f;
+  border-top: 3px solid var(--knight-accent);
+  border-radius: 6px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: rgb(27 35 45 / 90%);
+}
+
+article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th,
+article:has(.knight-sheet-marker) .knight-arsenal-table th {
+  color: var(--knight-accent);
+  background: rgb(34 45 56 / 96%);
+}
+
+article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) td,
+article:has(.knight-sheet-marker) .knight-arsenal-table td {
+  border-color: rgb(112 134 155 / 35%);
+}
+
 article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:first-child {
   width: 25%;
 }
 
 article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child(2) {
   width: 4.5rem;
+}
+
+.knight-arsenal-table {
+  table-layout: fixed;
+}
+
+.knight-arsenal-table th:first-child {
+  width: 18%;
+}
+
+.knight-arsenal-table th:nth-child(2) {
+  width: 8%;
+}
+
+.knight-arsenal-table th:nth-child(3) {
+  width: 5%;
+}
+
+.knight-arsenal-table th:nth-child(4),
+.knight-arsenal-table th:nth-child(5) {
+  width: 12%;
+}
+
+.knight-arsenal-table th:nth-child(6) {
+  width: 5%;
+}
+
+.knight-arsenal-table td[rowspan] {
+  vertical-align: top;
+  font-weight: 700;
+}
+
+.knight-range-legend {
+  margin: 0.3rem 0 0;
+  color: var(--knight-muted);
+  font-size: 0.72rem;
+  line-height: 1.25;
+}
+
+.knight-first-grenade td {
+  border-top: 2px solid var(--knight-accent) !important;
+}
+
+.knight-grenade-legend {
+  margin: 0.15rem 0 0;
+  color: var(--knight-muted);
+  font-size: 0.72rem;
+}
+
+.knight-nods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  align-items: baseline;
+  margin: 0.8rem 0 0.4rem;
+  padding: 0.45rem 0.6rem;
+  background: rgb(27 35 45 / 90%);
+  border: 1px solid #40505f;
+  border-top: 3px solid var(--knight-accent);
+  border-radius: 6px;
+}
+
+.knight-nods > strong {
+  color: var(--knight-accent);
+}
+
+.knight-nods span {
+  color: var(--knight-muted);
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.knight-nods b {
+  color: var(--knight-text);
+}
+
+.knight-counter {
+  display: inline-flex;
+  gap: 0.18rem;
+  align-items: center;
+  font-style: normal;
+}
+
+.knight-check-box {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 0.72rem;
+  height: 0.72rem;
+  background: transparent;
+  border: 1.5px solid var(--knight-accent);
+  border-radius: 2px;
+}
+
+.knight-grenade-counter {
+  margin-left: auto;
 }
 
 .knight-portrait {
@@ -322,7 +454,7 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
 @page {
   size: A4 portrait;
-  margin: 9mm 10mm;
+  margin: 12mm 11mm 10mm;
 }
 
 @media print {
@@ -346,14 +478,14 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
   .knight-identity {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 31mm;
+    grid-template-columns: minmax(0, 1fr) 34mm;
     gap: 3mm;
     min-height: 0;
     margin-bottom: 1mm;
   }
 
   .knight-profile-side {
-    width: 31mm;
+    width: 34mm;
   }
 
   .knight-progression {
@@ -361,8 +493,8 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     padding: 1mm;
     color: #111 !important;
     background: white !important;
-    border-color: #777 !important;
-    font-size: 7pt;
+    border-color: #a87920 !important;
+    font-size: 6.6pt;
   }
 
   .knight-minor-motivations ul {
@@ -381,19 +513,42 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   }
 
   .knight-profile-details > div {
-    grid-template-columns: 32mm minmax(0, 1fr);
+    grid-template-columns: 39mm minmax(0, 1fr);
+    gap: 1.5mm;
+  }
+
+  .knight-profile {
+    font-size: 7.6pt;
+    line-height: 1.1;
+  }
+
+  .knight-title-line {
+    gap: 1mm 3mm;
+    margin-bottom: 1.2mm;
+  }
+
+  .knight-profile-lead {
+    color: #111 !important;
+    font-size: 8.2pt;
+  }
+
+  .knight-profile-lead strong,
+  .knight-profile-details dd,
+  .knight-profile-details li {
+    color: #111 !important;
   }
 
   .knight-combat-grid {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     gap: 2mm;
+    margin-top: 4mm;
   }
 
   .knight-stat-table {
     padding: 0.8mm;
     color: #111 !important;
     background: white !important;
-    border-color: #777 !important;
+    border-color: #a87920 !important;
   }
 
   .knight-stat-cells {
@@ -429,7 +584,8 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     width: auto !important;
     max-width: none !important;
     margin: 0 !important;
-    padding: 0 !important;
+    box-sizing: border-box;
+    padding: 1mm 1.5mm !important;
     color: #111 !important;
     background: white !important;
     border: 0 !important;
@@ -440,12 +596,20 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   }
 
   article:has(.knight-sheet-marker) h1 {
-    margin: 0 0 2mm;
-    font-size: 19pt;
+    margin: 0;
+    font-size: 15pt;
+    line-height: 1;
   }
 
   article:has(.knight-sheet-marker) h2 {
-    display: none !important;
+    display: block !important;
+    visibility: hidden !important;
+    height: 4mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    font-size: 0 !important;
+    line-height: 0 !important;
   }
 
   article:has(.knight-sheet-marker) h3 {
@@ -470,20 +634,86 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     margin: 1mm 0 1.5mm;
     color: #111 !important;
     background: white !important;
-    border-color: #777 !important;
+    border: 1.2px solid #8a5b00 !important;
     font-size: 7.7pt;
     break-inside: avoid;
   }
 
   article:has(.knight-sheet-marker) th {
-    color: #111 !important;
-    background: #eee !important;
+    color: white !important;
+    background: #8a5b00 !important;
   }
 
   article:has(.knight-sheet-marker) th,
   article:has(.knight-sheet-marker) td {
     padding: 0.8mm 1.2mm;
-    border-color: #888 !important;
+    color: #111 !important;
+    border-color: #a87920 !important;
+  }
+
+  article:has(.knight-sheet-marker) tbody tr:nth-child(even) td {
+    background: #f5efe2 !important;
+  }
+
+  article:has(.knight-sheet-marker) .knight-arsenal-table {
+    margin-top: 4mm;
+    font-size: 6.4pt;
+  }
+
+  article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]),
+  article:has(.knight-sheet-marker) .knight-arsenal-table {
+    border: 1px solid #a87920 !important;
+    border-top: 2px solid #8a5b00 !important;
+    border-radius: 2mm;
+  }
+
+  article:has(.knight-sheet-marker) .knight-arsenal-table th,
+  article:has(.knight-sheet-marker) .knight-arsenal-table td {
+    padding: 0.6mm 0.8mm;
+  }
+
+  .knight-equipment-title {
+    display: none !important;
+  }
+
+  .knight-range-legend {
+    margin: 0.5mm 0 0;
+    color: #333 !important;
+    font-size: 5.8pt;
+    line-height: 1.15;
+  }
+
+  .knight-grenade-legend {
+    margin: 0.3mm 0 0;
+    color: #333 !important;
+    font-size: 5.8pt;
+  }
+
+  .knight-nods {
+    gap: 1mm 3mm;
+    margin: 3mm 0 1mm;
+    padding: 1mm 1.5mm;
+    color: #111 !important;
+    background: white !important;
+    border-color: #a87920 !important;
+    border-top-color: #8a5b00 !important;
+  }
+
+  .knight-nods > strong,
+  .knight-nods span,
+  .knight-nods b {
+    color: #111 !important;
+  }
+
+  .knight-check-box {
+    width: 3mm;
+    height: 3mm;
+    border: 0.35mm solid #8a5b00;
+    border-radius: 0.4mm;
+  }
+
+  .knight-counter {
+    gap: 0.6mm;
   }
 
   article:has(.knight-sheet-marker) a {
@@ -504,7 +734,7 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     padding: 1mm;
     color: #111 !important;
     background: white !important;
-    border-color: #777 !important;
+    border-color: #a87920 !important;
     border-top-color: #8a5b00 !important;
   }
 
@@ -520,15 +750,30 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   }
 
   .knight-trait {
-    display: inline-block;
-    width: calc(50% - 1.5mm);
-    margin: 0.5mm;
-    padding: 1mm 1.5mm;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0.6mm 0;
+    padding: 0.7mm 1mm;
     vertical-align: top;
     color: #111 !important;
     background: white !important;
-    border: 1px solid #aaa;
-    border-left: 2px solid #53616c;
+    border: 1px solid #b89552;
+    border-left: 2px solid #8a5b00;
+    font-size: 7.2pt;
+    line-height: 1.05;
+  }
+
+  .knight-trait h3 {
+    margin: 0 0 0.4mm;
+    font-size: 8.2pt;
+    line-height: 1.05;
+  }
+
+  .knight-trait-description,
+  .knight-trait-description p {
+    margin: 0 !important;
+    line-height: 1.05 !important;
   }
 
   .knight-effect {

@@ -179,6 +179,64 @@ function actorModifier(stat) {
   return bonuses - penalties;
 }
 
+function weaponFlatModifier(statistic) {
+  let total = 0;
+
+  for (const item of items.filter((entry) => entry.type === "arme" && entry.system?.equipped)) {
+    const data = item.system ?? {};
+    let effects = [];
+
+    if (data.type === "contact") {
+      if (!data.options2mains?.has || data.options2mains?.actuel === "1main") {
+        effects.push(...(data.effets?.raw ?? []), ...(data.effets?.custom ?? []));
+      } else {
+        effects.push(...(data.effets2mains?.raw ?? []), ...(data.effets2mains?.custom ?? []));
+      }
+      effects.push(
+        ...(data.structurelles?.raw ?? []),
+        ...(data.structurelles?.custom ?? []),
+        ...(data.ornementales?.raw ?? []),
+        ...(data.ornementales?.custom ?? []),
+      );
+    } else if (data.type === "distance") {
+      effects.push(
+        ...(data.effets?.raw ?? []),
+        ...(data.effets?.custom ?? []),
+        ...(data.distance?.raw ?? []),
+        ...(data.distance?.custom ?? []),
+      );
+      if (data.optionsmunitions?.has) {
+        const ammunition = data.optionsmunitions?.liste?.[data.optionsmunitions?.actuel] ?? {};
+        effects.push(...(ammunition.raw ?? []), ...(ammunition.custom ?? []));
+      }
+    }
+
+    for (const effect of effects) {
+      if (typeof effect === "object" && effect?.other?.cdf && statistic === "cdf") {
+        total += number(effect.other.cdf);
+        continue;
+      }
+      const [key, rawValue] = String(effect).split(" ");
+      const value = number(rawValue);
+      if (statistic === "defense") {
+        if (key === "defense") total += value;
+        if (key === "boucliergrave") total += 1;
+        if (key === "massive") total -= 1;
+      }
+      if (statistic === "reaction") {
+        if (key === "reaction") total += value;
+        if (key === "protectionarme") total += 2;
+      }
+      if (statistic === "cdf") {
+        if (key === "cdf") total += value;
+        if (key === "armuregravee") total += 2;
+      }
+    }
+  }
+
+  return total;
+}
+
 function styleModifiers(style = "standard") {
   const result = { defense: 0, reaction: 0 };
   if (style === "defensif") result.defense += 2;
@@ -262,8 +320,96 @@ function weaponUrl(name) {
   return `https://knight-jdr-systeme.fr/fr/weapon/${slugify(weaponBaseName(name))}/`;
 }
 
+function rangeAbbreviation(range = "") {
+  const normalized = normalizeKey(range);
+  const abbreviations = {
+    contact: "C",
+    distancemelee: "DM",
+    courte: "CT",
+    moyenne: "M",
+    longue: "L",
+    lointaine: "LT",
+  };
+  return abbreviations[normalized] ?? String(range || "—").toUpperCase();
+}
+
+function checkBoxes(count) {
+  return Array.from(
+    { length: Math.max(0, Math.min(number(count), 20)) },
+    () => '<i class="knight-check-box" aria-hidden="true"></i>',
+  ).join("");
+}
+
 function moduleUrl(name) {
   return `https://knight-jdr-systeme.fr/fr/module/${slugify(moduleFamily(name))}/`;
+}
+
+function rangeHelpUrl(range) {
+  return `https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/${range}`;
+}
+
+function grenadeModuleBonus(grenadeKey, statistic) {
+  return items
+    .filter((item) => item.type === "module")
+    .reduce((sum, item) => {
+      const data = selectedModuleData(item);
+      if (!data.bonus?.has || !data.bonus?.grenades?.has) return sum;
+      return sum + number(data.bonus.grenades?.liste?.[grenadeKey]?.[statistic]?.dice);
+    }, 0);
+}
+
+function arsenalSection(groups) {
+  const grenades = system.combat?.grenades ?? {};
+  if (!groups.size && number(grenades.quantity?.max) <= 0) return "";
+  const lines = [
+    '<h3 class="knight-equipment-title">Arsenal</h3>',
+    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Mode</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>PE</th><th>Effets</th></tr></thead><tbody>',
+  ];
+
+  for (const [baseName, group] of groups) {
+    for (const [index, weapon] of group.entries()) {
+      const effects = [
+        ...(weapon.system?.effets?.raw ?? []),
+        ...(weapon.system?.effets?.custom ?? []),
+        ...(weapon.system?.distance?.raw ?? []),
+        ...(weapon.system?.distance?.custom ?? []),
+        ...(weapon.system?.structurelles?.raw ?? []),
+        ...(weapon.system?.structurelles?.custom ?? []),
+        ...(weapon.system?.ornementales?.raw ?? []),
+        ...(weapon.system?.ornementales?.custom ?? []),
+      ];
+      lines.push(
+        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a></td>` : ""}<td>${escapeHtml(weaponMode(weapon.name))}</td><td>${escapeHtml(rangeAbbreviation(weapon.system?.portee))}</td><td>${escapeHtml(formatDice(weapon.system?.degats))}</td><td>${escapeHtml(formatDice(weapon.system?.violence))}</td><td>${number(weapon.system?.energie) || "—"}</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
+      );
+    }
+  }
+
+  const grenadeLabels = {
+    antiblindage: "Grenade antiblindage",
+    explosive: "Grenade explosive",
+    flashbang: "Grenade flashbang",
+    iem: "Grenade IEM",
+    shrapnel: "Grenade shrapnel",
+  };
+  if (number(grenades.quantity?.max) > 0) {
+    for (const [index, [key, grenade]] of Object.entries(grenades.liste ?? {}).entries()) {
+      const effects = [
+        ...(grenade.effets?.raw ?? []),
+        ...(grenade.effets?.custom ?? []),
+      ];
+      const damage = number(grenade.degats?.dice) + grenadeModuleBonus(key, "degats");
+      const violence = number(grenade.violence?.dice) + grenadeModuleBonus(key, "violence");
+      lines.push(
+        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>Grenade</td><td>CT</td><td>${damage ? `${damage}D6` : "—"}</td><td>${violence ? `${violence}D6` : "—"}</td><td>—</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
+      );
+    }
+  }
+
+  lines.push("</tbody></table>");
+  lines.push(
+    `<p class="knight-range-legend"><strong>Portées :</strong> <a href="${rangeHelpUrl("contact")}"><strong>C — Contact</strong> : distance de mêlée</a> · <a href="${rangeHelpUrl("courte")}"><strong>CT — Courte</strong> : 2–15 m</a> · <a href="${rangeHelpUrl("moyenne")}"><strong>M — Moyenne</strong> : 15–50 m</a> · <a href="${rangeHelpUrl("longue")}"><strong>L — Longue</strong> : 50–300 m</a> · <a href="${rangeHelpUrl("lointaine")}"><strong>LT — Lointaine</strong> : plus de 300 m</a></p>`,
+  );
+  return lines.join("\n");
 }
 
 function meaningfulItem(item) {
@@ -305,8 +451,7 @@ function traitSection(title, selectedItems) {
       return [
         '<section class="knight-trait">',
         `<h3>${escapeHtml(item.name)}</h3>`,
-        `<div class="screen-only">${markdownishHtml(description || "—")}</div>`,
-        effect ? `<p class="print-only knight-effect">${escapeHtml(effect)}</p>` : "",
+        `<div class="knight-trait-description">${markdownishHtml(description || effect || "—")}</div>`,
         "</section>",
       ]
         .filter(Boolean)
@@ -359,6 +504,14 @@ function selectedModuleData(item) {
   return details[`n${level}`] ?? details[`n${item.system?.niveau?.value}`] ?? {};
 }
 
+function isOverdriveModule(item) {
+  const overdrives = selectedModuleData(item).overdrives;
+  if (overdrives?.has) return true;
+  return Object.values(overdrives?.aspects ?? {}).some((characteristics) =>
+    Object.values(characteristics ?? {}).some((value) => number(value) > 0),
+  );
+}
+
 function moduleMechanicalSummary(item) {
   const data = selectedModuleData(item);
   const details = [];
@@ -400,6 +553,22 @@ function moduleMechanicalSummary(item) {
     }
   }
 
+  if (data.bonus?.grenades?.has) {
+    const grenadeBonuses = [];
+    for (const [key, grenade] of Object.entries(data.bonus.grenades.liste ?? {})) {
+      const damage = number(grenade.degats?.dice);
+      const violence = number(grenade.violence?.dice);
+      if (!damage && !violence) continue;
+      const label = {
+        antiblindage: "antiblindage",
+        explosive: "explosive",
+        shrapnel: "shrapnel",
+      }[key] ?? key;
+      grenadeBonuses.push(`${label} : +${damage}D6 dégâts, +${violence}D6 violence`);
+    }
+    if (grenadeBonuses.length) details.push(`Grenades ${grenadeBonuses.join(" ; ")}`);
+  }
+
   const effects = [
     ...(data.arme?.effets?.raw ?? []),
     ...(data.arme?.effets?.custom ?? []),
@@ -437,6 +606,7 @@ const iaDisadvantages = items.filter(
 const injuries = items.filter((item) => item.type === "blessure" && meaningfulItem(item));
 const weapons = items.filter((item) => item.type === "arme" && meaningfulItem(item));
 const modules = latestModules(items.filter((item) => item.type === "module"));
+const displayedModules = modules.filter((item) => !isOverdriveModule(item));
 
 const weaponGroups = new Map();
 for (const weapon of weapons) {
@@ -478,6 +648,7 @@ function defenseFor(withArmor) {
     maxCharacteristic("bete", withArmor) +
       (isKraken ? 1 : 0) +
       actorModifier("defense") +
+      weaponFlatModifier("defense") +
       combatStyle.defense,
   );
 }
@@ -488,6 +659,7 @@ function reactionFor(withArmor) {
     maxCharacteristic("machine", withArmor) +
       (isKraken ? 1 : 0) +
       actorModifier("reaction") +
+      weaponFlatModifier("reaction") +
       combatStyle.reaction,
   );
 }
@@ -518,7 +690,7 @@ const armorDefense = defenseFor(true);
 const guardianDefense = defenseFor(false);
 const armorReaction = reactionFor(true);
 const guardianReaction = reactionFor(false);
-const forceField = number(armorWorn ? armor?.system?.champDeForce?.base : system.equipements?.guardian?.champDeForce?.base);
+const forceField = number(armorWorn ? armor?.system?.champDeForce?.base : system.equipements?.guardian?.champDeForce?.base) + weaponFlatModifier("cdf");
 
 const out = [];
 out.push("---");
@@ -534,12 +706,13 @@ out.push("---\n");
 out.push('<div class="knight-sheet-marker" aria-hidden="true"></div>\n');
 out.push('<section class="knight-identity">');
 out.push('<div class="knight-profile">');
+out.push('<div class="knight-title-line">');
 out.push(`<h1>${escapeHtml(actor.name || "Personnage")}</h1>`);
 out.push(
-  `<p class="knight-profile-lead"><strong>${escapeHtml(system.archetype || "Archétype inconnu")}</strong> · Section <strong>${escapeHtml(system.section || "—")}</strong></p>`,
+  `<p class="knight-profile-lead"><strong>${escapeHtml(system.archetype || "Archétype inconnu")}</strong> · Section <strong>${escapeHtml(system.section || "—")}</strong> · Blason <strong>${escapeHtml(system.blason || "—")}</strong></p>`,
 );
+out.push("</div>");
 out.push('<dl class="knight-profile-details">');
-out.push(`<div><dt>Blason</dt><dd>${escapeHtml(system.blason || "—")}</dd></div>`);
 out.push(`<div><dt>Haut fait</dt><dd>${escapeHtml(system.hautFait || "—")}</dd></div>`);
 out.push(
   `<div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>${escapeHtml(htmlToMarkdown(system.motivations?.majeure) || "—")}</dd></div>`,
@@ -550,6 +723,12 @@ if (minorMotivations.length) {
     out.push(`<li>${escapeHtml(htmlToMarkdown(motivation.system?.description) || "—")}</li>`);
   }
   out.push("</ul></dd></div>");
+}
+if (personalAdvantages.length) {
+  out.push(`<div><dt>Avantages</dt><dd>${escapeHtml(personalAdvantages.map((item) => item.name).join(" • "))}</dd></div>`);
+}
+if (personalDisadvantages.length) {
+  out.push(`<div><dt>Inconvénients</dt><dd>${escapeHtml(personalDisadvantages.map((item) => item.name).join(" • "))}</dd></div>`);
 }
 out.push("</dl>");
 out.push("</div>");
@@ -566,7 +745,7 @@ out.push("</div>");
 out.push("</aside>");
 out.push("</section>");
 
-out.push("\n## État et combat\n");
+out.push("\n");
 out.push('<div class="knight-combat-grid">');
 out.push('<div class="knight-stat-table">');
 out.push('<div class="knight-stat-cells">');
@@ -589,7 +768,7 @@ out.push("</div>");
 out.push("</div>");
 out.push("</div>");
 
-out.push("\n## Domaines, caractéristiques et Overdrives\n");
+out.push("\n## Aspects, caractéristiques et overdrives\n");
 out.push('<div class="knight-domain-grid">');
 for (const [domain, characteristics] of Object.entries(DOMAIN_CHARACTERISTICS)) {
   out.push('<section class="knight-domain">');
@@ -604,8 +783,25 @@ for (const [domain, characteristics] of Object.entries(DOMAIN_CHARACTERISTICS)) 
 }
 out.push("</div>");
 
-if (personalAdvantages.length) out.push(`\n${traitSection("Avantages", personalAdvantages)}`);
-if (personalDisadvantages.length) out.push(`\n${traitSection("Inconvénients", personalDisadvantages)}`);
+const nods = system.combat?.nods ?? {};
+const availableNods = [
+  ["Soin", nods.soin],
+  ["Armure", nods.armure],
+  ["Énergie", nods.energie],
+].filter(([, nod]) => number(nod?.max) > 0);
+const grenadeMaximum = number(system.combat?.grenades?.quantity?.max);
+if (availableNods.length || grenadeMaximum > 0) {
+  out.push('<div class="knight-nods"><strong>NODs</strong>');
+  for (const [label, nod] of availableNods) {
+    out.push(`<span>${label} <b>${escapeHtml(nod.dices || "—")}</b><em class="knight-counter" aria-label="${number(nod.max)} utilisations">${checkBoxes(nod.max)}</em></span>`);
+  }
+  if (grenadeMaximum > 0) {
+    out.push(`<span class="knight-grenade-counter">Grenades <em class="knight-counter" aria-label="${grenadeMaximum} grenades">${checkBoxes(grenadeMaximum)}</em></span>`);
+  }
+  out.push("</div>");
+}
+
+if (weaponGroups.size || grenadeMaximum > 0) out.push(`\n${arsenalSection(weaponGroups)}\n`);
 
 out.push('\n<div class="knight-page-two" aria-hidden="true"></div>');
 out.push(`\n## Méta-armure — ${armor?.name || system.metaarmure || "—"}\n`);
@@ -615,30 +811,11 @@ if (armor?.system?.description) {
   );
 }
 
-if (weaponGroups.size) {
-  out.push("### Arsenal\n");
-  for (const [baseName, group] of weaponGroups) {
-    out.push(`#### [${baseName} ↗](${weaponUrl(baseName)})\n`);
-    out.push("| Mode | Portée | Dégâts | Violence | Énergie | Effets |");
-    out.push("|---|---|---:|---:|---:|---|");
-    for (const weapon of group) {
-      const effects = [
-        ...(weapon.system?.effets?.raw ?? []),
-        ...(weapon.system?.effets?.custom ?? []),
-      ];
-      out.push(
-        `| ${escapeCell(weaponMode(weapon.name))} | ${escapeCell(weapon.system?.portee)} | ${formatDice(weapon.system?.degats)} | ${formatDice(weapon.system?.violence)} | ${number(weapon.system?.energie) || "—"} | ${escapeCell(effects.join(", ") || "—")} |`,
-      );
-    }
-    out.push("");
-  }
-}
-
-if (modules.length) {
-  out.push("### Modules\n");
+if (displayedModules.length) {
+  out.push('<h3 class="knight-equipment-title">Modules</h3>\n');
   out.push("| Module | Niveau | Effets essentiels |");
   out.push("|---|:---:|---|");
-  for (const module of modules) {
+  for (const module of displayedModules) {
     const level = selectedModuleLevel(module);
     const name = moduleFamily(module.name).replace(/^./u, (c) => c.toLocaleUpperCase("fr"));
     out.push(
@@ -649,7 +826,7 @@ if (modules.length) {
 
 const ia = system.equipements?.ia ?? {};
 if (ia.surnom || ia.code || ia.caractere || iaAdvantages.length || iaDisadvantages.length) {
-  out.push(`\n## IA de la méta-armure — ${ia.surnom || "Sans surnom"}\n`);
+  out.push(`\n### IA de la méta-armure — ${ia.surnom || "Sans surnom"}\n`);
   out.push(`**Nom de code :** ${ia.code || "—"}\n`);
   if (ia.caractere) out.push(`> ${htmlToMarkdown(ia.caractere).replace(/\n/g, "\n> ")}\n`);
   if (iaAdvantages.length) out.push(`\n${traitSection("Avantages de l’IA", iaAdvantages)}`);
@@ -662,6 +839,9 @@ if (injuries.length) {
     out.push(`### ${injury.name}\n\n${htmlToMarkdown(injury.system?.description) || "—"}\n`);
   }
 }
+
+if (personalAdvantages.length) out.push(`\n${traitSection("Avantages", personalAdvantages)}`);
+if (personalDisadvantages.length) out.push(`\n${traitSection("Inconvénients", personalDisadvantages)}`);
 
 out.push("\n---");
 out.push(`*Fiche générée depuis un export Foundry VTT — système Knight ${actor._stats?.systemVersion ?? "version inconnue"}.*`);

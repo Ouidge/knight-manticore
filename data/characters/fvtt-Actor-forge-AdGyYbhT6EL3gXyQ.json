@@ -243,17 +243,17 @@
       },
       "nods": {
         "soin": {
-          "value": 2,
+          "value": 3,
           "max": 3,
           "dices": "3D6"
         },
         "armure": {
-          "value": 2,
+          "value": 3,
           "max": 3,
           "dices": "3D6"
         },
         "energie": {
-          "value": 2,
+          "value": 3,
           "max": 3,
           "dices": "3D6"
         }
@@ -818,7 +818,7 @@
       "flux": false
     },
     "armure": {
-      "value": 17,
+      "value": 5,
       "base": 0,
       "mod": 0,
       "max": 0,
@@ -1642,7 +1642,7 @@
               "key": "nanoc",
               "softlock": true,
               "active": {
-                "base": true,
+                "base": false,
                 "detaille": false,
                 "mecanique": false
               }
@@ -5037,11 +5037,11 @@
       },
       "_stats": {
         "systemId": "knight",
-        "systemVersion": "3.54.4",
+        "systemVersion": "3.58.35",
         "coreVersion": "14.365",
         "createdTime": 1666890021864,
-        "modifiedTime": 1787427437854,
-        "lastModifiedBy": "U8FN4soUFnrAbF1B",
+        "modifiedTime": 1788101441915,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.armours-base.dcd73012a30f598a",
         "duplicateSource": null,
         "exportSource": null
@@ -13960,7 +13960,7 @@
     "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679575810748,
-    "modifiedTime": 1788091150112,
+    "modifiedTime": 1788111231924,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": "Actor.5zuAo37jUrtqjAHI",
     "duplicateSource": null,

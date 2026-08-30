@@ -243,12 +243,12 @@
       },
       "nods": {
         "soin": {
-          "value": 2,
+          "value": 3,
           "max": 3,
           "dices": "3D6"
         },
         "armure": {
-          "value": 0,
+          "value": 3,
           "max": 3,
           "dices": "3D6"
         },
@@ -12648,10 +12648,10 @@
   "flags": {},
   "_stats": {
     "systemId": "knight",
-    "systemVersion": "3.54.4",
+    "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679573468977,
-    "modifiedTime": 1787492134217,
+    "modifiedTime": 1788111226818,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": null,
     "duplicateSource": null,
