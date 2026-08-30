@@ -810,7 +810,7 @@
       "flux": false
     },
     "armure": {
-      "value": 39,
+      "value": 5,
       "base": 0,
       "mod": 0,
       "max": 0,
@@ -5636,7 +5636,7 @@
       "sort": 200000
     },
     {
-      "name": "Couteau de combat D (Yurei)",
+      "name": "Couteau de combat",
       "type": "arme",
       "img": "https://assets.forge-vtt.com/bazaar/modules/knight-compendium/assets/assets/weapons/couteau-de-combat.webp",
       "system": {
@@ -5779,8 +5779,8 @@
         "systemVersion": "3.21.1",
         "coreVersion": "14.365",
         "createdTime": 1666890002686,
-        "modifiedTime": 1695576911190,
-        "lastModifiedBy": "CTCyykLHgz0jsePi",
+        "modifiedTime": 1788112731593,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.weapons-standard.a02e4ffc8ec4f1eb",
         "duplicateSource": null,
         "exportSource": null
@@ -5790,7 +5790,7 @@
       "_id": "TPSHFrLXyC4YKMFq"
     },
     {
-      "name": "Couteau de combat G (Yurei)",
+      "name": "Couteau de combat",
       "type": "arme",
       "img": "https://assets.forge-vtt.com/bazaar/modules/knight-compendium/assets/assets/weapons/couteau-de-combat.webp",
       "system": {
@@ -5933,8 +5933,8 @@
         "systemVersion": "3.22.4",
         "coreVersion": "14.365",
         "createdTime": 1666890002686,
-        "modifiedTime": 1705828629410,
-        "lastModifiedBy": "CTCyykLHgz0jsePi",
+        "modifiedTime": 1788112725115,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.weapons-standard.a02e4ffc8ec4f1eb",
         "duplicateSource": null,
         "exportSource": null
@@ -12651,7 +12651,7 @@
     "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679573468977,
-    "modifiedTime": 1788111226818,
+    "modifiedTime": 1788113387915,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": null,
     "duplicateSource": null,

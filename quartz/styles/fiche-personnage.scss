@@ -219,20 +219,29 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 }
 
 .knight-arsenal-table th:nth-child(2) {
-  width: 8%;
+  width: 10%;
 }
 
-.knight-arsenal-table th:nth-child(3) {
-  width: 5%;
+.knight-arsenal-table th:nth-child(3),
+.knight-arsenal-table th:nth-child(4) {
+  width: 9%;
 }
 
-.knight-arsenal-table th:nth-child(4),
 .knight-arsenal-table th:nth-child(5) {
-  width: 12%;
+  width: 21%;
 }
 
-.knight-arsenal-table th:nth-child(6) {
-  width: 5%;
+.knight-weapon-mode {
+  display: block;
+  margin-top: 0.12rem;
+  color: var(--knight-muted);
+  font-size: 0.82em;
+  font-weight: 600;
+}
+
+.knight-arsenal-table .knight-dv-bonus {
+  color: #f0c96a;
+  font-weight: 650;
 }
 
 .knight-arsenal-table td[rowspan] {
@@ -670,6 +679,16 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   article:has(.knight-sheet-marker) .knight-arsenal-table th,
   article:has(.knight-sheet-marker) .knight-arsenal-table td {
     padding: 0.6mm 0.8mm;
+  }
+
+  article:has(.knight-sheet-marker) .knight-arsenal-table .knight-dv-bonus {
+    color: #6e4700 !important;
+    font-weight: 700;
+  }
+
+  article:has(.knight-sheet-marker) .knight-weapon-mode {
+    margin-top: 0.2mm;
+    color: #333 !important;
   }
 
   .knight-equipment-title {

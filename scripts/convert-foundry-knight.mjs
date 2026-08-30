@@ -358,15 +358,52 @@ function grenadeModuleBonus(grenadeKey, statistic) {
     }, 0);
 }
 
+function damageViolenceBonuses(effects = [], extra = {}) {
+  const bonuses = [];
+
+  for (const effect of effects) {
+    if (typeof effect !== "string") continue;
+    const normalized = normalizeKey(effect);
+    const continuous = effect.match(/d[eé]g[aâ]ts\s*continus\s+(\d+)/i);
+
+    if (normalized === "faucheusegravee") bonuses.push("D +1D6 (Faucheuse gravée)");
+    if (normalized === "meurtrier") bonuses.push("D +2D6 (Meurtrier)");
+    if (normalized === "destructeur") bonuses.push("D +2D6 (Destructeur)");
+    if (normalized === "ultraviolence") {
+      bonuses.push("V +2D6 (bande, Chair < 10)");
+    }
+    if (normalized === "fureur") bonuses.push("V +4D6 (bande, Chair > 10)");
+    if (continuous) bonuses.push(`D continus ${continuous[1]}`);
+  }
+
+  const extraDamage = number(extra.damage);
+  const extraViolence = number(extra.violence);
+  if (extraDamage || extraViolence) {
+    const values = [];
+    if (extraDamage) values.push(`D +${extraDamage}D6`);
+    if (extraViolence) values.push(`V +${extraViolence}D6`);
+    bonuses.push(`${values.join(" / ")} (module Grenades intelligentes)`);
+  }
+
+  return [...new Set(bonuses)].join(" · ") || "—";
+}
+
 function arsenalSection(groups) {
   const grenades = system.combat?.grenades ?? {};
   if (!groups.size && number(grenades.quantity?.max) <= 0) return "";
   const lines = [
     '<h3 class="knight-equipment-title">Arsenal</h3>',
-    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Mode</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>PE</th><th>Effets</th></tr></thead><tbody>',
+    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>',
   ];
 
   for (const [baseName, group] of groups) {
+    const modes = group
+      .map((weapon) => weaponMode(weapon.name))
+      .filter((mode) => mode !== "Attaque");
+    const modesLabel = modes.length > 1
+      ? `<small class="knight-weapon-mode">${escapeHtml(modes.join(" / "))}</small>`
+      : "";
+
     for (const [index, weapon] of group.entries()) {
       const effects = [
         ...(weapon.system?.effets?.raw ?? []),
@@ -378,8 +415,11 @@ function arsenalSection(groups) {
         ...(weapon.system?.ornementales?.raw ?? []),
         ...(weapon.system?.ornementales?.custom ?? []),
       ];
+      const mode = weaponMode(weapon.name);
+      const range = rangeAbbreviation(weapon.system?.portee);
+      const rangeAndMode = mode === "Attaque" ? range : `${mode} · ${range}`;
       lines.push(
-        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a></td>` : ""}<td>${escapeHtml(weaponMode(weapon.name))}</td><td>${escapeHtml(rangeAbbreviation(weapon.system?.portee))}</td><td>${escapeHtml(formatDice(weapon.system?.degats))}</td><td>${escapeHtml(formatDice(weapon.system?.violence))}</td><td>${number(weapon.system?.energie) || "—"}</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
+        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a>${modesLabel}</td>` : ""}<td>${escapeHtml(rangeAndMode)}</td><td>${escapeHtml(formatDice(weapon.system?.degats))}</td><td>${escapeHtml(formatDice(weapon.system?.violence))}</td><td class="knight-dv-bonus">${escapeHtml(damageViolenceBonuses(effects))}</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
       );
     }
   }
@@ -397,10 +437,12 @@ function arsenalSection(groups) {
         ...(grenade.effets?.raw ?? []),
         ...(grenade.effets?.custom ?? []),
       ];
-      const damage = number(grenade.degats?.dice) + grenadeModuleBonus(key, "degats");
-      const violence = number(grenade.violence?.dice) + grenadeModuleBonus(key, "violence");
+      const moduleBonus = {
+        damage: grenadeModuleBonus(key, "degats"),
+        violence: grenadeModuleBonus(key, "violence"),
+      };
       lines.push(
-        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>Grenade</td><td>CT</td><td>${damage ? `${damage}D6` : "—"}</td><td>${violence ? `${violence}D6` : "—"}</td><td>—</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
+        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>CT</td><td>${escapeHtml(formatDice(grenade.degats))}</td><td>${escapeHtml(formatDice(grenade.violence))}</td><td class="knight-dv-bonus">${escapeHtml(damageViolenceBonuses(effects, moduleBonus))}</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
       );
     }
   }
