@@ -15,10 +15,11 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Maggot</h1>
-<p class="knight-profile-lead"><strong>Hors-la-loi</strong> · Section <strong>Tarasque</strong> · Blason <strong>Lion</strong></p>
+<p class="knight-profile-lead"><strong>Hors-la-loi</strong> · Section <strong>Tarasque</strong> · Blason <strong>[[Lion]]</strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Combat de Titans</dd></div>
+<div><dt>Méta-armure</dt><dd><a href="https://knight-jdr-systeme.fr/fr/armour/barbarian/">Barbarian ↗</a></dd></div>
 <div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>Création d'un réseau de leaders rebuts</dd></div>
 <div class="knight-minor-motivations"><dt>Motivations mineures</dt><dd><ul>
 <li>Racheter ses péchés</li>
@@ -105,6 +106,30 @@ cssclasses:
 <span class="knight-grenade-counter">Grenades <em class="knight-counter" aria-label="5 grenades"><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i></em></span>
 </div>
 
+<section class="knight-traits"><h2>Avantages</h2>
+<section class="knight-trait">
+<h3>Chanceux</h3>
+<div class="knight-trait-description"><p>Le personnage possède une chance hors du commun. Il est capable de réussir des choses inattendues ou de gagner de manière totalement imprévue. En termes de jeu, une fois par partie, le PJ peut relancer gratuitement tous les dés d'un test qu'il a raté.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Dur à cuire</h3>
+<div class="knight-trait-description"><p>Le personnage est plus résistant que la moyenne et dispose d'une endurance presque hors du commun, pouvant subir plus de coups et de blessures que quiconque. En termes de jeu, le personnage dispose de 5 points de santé supplémentaires, ce qui augmente son total de points de santé de 5.</p></div>
+</section>
+</section>
+
+<section class="knight-traits"><h2>Inconvénients</h2>
+<section class="knight-trait">
+<h3>Prisonnier</h3>
+<div class="knight-trait-description"><p>Le personnage est un prisonnier, recruté par le Knight directement en prison. Pour s'assurer qu'il ne tente pas de s'échapper, la section Tarasque du Knight a implanté dans le héros un micro-explosif commandé à distance capable de lui faire sauter la cervelle à la moindre incartade. En termes de jeu, la motivation majeure du personnage doit être : Retrouver la liberté. Tant que cette motivation n'a pas été accomplie, le personnage ne peut pas récupérer ou gagner de points d'espoir (les conditions de l'accomplissement de cette motivation doivent être créées en concertation avec le MJ, il peut par exemple s'agir d'un nombre de missions accomplies, d'un acte particulièrement héroïque, etc.).</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Tarasque - Fou dangereux</h3>
+<div class="knight-trait-description"><p>Même s’il n’est plus au sein de la section Tarasque, le chevalier reste surveillé par Sagramor et par les agents du Korrigan. À la moindre incartade, au moindre signe de désespoir, il est automatiquement &amp;laquo; neutralisé &amp;raquo; par l’explosif que la section Tarasque lui a placé dans la tête. Pour représenter cela, si au début d’une scène le personnage est à moins de 10 points d’espoir, il est automatiquement tué par l’explosif et retiré du jeu.</p></div>
+</section>
+</section>
+
 <h3 class="knight-equipment-title">Arsenal</h3>
 <table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
 <tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td>1D6</td><td>1</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
@@ -172,30 +197,6 @@ cssclasses:
 
 —
 
-
-<section class="knight-traits"><h2>Avantages</h2>
-<section class="knight-trait">
-<h3>Chanceux</h3>
-<div class="knight-trait-description"><p>Le personnage possède une chance hors du commun. Il est capable de réussir des choses inattendues ou de gagner de manière totalement imprévue. En termes de jeu, une fois par partie, le PJ peut relancer gratuitement tous les dés d'un test qu'il a raté.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Dur à cuire</h3>
-<div class="knight-trait-description"><p>Le personnage est plus résistant que la moyenne et dispose d'une endurance presque hors du commun, pouvant subir plus de coups et de blessures que quiconque. En termes de jeu, le personnage dispose de 5 points de santé supplémentaires, ce qui augmente son total de points de santé de 5.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Inconvénients</h2>
-<section class="knight-trait">
-<h3>Prisonnier</h3>
-<div class="knight-trait-description"><p>Le personnage est un prisonnier, recruté par le Knight directement en prison. Pour s'assurer qu'il ne tente pas de s'échapper, la section Tarasque du Knight a implanté dans le héros un micro-explosif commandé à distance capable de lui faire sauter la cervelle à la moindre incartade. En termes de jeu, la motivation majeure du personnage doit être : Retrouver la liberté. Tant que cette motivation n'a pas été accomplie, le personnage ne peut pas récupérer ou gagner de points d'espoir (les conditions de l'accomplissement de cette motivation doivent être créées en concertation avec le MJ, il peut par exemple s'agir d'un nombre de missions accomplies, d'un acte particulièrement héroïque, etc.).</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Tarasque - Fou dangereux</h3>
-<div class="knight-trait-description"><p>Même s’il n’est plus au sein de la section Tarasque, le chevalier reste surveillé par Sagramor et par les agents du Korrigan. À la moindre incartade, au moindre signe de désespoir, il est automatiquement &amp;laquo; neutralisé &amp;raquo; par l’explosif que la section Tarasque lui a placé dans la tête. Pour représenter cela, si au début d’une scène le personnage est à moins de 10 points d’espoir, il est automatiquement tué par l’explosif et retiré du jeu.</p></div>
-</section>
-</section>
 
 ---
 *Fiche générée depuis un export Foundry VTT — système Knight 3.54.4.*

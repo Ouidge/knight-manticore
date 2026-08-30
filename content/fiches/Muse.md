@@ -15,10 +15,11 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Muse</h1>
-<p class="knight-profile-lead"><strong>Rosa Diakité</strong> · Section <strong>Gargoyle</strong> · Blason <strong>Ours</strong></p>
+<p class="knight-profile-lead"><strong>Rosa Diakité</strong> · Section <strong>Gargoyle</strong> · Blason <strong>[[Ours]]</strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Défenseur de l'art</dd></div>
+<div><dt>Méta-armure</dt><dd><a href="https://knight-jdr-systeme.fr/fr/armour/wizard/">Wizard ↗</a></dd></div>
 <div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>Éliminer le Collectionneur</dd></div>
 <div class="knight-minor-motivations"><dt>Motivations mineures</dt><dd><ul>
 <li>Réaliser une &amp;oelig;uvre</li>

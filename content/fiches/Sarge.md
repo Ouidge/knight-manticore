@@ -15,10 +15,11 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Sarge</h1>
-<p class="knight-profile-lead"><strong>Habitant des territoires libres (NAU)</strong> · Section <strong>Gargoyle</strong> · Blason <strong>Dragon</strong></p>
+<p class="knight-profile-lead"><strong>Habitant des territoires libres (NAU)</strong> · Section <strong>Gargoyle</strong> · Blason <strong>[[Dragon]]</strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Survivant de la peste rouge</dd></div>
+<div><dt>Méta-armure</dt><dd><a href="https://knight-jdr-systeme.fr/fr/armour/paladin/">Paladin ↗</a></dd></div>
 <div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>Trouver qui a tué sa famille et se venger</dd></div>
 <div class="knight-minor-motivations"><dt>Motivations mineures</dt><dd><ul>
 <li>Respecter la loi locale et ne jamais mentir</li>
@@ -105,6 +106,30 @@ cssclasses:
 <span class="knight-grenade-counter">Grenades <em class="knight-counter" aria-label="5 grenades"><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i></em></span>
 </div>
 
+<section class="knight-traits"><h2>Avantages</h2>
+<section class="knight-trait">
+<h3>Guérison rapide</h3>
+<div class="knight-trait-description"><p>Le personnage est doté d'un métabolisme plus rapide que la normale. Il récupère vite, très vite, et semble pouvoir se remettre de blessures qui laisseraient normalement sur le carreau. En termes de jeu, cela signifie que le personnage met deux fois moins de temps à récupérer ses points de santé. De plus, lorsque le personnage récupère des points de santé grâce à des soins, des nanoM ou des nods médicaux, il en récupère toujours 3 de plus.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Esprit d'acier</h3>
+<div class="knight-trait-description"><p>Le personnage est habitué à gérer ses émotions seul et sait qu'il peut compter sur lui-même avant toute autre personne. S'il mécanise souvent ses émotions, il résiste mieux à l'Horreur et perd moins facilement espoir. En termes de jeu, lors des pertes de points d'espoir, peu importe leurs sources, le personnage perd toujours 1 point d'espoir de moins que ne l'annoncent le MJ ou les dés.</p></div>
+</section>
+</section>
+
+<section class="knight-traits"><h2>Inconvénients</h2>
+<section class="knight-trait">
+<h3>Colérique</h3>
+<div class="knight-trait-description"><p>Le héros est sujet à des pics de nervosité dus à presque tout et n'importe quoi (opposition d'idées, échec, acte que le personnage ne supporte pas, etc.). Ces pics se transforment très vite en colère semblable à de la folie. Le personnage subit un malus de 3 dés à tous ses tests base <em>Sang-Froid</em> lorsqu'il tente de se calmer ou de ne pas céder à la colère.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Gargoyle - Surprotecteur</h3>
+<div class="knight-trait-description"><p>Le PJ est un protecteur-né, incapable de laisser une personne qu’il considère comme précieuse ou faible sans protection. Pour symboliser cela, le PJ doit désigner un (et un seul) membre de la coterie (nécessairement un autre PJ) comme étant son protégé. Une fois cet allié désigné, le PJ doit appliquer les règles suivantes : lorsque le protégé est mis à l’agonie, le PJ perd 1D6+3 points d’espoir et si le protégé est tué, le PJ perd 2D6+6 points d’espoir en plus de tous points perdus normalement par les membres de la coterie à la mort d’un compagnon d’armes.</p></div>
+</section>
+</section>
+
 <h3 class="knight-equipment-title">Arsenal</h3>
 <table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
 <tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td>1D6</td><td>1</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
@@ -159,30 +184,6 @@ cssclasses:
 <section class="knight-trait">
 <h3>Silence</h3>
 <div class="knight-trait-description"><p>L'IA de l'armure ne supporte pas les bavardages inutiles et stériles. Par conséquent, lorsqu'une discussion tourne en rond ou l'ennuie, elle coupe les micros et les haut-parleurs afin de ne pas polluer l'esprit du chevalier d'idioties. En termes de jeu, une fois par scénario, le chevalier n'entend plus et ne peut plus communiquer avec son entourage tant que l'armure n'a pas décrété que la discussion mérite son attention.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Avantages</h2>
-<section class="knight-trait">
-<h3>Guérison rapide</h3>
-<div class="knight-trait-description"><p>Le personnage est doté d'un métabolisme plus rapide que la normale. Il récupère vite, très vite, et semble pouvoir se remettre de blessures qui laisseraient normalement sur le carreau. En termes de jeu, cela signifie que le personnage met deux fois moins de temps à récupérer ses points de santé. De plus, lorsque le personnage récupère des points de santé grâce à des soins, des nanoM ou des nods médicaux, il en récupère toujours 3 de plus.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Esprit d'acier</h3>
-<div class="knight-trait-description"><p>Le personnage est habitué à gérer ses émotions seul et sait qu'il peut compter sur lui-même avant toute autre personne. S'il mécanise souvent ses émotions, il résiste mieux à l'Horreur et perd moins facilement espoir. En termes de jeu, lors des pertes de points d'espoir, peu importe leurs sources, le personnage perd toujours 1 point d'espoir de moins que ne l'annoncent le MJ ou les dés.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Inconvénients</h2>
-<section class="knight-trait">
-<h3>Colérique</h3>
-<div class="knight-trait-description"><p>Le héros est sujet à des pics de nervosité dus à presque tout et n'importe quoi (opposition d'idées, échec, acte que le personnage ne supporte pas, etc.). Ces pics se transforment très vite en colère semblable à de la folie. Le personnage subit un malus de 3 dés à tous ses tests base <em>Sang-Froid</em> lorsqu'il tente de se calmer ou de ne pas céder à la colère.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Gargoyle - Surprotecteur</h3>
-<div class="knight-trait-description"><p>Le PJ est un protecteur-né, incapable de laisser une personne qu’il considère comme précieuse ou faible sans protection. Pour symboliser cela, le PJ doit désigner un (et un seul) membre de la coterie (nécessairement un autre PJ) comme étant son protégé. Une fois cet allié désigné, le PJ doit appliquer les règles suivantes : lorsque le protégé est mis à l’agonie, le PJ perd 1D6+3 points d’espoir et si le protégé est tué, le PJ perd 2D6+6 points d’espoir en plus de tous points perdus normalement par les membres de la coterie à la mort d’un compagnon d’armes.</p></div>
 </section>
 </section>
 

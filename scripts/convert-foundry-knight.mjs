@@ -320,6 +320,10 @@ function weaponUrl(name) {
   return `https://knight-jdr-systeme.fr/fr/weapon/${slugify(weaponBaseName(name))}/`;
 }
 
+function armorUrl(name) {
+  return `https://knight-jdr-systeme.fr/fr/armour/${slugify(name)}/`;
+}
+
 function rangeAbbreviation(range = "") {
   const normalized = normalizeKey(range);
   const abbreviations = {
@@ -750,12 +754,17 @@ out.push('<section class="knight-identity">');
 out.push('<div class="knight-profile">');
 out.push('<div class="knight-title-line">');
 out.push(`<h1>${escapeHtml(actor.name || "Personnage")}</h1>`);
+const blasonLink = system.blason ? `[[${String(system.blason).replace(/[\[\]]/g, "")}]]` : "—";
 out.push(
-  `<p class="knight-profile-lead"><strong>${escapeHtml(system.archetype || "Archétype inconnu")}</strong> · Section <strong>${escapeHtml(system.section || "—")}</strong> · Blason <strong>${escapeHtml(system.blason || "—")}</strong></p>`,
+  `<p class="knight-profile-lead"><strong>${escapeHtml(system.archetype || "Archétype inconnu")}</strong> · Section <strong>${escapeHtml(system.section || "—")}</strong> · Blason <strong>${blasonLink}</strong></p>`,
 );
 out.push("</div>");
 out.push('<dl class="knight-profile-details">');
 out.push(`<div><dt>Haut fait</dt><dd>${escapeHtml(system.hautFait || "—")}</dd></div>`);
+const armorName = armor?.name || system.metaarmure || "";
+out.push(
+  `<div><dt>Méta-armure</dt><dd>${armorName ? `<a href="${armorUrl(armorName)}">${escapeHtml(armorName)} ↗</a>` : "—"}</dd></div>`,
+);
 out.push(
   `<div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>${escapeHtml(htmlToMarkdown(system.motivations?.majeure) || "—")}</dd></div>`,
 );
@@ -843,6 +852,9 @@ if (availableNods.length || grenadeMaximum > 0) {
   out.push("</div>");
 }
 
+if (personalAdvantages.length) out.push(`\n${traitSection("Avantages", personalAdvantages)}`);
+if (personalDisadvantages.length) out.push(`\n${traitSection("Inconvénients", personalDisadvantages)}`);
+
 if (weaponGroups.size || grenadeMaximum > 0) out.push(`\n${arsenalSection(weaponGroups)}\n`);
 
 out.push('\n<div class="knight-page-two" aria-hidden="true"></div>');
@@ -881,9 +893,6 @@ if (injuries.length) {
     out.push(`### ${injury.name}\n\n${htmlToMarkdown(injury.system?.description) || "—"}\n`);
   }
 }
-
-if (personalAdvantages.length) out.push(`\n${traitSection("Avantages", personalAdvantages)}`);
-if (personalDisadvantages.length) out.push(`\n${traitSection("Inconvénients", personalDisadvantages)}`);
 
 out.push("\n---");
 out.push(`*Fiche générée depuis un export Foundry VTT — système Knight ${actor._stats?.systemVersion ?? "version inconnue"}.*`);

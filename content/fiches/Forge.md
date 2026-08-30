@@ -15,10 +15,11 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Forge</h1>
-<p class="knight-profile-lead"><strong>Génie</strong> · Section <strong>Giant</strong> · Blason <strong>Corbeau</strong></p>
+<p class="knight-profile-lead"><strong>Génie</strong> · Section <strong>Giant</strong> · Blason <strong>[[Corbeau]]</strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Conception de la 1ère méta-armure</dd></div>
+<div><dt>Méta-armure</dt><dd><a href="https://knight-jdr-systeme.fr/fr/armour/priest/">Priest ↗</a></dd></div>
 <div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>Mettre au point une nouvelle méta-armure</dd></div>
 <div class="knight-minor-motivations"><dt>Motivations mineures</dt><dd><ul>
 <li>Découvrir les secrets de l’Anathème</li>
@@ -105,6 +106,30 @@ cssclasses:
 <span class="knight-grenade-counter">Grenades <em class="knight-counter" aria-label="5 grenades"><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i></em></span>
 </div>
 
+<section class="knight-traits"><h2>Avantages</h2>
+<section class="knight-trait">
+<h3>Bon sens</h3>
+<div class="knight-trait-description"><p>Disposant d'un bon sens et d'une logique innés, le héros est particulièrement difficile à manipuler. Par conséquent, il reçoit un bonus d'une réussite automatique lors des jets qu'il effectue pour savoir s'il est berné ou non, peu importe le combo. De plus, en cas d'échec critique lors de ce jet, le PJ subit seulement les effets d'un échec normal.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Mémoire efficace</h3>
+<div class="knight-trait-description"><p>Le personnage a une mémoire qui lui permet de tout assimiler comme il le désire et de se rappeler à peu près tout. Il peut, une fois durant chaque séance de jeu, demander au MJ de lui fournir un savoir académique, un souvenir ou simplement un savoir passé que son personnage aurait pu lire ou voir quelque part. Ce savoir ne peut pas résoudre automatiquement une enquête ou abattre toutes les difficultés d'une aventure, mais peut bien entendu aider à les résoudre.</p></div>
+</section>
+</section>
+
+<section class="knight-traits"><h2>Inconvénients</h2>
+<section class="knight-trait">
+<h3>Trop prudent</h3>
+<div class="knight-trait-description"><p>Le personnage est si prudent qu'il agit parfois plus lentement que prévu. Ce n'est pas de la peur, à ce qu'il dit, mais plutôt « une analyse en détail de la situation ». En termes de jeu, plutôt que de lancer 3D6 pour déterminer son <em>initiative</em>, le PJ lance seulement 2D6 (plus les bonus appropriés évidemment).</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Giant - Rat d’atelier</h3>
+<div class="knight-trait-description"><p>Le PJ était plus souvent à l’atelier que sur le terrain et il est encore mal habitué aux créatures et horreurs de l’Anathème. Pour représenter cela, celui-ci subit le résultat échec critique de la capacité <em>peur</em> sans pouvoir faire de test pour y résister. Le nombre de tours que le PJ passe à ne rien pouvoir faire est égal, en D6, au score de la capacité <em>peur</em> présent dans le profil de l’ennemi.</p></div>
+</section>
+</section>
+
 <h3 class="knight-equipment-title">Arsenal</h3>
 <table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
 <tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td>1D6</td><td>1</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
@@ -176,30 +201,6 @@ Le personnage ne peut plus utiliser d’arme *lourde* ou à *deux mains* et doit
 
 Le MJ doit augmenter la difficulté des tests concernés.
 
-
-<section class="knight-traits"><h2>Avantages</h2>
-<section class="knight-trait">
-<h3>Bon sens</h3>
-<div class="knight-trait-description"><p>Disposant d'un bon sens et d'une logique innés, le héros est particulièrement difficile à manipuler. Par conséquent, il reçoit un bonus d'une réussite automatique lors des jets qu'il effectue pour savoir s'il est berné ou non, peu importe le combo. De plus, en cas d'échec critique lors de ce jet, le PJ subit seulement les effets d'un échec normal.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Mémoire efficace</h3>
-<div class="knight-trait-description"><p>Le personnage a une mémoire qui lui permet de tout assimiler comme il le désire et de se rappeler à peu près tout. Il peut, une fois durant chaque séance de jeu, demander au MJ de lui fournir un savoir académique, un souvenir ou simplement un savoir passé que son personnage aurait pu lire ou voir quelque part. Ce savoir ne peut pas résoudre automatiquement une enquête ou abattre toutes les difficultés d'une aventure, mais peut bien entendu aider à les résoudre.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Inconvénients</h2>
-<section class="knight-trait">
-<h3>Trop prudent</h3>
-<div class="knight-trait-description"><p>Le personnage est si prudent qu'il agit parfois plus lentement que prévu. Ce n'est pas de la peur, à ce qu'il dit, mais plutôt « une analyse en détail de la situation ». En termes de jeu, plutôt que de lancer 3D6 pour déterminer son <em>initiative</em>, le PJ lance seulement 2D6 (plus les bonus appropriés évidemment).</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Giant - Rat d’atelier</h3>
-<div class="knight-trait-description"><p>Le PJ était plus souvent à l’atelier que sur le terrain et il est encore mal habitué aux créatures et horreurs de l’Anathème. Pour représenter cela, celui-ci subit le résultat échec critique de la capacité <em>peur</em> sans pouvoir faire de test pour y résister. Le nombre de tours que le PJ passe à ne rien pouvoir faire est égal, en D6, au score de la capacité <em>peur</em> présent dans le profil de l’ennemi.</p></div>
-</section>
-</section>
 
 ---
 *Fiche générée depuis un export Foundry VTT — système Knight 3.58.35.*

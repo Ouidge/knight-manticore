@@ -15,10 +15,11 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Padre</h1>
-<p class="knight-profile-lead"><strong>Religieux</strong> · Section <strong>Dragon</strong> · Blason <strong>Cerf</strong></p>
+<p class="knight-profile-lead"><strong>Religieux</strong> · Section <strong>Dragon</strong> · Blason <strong>[[Cerf]]</strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Guide</dd></div>
+<div><dt>Méta-armure</dt><dd><a href="https://knight-jdr-systeme.fr/fr/armour/warmaster/">Warmaster ↗</a></dd></div>
 <div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>Répandre la parole de Dieu au sein du Knight</dd></div>
 <div class="knight-minor-motivations"><dt>Motivations mineures</dt><dd><ul>
 <li>Obéir aux ordres des chevaliers et d’Arthur</li>
@@ -105,6 +106,30 @@ cssclasses:
 <span class="knight-grenade-counter">Grenades <em class="knight-counter" aria-label="5 grenades"><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i></em></span>
 </div>
 
+<section class="knight-traits"><h2>Avantages</h2>
+<section class="knight-trait">
+<h3>Rayonnement</h3>
+<div class="knight-trait-description"><p>Le personnage est doté d'une aura naturelle qui réconforte les autres et leur permet de se dépasser. Profondément bienveillant, c'est un leader-né, qui est capable de pousser ses alliés à donner le meilleur d'eux-mêmes. En termes de jeu, lorsque le personnage est aidé par les PJ pour effectuer une action, ceux-ci reçoivent un bonus d'un dé à leur jet, peu importe la caractéristique utilisée, et ce, même lors d'un mode héroïque.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Magnétique</h3>
+<div class="knight-trait-description"><p>Que ce soit par sa gestuelle ou son magnétisme, le héros attire l'attention de tous ceux qu'il croise. De ce fait, il bénéficie d'un bonus d'une réussite automatique à tous ses jets base <em>Aura</em> lorsqu'il interagit avec des personnages humains.</p></div>
+</section>
+</section>
+
+<section class="knight-traits"><h2>Inconvénients</h2>
+<section class="knight-trait">
+<h3>Fanatique</h3>
+<div class="knight-trait-description"><p>Le PJ est un fanatique obtus. Il peut être un fanatique religieux, un intégriste ou simplement un fervent défenseur d'un code moral ou de la loi. Dans tous les cas, en plus d'être têtu, il est prosélyte et n'hésite pas à montrer son adoration. En termes de jeu, cet inconvénient est sujet à l'interprétation de son personnage par le joueur et n'ajoute aucun point de règle. Au joueur de rester en accord avec l'inconvénient et de se sentir capable de jouer un personnage de ce type.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Dragon - Humaniste</h3>
+<div class="knight-trait-description"><p>Le personnage est attaché à la vie humaine, même corrompue. Il essaie toujours de sauver le maximum de personnes, désespérées ou non, et son moral risque de se briser lorsqu’il échoue. Pour symboliser cela, lorsque le PJ doit subir la capacité <em>désespérant</em>, il perd 1D6+6 points d’espoir.</p></div>
+</section>
+</section>
+
 <h3 class="knight-equipment-title">Arsenal</h3>
 <table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
 <tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td>1D6</td><td>1</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
@@ -161,30 +186,6 @@ cssclasses:
 <section class="knight-trait">
 <h3>Jugement informatique</h3>
 <div class="knight-trait-description"><p>L'IA de l'armure est très critique envers le chevalier qui n'a pas droit à l'erreur. Lorsqu'il se trompe ou ne suit pas les conseils de l'IA, celle-ci lui applique une sanction. En termes de jeu, si le chevalier échoue deux fois d'affilée à un même test (base identique, quelle qu'elle soit), l'armure se folde pour 1 tour ou une dizaine de secondes.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Avantages</h2>
-<section class="knight-trait">
-<h3>Rayonnement</h3>
-<div class="knight-trait-description"><p>Le personnage est doté d'une aura naturelle qui réconforte les autres et leur permet de se dépasser. Profondément bienveillant, c'est un leader-né, qui est capable de pousser ses alliés à donner le meilleur d'eux-mêmes. En termes de jeu, lorsque le personnage est aidé par les PJ pour effectuer une action, ceux-ci reçoivent un bonus d'un dé à leur jet, peu importe la caractéristique utilisée, et ce, même lors d'un mode héroïque.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Magnétique</h3>
-<div class="knight-trait-description"><p>Que ce soit par sa gestuelle ou son magnétisme, le héros attire l'attention de tous ceux qu'il croise. De ce fait, il bénéficie d'un bonus d'une réussite automatique à tous ses jets base <em>Aura</em> lorsqu'il interagit avec des personnages humains.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Inconvénients</h2>
-<section class="knight-trait">
-<h3>Fanatique</h3>
-<div class="knight-trait-description"><p>Le PJ est un fanatique obtus. Il peut être un fanatique religieux, un intégriste ou simplement un fervent défenseur d'un code moral ou de la loi. Dans tous les cas, en plus d'être têtu, il est prosélyte et n'hésite pas à montrer son adoration. En termes de jeu, cet inconvénient est sujet à l'interprétation de son personnage par le joueur et n'ajoute aucun point de règle. Au joueur de rester en accord avec l'inconvénient et de se sentir capable de jouer un personnage de ce type.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Dragon - Humaniste</h3>
-<div class="knight-trait-description"><p>Le personnage est attaché à la vie humaine, même corrompue. Il essaie toujours de sauver le maximum de personnes, désespérées ou non, et son moral risque de se briser lorsqu’il échoue. Pour symboliser cela, lorsque le PJ doit subir la capacité <em>désespérant</em>, il perd 1D6+6 points d’espoir.</p></div>
 </section>
 </section>
 

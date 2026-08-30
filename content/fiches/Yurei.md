@@ -15,10 +15,11 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Yurei</h1>
-<p class="knight-profile-lead"><strong>Agent du Nodachi</strong> · Section <strong>Ogre</strong> · Blason <strong>Loup</strong></p>
+<p class="knight-profile-lead"><strong>Agent du Nodachi</strong> · Section <strong>Ogre</strong> · Blason <strong>[[Loup]]</strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Héros de guerre</dd></div>
+<div><dt>Méta-armure</dt><dd><a href="https://knight-jdr-systeme.fr/fr/armour/rogue/">Rogue ↗</a></dd></div>
 <div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>Éliminer le samourai du Nodachi Kenji Oda</dd></div>
 <div class="knight-minor-motivations"><dt>Motivations mineures</dt><dd><ul>
 <li>Protéger un chevalier en danger</li>
@@ -105,6 +106,30 @@ cssclasses:
 <span class="knight-grenade-counter">Grenades <em class="knight-counter" aria-label="5 grenades"><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i></em></span>
 </div>
 
+<section class="knight-traits"><h2>Avantages</h2>
+<section class="knight-trait">
+<h3>Instinct animal</h3>
+<div class="knight-trait-description"><p>Le personnage possède un instinct très prononcé qui lui permet de percevoir des choses et des événements avant les autres. En termes de jeu, le héros reçoit un bonus de +10 à son <em>initiative</em> lors des embuscades qu'il subit et conserve ses scores de <em>défense</em> et de <em>réaction</em> lorsqu'il subit une attaque surprise ou lorsqu'il est attaqué dans le dos.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Menteur professionnel</h3>
+<div class="knight-trait-description"><p>Le héros est très doué pour mentir et faire passer des vessies pour des lanternes. S'il n'est pas forcément un escroc, il ment avec un naturel et un aplomb que beaucoup envieraient s'ils savaient que le personnage ment. En termes de jeu, lorsque le personnage effectue un jet <em>Parole</em> combo <em>Discrétion</em>, la difficulté du test est réduite d'un niveau (un test difficulté faisable passe à un test difficulté facile).</p></div>
+</section>
+</section>
+
+<section class="knight-traits"><h2>Inconvénients</h2>
+<section class="knight-trait">
+<h3>Cauchemars</h3>
+<div class="knight-trait-description"><p>Depuis quelques années, suite à un traumatisme, le personnage dort très mal et fait régulièrement des cauchemars terribles (à préciser en accord avec le MJ) qui l'empêchent de dormir et dévorent son sommeil en plus d'alimenter sa fatigue. En termes de jeu, lorsque le personnage dort ou se repose pour récupérer des points de santé, il doit lancer 1D6. Sur un résultat pair, tout va bien, la récupération et la nuit sont normales. Sur un résultat impair, le héros subit une nuit de cauchemars et ne récupère aucun point de santé, même en cas de soin à l'infirmerie du Knight, et perd 1 point d'espoir.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Ogre - Marqué par les ténèbres</h3>
+<div class="knight-trait-description"><p>Le personnage a vu beaucoup de choses dans l’obscurité de l’Anathème. Plus les jours passent, plus il est taciturne. Pour représenter cela, le personnage reçoit un malus de 2D à toutes ses interactions sociales avec des humains autres que les membres de sa coterie ou de sa section.</p></div>
+</section>
+</section>
+
 <h3 class="knight-equipment-title">Arsenal</h3>
 <table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
 <tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Tir / Contact</small></td><td>Tir · M</td><td>2D6 + 6</td><td>1D6</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
@@ -163,30 +188,6 @@ cssclasses:
 <section class="knight-trait">
 <h3>Invasive</h3>
 <div class="knight-trait-description"><p>L'IA de l'armure est amoureuse de son porteur. Elle peut se montrer jalouse si le personnage vient à rencontrer une personne avec laquelle il tisse des liens amoureux. En termes de jeu, toute personne qui se rapproche trop du chevalier, d'un point de vue charnel ou émotionnel, est rejeté par l'IA de façon passive ou active, allant jusqu'à l'attaque frontale.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Avantages</h2>
-<section class="knight-trait">
-<h3>Instinct animal</h3>
-<div class="knight-trait-description"><p>Le personnage possède un instinct très prononcé qui lui permet de percevoir des choses et des événements avant les autres. En termes de jeu, le héros reçoit un bonus de +10 à son <em>initiative</em> lors des embuscades qu'il subit et conserve ses scores de <em>défense</em> et de <em>réaction</em> lorsqu'il subit une attaque surprise ou lorsqu'il est attaqué dans le dos.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Menteur professionnel</h3>
-<div class="knight-trait-description"><p>Le héros est très doué pour mentir et faire passer des vessies pour des lanternes. S'il n'est pas forcément un escroc, il ment avec un naturel et un aplomb que beaucoup envieraient s'ils savaient que le personnage ment. En termes de jeu, lorsque le personnage effectue un jet <em>Parole</em> combo <em>Discrétion</em>, la difficulté du test est réduite d'un niveau (un test difficulté faisable passe à un test difficulté facile).</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Inconvénients</h2>
-<section class="knight-trait">
-<h3>Cauchemars</h3>
-<div class="knight-trait-description"><p>Depuis quelques années, suite à un traumatisme, le personnage dort très mal et fait régulièrement des cauchemars terribles (à préciser en accord avec le MJ) qui l'empêchent de dormir et dévorent son sommeil en plus d'alimenter sa fatigue. En termes de jeu, lorsque le personnage dort ou se repose pour récupérer des points de santé, il doit lancer 1D6. Sur un résultat pair, tout va bien, la récupération et la nuit sont normales. Sur un résultat impair, le héros subit une nuit de cauchemars et ne récupère aucun point de santé, même en cas de soin à l'infirmerie du Knight, et perd 1 point d'espoir.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Ogre - Marqué par les ténèbres</h3>
-<div class="knight-trait-description"><p>Le personnage a vu beaucoup de choses dans l’obscurité de l’Anathème. Plus les jours passent, plus il est taciturne. Pour représenter cela, le personnage reçoit un malus de 2D à toutes ses interactions sociales avec des humains autres que les membres de sa coterie ou de sa section.</p></div>
 </section>
 </section>
 

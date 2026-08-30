@@ -15,10 +15,11 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Raptor</h1>
-<p class="knight-profile-lead"><strong>Indépendant</strong> · Section <strong>Cyclope</strong> · Blason <strong>Aigle</strong></p>
+<p class="knight-profile-lead"><strong>Indépendant</strong> · Section <strong>Cyclope</strong> · Blason <strong>[[Aigle]]</strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Construction de la première arche</dd></div>
+<div><dt>Méta-armure</dt><dd><a href="https://knight-jdr-systeme.fr/fr/armour/ranger/">Ranger ↗</a></dd></div>
 <div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>Devenir un chevalier de la Table Ronde</dd></div>
 <div class="knight-minor-motivations"><dt>Motivations mineures</dt><dd><ul>
 <li>Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué</li>
@@ -105,6 +106,30 @@ cssclasses:
 <span class="knight-grenade-counter">Grenades <em class="knight-counter" aria-label="5 grenades"><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i></em></span>
 </div>
 
+<section class="knight-traits"><h2>Avantages</h2>
+<section class="knight-trait">
+<h3>Forteresse spirituelle</h3>
+<div class="knight-trait-description"><p>L'esprit du héros est un bastion impénétrable, comme une sorte de forteresse spirituelle. Il est donc gratifié, à la création de personnage, d'un bonus de 5 points d'espoir, ce qui augmente son score total de points d'espoir.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Connaissance secrète</h3>
+<div class="knight-trait-description"><p>Le personnage possède une connaissance dans certains domaines, dont peu de personnes disposent. Pour toutes les connaissances d'un type au choix parmi : pègre, occulte, secte, société secrète..., lorsque le personnage effectue un jet base <em>Savoir</em>, le niveau de difficulté (pas le score) est abaissé de un. Cet avantage fonctionne tout le temps pour le type de connaissance choisi.</p></div>
+</section>
+</section>
+
+<section class="knight-traits"><h2>Inconvénients</h2>
+<section class="knight-trait">
+<h3>Esprit de contradiction</h3>
+<div class="knight-trait-description"><p>Le héros ne supporte pas que les autres aient raison, il prend donc toujours le contre-pied de ce qu'ils disent au risque de faire traîner la discussion pendant des heures ou de provoquer une réaction hostile de l'interlocuteur. Une fois par partie, quand le MJ le décide, lorsqu'un personnage (joueur ou non) pose un argument qui peut être soumis à un doute, le PJ doit tenter de prouver l'inexactitude ou la fausseté de l'argument en utilisant son savoir ou des moyens techniques.</p></div>
+</section>
+
+<section class="knight-trait">
+<h3>Cyclope - Sensible à l’Anathème</h3>
+<div class="knight-trait-description"><p>Le personnage est curieux de tout ce qui touche à l’Anathème et cette curiosité s’est muée en une étrange fascination. Le chevalier devient, à mesure que les jours passent, plus sensible aux ténèbres. Pour représenter cela, le personnage subit 1D6 supplémentaire lorsqu’il est soumis à la capacité <em>Anathème</em> et tout ennemi tentant de lui appliquer la capacité <em>domination</em> reçoit un bonus de 3 réussites automatiques à son test.</p></div>
+</section>
+</section>
+
 <h3 class="knight-equipment-title">Arsenal</h3>
 <table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
 <tr class="knight-grenade-row knight-first-grenade"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade antiblindage ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">D +2D6 (Destructeur)</td><td>destructeur, dispersion 6, penetrant 6, percearmure 20</td></tr>
@@ -152,30 +177,6 @@ cssclasses:
 <section class="knight-trait">
 <h3>Terreur</h3>
 <div class="knight-trait-description"><p>L'IA sait par quel type de créature a été tué le chevalier qu'elle pense être. Si elle doit affronter ce type d'être, elle risque de perdre de manière dramatique ses moyens. En termes de jeu, à la création de l'IA, le MJ choisit secrètement un type de créature, si le chevalier combat une entité similaire, tous ses tests contre celle-ci ou destinés à lui permettre de la fuir voient leur difficulté augmenter de 1.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Avantages</h2>
-<section class="knight-trait">
-<h3>Forteresse spirituelle</h3>
-<div class="knight-trait-description"><p>L'esprit du héros est un bastion impénétrable, comme une sorte de forteresse spirituelle. Il est donc gratifié, à la création de personnage, d'un bonus de 5 points d'espoir, ce qui augmente son score total de points d'espoir.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Connaissance secrète</h3>
-<div class="knight-trait-description"><p>Le personnage possède une connaissance dans certains domaines, dont peu de personnes disposent. Pour toutes les connaissances d'un type au choix parmi : pègre, occulte, secte, société secrète..., lorsque le personnage effectue un jet base <em>Savoir</em>, le niveau de difficulté (pas le score) est abaissé de un. Cet avantage fonctionne tout le temps pour le type de connaissance choisi.</p></div>
-</section>
-</section>
-
-<section class="knight-traits"><h2>Inconvénients</h2>
-<section class="knight-trait">
-<h3>Esprit de contradiction</h3>
-<div class="knight-trait-description"><p>Le héros ne supporte pas que les autres aient raison, il prend donc toujours le contre-pied de ce qu'ils disent au risque de faire traîner la discussion pendant des heures ou de provoquer une réaction hostile de l'interlocuteur. Une fois par partie, quand le MJ le décide, lorsqu'un personnage (joueur ou non) pose un argument qui peut être soumis à un doute, le PJ doit tenter de prouver l'inexactitude ou la fausseté de l'argument en utilisant son savoir ou des moyens techniques.</p></div>
-</section>
-
-<section class="knight-trait">
-<h3>Cyclope - Sensible à l’Anathème</h3>
-<div class="knight-trait-description"><p>Le personnage est curieux de tout ce qui touche à l’Anathème et cette curiosité s’est muée en une étrange fascination. Le chevalier devient, à mesure que les jours passent, plus sensible aux ténèbres. Pour représenter cela, le personnage subit 1D6 supplémentaire lorsqu’il est soumis à la capacité <em>Anathème</em> et tout ennemi tentant de lui appliquer la capacité <em>domination</em> reçoit un bonus de 3 réussites automatiques à son test.</p></div>
 </section>
 </section>
 
