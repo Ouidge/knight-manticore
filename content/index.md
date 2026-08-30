@@ -1,5 +1,5 @@
-# Bienvenue sur le site Knight Manticore!
-![[Manticore.png|300]]
+![[coterie-manticore-banner.png]]
+# Bienvenue sur le site de la Coterie Manticore !
 
 Mission en cours : [[Mission 1]]
 Prochaine Session : *à déterminer* 

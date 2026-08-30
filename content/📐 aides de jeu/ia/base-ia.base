@@ -1,0 +1,9 @@
+views:
+  - type: cards
+    name: Inconvénients
+    filters:
+      and:
+        - type == "adj"
+        - subtype == "ia-atout" || subtype == "ia-inconvenient"
+        - visibility == "public"
+    markers: none

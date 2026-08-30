@@ -28,6 +28,7 @@ motivations:
 <!-- BEGIN PJ INFOBOX -->
 >[!tldr] Muse
 > ![[Muse.webp]]
+> ![[Muse-portrait.png|250]]![[Muse-armure.png|250]]
 > *Rosa Diakité*
 > Joueur : Zidget
 > Méta-armure : **[Wizard](https://knight-jdr-systeme.fr/fr/armour/Wizard/)**

@@ -1,0 +1,9 @@
+views:
+  - type: cards
+    name: Nodachi
+    filters:
+      and:
+        - visibility == "public"
+        - type == "pnj"
+        - faction == "Nodachi"
+    image: note.portrait

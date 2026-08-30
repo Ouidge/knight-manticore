@@ -1,0 +1,546 @@
+/*
+ * Fiche Knight pour Quartz.
+ * Importer ce fichier tout en haut de quartz/styles/custom.scss :
+ * @use "./fiche-personnage";
+ */
+
+article:has(.knight-sheet-marker) {
+  --knight-bg: #11161d;
+  --knight-panel: #1b232d;
+  --knight-line: #70869b;
+  --knight-accent: #d7a84b;
+  --knight-text: #e9edf1;
+  --knight-muted: #aeb8c2;
+  color: var(--knight-text);
+  background:
+    linear-gradient(135deg, rgb(255 255 255 / 3%) 25%, transparent 25%) 0 0 / 18px 18px,
+    var(--knight-bg);
+  border: 1px solid #394958;
+  border-radius: 12px;
+  padding: clamp(1rem, 2.5vw, 2rem);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 24%);
+}
+
+article:has(.knight-sheet-marker) h1,
+article:has(.knight-sheet-marker) h2,
+article:has(.knight-sheet-marker) h3,
+article:has(.knight-sheet-marker) h4 {
+  color: var(--knight-text);
+  border-color: var(--knight-accent);
+}
+
+article:has(.knight-sheet-marker) h1 {
+  color: var(--knight-accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+article:has(.knight-sheet-marker) h2 {
+  margin-top: 1.5rem;
+  padding: 0.35rem 0.65rem;
+  border-left: 5px solid var(--knight-accent);
+  background: linear-gradient(90deg, rgb(215 168 75 / 18%), transparent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+article:has(.knight-sheet-marker) table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgb(27 35 45 / 88%);
+  border: 1px solid #40505f;
+}
+
+article:has(.knight-sheet-marker) th {
+  color: var(--knight-accent);
+  background: #222d38;
+}
+
+article:has(.knight-sheet-marker) th,
+article:has(.knight-sheet-marker) td {
+  padding: 0.42rem 0.55rem;
+  border: 1px solid #40505f;
+}
+
+.knight-identity {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 116px;
+  gap: 1rem;
+  align-items: start;
+  min-height: 148px;
+  margin-bottom: 1rem;
+}
+
+.knight-profile {
+  min-width: 0;
+}
+
+.knight-profile h1 {
+  margin: 0 0 0.45rem;
+}
+
+.knight-profile-lead {
+  margin: 0 0 0.8rem;
+  color: var(--knight-muted);
+  font-size: 1.05rem;
+}
+
+.knight-profile-details {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.knight-profile-details > div {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 0.5rem;
+}
+
+.knight-profile-details dt {
+  color: var(--knight-accent);
+  font-weight: 700;
+}
+
+.knight-profile-details dd {
+  min-width: 0;
+  margin: 0;
+}
+
+.knight-major-motivation dd {
+  color: var(--knight-text);
+  font-weight: 600;
+}
+
+.knight-minor-motivations ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.knight-combat-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.knight-stat-table {
+  min-width: 0;
+  padding: 0.35rem;
+  background: rgb(27 35 45 / 88%);
+  border: 1px solid #40505f;
+  border-radius: 5px;
+}
+
+.knight-stat-cells {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+
+.knight-stat-cells > div {
+  display: flex;
+  gap: 0.3rem;
+  align-items: baseline;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 0.22rem 0.35rem;
+  border-left: 2px solid var(--knight-line);
+}
+
+.knight-stat-cells span {
+  color: var(--knight-muted);
+  font-size: 0.82rem;
+}
+
+.knight-stat-cells strong {
+  color: var(--knight-accent);
+  white-space: nowrap;
+}
+
+.knight-combat-cells {
+  grid-template-columns: 1fr;
+}
+
+article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) {
+  table-layout: fixed;
+}
+
+article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:first-child {
+  width: 25%;
+}
+
+article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child(2) {
+  width: 4.5rem;
+}
+
+.knight-portrait {
+  width: 108px;
+}
+
+.knight-portrait img {
+  display: block;
+  width: 108px;
+  height: 138px;
+  margin: 0;
+  object-fit: cover;
+  object-position: top;
+  border: 2px solid var(--knight-accent);
+  border-radius: 5px;
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.knight-profile-side {
+  justify-self: end;
+  width: 108px;
+}
+
+.knight-progression {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.15rem 0.35rem;
+  margin-top: 0.4rem;
+  padding: 0.35rem 0.4rem;
+  font-size: 0.78rem;
+  text-align: center;
+  white-space: nowrap;
+  background: rgb(27 35 45 / 92%);
+  border: 1px solid #40505f;
+  border-radius: 4px;
+}
+
+.knight-domain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.knight-domain {
+  break-inside: avoid;
+  background: rgb(27 35 45 / 90%);
+  border: 1px solid #40505f;
+  border-top: 3px solid var(--knight-accent);
+  border-radius: 6px;
+  padding: 0.5rem;
+}
+
+.knight-domain h3 {
+  margin: 0 0 0.3rem;
+}
+
+.knight-characteristics {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.knight-characteristic {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1.4rem 2.5rem;
+  gap: 0.25rem;
+  align-items: baseline;
+  padding-top: 0.15rem;
+  border-top: 1px solid rgb(112 134 155 / 28%);
+}
+
+.knight-characteristic strong {
+  color: var(--knight-accent);
+  text-align: center;
+}
+
+.knight-characteristic small {
+  color: var(--knight-muted);
+  white-space: nowrap;
+}
+
+.knight-traits {
+  break-inside: avoid;
+}
+
+.knight-trait {
+  margin: 0.55rem 0;
+  padding: 0.6rem 0.75rem;
+  background: rgb(27 35 45 / 88%);
+  border-left: 3px solid var(--knight-line);
+  break-inside: avoid;
+}
+
+.knight-trait h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.knight-trait p {
+  margin: 0;
+}
+
+.print-only {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .knight-identity {
+    grid-template-columns: minmax(0, 1fr) 86px;
+    gap: 0.7rem;
+    min-height: 115px;
+  }
+
+  .knight-portrait,
+  .knight-portrait img {
+    width: 82px;
+  }
+
+  .knight-profile-side {
+    width: 82px;
+  }
+
+  .knight-progression {
+    grid-template-columns: 1fr;
+  }
+
+  .knight-portrait img {
+    height: 105px;
+  }
+
+  .knight-profile-details > div {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  .knight-combat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .knight-stat-cells,
+  .knight-combat-cells {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .knight-domain-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@page {
+  size: A4 portrait;
+  margin: 9mm 10mm;
+}
+
+@media print {
+  body:has(.knight-sheet-marker) {
+    background: white !important;
+  }
+
+  body:has(.knight-sheet-marker) header,
+  body:has(.knight-sheet-marker) footer,
+  body:has(.knight-sheet-marker) .sidebar,
+  body:has(.knight-sheet-marker) .left,
+  body:has(.knight-sheet-marker) .right,
+  body:has(.knight-sheet-marker) .page-header,
+  body:has(.knight-sheet-marker) .graph,
+  body:has(.knight-sheet-marker) .backlinks,
+  body:has(.knight-sheet-marker) .comments,
+  body:has(.knight-sheet-marker) .knight-portrait,
+  body:has(.knight-sheet-marker) .screen-only {
+    display: none !important;
+  }
+
+  .knight-identity {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 31mm;
+    gap: 3mm;
+    min-height: 0;
+    margin-bottom: 1mm;
+  }
+
+  .knight-profile-side {
+    width: 31mm;
+  }
+
+  .knight-progression {
+    margin-top: 0;
+    padding: 1mm;
+    color: #111 !important;
+    background: white !important;
+    border-color: #777 !important;
+    font-size: 7pt;
+  }
+
+  .knight-minor-motivations ul {
+    display: inline;
+    padding: 0;
+    list-style: none;
+  }
+
+  .knight-minor-motivations li {
+    display: inline;
+  }
+
+  .knight-minor-motivations li + li::before {
+    content: " • ";
+    color: #555;
+  }
+
+  .knight-profile-details > div {
+    grid-template-columns: 32mm minmax(0, 1fr);
+  }
+
+  .knight-combat-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 2mm;
+  }
+
+  .knight-stat-table {
+    padding: 0.8mm;
+    color: #111 !important;
+    background: white !important;
+    border-color: #777 !important;
+  }
+
+  .knight-stat-cells {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.7mm;
+  }
+
+  .knight-combat-cells {
+    grid-template-columns: 1fr;
+  }
+
+  .knight-stat-cells > div {
+    padding: 0.4mm 0.7mm;
+  }
+
+  .knight-stat-cells span,
+  .knight-stat-cells strong {
+    color: #111 !important;
+    font-size: 7.4pt;
+  }
+
+  body:has(.knight-sheet-marker) .print-only {
+    display: block !important;
+  }
+
+  article:has(.knight-sheet-marker) {
+    --knight-bg: white;
+    --knight-panel: white;
+    --knight-line: #53616c;
+    --knight-accent: #8a5b00;
+    --knight-text: #111;
+    --knight-muted: #444;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #111 !important;
+    background: white !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-size: 8.1pt;
+    line-height: 1.16;
+  }
+
+  article:has(.knight-sheet-marker) h1 {
+    margin: 0 0 2mm;
+    font-size: 19pt;
+  }
+
+  article:has(.knight-sheet-marker) h2 {
+    display: none !important;
+  }
+
+  article:has(.knight-sheet-marker) h3 {
+    margin: 1.5mm 0 0.7mm;
+    font-size: 9.5pt;
+    color: #111 !important;
+  }
+
+  article:has(.knight-sheet-marker) h4 {
+    margin: 1.2mm 0 0.5mm;
+    font-size: 9pt;
+    color: #111 !important;
+  }
+
+  article:has(.knight-sheet-marker) p,
+  article:has(.knight-sheet-marker) blockquote {
+    margin-top: 1mm;
+    margin-bottom: 1mm;
+  }
+
+  article:has(.knight-sheet-marker) table {
+    margin: 1mm 0 1.5mm;
+    color: #111 !important;
+    background: white !important;
+    border-color: #777 !important;
+    font-size: 7.7pt;
+    break-inside: avoid;
+  }
+
+  article:has(.knight-sheet-marker) th {
+    color: #111 !important;
+    background: #eee !important;
+  }
+
+  article:has(.knight-sheet-marker) th,
+  article:has(.knight-sheet-marker) td {
+    padding: 0.8mm 1.2mm;
+    border-color: #888 !important;
+  }
+
+  article:has(.knight-sheet-marker) a {
+    color: #111 !important;
+    text-decoration: none !important;
+  }
+
+  article:has(.knight-sheet-marker) a::after {
+    content: none !important;
+  }
+
+  .knight-domain-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5mm;
+  }
+
+  .knight-domain {
+    padding: 1mm;
+    color: #111 !important;
+    background: white !important;
+    border-color: #777 !important;
+    border-top-color: #8a5b00 !important;
+  }
+
+  .knight-characteristic {
+    grid-template-columns: minmax(0, 1fr) 4mm 8mm;
+    gap: 0.7mm;
+    padding-top: 0.3mm;
+  }
+
+  .knight-characteristic strong,
+  .knight-characteristic small {
+    color: #111 !important;
+  }
+
+  .knight-trait {
+    display: inline-block;
+    width: calc(50% - 1.5mm);
+    margin: 0.5mm;
+    padding: 1mm 1.5mm;
+    vertical-align: top;
+    color: #111 !important;
+    background: white !important;
+    border: 1px solid #aaa;
+    border-left: 2px solid #53616c;
+  }
+
+  .knight-effect {
+    font-size: 7.5pt;
+  }
+
+  .knight-page-two {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  article:has(.knight-sheet-marker) hr {
+    display: none;
+  }
+}

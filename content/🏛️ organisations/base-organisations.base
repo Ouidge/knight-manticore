@@ -1,0 +1,8 @@
+views:
+  - type: cards
+    name: Factions
+    filters:
+      and:
+        - file.path.contains("🏛️ organisations")
+        - type == "faction"
+    image: note.image

@@ -3,11 +3,13 @@ formulas:
   f_nom: file.folder.split("/").slice(-1)[0]
 views:
   - type: cards
-    name: Tableau
+    name: Aides de jeu
     filters:
       and:
-        - file.path.contains("aides de jeu")
+        - file.path.contains("📐 aides de jeu/")
         - file.name == "index"
+        - type == "adj"
+        - visibility == "public"
     order:
       - formula.f_nom
     sort:

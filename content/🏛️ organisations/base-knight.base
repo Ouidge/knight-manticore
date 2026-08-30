@@ -1,0 +1,9 @@
+views:
+  - type: cards
+    name: Knight
+    filters:
+      and:
+        - visibility == "public"
+        - type == "pnj"
+        - faction == "Knight"
+    image: note.portrait
