@@ -882,7 +882,11 @@ const ia = system.equipements?.ia ?? {};
 if (ia.surnom || ia.code || ia.caractere || iaAdvantages.length || iaDisadvantages.length) {
   out.push(`\n### IA de la méta-armure — ${ia.surnom || "Sans surnom"}\n`);
   out.push(`**Nom de code :** ${ia.code || "—"}\n`);
-  if (ia.caractere) out.push(`> ${htmlToMarkdown(ia.caractere).replace(/\n/g, "\n> ")}\n`);
+  if (ia.caractere) {
+    out.push(
+      `<blockquote class="knight-ia-character">${markdownishHtml(htmlToMarkdown(ia.caractere))}</blockquote>\n`,
+    );
+  }
   if (iaAdvantages.length) out.push(`\n${traitSection("Avantages de l’IA", iaAdvantages)}`);
   if (iaDisadvantages.length) out.push(`\n${traitSection("Inconvénients de l’IA", iaDisadvantages)}`);
 }
