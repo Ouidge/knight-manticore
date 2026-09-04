@@ -978,8 +978,7 @@ if (injuries.length) {
   }
 }
 
-out.push("\n---");
-out.push(`*Fiche générée depuis un export Foundry VTT — système Knight ${actor._stats?.systemVersion ?? "version inconnue"}.*`);
+out.push(`\n<div class="screen-only knight-generation-note"><hr><p><em>Fiche générée depuis un export Foundry VTT — système Knight ${escapeHtml(actor._stats?.systemVersion ?? "version inconnue")}.</em></p></div>`);
 
 fs.writeFileSync(outputPath, `${out.join("\n").replace(/\n{4,}/g, "\n\n\n")}\n`, "utf8");
 console.log(`Fiche générée : ${outputPath}`);

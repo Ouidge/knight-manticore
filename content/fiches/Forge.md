@@ -218,5 +218,4 @@ Le personnage ne peut plus utiliser d’arme *lourde* ou à *deux mains* et doit
 Le MJ doit augmenter la difficulté des tests concernés.
 
 
----
-*Fiche générée depuis un export Foundry VTT — système Knight 3.58.35.*
+<div class="screen-only knight-generation-note"><hr><p><em>Fiche générée depuis un export Foundry VTT — système Knight 3.58.35.</em></p></div>

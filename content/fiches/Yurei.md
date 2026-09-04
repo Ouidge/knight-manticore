@@ -205,5 +205,4 @@ cssclasses:
 </section>
 </section>
 
----
-*Fiche générée depuis un export Foundry VTT — système Knight 3.58.35.*
+<div class="screen-only knight-generation-note"><hr><p><em>Fiche générée depuis un export Foundry VTT — système Knight 3.58.35.</em></p></div>

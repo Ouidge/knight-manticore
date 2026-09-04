@@ -588,6 +588,10 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   body:has(.knight-sheet-marker) .graph,
   body:has(.knight-sheet-marker) .backlinks,
   body:has(.knight-sheet-marker) .comments,
+  body:has(.knight-sheet-marker) .giscus,
+  body:has(.knight-sheet-marker) .giscus-frame,
+  body:has(.knight-sheet-marker) iframe[src*="giscus.app"],
+  body:has(.knight-sheet-marker) .page-footer:has(.giscus),
   body:has(.knight-sheet-marker) .knight-portrait,
   body:has(.knight-sheet-marker) .screen-only {
     display: none !important;
