@@ -32,7 +32,7 @@ powershell -ExecutionPolicy Bypass -File .\convert-all-characters.ps1
 2. Ajouter cette ligne **tout en haut** de `quartz/styles/custom.scss` :
 
 ```scss
-@use "./fiche-personnage";
+@use "../quartz/styles/fiche-personnage";
 ```
 
 3. Reconstruire Quartz :

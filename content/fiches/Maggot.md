@@ -26,8 +26,6 @@ cssclasses:
 <li>Protéger ses coéquipiers</li>
 <li>Ne jamais fuir devant un ennemi s’il met des innocents en danger</li>
 </ul></dd></div>
-<div><dt>Avantages</dt><dd>Chanceux • Dur à cuire</dd></div>
-<div><dt>Inconvénients</dt><dd>Prisonnier • Tarasque - Fou dangereux</dd></div>
 </dl>
 </div>
 <aside class="knight-profile-side">
@@ -35,6 +33,10 @@ cssclasses:
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 75 / 225</span>
 <span><strong>PX</strong> 35 / 154</span>
+</div>
+<div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
+<span><strong title="Points de contact">PC</strong> 1</span>
+<span><strong title="Points d’héroïsme">PH</strong> 2 / 6</span>
 </div>
 </aside>
 </section>
@@ -45,7 +47,6 @@ cssclasses:
 <div class="knight-stat-cells">
 <div><span>PS</span><strong>76</strong></div>
 <div><span>PEs</span><strong>67 / 75</strong></div>
-<div><span>PH</span><strong>2 / 6</strong></div>
 <div><span>PA</span><strong>60</strong></div>
 <div><span>PE</span><strong>60</strong></div>
 <div><span>CdF</span><strong>12</strong></div>
@@ -55,7 +56,7 @@ cssclasses:
 <div class="knight-stat-cells knight-combat-cells">
 <div><span>Défense <small>MA / G</small></span><strong>9 / 7</strong></div>
 <div><span>Réaction <small>MA / G</small></span><strong>2 / 2</strong></div>
-<div><span>Initiative</span><strong>3D6 + 1</strong></div>
+<div class="knight-initiative-cell"><span>Initiative</span><strong>3D6 + 1</strong></div>
 </div>
 </div>
 </div>
@@ -130,17 +131,24 @@ cssclasses:
 </section>
 </section>
 
+<section class="knight-traits"><h2>Distinctions</h2>
+<section class="knight-trait">
+<h3>Etoile de Dublin</h3>
+<div class="knight-trait-description"><p>Faite d'un métal rare, le <em>rhodium</em>, elle peut être placée sur l'<em>épaulière</em> de la méta armure.<br>Effet : Lorsque les chevaliers <strong>s’adressent à des membres du Knight ou</strong> lorsqu’ils discutent avec des personnages considérés comme <strong>alliés de l’organisation</strong>, ils reçoivent un bonus de <strong>1 réussite automatique</strong> à leur jet.</p></div>
+</section>
+</section>
+
 <h3 class="knight-equipment-title">Arsenal</h3>
-<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
-<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td>1D6</td><td>1</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
-<tr><td>Tir · M</td><td>2D6 + 6</td><td>1D6</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
-<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/marteau-epieu/">Marteau-épieu ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td>3D6</td><td>1D6</td><td class="knight-dv-bonus">—</td><td>percearmure 40</td></tr>
-<tr><td>Tir · CT</td><td>3D6 + 12</td><td>3D6 + 12</td><td class="knight-dv-bonus">D continus 3</td><td>chargeur 1, degatscontinus 3, dispersion 3, lumiere 2</td></tr>
-<tr class="knight-grenade-row knight-first-grenade"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade antiblindage ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">D +2D6 (Destructeur)</td><td>destructeur, dispersion 6, penetrant 6, percearmure 20</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade explosive ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">—</td><td>antivehicule, choc 1, dispersion 3</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade flashbang ↗</a></td><td>CT</td><td>—</td><td>—</td><td class="knight-dv-bonus">—</td><td>aucundegatsviolence, barrage 2, choc 1, dispersion 6</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade IEM ↗</a></td><td>CT</td><td>—</td><td>—</td><td class="knight-dv-bonus">—</td><td>aucundegatsviolence, dispersion 6, parasitage 2</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade shrapnel ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</td><td>dispersion 6, meurtrier, ultraviolence</td></tr>
+<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th></tr></thead><tbody>
+<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td class="knight-damage-cell">1D6</td><td>1</td><td>silencieux</td></tr>
+<tr><td>Tir · M</td><td class="knight-damage-cell">2D6 + 6</td><td>1D6</td><td>silencieux</td></tr>
+<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/marteau-epieu/">Marteau-épieu ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td class="knight-damage-cell">3D6</td><td>1D6</td><td>percearmure 40</td></tr>
+<tr><td>Tir · CT</td><td class="knight-damage-cell">3D6 + 12<small class="knight-dv-bonus">D continus 3</small></td><td>3D6 + 12</td><td>chargeur 1, degatscontinus 3, dispersion 3, lumiere 2</td></tr>
+<tr class="knight-grenade-row knight-first-grenade"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade antiblindage ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6<small class="knight-dv-bonus">D +2D6 (Destructeur)</small></td><td>3D6</td><td>destructeur, dispersion 6, penetrant 6, percearmure 20</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade explosive ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6</td><td>3D6</td><td>antivehicule, choc 1, dispersion 3</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade flashbang ↗</a></td><td>CT</td><td class="knight-damage-cell">—</td><td>—</td><td>aucundegatsviolence, barrage 2, choc 1, dispersion 6</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade IEM ↗</a></td><td>CT</td><td class="knight-damage-cell">—</td><td>—</td><td>aucundegatsviolence, dispersion 6, parasitage 2</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade shrapnel ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6<small class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</small></td><td>3D6</td><td>dispersion 6, meurtrier, ultraviolence</td></tr>
 </tbody></table>
 <p class="knight-range-legend"><strong>Portées :</strong> <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/contact"><strong>C — Contact</strong> : distance de mêlée</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/courte"><strong>CT — Courte</strong> : 2–15 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/moyenne"><strong>M — Moyenne</strong> : 15–50 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/longue"><strong>L — Longue</strong> : 50–300 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/lointaine"><strong>LT — Lointaine</strong> : plus de 300 m</a></p>
 
@@ -151,6 +159,9 @@ cssclasses:
 
 <div class="screen-only"><p>Dernière-née de l'esprit de Merlin, la méta-armure Barbarian est un monstre de combat d'une puissance inimaginable. Sa conception risquée et son utilité en font une armure rare autant qu'impressionnante. La combinaison, dont l'aspect et le fonctionnement sont calqués sur le corps humain, est uniquement constituée d'élément alpha, de soie d'araignée et de nanomachines. Grâce à ces dernières, présentes dans le moindre interstice, elle peut être modifiée par le porteur afin d'obtenir une puissance accrue. Le chevalier peut ainsi augmenter la taille et la densité des muscles hauts de l'armure pour obtenir une force extraordinaire en un temps record. En somme, l'armure Barbarian se révèle utile sur les fronts qui nécessitent des frappes brutales et peut déployer en quelques secondes une force colossale. Toutes ces aptitudes ne fonctionnent qu'avec les capacités physiques de l'armure telles que la force. De fait, les chevaliers en méta-armure Barbarian deviennent souvent des adeptes du combat au contact, capables de tordre des réverbères, de se battre en écrasant des véhicules sur leurs adversaires ou d'arracher les membres de leurs ennemis.</p></div>
 
+<section class="knight-traits knight-capabilities" aria-label="Capacités de méta-armure"><section class="knight-trait knight-capability"><h3>Mode Goliath</h3><div class="knight-trait-description"><p>La méta-armure, en générant de la matière grâce aux nanomachines qui composent son enveloppe, peut augmenter sa masse musculaire et ainsi augmenter en taille à mesure qu’elle gagne en puissance. En activant ce mode, la méta-armure peut ainsi atteindre 6 mètres de haut pour un gain en force et en endurance considérable… Au détriment des réflexes et de la rapidité.</p><div class="knight-capability-details"><p><strong>Activation :</strong> Action de déplacement</p>
+<p><strong>Durée :</strong> 6 tours ou 1 minute</p>
+<p><strong>Énergie :</strong> 2 PE</p></div></div></section></section>
 <h3 class="knight-equipment-title">Modules</h3>
 
 | Module | Niveau | Effets essentiels |

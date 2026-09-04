@@ -397,7 +397,7 @@ function arsenalSection(groups) {
   if (!groups.size && number(grenades.quantity?.max) <= 0) return "";
   const lines = [
     '<h3 class="knight-equipment-title">Arsenal</h3>',
-    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>',
+    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th></tr></thead><tbody>',
   ];
 
   for (const [baseName, group] of groups) {
@@ -422,8 +422,10 @@ function arsenalSection(groups) {
       const mode = weaponMode(weapon.name);
       const range = rangeAbbreviation(weapon.system?.portee);
       const rangeAndMode = mode === "Attaque" ? range : `${mode} · ${range}`;
+      const dvBonuses = damageViolenceBonuses(effects);
+      const damageCell = `${escapeHtml(formatDice(weapon.system?.degats))}${dvBonuses === "—" ? "" : `<small class="knight-dv-bonus">${escapeHtml(dvBonuses)}</small>`}`;
       lines.push(
-        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a>${modesLabel}</td>` : ""}<td>${escapeHtml(rangeAndMode)}</td><td>${escapeHtml(formatDice(weapon.system?.degats))}</td><td>${escapeHtml(formatDice(weapon.system?.violence))}</td><td class="knight-dv-bonus">${escapeHtml(damageViolenceBonuses(effects))}</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
+        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a>${modesLabel}</td>` : ""}<td>${escapeHtml(rangeAndMode)}</td><td class="knight-damage-cell">${damageCell}</td><td>${escapeHtml(formatDice(weapon.system?.violence))}</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
       );
     }
   }
@@ -445,8 +447,10 @@ function arsenalSection(groups) {
         damage: grenadeModuleBonus(key, "degats"),
         violence: grenadeModuleBonus(key, "violence"),
       };
+      const dvBonuses = damageViolenceBonuses(effects, moduleBonus);
+      const damageCell = `${escapeHtml(formatDice(grenade.degats))}${dvBonuses === "—" ? "" : `<small class="knight-dv-bonus">${escapeHtml(dvBonuses)}</small>`}`;
       lines.push(
-        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>CT</td><td>${escapeHtml(formatDice(grenade.degats))}</td><td>${escapeHtml(formatDice(grenade.violence))}</td><td class="knight-dv-bonus">${escapeHtml(damageViolenceBonuses(effects, moduleBonus))}</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
+        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>CT</td><td class="knight-damage-cell">${damageCell}</td><td>${escapeHtml(formatDice(grenade.violence))}</td><td>${escapeHtml(effects.join(", ") || "—")}</td></tr>`,
       );
     }
   }
@@ -505,6 +509,69 @@ function traitSection(title, selectedItems) {
     })
     .join("\n\n");
   return `<section class="knight-traits"><h2>${escapeHtml(title)}</h2>\n${content}\n</section>`;
+}
+
+// Use the character's selected values, never the catalogue or evolution snapshots.
+function armorCapabilitiesSection(armorItem) {
+  const selected = armorItem?.system?.capacites?.selected ?? {};
+  const labels = { aucune: "Aucune action", aucun: "Aucune action", toutes: "Toutes les actions", deplacement: "Action de déplacement", deplacement6Sec: "Action de déplacement / 6 secondes", combat: "Action de combat", tour: "Un tour", tour6Sec: "Un tour / 6 secondes", contact: "Contact", distance: "Distance", base: "Simple", detaille: "Détaillé", mecanique: "Mécanique", prolonger: "Prolongation", minute: "Hors conflit" };
+  const label = (value) => labels[value] ?? value;
+  const entries = [];
+  for (const [key, capability] of Object.entries(selected)) {
+    if (!capability || typeof capability !== "object") continue;
+    const rows = [];
+    const add = (name, value) => {
+      if (value !== undefined && value !== null && value !== "") rows.push(`<p><strong>${escapeHtml(name)} :</strong> ${escapeHtml(value)}</p>`);
+    };
+    const fields = (value, unit = "") => {
+      if (value == null) return "";
+      if (typeof value !== "object") return `${label(value)}${unit}`;
+      if (value.min != null && value.max != null) return `${value.min} à ${value.max}${unit}`;
+      return Object.entries(value).filter(([, v]) => typeof v === "string" || typeof v === "number")
+        .map(([k, v]) => `${k === "tour" ? "En conflit" : label(k)} : ${label(v)}${unit}`).join(" · ");
+    };
+    add("Activation", fields(capability.activation));
+    add("Durée", capability.duree);
+    add("Énergie", fields(capability.energie, " PE"));
+    if (typeof capability.portee === "string") add("Portée", capability.portee);
+    if (key === "mechanic") {
+      for (const mode of ["contact", "distance"]) {
+        if (capability.reparation?.[mode]) add(`Réparation — ${label(mode)}`, `${formatDice(capability.reparation[mode])} · ${capability.reparation[mode].duree || ""}`);
+      }
+    }
+    if (key === "ghost") {
+      add("Réussites bonus", capability.bonus?.reussites);
+      add("Attaque", capability.bonus?.attaque);
+      const damage = capability.bonus?.degats;
+      if (damage) {
+        const parts = [];
+        if (damage.fixe) parts.push(`valeur de ${damage.caracteristique}`);
+        if (damage.dice) parts.push(`dés de ${damage.caracteristique}`);
+        if (damage.od) parts.push(`OD de ${damage.caracteristique}`);
+        if (parts.length) add("Bonus dégâts configuré", parts.join(" + "));
+      }
+    }
+    if (key === "longbow") {
+      // These are configurable ranges, not an already-paid attack profile.
+      for (const [stat, title] of [["degats", "Dégâts"], ["violence", "Violence"]]) {
+        const value = capability[stat];
+        if (value?.min != null && value?.max != null) add(title, `${value.min} à ${value.max}D6${value.energie != null ? ` · coût de réglage : ${value.energie} PE` : ""}`);
+      }
+      const range = capability.portee;
+      if (range?.min) add("Portée réglable", `${range.min} à ${range.max}${range.energie != null ? ` · coût de réglage : ${range.energie} PE` : ""}`);
+      for (const [effectKey, effects] of Object.entries(capability.effets ?? {})) {
+        if (effects.acces === false) continue;
+        const names = [...(effects.raw ?? []), ...(effects.custom ?? [])];
+        if (names.length) add(effectKey === "base" ? "Effets de base" : `Effets au choix — ${effectKey.replace("liste", "liste ")}${effects.energie != null ? ` (${effects.energie} PE)` : ""}`, names.join(", "));
+      }
+    }
+    for (const [stat, title] of [["degats", "Dégâts"], ["violence", "Violence"]]) {
+      if (capability[stat]?.dice != null) add(title, formatDice(capability[stat]));
+    }
+    const description = htmlToMarkdown(capability.description || "");
+    entries.push(`<section class="knight-trait knight-capability"><h3>${escapeHtml(capability.label || key)}</h3><div class="knight-trait-description">${markdownishHtml(description)}${rows.length ? `<div class="knight-capability-details">${rows.join("\n")}</div>` : ""}</div></section>`);
+  }
+  return entries.length ? `<section class="knight-traits knight-capabilities" aria-label="Capacités de méta-armure">${entries.join("\n")}</section>` : "";
 }
 
 function escapeHtml(value = "") {
@@ -636,6 +703,7 @@ function moduleMechanicalSummary(item) {
 }
 
 const armor = items.find((item) => item.type === "armure");
+const distinctions = items.filter((item) => item.type === "distinction" && meaningfulItem(item));
 const minorMotivations = items.filter((item) => item.type === "motivationMineure");
 const personalAdvantages = items.filter(
   (item) => item.type === "avantage" && item.system?.type !== "ia" && meaningfulItem(item),
@@ -775,12 +843,6 @@ if (minorMotivations.length) {
   }
   out.push("</ul></dd></div>");
 }
-if (personalAdvantages.length) {
-  out.push(`<div><dt>Avantages</dt><dd>${escapeHtml(personalAdvantages.map((item) => item.name).join(" • "))}</dd></div>`);
-}
-if (personalDisadvantages.length) {
-  out.push(`<div><dt>Inconvénients</dt><dd>${escapeHtml(personalDisadvantages.map((item) => item.name).join(" • "))}</dd></div>`);
-}
 out.push("</dl>");
 out.push("</div>");
 out.push('<aside class="knight-profile-side">');
@@ -793,6 +855,10 @@ out.push('<div class="knight-progression" aria-label="Progression">');
 out.push(`<span><strong>PG</strong> ${gloryRemaining} / ${gloryTotal}</span>`);
 out.push(`<span><strong>PX</strong> ${experienceRemaining} / ${experienceTotal}</span>`);
 out.push("</div>");
+out.push('<div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">');
+out.push(`<span><strong title="Points de contact">PC</strong> ${escapeHtml(system.contacts?.actuel ?? "—")}</span>`);
+out.push(`<span><strong title="Points d’héroïsme">PH</strong> ${number(system.heroisme?.value)} / ${number(system.heroisme?.max)}</span>`);
+out.push("</div>");
 out.push("</aside>");
 out.push("</section>");
 
@@ -802,7 +868,6 @@ out.push('<div class="knight-stat-table">');
 out.push('<div class="knight-stat-cells">');
 out.push(`<div><span>PS</span><strong>${healthMaximum}</strong></div>`);
 out.push(`<div><span>PEs</span><strong>${number(system.espoir?.value)} / ${hopeMaximum}</strong></div>`);
-out.push(`<div><span>PH</span><strong>${number(system.heroisme?.value)} / ${number(system.heroisme?.max)}</strong></div>`);
 out.push(`<div><span>PA</span><strong>${number(armor?.system?.armure?.base) || "—"}</strong></div>`);
 out.push(`<div><span>PE</span><strong>${number(armor?.system?.energie?.base) || "—"}</strong></div>`);
 out.push(`<div><span>CdF</span><strong>${forceField}</strong></div>`);
@@ -814,7 +879,7 @@ const guardianInitiative = `${initiativeDice}D6${guardianInitiativeFixed ? ` + $
 out.push('<div class="knight-stat-cells knight-combat-cells">');
 out.push(`<div><span>Défense <small>MA / G</small></span><strong>${armorDefense} / ${guardianDefense}</strong></div>`);
 out.push(`<div><span>Réaction <small>MA / G</small></span><strong>${armorReaction} / ${guardianReaction}</strong></div>`);
-out.push(`<div><span>Initiative</span><strong>${armorInitiative === guardianInitiative ? armorInitiative : `${armorInitiative} / ${guardianInitiative}`}</strong></div>`);
+out.push(`<div class="knight-initiative-cell"><span>Initiative${armorInitiative === guardianInitiative ? "" : " <small>MA / G</small>"}</span><strong>${armorInitiative === guardianInitiative ? armorInitiative : `${armorInitiative} / ${guardianInitiative}`}</strong></div>`);
 out.push("</div>");
 out.push("</div>");
 out.push("</div>");
@@ -855,6 +920,19 @@ if (availableNods.length || grenadeMaximum > 0) {
 if (personalAdvantages.length) out.push(`\n${traitSection("Avantages", personalAdvantages)}`);
 if (personalDisadvantages.length) out.push(`\n${traitSection("Inconvénients", personalDisadvantages)}`);
 
+if (distinctions.length) {
+  // Display conditional effects without adding them to permanent statistics.
+  const cards = distinctions.map((item) => {
+    const bonuses = [];
+    for (const [key, label] of [["espoir", "Espoir"], ["egide", "Égide"]]) {
+      const value = number(item.system?.[key]);
+      if (value) bonuses.push(`${label} : ${value > 0 ? "+" : ""}${value}`);
+    }
+    return { ...item, system: { ...item.system, description: `${item.system?.description || ""}${bonuses.length ? `<p><strong>Bonus renseignés :</strong> ${bonuses.join(" ; ")}</p>` : ""}` } };
+  });
+  out.push(`\n${traitSection("Distinctions", cards)}`);
+}
+
 if (weaponGroups.size || grenadeMaximum > 0) out.push(`\n${arsenalSection(weaponGroups)}\n`);
 
 out.push('\n<div class="knight-page-two" aria-hidden="true"></div>');
@@ -864,6 +942,8 @@ if (armor?.system?.description) {
     `<div class="screen-only">${markdownishHtml(htmlToMarkdown(armor.system.description).split("\n\n")[0])}</div>\n`,
   );
 }
+
+out.push(armorCapabilitiesSection(armor));
 
 if (displayedModules.length) {
   out.push('<h3 class="knight-equipment-title">Modules</h3>\n');

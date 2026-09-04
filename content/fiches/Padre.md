@@ -26,8 +26,6 @@ cssclasses:
 <li>Combattre le désespoir</li>
 <li>Apaiser les tensions</li>
 </ul></dd></div>
-<div><dt>Avantages</dt><dd>Rayonnement • Magnétique</dd></div>
-<div><dt>Inconvénients</dt><dd>Fanatique • Dragon - Humaniste</dd></div>
 </dl>
 </div>
 <aside class="knight-profile-side">
@@ -35,6 +33,10 @@ cssclasses:
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 85 / 165</span>
 <span><strong>PX</strong> 58 / 109</span>
+</div>
+<div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
+<span><strong title="Points de contact">PC</strong> 1</span>
+<span><strong title="Points d’héroïsme">PH</strong> 0 / 6</span>
 </div>
 </aside>
 </section>
@@ -45,7 +47,6 @@ cssclasses:
 <div class="knight-stat-cells">
 <div><span>PS</span><strong>22</strong></div>
 <div><span>PEs</span><strong>45 / 50</strong></div>
-<div><span>PH</span><strong>0 / 6</strong></div>
 <div><span>PA</span><strong>90</strong></div>
 <div><span>PE</span><strong>60</strong></div>
 <div><span>CdF</span><strong>8</strong></div>
@@ -55,7 +56,7 @@ cssclasses:
 <div class="knight-stat-cells knight-combat-cells">
 <div><span>Défense <small>MA / G</small></span><strong>2 / 2</strong></div>
 <div><span>Réaction <small>MA / G</small></span><strong>7 / 6</strong></div>
-<div><span>Initiative</span><strong>3D6 + 2</strong></div>
+<div class="knight-initiative-cell"><span>Initiative</span><strong>3D6 + 2</strong></div>
 </div>
 </div>
 </div>
@@ -130,19 +131,26 @@ cssclasses:
 </section>
 </section>
 
+<section class="knight-traits"><h2>Distinctions</h2>
+<section class="knight-trait">
+<h3>Etoile de Dublin</h3>
+<div class="knight-trait-description"><p>Faite d'un métal rare, le <em>rhodium</em>, elle peut être placée sur l'<em>épaulière</em> de la méta armure.<br>Effet : Lorsque les chevaliers <strong>s’adressent à des membres du Knight ou</strong> lorsqu’ils discutent avec des personnages considérés comme <strong>alliés de l’organisation</strong>, ils reçoivent un bonus de <strong>1 réussite automatique</strong> à leur jet.</p></div>
+</section>
+</section>
+
 <h3 class="knight-equipment-title">Arsenal</h3>
-<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
-<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td>1D6</td><td>1</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
-<tr><td>Tir · M</td><td>2D6 + 6</td><td>1D6</td><td class="knight-dv-bonus">—</td><td>silencieux</td></tr>
-<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/marteau-epieu/">Marteau-épieu ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td>3D6</td><td>1D6</td><td class="knight-dv-bonus">—</td><td>percearmure 40</td></tr>
-<tr><td>Tir · CT</td><td>3D6 + 12</td><td>3D6 + 12</td><td class="knight-dv-bonus">D continus 3</td><td>chargeur 1, degatscontinus 3, dispersion 3, lumiere 2</td></tr>
-<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-mitrailleur/">Pistolet mitrailleur ↗</a></td><td>M</td><td>3D6</td><td>4D6</td><td class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</td><td>jumeleakimbo, meurtrier, ultraviolence, canonlong</td></tr>
-<tr><td>M</td><td>3D6</td><td>4D6</td><td class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</td><td>jumeleakimbo, meurtrier, ultraviolence, canonlong</td></tr>
-<tr class="knight-grenade-row knight-first-grenade"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade antiblindage ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">D +2D6 (Destructeur)</td><td>destructeur, dispersion 6, penetrant 6, percearmure 20</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade explosive ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">—</td><td>antivehicule, choc 1, dispersion 3</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade flashbang ↗</a></td><td>CT</td><td>—</td><td>—</td><td class="knight-dv-bonus">—</td><td>aucundegatsviolence, barrage 2, choc 1, dispersion 6</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade IEM ↗</a></td><td>CT</td><td>—</td><td>—</td><td class="knight-dv-bonus">—</td><td>aucundegatsviolence, dispersion 6, parasitage 2</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade shrapnel ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</td><td>dispersion 6, meurtrier, ultraviolence</td></tr>
+<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th></tr></thead><tbody>
+<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td class="knight-damage-cell">1D6</td><td>1</td><td>silencieux</td></tr>
+<tr><td>Tir · M</td><td class="knight-damage-cell">2D6 + 6</td><td>1D6</td><td>silencieux</td></tr>
+<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/marteau-epieu/">Marteau-épieu ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td class="knight-damage-cell">3D6</td><td>1D6</td><td>percearmure 40</td></tr>
+<tr><td>Tir · CT</td><td class="knight-damage-cell">3D6 + 12<small class="knight-dv-bonus">D continus 3</small></td><td>3D6 + 12</td><td>chargeur 1, degatscontinus 3, dispersion 3, lumiere 2</td></tr>
+<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-mitrailleur/">Pistolet mitrailleur ↗</a></td><td>M</td><td class="knight-damage-cell">3D6<small class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</small></td><td>4D6</td><td>jumeleakimbo, meurtrier, ultraviolence, canonlong</td></tr>
+<tr><td>M</td><td class="knight-damage-cell">3D6<small class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</small></td><td>4D6</td><td>jumeleakimbo, meurtrier, ultraviolence, canonlong</td></tr>
+<tr class="knight-grenade-row knight-first-grenade"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade antiblindage ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6<small class="knight-dv-bonus">D +2D6 (Destructeur)</small></td><td>3D6</td><td>destructeur, dispersion 6, penetrant 6, percearmure 20</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade explosive ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6</td><td>3D6</td><td>antivehicule, choc 1, dispersion 3</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade flashbang ↗</a></td><td>CT</td><td class="knight-damage-cell">—</td><td>—</td><td>aucundegatsviolence, barrage 2, choc 1, dispersion 6</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade IEM ↗</a></td><td>CT</td><td class="knight-damage-cell">—</td><td>—</td><td>aucundegatsviolence, dispersion 6, parasitage 2</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade shrapnel ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6<small class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</small></td><td>3D6</td><td>dispersion 6, meurtrier, ultraviolence</td></tr>
 </tbody></table>
 <p class="knight-range-legend"><strong>Portées :</strong> <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/contact"><strong>C — Contact</strong> : distance de mêlée</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/courte"><strong>CT — Courte</strong> : 2–15 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/moyenne"><strong>M — Moyenne</strong> : 15–50 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/longue"><strong>L — Longue</strong> : 50–300 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/lointaine"><strong>LT — Lointaine</strong> : plus de 300 m</a></p>
 
@@ -153,6 +161,10 @@ cssclasses:
 
 <div class="screen-only"><p>Dernière méta-armure de première génération à avoir été créée et conçue par Merlin, la méta-armure Warmaster a été pensée pour répondre aux besoins des sénéchaux, les officiers du Knight, sur le terrain. Il leur fallait une méta-armure dotée de bonnes capacités de combat, capable d'assurer un contrôle tactique et d'aider au commandement. La Warmaster est donc plus légère et mobile que la Warrior. Elle est aussi dotée d'un meilleur réacteur et d'éléments de gestion stratégique et tactique des opérations ainsi que d'un bon blindage et d'un champ de force de bonne qualité.</p></div>
 
+<section class="knight-traits knight-capabilities" aria-label="Capacités de méta-armure"><section class="knight-trait knight-capability"><h3>Mode Warlord</h3><div class="knight-trait-description"><p>Le porteur de l'armure peut améliorer à distance les méta-armures des chevaliers pendant un certain temps. Ces améliorations, appelées « impulsions », offrent des bonus substantiels aux membres de la coterie alliés. Une armure Warmaster possède au départ 3 impulsions différentes, à choisir parmi celles proposées, représentées par des grésillements de couleur lorsqu'elles sont utilisées.</p><p>Utiliser une impulsion coûte une action de déplacement. Les impulsions possèdent toutes une portée lointaine et peuvent être lancées sur les chevaliers alliés, même si le personnage ne possède pas de ligne vue sur eux ou s'ils sont invisibles.<br>Quand c'est indiqué, le porteur de la méta-armure peut décider de se cibler lui-même. Le chevalier peut aussi décider de recevoir l'effet bonus offert à un ou plusieurs alliés pour un coût en énergie supplémentaire égal à la moitié du coût de base en énergie de l'impulsion (arrondi à l'entier supérieur). Viser plusieurs alliés et se viser soi-même avec une impulsion ne coûte aucune action supplémentaire autre que celle de base.</p><p>Quand c'est indiqué, certaines impulsions peuvent être prolongées pour un coût égal à la moitié du coût total d'activation de l'impulsion (en comptabilisant le coût d'éventuelles cibles supplémentaires), avec un minimum de 1 PE dépensé. Le chevalier décide à chaque tour de prolonger ou non une impulsion. Il dépense l'énergie à chaque tour où il décide de prolonger une impulsion. Prolonger une impulsion ne coûte aucune action. Il est tout à fait possible de prolonger plusieurs impulsions en même temps, mais on ne peut pas cumuler plusieurs fois la même impulsion sur une cible.<br>Exemple : <em>Le personnage de Nicolas utilise une impulsion d'esquive sur un allié, il doit donc dépenser 3 PE. Il décide cependant d'utiliser cette impulsion aussi sur lui-même. Il dépense donc la moitié du coût de base en énergie, c'est-à-dire 2, et bénéficie de l'effet. Au total, pour son allié et lui-même, l'impulsion aura coûté 5 PE.</em></p></div></section>
+<section class="knight-trait knight-capability"><h3>Mode Falcon</h3><div class="knight-trait-description"><p>Disposant d’un analyseur dernière génération, la Warmaster est capable de détecter les faiblesses et les forces des ennemis. En activant cette capacité, le chevalier perçoit des données sur chaque cicatrice, chaque mouvement, chaque attitude d’un ennemi, qu’il soit humain, monstre des ténèbres ou machine. Par un jeu de reconstitution des faisceaux d’information, la méta-armure analyse les forces et faiblesses de la cible visée et dévoile au chevalier celles qui semblent les plus probables. Utiliser le mode Falcon coûte une action de déplacement.</p><div class="knight-capability-details"><p><strong>Activation :</strong> Action de déplacement</p>
+<p><strong>Durée :</strong> Instantanée</p>
+<p><strong>Énergie :</strong> 6 PE</p></div></div></section></section>
 <h3 class="knight-equipment-title">Modules</h3>
 
 | Module | Niveau | Effets essentiels |

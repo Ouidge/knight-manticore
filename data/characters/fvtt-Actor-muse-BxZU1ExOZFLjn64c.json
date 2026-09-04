@@ -244,18 +244,18 @@
       },
       "nods": {
         "soin": {
-          "value": 0,
-          "max": 0,
+          "value": 3,
+          "max": 3,
           "dices": "3D6"
         },
         "armure": {
-          "value": 0,
-          "max": 0,
+          "value": 3,
+          "max": 3,
           "dices": "3D6"
         },
         "energie": {
-          "value": 0,
-          "max": 0,
+          "value": 3,
+          "max": 3,
           "dices": "3D6"
         }
       },
@@ -9826,6 +9826,368 @@
       },
       "folder": "gisjFpDcsQz1NIIN",
       "sort": 0
+    },
+    {
+      "name": "Créateur-né",
+      "type": "avantage",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/avantage.svg",
+      "system": {
+        "description": "<p>Le personnage est doué de ses mains pour fabriquer des choses et créer des œuvres. Par chance, la flamme artistique ne l'a jamais quitté et il continue son art. Il peut être peintre, sculpteur ou encore musicien et fait profiter le Knight de ses compétences artistiques. En termes de jeu, le personnage pratique un art. Il peut ajouter une motivation supplémentaire à ses motivations mineures : Réaliser une œuvre. Elle fonctionne comme n'importe quelle motivation mineure.</p>",
+        "type": "standard",
+        "bonus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsReduits": {
+            "has": false,
+            "aspect": {
+              "divise": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "divise": 0,
+              "value": 0
+            }
+          },
+          "noDmgSante": false,
+          "devasterAnatheme": false,
+          "bourreauTenebres": false,
+          "equilibrerBalance": false
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "fuG4xEBFE4znD5G8",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": 1788514858102,
+        "modifiedTime": 1788514858102,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "compendiumSource": "Compendium.knight-compendium.knight-advantages-base.f0e9beb63cb1bb3b",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "f8QRUOGTyK1P1aJf",
+      "sort": 0
+    },
+    {
+      "name": "Ennemi juré : le Collectionneur",
+      "type": "inconvenient",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/inconvenient.svg",
+      "system": {
+        "description": "<p>Le personnage s'est fait un ennemi juré dans une organisation rivale ou ennemie du Knight. Cet ennemi est un personnage puissant (à la discrétion du MJ) et fera tout pour tuer le personnage, jeter la honte sur lui, blesser ses proches ou simplement lui faire du mal.</p>",
+        "type": "standard",
+        "limitations": {
+          "aspects": {
+            "all": {
+              "has": false,
+              "value": 9
+            },
+            "bete": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "chair": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "machine": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "dame": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "masque": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            }
+          },
+          "espoir": {
+            "aucunGain": false
+          }
+        },
+        "malus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": true,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsAugmentes": {
+            "has": false,
+            "aspect": {
+              "multiplie": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "multiplie": 0,
+              "value": 0
+            }
+          }
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "PIPxitFZNkmnb2Kr",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": 1788514871334,
+        "modifiedTime": 1788514878249,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "compendiumSource": "Compendium.knight-compendium.knight-disadvantages-base.49e4cd008a11f112",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "O0eHkq4ctY9rZiHY",
+      "sort": 0
+    },
+    {
+      "name": "Gargoyle - Surprotecteur : Forge",
+      "type": "inconvenient",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/inconvenient.svg",
+      "system": {
+        "description": "<p>Le PJ est un protecteur-n&eacute;, incapable de laisser une personne qu&rsquo;il consid&egrave;re comme pr&eacute;cieuse ou faible sans protection. Pour symboliser cela, le PJ doit d&eacute;signer un (et un seul) membre de la coterie (n&eacute;cessairement un autre PJ) comme &eacute;tant son prot&eacute;g&eacute;. Une fois cet alli&eacute; d&eacute;sign&eacute;, le PJ doit appliquer les r&egrave;gles suivantes : lorsque le prot&eacute;g&eacute; est mis &agrave; l&rsquo;agonie, le PJ perd 1D6+3 points d&rsquo;espoir et si le prot&eacute;g&eacute; est tu&eacute;, le PJ perd 2D6+6 points d&rsquo;espoir en plus de tous points perdus normalement par les membres de la coterie &agrave; la mort d&rsquo;un compagnon d&rsquo;armes.</p>",
+        "type": "standard",
+        "limitations": {
+          "aspects": {
+            "all": {
+              "has": false,
+              "value": 9
+            },
+            "bete": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "chair": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "machine": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "dame": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "masque": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            }
+          },
+          "espoir": {
+            "aucunGain": false
+          }
+        },
+        "malus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": true,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsAugmentes": {
+            "has": false,
+            "aspect": {
+              "multiplie": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "multiplie": 0,
+              "value": 0
+            }
+          }
+        },
+        "show": false
+      },
+      "effects": [],
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": 1788514900111,
+        "modifiedTime": 1788514906479,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "compendiumSource": "Compendium.knight-compendium.section-disadvantages-base.AyfjRQVFsNTHguMj",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_id": "aDWdKBQ48bsSRVCJ",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "folder": "UlfEFZRmkVTv0wCf",
+      "sort": 0
+    },
+    {
+      "name": "Sûr de soi",
+      "type": "avantage",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/avantage.svg",
+      "system": {
+        "description": "<p>Le PJ est doté d'une confiance quasi absolue dans ses paroles et son jugement sans pour autant faire preuve de prétention. De ce fait, il bénéficie d'un bonus d'une réussite automatique à tous ses jets base <em>Parole</em> lorsqu'il interagit avec des personnages humains.</p>",
+        "type": "standard",
+        "bonus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsReduits": {
+            "has": false,
+            "aspect": {
+              "divise": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "divise": 0,
+              "value": 0
+            }
+          },
+          "noDmgSante": false,
+          "devasterAnatheme": false,
+          "bourreauTenebres": false,
+          "equilibrerBalance": false
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "oSZycbyBbmd9cTpW",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": 1788514917237,
+        "modifiedTime": 1788514917237,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "compendiumSource": "Compendium.knight-compendium.knight-advantages-base.ef4a4f4a6b53042f",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "f8QRUOGTyK1P1aJf",
+      "sort": 0
+    },
+    {
+      "name": "Etoile de Dublin",
+      "type": "distinction",
+      "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/Distinctions/etoiledublin.png",
+      "_id": "nJa3Q4bUgXghGxjt",
+      "system": {
+        "description": "<p>Faite d'un m&eacute;tal rare, le&nbsp;<em>rhodium</em>, elle peut &ecirc;tre plac&eacute;e sur l'<em>&eacute;pauli&egrave;re</em>&nbsp;de la m&eacute;ta armure.<br>Effet : Lorsque les chevaliers&nbsp;<strong>s&rsquo;adressent &agrave; des membres du Knight ou</strong>&nbsp;lorsqu&rsquo;ils discutent avec des personnages consid&eacute;r&eacute;s comme&nbsp;<strong>alli&eacute;s de l&rsquo;organisation</strong>, ils re&ccedil;oivent un bonus de&nbsp;<strong>1 r&eacute;ussite automatique</strong> &agrave; leur jet.</p>",
+        "espoir": 0,
+        "egide": 0
+      },
+      "effects": [],
+      "folder": "HS4RyF9PhCyczepQ",
+      "sort": 100000,
+      "ownership": {
+        "default": 2,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": 1788515108187,
+        "modifiedTime": 1788515108187,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "exportSource": null
+      }
     }
   ],
   "effects": [
@@ -9893,10 +10255,10 @@
   "flags": {},
   "_stats": {
     "systemId": "knight",
-    "systemVersion": "3.54.4",
+    "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1682525026486,
-    "modifiedTime": 1785419510105,
+    "modifiedTime": 1788111192842,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": null,
     "duplicateSource": null,

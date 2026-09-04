@@ -13945,6 +13945,36 @@
       },
       "folder": "UlfEFZRmkVTv0wCf",
       "sort": 0
+    },
+    {
+      "name": "Etoile de Dublin",
+      "type": "distinction",
+      "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/Distinctions/etoiledublin.png",
+      "_id": "AcARKynvCcoxuA2s",
+      "system": {
+        "description": "<p>Faite d'un m&eacute;tal rare, le&nbsp;<em>rhodium</em>, elle peut &ecirc;tre plac&eacute;e sur l'<em>&eacute;pauli&egrave;re</em>&nbsp;de la m&eacute;ta armure.<br>Effet : Lorsque les chevaliers&nbsp;<strong>s&rsquo;adressent &agrave; des membres du Knight ou</strong>&nbsp;lorsqu&rsquo;ils discutent avec des personnages consid&eacute;r&eacute;s comme&nbsp;<strong>alli&eacute;s de l&rsquo;organisation</strong>, ils re&ccedil;oivent un bonus de&nbsp;<strong>1 r&eacute;ussite automatique</strong> &agrave; leur jet.</p>",
+        "espoir": 0,
+        "egide": 0
+      },
+      "effects": [],
+      "folder": "HS4RyF9PhCyczepQ",
+      "sort": 100000,
+      "ownership": {
+        "default": 2,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": 1788515007105,
+        "modifiedTime": 1788515007105,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "exportSource": null
+      }
     }
   ],
   "effects": [],

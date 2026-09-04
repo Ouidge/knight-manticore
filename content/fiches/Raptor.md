@@ -26,8 +26,6 @@ cssclasses:
 <li>Protéger ses coéquipiers</li>
 <li>Promouvoir le Knight</li>
 </ul></dd></div>
-<div><dt>Avantages</dt><dd>Forteresse spirituelle • Connaissance secrète</dd></div>
-<div><dt>Inconvénients</dt><dd>Esprit de contradiction • Cyclope - Sensible à l’Anathème</dd></div>
 </dl>
 </div>
 <aside class="knight-profile-side">
@@ -35,6 +33,10 @@ cssclasses:
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 45 / 105</span>
 <span><strong>PX</strong> 34 / 73</span>
+</div>
+<div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
+<span><strong title="Points de contact">PC</strong> 1</span>
+<span><strong title="Points d’héroïsme">PH</strong> 0 / 6</span>
 </div>
 </aside>
 </section>
@@ -45,7 +47,6 @@ cssclasses:
 <div class="knight-stat-cells">
 <div><span>PS</span><strong>22</strong></div>
 <div><span>PEs</span><strong>55 / 60</strong></div>
-<div><span>PH</span><strong>0 / 6</strong></div>
 <div><span>PA</span><strong>50</strong></div>
 <div><span>PE</span><strong>70</strong></div>
 <div><span>CdF</span><strong>12</strong></div>
@@ -55,7 +56,7 @@ cssclasses:
 <div class="knight-stat-cells knight-combat-cells">
 <div><span>Défense <small>MA / G</small></span><strong>2 / 2</strong></div>
 <div><span>Réaction <small>MA / G</small></span><strong>7 / 6</strong></div>
-<div><span>Initiative</span><strong>3D6 + 4</strong></div>
+<div class="knight-initiative-cell"><span>Initiative</span><strong>3D6 + 4</strong></div>
 </div>
 </div>
 </div>
@@ -131,12 +132,12 @@ cssclasses:
 </section>
 
 <h3 class="knight-equipment-title">Arsenal</h3>
-<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Bonus D/V</th><th>Effets</th></tr></thead><tbody>
-<tr class="knight-grenade-row knight-first-grenade"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade antiblindage ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">D +2D6 (Destructeur)</td><td>destructeur, dispersion 6, penetrant 6, percearmure 20</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade explosive ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">—</td><td>antivehicule, choc 1, dispersion 3</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade flashbang ↗</a></td><td>CT</td><td>—</td><td>—</td><td class="knight-dv-bonus">—</td><td>aucundegatsviolence, barrage 2, choc 1, dispersion 6</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade IEM ↗</a></td><td>CT</td><td>—</td><td>—</td><td class="knight-dv-bonus">—</td><td>aucundegatsviolence, dispersion 6, parasitage 2</td></tr>
-<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade shrapnel ↗</a></td><td>CT</td><td>3D6</td><td>3D6</td><td class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</td><td>dispersion 6, meurtrier, ultraviolence</td></tr>
+<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th></tr></thead><tbody>
+<tr class="knight-grenade-row knight-first-grenade"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade antiblindage ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6<small class="knight-dv-bonus">D +2D6 (Destructeur)</small></td><td>3D6</td><td>destructeur, dispersion 6, penetrant 6, percearmure 20</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade explosive ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6</td><td>3D6</td><td>antivehicule, choc 1, dispersion 3</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade flashbang ↗</a></td><td>CT</td><td class="knight-damage-cell">—</td><td>—</td><td>aucundegatsviolence, barrage 2, choc 1, dispersion 6</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade IEM ↗</a></td><td>CT</td><td class="knight-damage-cell">—</td><td>—</td><td>aucundegatsviolence, dispersion 6, parasitage 2</td></tr>
+<tr class="knight-grenade-row"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade shrapnel ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6<small class="knight-dv-bonus">D +2D6 (Meurtrier) · V +2D6 (bande, Chair &lt; 10)</small></td><td>3D6</td><td>dispersion 6, meurtrier, ultraviolence</td></tr>
 </tbody></table>
 <p class="knight-range-legend"><strong>Portées :</strong> <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/contact"><strong>C — Contact</strong> : distance de mêlée</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/courte"><strong>CT — Courte</strong> : 2–15 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/moyenne"><strong>M — Moyenne</strong> : 15–50 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/longue"><strong>L — Longue</strong> : 50–300 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/lointaine"><strong>LT — Lointaine</strong> : plus de 300 m</a></p>
 
@@ -147,6 +148,15 @@ cssclasses:
 
 <div class="screen-only"><p>Il est très difficile d'évoquer l'armure Ranger sans parler du fusil Longbow qui l'accompagne. En fait, là où la plupart des méta-armures sont créées pour un besoin bien précis sur le terrain, pour accomplir une fonction requérant des aptitudes particulières, souvent inédites, l'armure Ranger, elle, a été pensée autour d'une arme, le fusil polymorphe polycalibre Longbow. Inventé par Merlin lui-même suite à la mort de plusieurs chevaliers lors du siège d'un avant-poste par des créatures colossales de l'Anathème, le fusil Longbow est taillé pour abattre les ennemis les plus gros et effacer les meutes d'abominations de la carte, le tout à n'importe quelle distance. La méta-armure Ranger et le fusil Longbow ne sont en fait qu'une seule machinerie qui concilie la puissance et la précision d'un fusil anti-matériel avec la polyvalence nécessaire à celui qui évolue dans les territoires de l'Anathème. À la base, un fusil anti-matériel est une arme surdimensionnée conçue pour tirer des munitions de mitrailleuse lourde et de canon antiaérien depuis une position sécurisée, loin de sa cible. Or un chevalier en armure Ranger est appelé à rencontrer des adversaires sur des terrains de combat étroits où un fusil aussi encombrant est inutilisable. Le fusil Longbow compense ce problème en étant parfaitement modifiable en termes de taille et de calibre, et ce, en quelques secondes seulement.</p></div>
 
+<section class="knight-traits knight-capabilities" aria-label="Capacités de méta-armure"><section class="knight-trait knight-capability"><h3>Vision</h3><div class="knight-trait-description"><p>Grâce au système de vision de l’armure Ranger, le personnage peut voir, pendant quelques secondes, des choses qui ne devraient pas être vues. Grâce à la « Vision », le personnage peut distinguer les gaz, le vent, les maladies, la respiration, les créatures microscopiques, les ondes radio, l’Anathème, les pensées, etc. C’est au joueur de dire au MJ ce qu’il désire voir. En fonction de la difficulté de la vision, le chevalier doit dépenser de 5 à 10 points d’énergie, au choix du MJ.<br>Le MJ décrit ensuite au PJ ce qu’il voit durant quelques secondes, il peut être très précis ou, à l’inverse, nébuleux, la Vision étant parfois peu précise.<br>La Vision ne passe bien entendu que par la vue. Si le PJ choisit par exemple de voir les pensées d’une personne, il voit des mots ou des images, mais n’entend aucun son.</p><div class="knight-capability-details"><p><strong>Activation :</strong> Action de déplacement / 6 secondes</p>
+<p><strong>Durée :</strong> 6 secondes</p>
+<p><strong>Énergie :</strong> 5 à 10 PE</p></div></div></section>
+<section class="knight-trait knight-capability"><h3>Fusil de précision Longbow</h3><div class="knight-trait-description"><p>La méta-armure Ranger et le fusil Longbow ne sont qu’une seule machinerie qui concilie la puissance et la précision d’un fusil anti-matériel avec la polyvalence nécessaire à celui qui évolue seul dans les territoires de l’Anathème. Le fusil Longbow est sans doute l’arme principale d’un chevalier en armure Ranger. Le fusil de précision Longbow peut être racké. Il compte dans la limite des armes contenues dans le rack de la méta-armure. De plus, au même titre qu’une autre arme de tir, il peut recevoir des améliorations d’armes, mais dans la limite de deux (et seulement deux) maximum, avec les mêmes restrictions que les armes possédant l’effet lourd.</p><div class="knight-capability-details"><p><strong>Dégâts :</strong> 5 à 14D6 · coût de réglage : 1 PE</p>
+<p><strong>Violence :</strong> 3 à 12D6 · coût de réglage : 1 PE</p>
+<p><strong>Portée réglable :</strong> moyenne à lointaine · coût de réglage : 1 PE</p>
+<p><strong>Effets de base :</strong> assistanceattaque, deuxmains, lourd</p>
+<p><strong>Effets au choix — liste 1 (2 PE) :</strong> choc 1, degatscontinus 3, designation, percearmure 40, silencieux, ultraviolence</p>
+<p><strong>Effets au choix — liste 2 (3 PE) :</strong> antivehicule, artillerie, dispersion 3, lumiere 4, penetrant 6, percearmure 60</p></div></div></section></section>
 <h3 class="knight-equipment-title">Modules</h3>
 
 | Module | Niveau | Effets essentiels |
