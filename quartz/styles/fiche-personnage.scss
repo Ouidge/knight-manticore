@@ -504,6 +504,65 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   overflow-wrap: anywhere;
 }
 
+.knight-armor-evolutions {
+  margin: 0.7rem 0;
+}
+
+.knight-armor-evolutions > h3 {
+  margin: 0 0 0.3rem;
+}
+
+.knight-armor-evolutions table {
+  width: 100%;
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.12;
+}
+
+.knight-armor-evolutions th {
+  width: 8rem;
+  white-space: nowrap;
+}
+
+.knight-armor-evolutions th,
+.knight-armor-evolutions td {
+  padding: 0.25rem 0.4rem;
+  vertical-align: top;
+}
+
+.knight-armor-evolutions td p {
+  margin: 0;
+}
+
+.knight-capability:has(.knight-goliath-table) {
+  grid-column: 1 / -1;
+}
+
+.knight-goliath-table-wrap {
+  margin-top: 0.5rem;
+  overflow-x: auto;
+}
+
+.knight-goliath-table {
+  width: 100%;
+  min-width: 50rem;
+  margin: 0;
+  font-size: 0.78em;
+  line-height: 1.05;
+}
+
+.knight-goliath-table th,
+.knight-goliath-table td {
+  padding: 0.28rem 0.35rem;
+  vertical-align: top;
+}
+
+.knight-goliath-table td > small {
+  display: block;
+  margin-top: 0.1em;
+  color: var(--knight-muted);
+}
+
 .knight-ia-character {
   margin: 0.5rem 0 0.8rem;
   padding: 0.55rem 0.75rem;
@@ -1022,6 +1081,59 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
   .knight-effect {
     font-size: 7.5pt;
+  }
+
+  .knight-armor-evolutions {
+    margin: 0.6mm 0;
+  }
+
+  .knight-armor-evolutions > h3 {
+    margin: 0 0 0.3mm;
+    font-size: 8pt;
+  }
+
+  .knight-armor-evolutions table {
+    font-size: 6.6pt;
+    line-height: 0.96;
+  }
+
+  .knight-armor-evolutions th {
+    width: 22mm;
+  }
+
+  .knight-armor-evolutions th,
+  .knight-armor-evolutions td {
+    padding: 0.3mm 0.6mm;
+  }
+
+  .knight-armor-evolutions td p {
+    line-height: 0.96 !important;
+  }
+
+  .knight-goliath-table-wrap {
+    margin-top: 1mm;
+    overflow: visible;
+  }
+
+  .knight-goliath-table {
+    min-width: 0;
+    font-size: 5.8pt;
+    line-height: 1;
+  }
+
+  .knight-goliath-table th,
+  .knight-goliath-table td {
+    padding: 0.45mm 0.55mm;
+  }
+
+  .knight-goliath-table th:last-child,
+  .knight-goliath-table td:last-child {
+    width: 27%;
+  }
+
+  .knight-goliath-table td > small {
+    margin-top: 0;
+    color: #333 !important;
   }
 
   .knight-page-two {

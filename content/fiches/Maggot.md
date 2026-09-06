@@ -161,9 +161,12 @@ cssclasses:
 
 <div class="screen-only"><p>Dernière-née de l'esprit de Merlin, la méta-armure Barbarian est un monstre de combat d'une puissance inimaginable. Sa conception risquée et son utilité en font une armure rare autant qu'impressionnante. La combinaison, dont l'aspect et le fonctionnement sont calqués sur le corps humain, est uniquement constituée d'élément alpha, de soie d'araignée et de nanomachines. Grâce à ces dernières, présentes dans le moindre interstice, elle peut être modifiée par le porteur afin d'obtenir une puissance accrue. Le chevalier peut ainsi augmenter la taille et la densité des muscles hauts de l'armure pour obtenir une force extraordinaire en un temps record. En somme, l'armure Barbarian se révèle utile sur les fronts qui nécessitent des frappes brutales et peut déployer en quelques secondes une force colossale. Toutes ces aptitudes ne fonctionnent qu'avec les capacités physiques de l'armure telles que la force. De fait, les chevaliers en méta-armure Barbarian deviennent souvent des adeptes du combat au contact, capables de tordre des réverbères, de se battre en écrasant des véhicules sur leurs adversaires ou d'arracher les membres de leurs ennemis.</p></div>
 
+<section class="knight-armor-evolutions"><h3>Évolutions acquises</h3><table><tbody><tr><th>150 PG</th><td><p>La limite de taille du mode Goliath est de 8 mètres (soit une augmentation de 6 mètres).</p></td></tr>
+<tr><th>200 PG</th><td><p>La <em>défense</em> ne baisse plus lors de l'activation du mode Goliath (mais la <em>réaction</em> diminue encore).</p></td></tr></tbody></table></section>
 <section class="knight-traits knight-capabilities" aria-label="Capacités de méta-armure"><section class="knight-trait knight-capability"><h3>Mode Goliath</h3><div class="knight-trait-description"><p>La méta-armure, en générant de la matière grâce aux nanomachines qui composent son enveloppe, peut augmenter sa masse musculaire et ainsi augmenter en taille à mesure qu’elle gagne en puissance. En activant ce mode, la méta-armure peut ainsi atteindre 6 mètres de haut pour un gain en force et en endurance considérable… Au détriment des réflexes et de la rapidité.</p><div class="knight-capability-details"><p><strong>Activation :</strong> Action de déplacement</p>
 <p><strong>Durée :</strong> 6 tours ou 1 minute</p>
-<p><strong>Énergie :</strong> 2 PE</p></div></div></section></section>
+<p><strong>Énergie :</strong> 2 PE par mètre gagné</p>
+<p><strong>Limite actuelle :</strong> 8 m au total (+6 m)</p></div><div class="knight-goliath-table-wrap"><table class="knight-goliath-table"><thead><tr><th>Taille</th><th>Coût</th><th>Force / Endurance</th><th>Dégâts / Violence</th><th>CdF</th><th>Déf. / Réac.</th><th>À partir de cette taille</th></tr></thead><tbody><tr><td>3 m</td><td>2 PE</td><td>+1 réussite chacune<small>+5 t soulevées</small></td><td>+1D6 / +1D6</td><td>+1</td><td>— / −2</td><td>—</td></tr><tr><td>4 m</td><td>4 PE</td><td>+2 réussites chacune<small>+10 t soulevées</small></td><td>+2D6 / +2D6</td><td>+2</td><td>— / −4</td><td>—</td></tr><tr><td>5 m</td><td>6 PE</td><td>+3 réussites chacune<small>+15 t soulevées</small></td><td>+3D6 / +3D6</td><td>+3</td><td>— / −6</td><td>—</td></tr><tr><td>6 m</td><td>8 PE</td><td>+4 réussites chacune<small>+20 t soulevées</small></td><td>+4D6 / +4D6</td><td>+4</td><td>— / −8</td><td>Anti-véhicule · armes rackées (modules utilisables)</td></tr><tr><td>7 m</td><td>10 PE</td><td>+5 réussites chacune<small>+25 t soulevées</small></td><td>+5D6 / +5D6</td><td>+5</td><td>— / −10</td><td>Anti-véhicule · armes rackées (modules utilisables)</td></tr><tr><td>8 m</td><td>12 PE</td><td>+6 réussites chacune<small>+30 t soulevées</small></td><td>+6D6 / +6D6</td><td>+6</td><td>— / −12</td><td>Anti-véhicule · armes rackées (modules utilisables)</td></tr></tbody></table></div></div></section></section>
 <h3 class="knight-equipment-title">Modules</h3>
 
 | Module | Niveau | Effets essentiels |
@@ -199,16 +202,5 @@ cssclasses:
 <div class="knight-trait-description"><p>L'IA de l'armure, bien que consciente du besoin naturel et obligatoire de repos de son chevalier, s'arrange pour continuer à faire des découvertes pendant son sommeil. En termes de jeu, une fois par partie, quand le chevalier s'endort ou se repose, l'armure défolde et explore l'endroit où elle se trouve pendant une à deux heures avant de reprendre la place qui était la sienne. Si elle rencontre des personnes, elle communique comme s'il s'agissait du chevalier et, si elle doit entrer en action, elle s'exécute. Si elle déclenche une scène d'action mouvementée, telle qu'un combat par exemple, son porteur doit réussir un test base <em>Endurance</em> difficulté délicat (4) afin de se réveiller.</p></div>
 </section>
 </section>
-
-## Blessures
-
-### Blessure Grave
-
-—
-
-### Blessure Grave
-
-—
-
 
 <div class="screen-only knight-generation-note"><hr><p><em>Fiche générée depuis un export Foundry VTT — système Knight 3.54.4.</em></p></div>

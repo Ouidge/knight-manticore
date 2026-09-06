@@ -621,6 +621,36 @@ function traitSection(title, selectedItems) {
   return `<section class="knight-traits"><h2>${escapeHtml(title)}</h2>\n${content}\n</section>`;
 }
 
+function armorEvolutionsSection(armorItem) {
+  const evolutions = armorItem?.system?.evolutions ?? {};
+  const acquired = [];
+
+  for (const evolution of Object.values(evolutions.liste ?? {})) {
+    if (!evolution?.applied) continue;
+    acquired.push({
+      label: `${number(evolution.value)} PG`,
+      description: htmlToMarkdown(evolution.description || ""),
+    });
+  }
+
+  for (const [family, levels] of Object.entries(evolutions.special ?? {})) {
+    for (const evolution of Object.values(levels ?? {})) {
+      if (!evolution?.applied) continue;
+      const familyLabel = family.replace(/^./u, (character) => character.toLocaleUpperCase("fr"));
+      acquired.push({
+        label: `${familyLabel} · ${number(evolution.value)} PG`,
+        description: htmlToMarkdown(evolution.description || ""),
+      });
+    }
+  }
+
+  if (!acquired.length) return "";
+  const rows = acquired
+    .map(({ label, description }) => `<tr><th>${escapeHtml(label)}</th><td>${markdownishHtml(description || "Évolution acquise")}</td></tr>`)
+    .join("\n");
+  return `<section class="knight-armor-evolutions"><h3>Évolutions acquises</h3><table><tbody>${rows}</tbody></table></section>`;
+}
+
 // Use the character's selected values, never the catalogue or evolution snapshots.
 function armorCapabilitiesSection(armorItem) {
   const selected = armorItem?.system?.capacites?.selected ?? {};
@@ -630,6 +660,7 @@ function armorCapabilitiesSection(armorItem) {
   for (const [key, capability] of Object.entries(selected)) {
     if (!capability || typeof capability !== "object") continue;
     const rows = [];
+    let supplementalHtml = "";
     const add = (name, value) => {
       if (value !== undefined && value !== null && value !== "") rows.push(`<p><strong>${escapeHtml(name)} :</strong> ${escapeHtml(value)}</p>`);
     };
@@ -642,7 +673,12 @@ function armorCapabilitiesSection(armorItem) {
     };
     add("Activation", fields(capability.activation));
     add("Durée", capability.duree);
-    add("Énergie", fields(capability.energie, " PE"));
+    add(
+      "Énergie",
+      key === "goliath" && typeof capability.energie === "number"
+        ? `${capability.energie} PE par mètre gagné`
+        : fields(capability.energie, " PE"),
+    );
     if (typeof capability.portee === "string") add("Portée", capability.portee);
     if (key === "mechanic") {
       for (const mode of ["contact", "distance"]) {
@@ -659,6 +695,37 @@ function armorCapabilitiesSection(armorItem) {
         if (damage.dice) parts.push(`dés de ${damage.caracteristique}`);
         if (damage.od) parts.push(`OD de ${damage.caracteristique}`);
         if (parts.length) add("Bonus dégâts configuré", parts.join(" + "));
+      }
+    }
+    if (key === "goliath") {
+      const maximumGain = number(capability.taille?.max);
+      const energyPerMeter = number(capability.energie);
+      const forcePerMeter = number(capability.bonus?.force?.value);
+      const endurancePerMeter = number(capability.bonus?.endurance?.value);
+      const damagePerMeter = number(capability.bonus?.degats?.dice);
+      const violencePerMeter = number(capability.bonus?.violence?.dice);
+      const forceFieldPerMeter = number(capability.bonus?.cdf?.value);
+      const defensePerMeter = number(capability.malus?.defense?.value);
+      const reactionPerMeter = number(capability.malus?.reaction?.value);
+      const rackHeight = number(capability.armesRack?.value);
+      if (maximumGain) add("Limite actuelle", `${2 + maximumGain} m au total (+${maximumGain} m)`);
+      const tableRows = [];
+      for (let gain = 1; gain <= maximumGain; gain += 1) {
+        const height = 2 + gain;
+        const forceBonus = forcePerMeter * gain;
+        const enduranceBonus = endurancePerMeter * gain;
+        const characteristicBonus = forceBonus === enduranceBonus
+          ? `+${forceBonus} réussite${forceBonus > 1 ? "s" : ""} chacune`
+          : `Force +${forceBonus} / Endurance +${enduranceBonus}`;
+        const special = rackHeight && height >= rackHeight
+          ? "Anti-véhicule · armes rackées (modules utilisables)"
+          : "—";
+        tableRows.push(
+          `<tr><td>${height} m</td><td>${energyPerMeter * gain} PE</td><td>${characteristicBonus}<small>+${5 * gain} t soulevées</small></td><td>+${damagePerMeter * gain}D6 / +${violencePerMeter * gain}D6</td><td>+${forceFieldPerMeter * gain}</td><td>${defensePerMeter ? `−${defensePerMeter * gain}` : "—"} / ${reactionPerMeter ? `−${reactionPerMeter * gain}` : "—"}</td><td>${special}</td></tr>`,
+        );
+      }
+      if (tableRows.length) {
+        supplementalHtml = `<div class="knight-goliath-table-wrap"><table class="knight-goliath-table"><thead><tr><th>Taille</th><th>Coût</th><th>Force / Endurance</th><th>Dégâts / Violence</th><th>CdF</th><th>Déf. / Réac.</th><th>À partir de cette taille</th></tr></thead><tbody>${tableRows.join("")}</tbody></table></div>`;
       }
     }
     if (key === "longbow") {
@@ -680,7 +747,7 @@ function armorCapabilitiesSection(armorItem) {
       if (capability[stat]?.dice != null) add(title, formatDice(capability[stat]));
     }
     const description = htmlToMarkdown(capability.description || "");
-    entries.push(`<section class="knight-trait knight-capability"><h3>${escapeHtml(capability.label || key)}</h3><div class="knight-trait-description">${markdownishHtml(description)}${rows.length ? `<div class="knight-capability-details">${rows.join("\n")}</div>` : ""}</div></section>`);
+    entries.push(`<section class="knight-trait knight-capability"><h3>${escapeHtml(capability.label || key)}</h3><div class="knight-trait-description">${markdownishHtml(description)}${rows.length ? `<div class="knight-capability-details">${rows.join("\n")}</div>` : ""}${supplementalHtml}</div></section>`);
   }
   return entries.length ? `<section class="knight-traits knight-capabilities" aria-label="Capacités de méta-armure">${entries.join("\n")}</section>` : "";
 }
@@ -1073,6 +1140,7 @@ if (armor?.system?.description) {
   );
 }
 
+out.push(armorEvolutionsSection(armor));
 out.push(armorCapabilitiesSection(armor));
 
 if (displayedModules.length) {
