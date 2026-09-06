@@ -15,7 +15,7 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Forge</h1>
-<p class="knight-profile-lead"><strong>Génie</strong> · Section <strong>Giant</strong> · Blason <strong>[[Corbeau]]</strong></p>
+<p class="knight-profile-lead"><strong>Génie</strong> · Section <strong>Giant</strong> · Blason <strong><a class="internal" href="/knight-manticore/%F0%9F%93%90-aides-de-jeu/blasons/corbeau">Corbeau</a></strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Conception de la 1ère méta-armure</dd></div>
@@ -134,7 +134,7 @@ cssclasses:
 <section class="knight-traits"><h2>Distinctions</h2>
 <section class="knight-trait">
 <h3>Etoile de Dublin</h3>
-<div class="knight-trait-description"><p>Faite d'un métal rare, le <em>rhodium</em>, elle peut être placée sur l'<em>épaulière</em> de la méta armure.<br>Effet : Lorsque les chevaliers <strong>s’adressent à des membres du Knight ou</strong> lorsqu’ils discutent avec des personnages considérés comme <strong>alliés de l’organisation</strong>, ils reçoivent un bonus de <strong>1 réussite automatique</strong> à leur jet.</p></div>
+<div class="knight-trait-description"><p>Faite d'un métal rare, le <em>rhodium</em>, elle peut être placée sur l'<em>épaulière</em> de la méta armure.<br>Effet : +<strong>1 réussite automatique</strong> au jet de Parole lorsque le chevalier <strong>s’adresse à des membres du Knight ou</strong> des <strong>alliés du Knight</strong>.</p></div>
 </section>
 </section>
 

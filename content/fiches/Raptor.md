@@ -15,7 +15,7 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Raptor</h1>
-<p class="knight-profile-lead"><strong>Indépendant</strong> · Section <strong>Cyclope</strong> · Blason <strong>[[Aigle]]</strong></p>
+<p class="knight-profile-lead"><strong>Indépendant</strong> · Section <strong>Cyclope</strong> · Blason <strong><a class="internal" href="/knight-manticore/%F0%9F%93%90-aides-de-jeu/blasons/aigle">Aigle</a></strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Construction de la première arche</dd></div>

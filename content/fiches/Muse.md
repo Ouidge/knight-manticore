@@ -15,7 +15,7 @@ cssclasses:
 <div class="knight-profile">
 <div class="knight-title-line">
 <h1>Muse</h1>
-<p class="knight-profile-lead"><strong>Rosa Diakité</strong> · Section <strong>Gargoyle</strong> · Blason <strong>[[Ours]]</strong></p>
+<p class="knight-profile-lead"><strong>Rosa Diakité</strong> · Section <strong>Gargoyle</strong> · Blason <strong><a class="internal" href="/knight-manticore/%F0%9F%93%90-aides-de-jeu/blasons/ours">Ours</a></strong></p>
 </div>
 <dl class="knight-profile-details">
 <div><dt>Haut fait</dt><dd>Défenseur de l'art</dd></div>
@@ -128,14 +128,14 @@ cssclasses:
 
 <section class="knight-trait">
 <h3>Gargoyle - Surprotecteur : Forge</h3>
-<div class="knight-trait-description"><p>Le PJ est un protecteur-né, incapable de laisser une personne qu’il considère comme précieuse ou faible sans protection. Pour symboliser cela, le PJ doit désigner un (et un seul) membre de la coterie (nécessairement un autre PJ) comme étant son protégé. Une fois cet allié désigné, le PJ doit appliquer les règles suivantes : lorsque le protégé est mis à l’agonie, le PJ perd 1D6+3 points d’espoir et si le protégé est tué, le PJ perd 2D6+6 points d’espoir en plus de tous points perdus normalement par les membres de la coterie à la mort d’un compagnon d’armes.</p></div>
+<div class="knight-trait-description"><p>Le PJ est un protecteur-né, incapable de laisser @UUID[Actor.AdGyYbhT6EL3gXyQ]{Forge}, qu’il considère comme précieux ou faible sans protection. Pour symboliser cela, le PJ doit désigner un (et un seul) membre de la coterie (nécessairement un autre PJ) comme étant son protégé. Une fois cet allié désigné, le PJ doit appliquer les règles suivantes : lorsque le protégé est mis à l’agonie, le PJ perd 1D6+3 points d’espoir et si le protégé est tué, le PJ perd 2D6+6 points d’espoir en plus de tous points perdus normalement par les membres de la coterie à la mort d’un compagnon d’armes.</p></div>
 </section>
 </section>
 
 <section class="knight-traits"><h2>Distinctions</h2>
 <section class="knight-trait">
 <h3>Etoile de Dublin</h3>
-<div class="knight-trait-description"><p>Faite d'un métal rare, le <em>rhodium</em>, elle peut être placée sur l'<em>épaulière</em> de la méta armure.<br>Effet : Lorsque les chevaliers <strong>s’adressent à des membres du Knight ou</strong> lorsqu’ils discutent avec des personnages considérés comme <strong>alliés de l’organisation</strong>, ils reçoivent un bonus de <strong>1 réussite automatique</strong> à leur jet.</p></div>
+<div class="knight-trait-description"><p>Faite d'un métal rare, le <em>rhodium</em>, elle peut être placée sur l'<em>épaulière</em> de la méta armure.<br>Effet : +<strong>1 réussite automatique</strong> au jet de Parole lorsque le chevalier <strong>s’adresse à des membres du Knight ou</strong> des <strong>alliés du Knight</strong>.</p></div>
 </section>
 </section>
 

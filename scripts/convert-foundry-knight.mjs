@@ -822,7 +822,10 @@ out.push('<section class="knight-identity">');
 out.push('<div class="knight-profile">');
 out.push('<div class="knight-title-line">');
 out.push(`<h1>${escapeHtml(actor.name || "Personnage")}</h1>`);
-const blasonLink = system.blason ? `[[${String(system.blason).replace(/[\[\]]/g, "")}]]` : "—";
+const blasonName = String(system.blason ?? "").replace(/[\[\]]/g, "").trim();
+const blasonLink = blasonName
+  ? `<a class="internal" href="/knight-manticore/%F0%9F%93%90-aides-de-jeu/blasons/${slugify(blasonName)}">${escapeHtml(blasonName)}</a>`
+  : "—";
 out.push(
   `<p class="knight-profile-lead"><strong>${escapeHtml(system.archetype || "Archétype inconnu")}</strong> · Section <strong>${escapeHtml(system.section || "—")}</strong> · Blason <strong>${blasonLink}</strong></p>`,
 );
