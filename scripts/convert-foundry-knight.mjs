@@ -468,7 +468,9 @@ function effectPresentation(effect) {
 function effectsHtml(effects = []) {
   const rendered = effects.map(effectPresentation).filter(Boolean).map(({ label, note }) => {
     if (!note) return escapeHtml(label);
-    const href = `/knight-manticore/%F0%9F%93%90-aides-de-jeu/effets/${slugify(note)}`;
+    // Quartz ajoute lui-même le préfixe du site GitHub Pages (`/knight-manticore`).
+    // Le conserver ici produirait un chemin doublé après le rendu.
+    const href = `/%F0%9F%93%90-aides-de-jeu/effets/${slugify(note)}`;
     return `<a class="internal knight-effect-link" href="${href}">${escapeHtml(label)}</a>`;
   });
   return rendered.join(", ") || "—";
@@ -901,7 +903,7 @@ out.push('<div class="knight-title-line">');
 out.push(`<h1>${escapeHtml(actor.name || "Personnage")}</h1>`);
 const blasonName = String(system.blason ?? "").replace(/[\[\]]/g, "").trim();
 const blasonLink = blasonName
-  ? `<a class="internal" href="/knight-manticore/%F0%9F%93%90-aides-de-jeu/blasons/${slugify(blasonName)}">${escapeHtml(blasonName)}</a>`
+  ? `<a class="internal" href="/%F0%9F%93%90-aides-de-jeu/blasons/${slugify(blasonName)}">${escapeHtml(blasonName)}</a>`
   : "—";
 out.push(
   `<p class="knight-profile-lead"><strong>${escapeHtml(system.archetype || "Archétype inconnu")}</strong> · Section <strong>${escapeHtml(system.section || "—")}</strong> · Blason <strong>${blasonLink}</strong></p>`,
