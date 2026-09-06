@@ -130,8 +130,18 @@ article:has(.knight-sheet-marker) tbody tr:nth-child(even) td {
 .knight-profile-details dd {
   min-width: 0;
   margin: 0;
+  color: var(--knight-text) !important;
+  -webkit-text-fill-color: var(--knight-text);
   font-size: 0.78rem;
   line-height: 1.15;
+}
+
+.knight-profile-details dd li,
+.knight-profile-details dd p,
+.knight-profile-details dd strong,
+.knight-profile-details dd em {
+  color: var(--knight-text) !important;
+  -webkit-text-fill-color: var(--knight-text);
 }
 
 .knight-major-motivation dd {
@@ -231,7 +241,22 @@ article:has(.knight-sheet-marker) .knight-arsenal-table th {
 
 article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) td,
 article:has(.knight-sheet-marker) .knight-arsenal-table td {
+  color: var(--knight-text) !important;
+  -webkit-text-fill-color: var(--knight-text);
   border-color: rgb(112 134 155 / 35%);
+}
+
+article:has(.knight-sheet-marker) .knight-arsenal-table tbody tr:nth-child(even) td {
+  color: var(--knight-text) !important;
+  -webkit-text-fill-color: var(--knight-text);
+  background: rgb(112 134 155 / 10%);
+}
+
+article:has(.knight-sheet-marker) .knight-arsenal-table td small,
+article:has(.knight-sheet-marker) .knight-arsenal-table td strong,
+article:has(.knight-sheet-marker) .knight-arsenal-table td em {
+  color: inherit;
+  -webkit-text-fill-color: currentcolor;
 }
 
 article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) td:last-child,

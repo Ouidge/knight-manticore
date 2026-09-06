@@ -1,0 +1,8 @@
+---
+type: adj
+subtype: effet
+---
+> desc:: Si le jet pour toucher avec l’arme est *supérieur au score de l’aspect Chair* (divisé par 2 pour un PNJ) de la cible, celle-ci **perd ses X prochaines actions**. Cet effet ne fonctionne *pas contre les bandes*. Attention, l’effet ne peut *pas se cumuler* alors que la cible est déjà sous l’effet choc. Dans certaines circonstances, l’effet choc peut être considéré comme automatique et ne prend donc pas en compte le score de l’aspect Chair. Lorsque l’effet choc est censé s’appliquer automatiquement, il faut tout de même que le personnage touche sa cible. En revanche, son résultat n’a pas besoin d’égaler l’aspect Chair divisé par deux de la cible pour que l’effet fonctionne. En fonction des circonstances, le MJ peut décider qu’un personnage sous l’effet choc subit un malus de 2 à sa réaction et à sa défense. L’effet *ne se cumule pas avec parasitage X*. 
+
+> [!example] Exemple
+> Le personnage de Nicolas attaque un bestian qui possède un score de Chair de 8 avec un ceste répulsif possé- dant l’effet choc 2. Il effectue un jet pour toucher et obtient 7 réussites. Il dépasse donc la Chair du bestian divisée par 2. La créature perd ses deux prochaines actions. 
