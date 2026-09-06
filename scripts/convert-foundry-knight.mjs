@@ -671,19 +671,45 @@ function armorCapabilitiesSection(armorItem) {
       return Object.entries(value).filter(([, v]) => typeof v === "string" || typeof v === "number")
         .map(([k, v]) => `${k === "tour" ? "En conflit" : label(k)} : ${label(v)}${unit}`).join(" · ");
     };
-    add("Activation", fields(capability.activation));
-    add("Durée", capability.duree);
-    add(
-      "Énergie",
-      key === "goliath" && typeof capability.energie === "number"
-        ? `${capability.energie} PE par mètre gagné`
-        : fields(capability.energie, " PE"),
-    );
-    if (typeof capability.portee === "string") add("Portée", capability.portee);
+    const table = (headers, tableRows, extraClass = "") => {
+      const head = headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("");
+      const body = tableRows.map((cells) => `<tr>${cells.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("");
+      return `<div class="knight-capability-table-wrap"><table class="knight-capability-table ${extraClass}"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`;
+    };
+    const detailedKeys = new Set(["nanoc", "mechanic", "longbow", "borealis", "warlord"]);
+    if (!detailedKeys.has(key)) {
+      add("Activation", fields(capability.activation));
+      add("Durée", capability.duree);
+      add(
+        "Énergie",
+        key === "goliath" && typeof capability.energie === "number"
+          ? `${capability.energie} PE par mètre gagné`
+          : fields(capability.energie, " PE"),
+      );
+      if (typeof capability.portee === "string") add("Portée", capability.portee);
+    }
+    if (key === "nanoc") {
+      add("Activation", fields(capability.activation));
+      add("Durée", capability.duree);
+      const creationRows = [["Simple", capability.energie?.base], ["Détaillé", capability.energie?.detaille], ["Mécanique", capability.energie?.mecanique]]
+        .filter(([, cost]) => cost != null)
+        .map(([name, cost]) => [escapeHtml(name), `${number(cost)} PE`]);
+      if (capability.energie?.prolonger != null) creationRows.push(["Prolongation", `${number(capability.energie.prolonger)} PE`]);
+      supplementalHtml = table(["Création nanoC", "Coût"], creationRows);
+    }
     if (key === "mechanic") {
+      const repairRows = [];
       for (const mode of ["contact", "distance"]) {
-        if (capability.reparation?.[mode]) add(`Réparation — ${label(mode)}`, `${formatDice(capability.reparation[mode])} · ${capability.reparation[mode].duree || ""}`);
+        const repair = capability.reparation?.[mode];
+        if (!repair) continue;
+        repairRows.push([
+          escapeHtml(label(mode)),
+          `${escapeHtml(formatDice(repair))}<small>${escapeHtml(repair.duree || "—")}</small>`,
+          `${number(capability.energie?.[mode])} PE`,
+          escapeHtml(mode === "distance" ? capability.portee || "—" : "Contact"),
+        ]);
       }
+      supplementalHtml = table(["Mode", "Réparation", "Coût", "Portée"], repairRows, "knight-mechanic-table");
     }
     if (key === "ghost") {
       add("Réussites bonus", capability.bonus?.reussites);
@@ -730,24 +756,88 @@ function armorCapabilitiesSection(armorItem) {
     }
     if (key === "longbow") {
       // These are configurable ranges, not an already-paid attack profile.
+      const adjustmentRows = [];
       for (const [stat, title] of [["degats", "Dégâts"], ["violence", "Violence"]]) {
         const value = capability[stat];
-        if (value?.min != null && value?.max != null) add(title, `${value.min} à ${value.max}D6${value.energie != null ? ` · coût de réglage : ${value.energie} PE` : ""}`);
+        if (value?.min != null && value?.max != null) adjustmentRows.push([escapeHtml(title), `${value.min} à ${value.max}D6`, `${number(value.energie)} PE / niveau`]);
       }
       const range = capability.portee;
-      if (range?.min) add("Portée réglable", `${range.min} à ${range.max}${range.energie != null ? ` · coût de réglage : ${range.energie} PE` : ""}`);
+      if (range?.min) adjustmentRows.push(["Portée", `${escapeHtml(range.min)} à ${escapeHtml(range.max)}`, `${number(range.energie)} PE / niveau`]);
+      const effectRows = [];
       for (const [effectKey, effects] of Object.entries(capability.effets ?? {})) {
         if (effects.acces === false) continue;
         const names = [...(effects.raw ?? []), ...(effects.custom ?? [])]
           .map(effectPresentation).filter(Boolean).map(({ label }) => label);
-        if (names.length) add(effectKey === "base" ? "Effets de base" : `Effets au choix — ${effectKey.replace("liste", "liste ")}${effects.energie != null ? ` (${effects.energie} PE)` : ""}`, names.join(", "));
+        if (names.length) effectRows.push([
+          effectKey === "base" ? "Base" : escapeHtml(effectKey.replace("liste", "Liste ")),
+          effects.energie == null ? "—" : `${number(effects.energie)} PE`,
+          escapeHtml(names.join(" · ")),
+        ]);
+      }
+      supplementalHtml = `${table(["Réglage", "Plage actuelle", "Coût"], adjustmentRows, "knight-capability-table-wide")}${table(["Effets", "Coût", "Choix disponibles"], effectRows, "knight-capability-table-wide knight-capability-effects-table")}`;
+    }
+    if (key === "borealis") {
+      const support = capability.support ?? {};
+      const offensive = capability.offensif ?? {};
+      const utility = capability.utilitaire ?? {};
+      const offensiveEffects = [...(offensive.effets?.raw ?? []), ...(offensive.effets?.custom ?? [])]
+        .map(effectPresentation).filter(Boolean).map(({ label }) => label).join(" · ");
+      supplementalHtml = table(
+        ["Usage", "Activation", "Durée", "Coût", "Effet"],
+        [
+          ["Support", escapeHtml(label(support.activation)), escapeHtml(support.duree || "—"), `${number(support.energie?.base)} PE<small>+${number(support.energie?.allie)} PE par allié supplémentaire</small>`, "Anti-Anathème sur les armes utilisées"],
+          ["Offensif", escapeHtml(label(offensive.activation)), escapeHtml(offensive.duree || "—"), `${number(offensive.energie)} PE`, `${escapeHtml(formatDice(offensive.degats))} dégâts / ${escapeHtml(formatDice(offensive.violence))} violence<small>Portée ${escapeHtml(offensive.portee || "—")} · ${escapeHtml(offensiveEffects)}</small>`],
+          ["Utilitaire", escapeHtml(label(utility.activation)), escapeHtml(utility.duree || "—"), `${number(utility.energie)} PE`, "Manipulation du plasma<small>Éclairage, fusion, feu ou formes simples</small>"],
+        ],
+        "knight-capability-table-wide",
+      );
+    }
+    if (key === "oriflamme") {
+      const effectNames = [...(capability.effets?.raw ?? []), ...(capability.effets?.custom ?? [])]
+        .map(effectPresentation).filter(Boolean).map(({ label }) => label);
+      if (effectNames.length) add("Effets", effectNames.join(" · "));
+    }
+    if (key === "warlord") {
+      const impulses = capability.impulsions ?? {};
+      if (impulses.selection != null) add("Impulsions sélectionnables", impulses.selection);
+      const impulseRows = [];
+      const costs = (energy = {}) => Object.entries(energy)
+        .filter(([, value]) => typeof value === "number")
+        .map(([target, value]) => `${target === "allie" ? "Allié" : target === "porteur" ? "Porteur" : label(target)} : ${value} PE`).join(" · ");
+      const impulseSummary = {
+        action: "Une action de combat ou de déplacement supplémentaire",
+        esquive: `Défense +${number(impulses.esquive?.bonus?.defense)} · Réaction +${number(impulses.esquive?.bonus?.reaction)}`,
+        force: `CdF +${number(impulses.force?.bonus?.champDeForce)}`,
+        guerre: `Dégâts +${number(impulses.guerre?.bonus?.degats)}D6 · Violence +${number(impulses.guerre?.bonus?.violence)}D6`,
+        energie: `Transfert de ${number(impulses.energie?.energie?.min)} à ${number(impulses.energie?.energie?.max)} PE à un allié`,
+      };
+      for (const impulseKey of ["action", "esquive", "force", "guerre", "energie"]) {
+        const impulse = impulses[impulseKey];
+        if (!impulse) continue;
+        const activation = Array.isArray(impulse.activation)
+          ? [...new Set(impulse.activation.map(label))].join(" / ")
+          : label(impulse.activation);
+        impulseRows.push([
+          escapeHtml(impulseKey.replace(/^./u, (character) => character.toLocaleUpperCase("fr"))),
+          escapeHtml(activation || "—"),
+          escapeHtml(impulse.duree || "—"),
+          escapeHtml(impulseSummary[impulseKey] || "—"),
+          escapeHtml(costs(impulse.energie) || "—"),
+        ]);
+      }
+      supplementalHtml = table(["Impulsion", "Activation", "Durée", "Bonus", "Coût"], impulseRows, "knight-capability-table-wide");
+    }
+    if (key === "falcon") {
+      const informationChoices = htmlToMarkdown(capability.informations || "").split(/\n+/).map((choice) => choice.trim()).filter(Boolean);
+      if (informationChoices.length) {
+        supplementalHtml = `<div class="knight-falcon-choices"><strong>Une information au choix :</strong><ul>${informationChoices.map((choice) => `<li>${escapeHtml(choice)}</li>`).join("")}</ul></div>`;
       }
     }
     for (const [stat, title] of [["degats", "Dégâts"], ["violence", "Violence"]]) {
       if (capability[stat]?.dice != null) add(title, formatDice(capability[stat]));
     }
     const description = htmlToMarkdown(capability.description || "");
-    entries.push(`<section class="knight-trait knight-capability"><h3>${escapeHtml(capability.label || key)}</h3><div class="knight-trait-description">${markdownishHtml(description)}${rows.length ? `<div class="knight-capability-details">${rows.join("\n")}</div>` : ""}${supplementalHtml}</div></section>`);
+    entries.push(`<section class="knight-trait knight-capability"><h3>${escapeHtml(capability.label || key)}</h3><div class="knight-trait-description">${description ? `<div class="knight-capability-prose">${markdownishHtml(description)}</div>` : ""}${rows.length ? `<div class="knight-capability-details">${rows.join("\n")}</div>` : ""}${supplementalHtml}</div></section>`);
   }
   return entries.length ? `<section class="knight-traits knight-capabilities" aria-label="Capacités de méta-armure">${entries.join("\n")}</section>` : "";
 }

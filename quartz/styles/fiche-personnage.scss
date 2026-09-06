@@ -538,6 +538,67 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   grid-column: 1 / -1;
 }
 
+.knight-capability:has(.knight-capability-table-wide),
+.knight-capability:has(.knight-falcon-choices) {
+  grid-column: 1 / -1;
+}
+
+.knight-capability-table-wrap {
+  margin-top: 0.5rem;
+  overflow-x: auto;
+}
+
+.knight-capability-table {
+  width: 100%;
+  margin: 0;
+  font-size: 0.82em;
+  line-height: 1.08;
+}
+
+.knight-capability-table th,
+.knight-capability-table td {
+  padding: 0.3rem 0.4rem;
+  vertical-align: top;
+}
+
+.knight-capability-table td > small {
+  display: block;
+  margin-top: 0.12em;
+  color: var(--knight-muted);
+  line-height: 1.08;
+}
+
+.knight-capability-effects-table td:last-child {
+  width: 70%;
+}
+
+.knight-mechanic-table {
+  table-layout: fixed;
+}
+
+.knight-mechanic-table th:nth-child(1) { width: 20%; }
+.knight-mechanic-table th:nth-child(2) { width: 34%; }
+.knight-mechanic-table th:nth-child(3) { width: 18%; }
+.knight-mechanic-table th:nth-child(4) { width: 28%; }
+
+.knight-falcon-choices {
+  margin-top: 0.45rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid #b89552;
+}
+
+.knight-falcon-choices ul {
+  columns: 2;
+  column-gap: 1.5rem;
+  margin: 0.3rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.knight-falcon-choices li {
+  margin-bottom: 0.18rem;
+  break-inside: avoid;
+}
+
 .knight-goliath-table-wrap {
   margin-top: 0.5rem;
   overflow-x: auto;
@@ -609,6 +670,19 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   article:has(.knight-sheet-marker) table::-webkit-scrollbar-thumb {
     background: var(--knight-accent);
     border-radius: 999px;
+  }
+
+  article:has(.knight-sheet-marker) .knight-mechanic-table {
+    display: table;
+    width: 100%;
+    max-width: none;
+    overflow: visible;
+    table-layout: fixed;
+    white-space: normal;
+  }
+
+  .knight-capability-table-wrap:has(.knight-mechanic-table) {
+    overflow: visible;
   }
 
   .knight-identity {
@@ -1079,6 +1153,10 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     line-height: 1.05 !important;
   }
 
+  .knight-capability-prose {
+    display: none !important;
+  }
+
   .knight-effect {
     font-size: 7.5pt;
   }
@@ -1134,6 +1212,47 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   .knight-goliath-table td > small {
     margin-top: 0;
     color: #333 !important;
+  }
+
+  .knight-capability-table-wrap {
+    margin-top: 1mm;
+    overflow: visible;
+  }
+
+  .knight-capability-table {
+    font-size: 6.2pt;
+    line-height: 1;
+  }
+
+  .knight-capability-table th,
+  .knight-capability-table td {
+    padding: 0.45mm 0.65mm;
+  }
+
+  .knight-capability-table td > small {
+    margin-top: 0;
+    color: #333 !important;
+    line-height: 1 !important;
+  }
+
+  .knight-capability-effects-table td:last-child {
+    width: 67%;
+  }
+
+  .knight-falcon-choices {
+    margin-top: 0.8mm;
+    padding-top: 0.7mm;
+  }
+
+  .knight-falcon-choices ul {
+    column-gap: 4mm;
+    margin-top: 0.5mm;
+    padding-left: 4mm;
+  }
+
+  .knight-falcon-choices li {
+    margin-bottom: 0.4mm;
+    line-height: 1.02;
   }
 
   .knight-page-two {
