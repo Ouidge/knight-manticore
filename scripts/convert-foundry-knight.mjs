@@ -324,6 +324,19 @@ function slugify(value = "") {
     .replace(/^-+|-+$/g, "");
 }
 
+function quartzNoteSlug(value = "") {
+  // Quartz conserve les caractères Unicode des noms de fichiers dans ses slugs.
+  // On encode donc le nom sans retirer les accents, contrairement aux liens du
+  // site de règles externe qui utilisent des slugs ASCII.
+  const slug = String(value)
+    .trim()
+    .toLocaleLowerCase("fr")
+    .replace(/\s+/g, "-")
+    .replace(/#/g, "")
+    .replace(/\?/g, "");
+  return encodeURIComponent(slug);
+}
+
 function weaponMode(name = "") {
   return name.match(/\s+-\s+(.+)$/)?.[1] ?? "Attaque";
 }
@@ -375,33 +388,42 @@ function grenadeModuleBonus(grenadeKey, statistic) {
 }
 
 function damageViolenceBonuses(effects = [], extra = {}) {
-  const bonuses = [];
+  const damage = [];
+  const violence = [];
 
   for (const effect of effects) {
     if (typeof effect !== "string") continue;
     const normalized = normalizeKey(effect);
     const continuous = effect.match(/d[eé]g[aâ]ts\s*continus\s+(\d+)/i);
 
-    if (normalized === "faucheusegravee") bonuses.push("D +1D6 (Faucheuse gravée)");
-    if (normalized === "meurtrier") bonuses.push("D +2D6 (Meurtrier)");
-    if (normalized === "destructeur") bonuses.push("D +2D6 (Destructeur)");
-    if (normalized === "ultraviolence") {
-      bonuses.push("V +2D6 (bande, Chair < 10)");
+    if (normalized === "faucheusegravee") damage.push("+1D6 (Faucheuse gravée)");
+    if (normalized === "meurtrier") damage.push("+2D6 (Meurtrier)");
+    if (normalized === "destructeur") damage.push("+2D6 (Destructeur)");
+    if (normalized === "surmesure") {
+      const combat = characteristicValue("bete", "combat") + overdriveValue("bete", "combat");
+      if (combat) damage.push(`+${combat} (Sur mesure)`);
     }
-    if (normalized === "fureur") bonuses.push("V +4D6 (bande, Chair > 10)");
-    if (continuous) bonuses.push(`D continus ${continuous[1]}`);
+    if (normalized === "ultraviolence") {
+      violence.push("+2D6 (bande, Chair < 10)");
+    }
+    if (normalized === "fureur") violence.push("+4D6 (bande, Chair > 10)");
+    if (continuous) damage.push(`Dégâts continus ${continuous[1]}`);
   }
 
   const extraDamage = number(extra.damage);
   const extraViolence = number(extra.violence);
-  if (extraDamage || extraViolence) {
-    const values = [];
-    if (extraDamage) values.push(`D +${extraDamage}D6`);
-    if (extraViolence) values.push(`V +${extraViolence}D6`);
-    bonuses.push(`${values.join(" / ")} (module Grenades intelligentes)`);
-  }
+  if (extraDamage) damage.push(`+${extraDamage}D6 (module Grenades intelligentes)`);
+  if (extraViolence) violence.push(`+${extraViolence}D6 (module Grenades intelligentes)`);
 
-  return [...new Set(bonuses)].join(" · ") || "—";
+  return {
+    damage: [...new Set(damage)],
+    violence: [...new Set(violence)],
+  };
+}
+
+function bonusLinesHtml(bonuses = []) {
+  if (!bonuses.length) return "";
+  return `<small class="knight-dv-bonus">${bonuses.map((bonus) => `<span>${escapeHtml(bonus)}</span>`).join("")}</small>`;
 }
 
 const EFFECT_PRESENTATIONS = {
@@ -418,6 +440,7 @@ const EFFECT_PRESENTATIONS = {
   destructeur: ["Destructeur", "Destructeur"],
   deuxmains: ["Deux mains", "Deux mains"],
   dispersion: ["Dispersion", "Dispersion"],
+  electrifiee: ["Choc 1 (Électrifiée)", "Choc X"],
   enchaine: ["En chaîne", "En chaîne"],
   fureur: ["Fureur", "Fureur"],
   ignorearmure: ["Ignore armure", "Ignore armure"],
@@ -444,10 +467,11 @@ const EFFECT_PRESENTATIONS = {
 const UNLINKED_EFFECT_LABELS = {
   boucliergrave: "Bouclier gravé",
   canonlong: "Canon long",
-  electrifiee: "Électrifiée",
   faucheusegravee: "Faucheuse gravée",
   jumelle: "Jumelle",
   pointeurlaser: "Pointeur laser",
+  soeur: "Sœur",
+  surmesure: "Sur mesure",
   tenebricide: "Ténébricide",
 };
 
@@ -470,7 +494,7 @@ function effectsHtml(effects = []) {
     if (!note) return escapeHtml(label);
     // Quartz ajoute lui-même le préfixe du site GitHub Pages (`/knight-manticore`).
     // Le conserver ici produirait un chemin doublé après le rendu.
-    const href = `/%F0%9F%93%90-aides-de-jeu/effets/${slugify(note)}`;
+    const href = `/%F0%9F%93%90-aides-de-jeu/effets/${quartzNoteSlug(note)}`;
     return `<a class="internal knight-effect-link" href="${href}">${escapeHtml(label)}</a>`;
   });
   return rendered.join(", ") || "—";
@@ -506,10 +530,11 @@ function arsenalSection(groups) {
       const mode = weaponMode(weapon.name);
       const range = rangeAbbreviation(weapon.system?.portee);
       const rangeAndMode = mode === "Attaque" ? range : `${mode} · ${range}`;
-      const dvBonuses = damageViolenceBonuses(effects);
-      const damageCell = `${escapeHtml(formatDice(weapon.system?.degats))}${dvBonuses === "—" ? "" : `<small class="knight-dv-bonus">${escapeHtml(dvBonuses)}</small>`}`;
+      const bonuses = damageViolenceBonuses(effects);
+      const damageCell = `${escapeHtml(formatDice(weapon.system?.degats))}${bonusLinesHtml(bonuses.damage)}`;
+      const violenceCell = `${escapeHtml(formatDice(weapon.system?.violence))}${bonusLinesHtml(bonuses.violence)}`;
       lines.push(
-        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a>${modesLabel}</td>` : ""}<td>${escapeHtml(rangeAndMode)}</td><td class="knight-damage-cell">${damageCell}</td><td>${escapeHtml(formatDice(weapon.system?.violence))}</td><td>${effectsHtml(effects)}</td></tr>`,
+        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weapon.arsenalUrl ?? weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a>${modesLabel}</td>` : ""}<td>${escapeHtml(rangeAndMode)}</td><td class="knight-damage-cell">${damageCell}</td><td class="knight-damage-cell">${violenceCell}</td><td>${effectsHtml(effects)}</td></tr>`,
       );
     }
   }
@@ -531,10 +556,11 @@ function arsenalSection(groups) {
         damage: grenadeModuleBonus(key, "degats"),
         violence: grenadeModuleBonus(key, "violence"),
       };
-      const dvBonuses = damageViolenceBonuses(effects, moduleBonus);
-      const damageCell = `${escapeHtml(formatDice(grenade.degats))}${dvBonuses === "—" ? "" : `<small class="knight-dv-bonus">${escapeHtml(dvBonuses)}</small>`}`;
+      const bonuses = damageViolenceBonuses(effects, moduleBonus);
+      const damageCell = `${escapeHtml(formatDice(grenade.degats))}${bonusLinesHtml(bonuses.damage)}`;
+      const violenceCell = `${escapeHtml(formatDice(grenade.violence))}${bonusLinesHtml(bonuses.violence)}`;
       lines.push(
-        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>CT</td><td class="knight-damage-cell">${damageCell}</td><td>${escapeHtml(formatDice(grenade.violence))}</td><td>${effectsHtml(effects)}</td></tr>`,
+        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>CT</td><td class="knight-damage-cell">${damageCell}</td><td class="knight-damage-cell">${violenceCell}</td><td>${effectsHtml(effects)}</td></tr>`,
       );
     }
   }
@@ -702,6 +728,25 @@ function selectedModuleData(item) {
   return details[`n${level}`] ?? details[`n${item.system?.niveau?.value}`] ?? {};
 }
 
+function moduleWeaponProfile(item) {
+  const weapon = selectedModuleData(item).arme;
+  if (!weapon?.has) return null;
+  const hasCombatValues = Boolean(
+    number(weapon.degats?.dice) ||
+      number(weapon.degats?.fixe) ||
+      number(weapon.violence?.dice) ||
+      number(weapon.violence?.fixe) ||
+      weapon.degats?.variable?.has ||
+      weapon.violence?.variable?.has,
+  );
+  if (!hasCombatValues) return null;
+  return {
+    name: item.name,
+    system: weapon,
+    arsenalUrl: moduleUrl(item.name),
+  };
+}
+
 function isOverdriveModule(item) {
   const overdrives = selectedModuleData(item).overdrives;
   if (overdrives?.has) return true;
@@ -797,9 +842,12 @@ const iaDisadvantages = items.filter(
   (item) => item.type === "inconvenient" && item.system?.type === "ia" && meaningfulItem(item),
 );
 const injuries = items.filter((item) => item.type === "blessure" && meaningfulItem(item));
-const weapons = items.filter((item) => item.type === "arme" && meaningfulItem(item));
 const modules = latestModules(items.filter((item) => item.type === "module"));
 const displayedModules = modules.filter((item) => !isOverdriveModule(item));
+const weapons = [
+  ...items.filter((item) => item.type === "arme" && meaningfulItem(item)),
+  ...modules.map(moduleWeaponProfile).filter(Boolean),
+];
 
 const weaponGroups = new Map();
 for (const weapon of weapons) {
@@ -905,16 +953,16 @@ const blasonName = String(system.blason ?? "").replace(/[\[\]]/g, "").trim();
 const blasonLink = blasonName
   ? `<a class="internal" href="/%F0%9F%93%90-aides-de-jeu/blasons/${slugify(blasonName)}">${escapeHtml(blasonName)}</a>`
   : "—";
+const armorName = armor?.name || system.metaarmure || "";
+const armorProfileLink = armorName
+  ? `<strong><a href="${armorUrl(armorName)}">${escapeHtml(armorName)}</a></strong> · `
+  : "";
 out.push(
-  `<p class="knight-profile-lead"><strong>${escapeHtml(system.archetype || "Archétype inconnu")}</strong> · Section <strong>${escapeHtml(system.section || "—")}</strong> · Blason <strong>${blasonLink}</strong></p>`,
+  `<p class="knight-profile-lead">${armorProfileLink}<strong>${escapeHtml(system.archetype || "Archétype inconnu")}</strong> · Section <strong>${escapeHtml(system.section || "—")}</strong> · Blason <strong>${blasonLink}</strong></p>`,
 );
 out.push("</div>");
 out.push('<dl class="knight-profile-details">');
 out.push(`<div><dt>Haut fait</dt><dd>${escapeHtml(system.hautFait || "—")}</dd></div>`);
-const armorName = armor?.name || system.metaarmure || "";
-out.push(
-  `<div><dt>Méta-armure</dt><dd>${armorName ? `<a href="${armorUrl(armorName)}">${escapeHtml(armorName)} ↗</a>` : "—"}</dd></div>`,
-);
 out.push(
   `<div class="knight-major-motivation"><dt>Motivation majeure</dt><dd>${escapeHtml(htmlToMarkdown(system.motivations?.majeure) || "—")}</dd></div>`,
 );

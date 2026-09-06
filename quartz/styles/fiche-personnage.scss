@@ -309,6 +309,10 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   line-height: 1.08;
 }
 
+.knight-arsenal-table .knight-dv-bonus > span {
+  display: block;
+}
+
 .knight-arsenal-table td[rowspan] {
   vertical-align: top;
   font-weight: 700;
@@ -849,6 +853,17 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     line-height: 1.04;
   }
 
+  article:has(.knight-sheet-marker) .knight-arsenal-table td:last-child {
+    line-height: 0.88 !important;
+  }
+
+  article:has(.knight-sheet-marker) .knight-arsenal-table td:last-child .knight-effect-link {
+    display: inline !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: inherit !important;
+  }
+
   article:has(.knight-sheet-marker) .knight-arsenal-table .knight-dv-bonus {
     margin-top: 0.25mm;
     color: #6e4700 !important;
@@ -932,8 +947,14 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   }
 
   .knight-traits:not(.knight-capabilities) {
-    margin: 0.7mm 0;
-    row-gap: 1mm;
+    margin: 0.3mm 0;
+    column-gap: 1.2mm;
+    row-gap: 0.5mm;
+  }
+
+  .knight-traits:not(.knight-capabilities) > h2 {
+    display: none !important;
+    height: 0 !important;
   }
 
   .knight-ia-character {
