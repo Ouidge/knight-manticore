@@ -399,6 +399,10 @@ function damageViolenceBonuses(effects = [], extra = {}) {
     if (normalized === "faucheusegravee") damage.push("+1D6 (Faucheuse gravée)");
     if (normalized === "meurtrier") damage.push("+2D6 (Meurtrier)");
     if (normalized === "destructeur") damage.push("+2D6 (Destructeur)");
+    if (normalized === "silencieux") {
+      const discretion = characteristicValue("masque", "discretion") + overdriveValue("masque", "discretion");
+      if (discretion) damage.push(`+${discretion} (Silencieux — surprise, invisibilité, Ghost ou Changeling)`);
+    }
     if (normalized === "surmesure") {
       const combat = characteristicValue("bete", "combat") + overdriveValue("bete", "combat");
       if (combat) damage.push(`+${combat} (Sur mesure)`);
@@ -424,6 +428,62 @@ function damageViolenceBonuses(effects = [], extra = {}) {
 function bonusLinesHtml(bonuses = []) {
   if (!bonuses.length) return "";
   return `<small class="knight-dv-bonus">${bonuses.map((bonus) => `<span>${escapeHtml(bonus)}</span>`).join("")}</small>`;
+}
+
+function precomputedDamage(stat = {}, effects = [], options = {}) {
+  if (stat.variable?.has) {
+    return { formula: "Variable", details: ["Selon le réglage de l’arme"] };
+  }
+
+  let dice = number(stat.dice);
+  let fixed = number(stat.fixe);
+  const details = [];
+  const normalizedEffects = new Set(
+    effects.filter((effect) => typeof effect === "string").map(normalizeKey),
+  );
+
+  if (options.contact) {
+    const force = characteristicValue("chair", "force");
+    const forceOverdrive = overdriveValue("chair", "force");
+    const overdriveDamage = forceOverdrive * 3;
+    const isWeighted = normalizedEffects.has("leste");
+    const forceDamage = force * (isWeighted ? 2 : 1);
+    fixed += forceDamage + overdriveDamage;
+    if (force) details.push(isWeighted ? `Force ${force} × 2 (Lesté)` : `Force ${force}`);
+    if (overdriveDamage) details.push(`OD Force +${overdriveDamage}`);
+  }
+
+  if (normalizedEffects.has("surmesure")) {
+    const combat = characteristicValue("bete", "combat") + overdriveValue("bete", "combat");
+    fixed += combat;
+    if (combat) details.push(`Sur mesure +${combat}`);
+  }
+
+  if (normalizedEffects.has("faucheusegravee")) {
+    dice += 1;
+    details.push("Faucheuse gravée +1D6");
+  }
+
+  const extraDice = number(options.extraDice);
+  if (extraDice) {
+    dice += extraDice;
+    details.push(`Module +${extraDice}D6`);
+  }
+
+  return { formula: formatDice({ dice, fixe: fixed }), details };
+}
+
+function precomputedDamageHtml(calculation, conditionalBonuses = []) {
+  const detail = calculation.details?.length
+    ? `<small class="knight-damage-calculation-detail">${calculation.details.map(escapeHtml).join(" · ")}</small>`
+    : "";
+  return `<strong class="knight-damage-calculation">${escapeHtml(calculation.formula)}</strong>${detail}${bonusLinesHtml(conditionalBonuses)}`;
+}
+
+function conditionalDamageBonuses(bonuses = []) {
+  return bonuses.filter((bonus) =>
+    /\((?:Meurtrier|Destructeur|Silencieux\b)|^Dégâts continus\b/i.test(bonus),
+  );
 }
 
 const EFFECT_PRESENTATIONS = {
@@ -505,7 +565,7 @@ function arsenalSection(groups) {
   if (!groups.size && number(grenades.quantity?.max) <= 0) return "";
   const lines = [
     '<h3 class="knight-equipment-title">Arsenal</h3>',
-    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th></tr></thead><tbody>',
+    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th><th>Dégâts PJ</th></tr></thead><tbody>',
   ];
 
   for (const [baseName, group] of groups) {
@@ -531,10 +591,13 @@ function arsenalSection(groups) {
       const range = rangeAbbreviation(weapon.system?.portee);
       const rangeAndMode = mode === "Attaque" ? range : `${mode} · ${range}`;
       const bonuses = damageViolenceBonuses(effects);
-      const damageCell = `${escapeHtml(formatDice(weapon.system?.degats))}${bonusLinesHtml(bonuses.damage)}`;
+      const damageCell = escapeHtml(formatDice(weapon.system?.degats));
       const violenceCell = `${escapeHtml(formatDice(weapon.system?.violence))}${bonusLinesHtml(bonuses.violence)}`;
+      const calculatedDamage = precomputedDamage(weapon.system?.degats, effects, {
+        contact: normalizeKey(weapon.system?.type) === "contact" || normalizeKey(weapon.system?.portee) === "contact",
+      });
       lines.push(
-        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weapon.arsenalUrl ?? weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a>${modesLabel}</td>` : ""}<td>${escapeHtml(rangeAndMode)}</td><td class="knight-damage-cell">${damageCell}</td><td class="knight-damage-cell">${violenceCell}</td><td>${effectsHtml(effects)}</td></tr>`,
+        `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weapon.arsenalUrl ?? weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a>${modesLabel}</td>` : ""}<td>${escapeHtml(rangeAndMode)}</td><td class="knight-damage-cell">${damageCell}</td><td class="knight-damage-cell">${violenceCell}</td><td class="knight-effects-cell">${effectsHtml(effects)}</td><td class="knight-calculated-damage-cell">${precomputedDamageHtml(calculatedDamage, conditionalDamageBonuses(bonuses.damage))}</td></tr>`,
       );
     }
   }
@@ -557,10 +620,11 @@ function arsenalSection(groups) {
         violence: grenadeModuleBonus(key, "violence"),
       };
       const bonuses = damageViolenceBonuses(effects, moduleBonus);
-      const damageCell = `${escapeHtml(formatDice(grenade.degats))}${bonusLinesHtml(bonuses.damage)}`;
+      const damageCell = escapeHtml(formatDice(grenade.degats));
       const violenceCell = `${escapeHtml(formatDice(grenade.violence))}${bonusLinesHtml(bonuses.violence)}`;
+      const calculatedDamage = precomputedDamage(grenade.degats, effects, { extraDice: moduleBonus.damage });
       lines.push(
-        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>CT</td><td class="knight-damage-cell">${damageCell}</td><td class="knight-damage-cell">${violenceCell}</td><td>${effectsHtml(effects)}</td></tr>`,
+        `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>CT</td><td class="knight-damage-cell">${damageCell}</td><td class="knight-damage-cell">${violenceCell}</td><td class="knight-effects-cell">${effectsHtml(effects)}</td><td class="knight-calculated-damage-cell">${precomputedDamageHtml(calculatedDamage, conditionalDamageBonuses(bonuses.damage))}</td></tr>`,
       );
     }
   }

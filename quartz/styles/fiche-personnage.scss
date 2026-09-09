@@ -290,7 +290,7 @@ article:has(.knight-sheet-marker) .knight-arsenal-table td em {
 }
 
 article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) td:last-child,
-article:has(.knight-sheet-marker) .knight-arsenal-table td:last-child {
+article:has(.knight-sheet-marker) .knight-arsenal-table .knight-effects-cell {
   line-height: 1.08;
 }
 
@@ -307,19 +307,47 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 }
 
 .knight-arsenal-table th:first-child {
-  width: 19%;
+  width: 17%;
 }
 
 .knight-arsenal-table th:nth-child(2) {
-  width: 11%;
+  width: 9%;
 }
 
 .knight-arsenal-table th:nth-child(3) {
-  width: 25%;
+  width: 18%;
 }
 
 .knight-arsenal-table th:nth-child(4) {
   width: 10%;
+}
+
+.knight-arsenal-table th:nth-child(5) {
+  width: 30%;
+}
+
+.knight-arsenal-table th:nth-child(6) {
+  width: 16%;
+}
+
+.knight-calculated-damage-cell {
+  text-align: center;
+}
+
+.knight-damage-calculation {
+  display: block;
+  color: var(--knight-accent) !important;
+  font-size: 1.03em;
+  white-space: nowrap;
+}
+
+.knight-damage-calculation-detail {
+  display: block;
+  margin-top: 0.16rem;
+  color: var(--knight-muted) !important;
+  font-size: 0.78em;
+  font-weight: 500;
+  line-height: 1.05;
 }
 
 .knight-weapon-mode {
@@ -774,10 +802,12 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 @media print {
   html:has(.knight-sheet-marker),
   body:has(.knight-sheet-marker) {
-    width: 100% !important;
-    max-width: none !important;
+    width: 188mm !important;
+    min-width: 0 !important;
+    max-width: 188mm !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: visible !important;
     background: white !important;
   }
 
@@ -787,10 +817,14 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   body:has(.knight-sheet-marker) .page > main,
   body:has(.knight-sheet-marker) main.center {
     display: block !important;
-    width: 100% !important;
-    max-width: none !important;
+    box-sizing: border-box !important;
+    width: 188mm !important;
+    min-width: 0 !important;
+    max-width: 188mm !important;
     margin: 0 !important;
     padding: 0 !important;
+    overflow: visible !important;
+    transform: none !important;
   }
 
   body:has(.knight-sheet-marker) #quartz-body {
@@ -950,8 +984,9 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     --knight-accent: #8a5b00;
     --knight-text: #111;
     --knight-muted: #444;
-    width: auto !important;
-    max-width: none !important;
+    width: 188mm !important;
+    min-width: 0 !important;
+    max-width: 188mm !important;
     margin: 0 !important;
     box-sizing: border-box;
     padding: 1mm 1.5mm !important;
@@ -962,6 +997,15 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     box-shadow: none !important;
     font-size: 8.1pt;
     line-height: 1.16;
+  }
+
+  article:has(.knight-sheet-marker) .knight-capability-table-wrap,
+  article:has(.knight-sheet-marker) .knight-goliath-table-wrap {
+    box-sizing: border-box;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: visible !important;
   }
 
   article:has(.knight-sheet-marker) h1 {
@@ -1049,15 +1093,24 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     line-height: 1.04;
   }
 
-  article:has(.knight-sheet-marker) .knight-arsenal-table td:last-child {
+  article:has(.knight-sheet-marker) .knight-arsenal-table .knight-effects-cell {
     line-height: 0.88 !important;
   }
 
-  article:has(.knight-sheet-marker) .knight-arsenal-table td:last-child .knight-effect-link {
+  article:has(.knight-sheet-marker) .knight-arsenal-table .knight-effects-cell .knight-effect-link {
     display: inline !important;
     margin: 0 !important;
     padding: 0 !important;
     line-height: inherit !important;
+  }
+
+  article:has(.knight-sheet-marker) .knight-damage-calculation {
+    color: #6e4700 !important;
+    font-size: 6.8pt;
+  }
+
+  article:has(.knight-sheet-marker) .knight-damage-calculation-detail {
+    display: none !important;
   }
 
   article:has(.knight-sheet-marker) .knight-arsenal-table .knight-dv-bonus {
