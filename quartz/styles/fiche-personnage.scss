@@ -68,6 +68,36 @@ article:has(.knight-sheet-marker) tbody tr:nth-child(even) td {
   background: rgb(112 134 155 / 8%);
 }
 
+.knight-print-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0 0;
+}
+
+.knight-print-button {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  padding: 0.42rem 0.72rem;
+  color: var(--knight-text);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  background: #222d38;
+  border: 1px solid var(--knight-accent);
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 22%);
+}
+
+.knight-print-button:hover,
+.knight-print-button:focus-visible {
+  color: #11161d;
+  background: var(--knight-accent);
+  outline: none;
+}
+
 .knight-identity {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 116px;
@@ -729,6 +759,11 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   .knight-traits {
     grid-template-columns: 1fr;
   }
+
+  .knight-print-actions {
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
 }
 
 @page {
@@ -737,8 +772,30 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 }
 
 @media print {
+  html:has(.knight-sheet-marker),
   body:has(.knight-sheet-marker) {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
     background: white !important;
+  }
+
+  body:has(.knight-sheet-marker) .page,
+  body:has(.knight-sheet-marker) #quartz-body,
+  body:has(.knight-sheet-marker) .center,
+  body:has(.knight-sheet-marker) .page > main,
+  body:has(.knight-sheet-marker) main.center {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  body:has(.knight-sheet-marker) #quartz-body {
+    grid-template: none !important;
+    grid-template-columns: minmax(0, 1fr) !important;
   }
 
   body:has(.knight-sheet-marker) header,
@@ -943,11 +1000,17 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   }
 
   article:has(.knight-sheet-marker) table {
+    display: table !important;
+    width: 100% !important;
+    max-width: none !important;
     margin: 1mm 0 1.5mm;
+    overflow: visible !important;
     color: #111 !important;
     background: white !important;
     border: 1.2px solid #8a5b00 !important;
     font-size: 7.7pt;
+    table-layout: fixed;
+    white-space: normal !important;
     break-inside: avoid;
   }
 

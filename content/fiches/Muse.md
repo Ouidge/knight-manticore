@@ -210,3 +210,5 @@ cssclasses:
 </section>
 
 <div class="screen-only knight-generation-note"><hr><p><em>Fiche générée depuis un export Foundry VTT — système Knight 3.58.35.</em></p></div>
+
+<div class="screen-only knight-print-actions"><button type="button" class="knight-print-button" onclick="window.print()" aria-label="Imprimer la fiche">🖨 Imprimer la fiche</button></div>
