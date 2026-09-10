@@ -565,10 +565,11 @@ function arsenalSection(groups) {
   if (!groups.size && number(grenades.quantity?.max) <= 0) return "";
   const lines = [
     '<h3 class="knight-equipment-title">Arsenal</h3>',
-    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th><th>Dégâts PJ</th></tr></thead><tbody>',
+    '<table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th><th>Dégâts PJ</th></tr></thead>',
   ];
 
   for (const [baseName, group] of groups) {
+    lines.push('<tbody class="knight-weapon-group">');
     const modes = group
       .map((weapon) => weaponMode(weapon.name))
       .filter((mode) => mode !== "Attaque");
@@ -600,6 +601,7 @@ function arsenalSection(groups) {
         `<tr>${index === 0 ? `<td rowspan="${group.length}"><a href="${weapon.arsenalUrl ?? weaponUrl(baseName)}">${escapeHtml(baseName)} ↗</a>${modesLabel}</td>` : ""}<td>${escapeHtml(rangeAndMode)}</td><td class="knight-damage-cell">${damageCell}</td><td class="knight-damage-cell">${violenceCell}</td><td class="knight-effects-cell">${effectsHtml(effects)}</td><td class="knight-calculated-damage-cell">${precomputedDamageHtml(calculatedDamage, conditionalDamageBonuses(bonuses.damage))}</td></tr>`,
       );
     }
+    lines.push("</tbody>");
   }
 
   const grenadeLabels = {
@@ -610,6 +612,7 @@ function arsenalSection(groups) {
     shrapnel: "Grenade shrapnel",
   };
   if (number(grenades.quantity?.max) > 0) {
+    lines.push('<tbody class="knight-grenade-group">');
     for (const [index, [key, grenade]] of Object.entries(grenades.liste ?? {}).entries()) {
       const effects = [
         ...(grenade.effets?.raw ?? []),
@@ -627,9 +630,10 @@ function arsenalSection(groups) {
         `<tr class="knight-grenade-row${index === 0 ? " knight-first-grenade" : ""}"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">${escapeHtml(grenade.custom ? grenade.label : grenadeLabels[key] ?? `Grenade ${key}`)} ↗</a></td><td>CT</td><td class="knight-damage-cell">${damageCell}</td><td class="knight-damage-cell">${violenceCell}</td><td class="knight-effects-cell">${effectsHtml(effects)}</td><td class="knight-calculated-damage-cell">${precomputedDamageHtml(calculatedDamage, conditionalDamageBonuses(bonuses.damage))}</td></tr>`,
       );
     }
+    lines.push("</tbody>");
   }
 
-  lines.push("</tbody></table>");
+  lines.push("</table>");
   lines.push(
     `<p class="knight-range-legend"><strong>Portées :</strong> <a href="${rangeHelpUrl("contact")}"><strong>C — Contact</strong> : distance de mêlée</a> · <a href="${rangeHelpUrl("courte")}"><strong>CT — Courte</strong> : 2–15 m</a> · <a href="${rangeHelpUrl("moyenne")}"><strong>M — Moyenne</strong> : 15–50 m</a> · <a href="${rangeHelpUrl("longue")}"><strong>L — Longue</strong> : 50–300 m</a> · <a href="${rangeHelpUrl("lointaine")}"><strong>LT — Lointaine</strong> : plus de 300 m</a></p>`,
   );

@@ -796,15 +796,15 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
 @page {
   size: A4 portrait;
-  margin: 12mm 11mm 10mm;
+  margin: 14mm 13mm 12mm;
 }
 
 @media print {
   html:has(.knight-sheet-marker),
   body:has(.knight-sheet-marker) {
-    width: 188mm !important;
+    width: 184mm !important;
     min-width: 0 !important;
-    max-width: 188mm !important;
+    max-width: 184mm !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
@@ -818,9 +818,9 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   body:has(.knight-sheet-marker) main.center {
     display: block !important;
     box-sizing: border-box !important;
-    width: 188mm !important;
+    width: 184mm !important;
     min-width: 0 !important;
-    max-width: 188mm !important;
+    max-width: 184mm !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
@@ -984,9 +984,9 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     --knight-accent: #8a5b00;
     --knight-text: #111;
     --knight-muted: #444;
-    width: 188mm !important;
+    width: 184mm !important;
     min-width: 0 !important;
-    max-width: 188mm !important;
+    max-width: 184mm !important;
     margin: 0 !important;
     box-sizing: border-box;
     padding: 1mm 1.5mm !important;
@@ -1078,6 +1078,22 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   article:has(.knight-sheet-marker) .knight-arsenal-table {
     margin-top: 4mm;
     font-size: 6.8pt;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  article:has(.knight-sheet-marker) .knight-arsenal-table thead {
+    display: table-header-group;
+  }
+
+  article:has(.knight-sheet-marker) .knight-arsenal-table tbody {
+    display: table-row-group;
+  }
+
+  article:has(.knight-sheet-marker) .knight-arsenal-table tr,
+  article:has(.knight-sheet-marker) .knight-arsenal-table .knight-weapon-group {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 
   article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]),
