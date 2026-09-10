@@ -527,6 +527,14 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   margin: 0.8rem 0;
 }
 
+.knight-traits:not(.knight-capabilities) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.knight-traits:not(.knight-capabilities) > .knight-trait:only-of-type {
+  grid-column: 1 / -1;
+}
+
 .knight-traits > h2 {
   grid-column: 1 / -1;
   margin-bottom: 0;
@@ -788,6 +796,10 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     grid-template-columns: 1fr;
   }
 
+  .knight-traits:not(.knight-capabilities) {
+    grid-template-columns: 1fr;
+  }
+
   .knight-print-actions {
     justify-content: center;
     margin-top: 1.25rem;
@@ -796,15 +808,15 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
 @page {
   size: A4 portrait;
-  margin: 14mm 13mm 12mm;
+  margin: 12mm;
 }
 
 @media print {
   html:has(.knight-sheet-marker),
   body:has(.knight-sheet-marker) {
-    width: 184mm !important;
+    width: auto !important;
     min-width: 0 !important;
-    max-width: 184mm !important;
+    max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
@@ -818,9 +830,9 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   body:has(.knight-sheet-marker) main.center {
     display: block !important;
     box-sizing: border-box !important;
-    width: 184mm !important;
+    width: 100% !important;
     min-width: 0 !important;
-    max-width: 184mm !important;
+    max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
     overflow: visible !important;
@@ -984,9 +996,9 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     --knight-accent: #8a5b00;
     --knight-text: #111;
     --knight-muted: #444;
-    width: 184mm !important;
+    width: 100% !important;
     min-width: 0 !important;
-    max-width: 184mm !important;
+    max-width: 100% !important;
     margin: 0 !important;
     box-sizing: border-box;
     padding: 1mm 1.5mm !important;

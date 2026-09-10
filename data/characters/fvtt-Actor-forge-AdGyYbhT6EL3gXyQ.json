@@ -13975,6 +13975,62 @@
         "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "exportSource": null
       }
+    },
+    {
+      "name": "Admin Knight Korrigan (1)",
+      "type": "contact",
+      "img": "systems/knight/assets/icons/contact.svg",
+      "system": {
+        "description": ""
+      },
+      "_id": "FpsTcUsqvJ8mW51X",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": 1789024736996,
+        "modifiedTime": 1789024742563,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "name": "Franklin Ilianov",
+      "type": "contact",
+      "img": "systems/knight/assets/icons/contact.svg",
+      "system": {
+        "description": "<p>cousin éloigné</p>"
+      },
+      "_id": "OsuM6YgwYTty3SD9",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": 1789024751728,
+        "modifiedTime": 1789024768422,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
     }
   ],
   "effects": [],

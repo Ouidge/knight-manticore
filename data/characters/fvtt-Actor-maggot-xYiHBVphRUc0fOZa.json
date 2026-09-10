@@ -12414,11 +12414,11 @@
       }
     },
     {
-      "name": "Contact",
+      "name": "Deirdre",
       "type": "contact",
       "img": "systems/knight/assets/icons/contact.svg",
       "system": {
-        "description": ""
+        "description": "<p>Dublin - Proche du maire </p>"
       },
       "_id": "RJJlLdGaGtqlxFRm",
       "effects": [],
@@ -12435,18 +12435,18 @@
         "exportSource": null,
         "coreVersion": "14.365",
         "systemId": "knight",
-        "systemVersion": "3.54.4",
+        "systemVersion": "3.58.35",
         "createdTime": 1784923205146,
-        "modifiedTime": 1784923205146,
-        "lastModifiedBy": "SYq7uyPjQaWolYA9"
+        "modifiedTime": 1789024635148,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN"
       }
     },
     {
-      "name": "Contact",
+      "name": "Raoul",
       "type": "contact",
       "img": "systems/knight/assets/icons/contact.svg",
       "system": {
-        "description": ""
+        "description": "<p>Paris - Truand</p>"
       },
       "_id": "dyOFKLULVMu0x5N9",
       "effects": [],
@@ -12463,10 +12463,10 @@
         "exportSource": null,
         "coreVersion": "14.365",
         "systemId": "knight",
-        "systemVersion": "3.54.4",
+        "systemVersion": "3.58.35",
         "createdTime": 1784923207080,
-        "modifiedTime": 1784923207080,
-        "lastModifiedBy": "SYq7uyPjQaWolYA9"
+        "modifiedTime": 1789024646183,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN"
       }
     },
     {
