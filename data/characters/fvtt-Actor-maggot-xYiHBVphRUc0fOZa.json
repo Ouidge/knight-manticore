@@ -12498,6 +12498,34 @@
         "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "exportSource": null
       }
+    },
+    {
+      "name": "Yin",
+      "type": "contact",
+      "img": "systems/knight/assets/icons/contact.svg",
+      "system": {
+        "description": ""
+      },
+      "_id": "KEUhJSAJtQrmkuwB",
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": 1789025163222,
+        "modifiedTime": 1789025170947,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
     }
   ],
   "effects": [],

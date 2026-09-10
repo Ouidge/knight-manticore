@@ -26,6 +26,11 @@ cssclasses:
 <li>Promouvoir le Knight</li>
 </ul></dd></div>
 </dl>
+<section class="knight-contacts knight-domain screen-only knight-contacts-screen">
+<h3>Contacts</h3>
+<ul><li><strong>Admin Knight Korrigan (1)</strong></li>
+<li><strong>Franklin Ilianov</strong> <span>— cousin éloigné</span></li></ul>
+</section>
 </div>
 <aside class="knight-profile-side">
 <div class="knight-portrait"><img src="https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Forge-portrait.png" alt="Portrait de Forge"></div>
@@ -34,8 +39,8 @@ cssclasses:
 <span><strong>PX</strong> 48 / 154</span>
 </div>
 <div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
-<span><strong title="Points de contact">PC</strong> 1</span>
-<span><strong title="Points d’héroïsme">PH</strong> 2 / 6</span>
+<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 2 / 6</span>
+<span class="knight-pc"><strong title="Points de contact">PC</strong> 1</span>
 </div>
 </aside>
 </section>
@@ -53,8 +58,8 @@ cssclasses:
 </div>
 <div class="knight-stat-table">
 <div class="knight-stat-cells knight-combat-cells">
-<div><span>Défense <small>MA / G</small></span><strong>4 / 4</strong></div>
-<div><span>Réaction <small>MA / G</small></span><strong>11 / 8</strong></div>
+<div><span>Défense</span><strong>4 / 4</strong></div>
+<div><span>Réaction</span><strong>11 / 8</strong></div>
 <div class="knight-initiative-cell"><span>Initiative</span><strong>2D6 + 3</strong></div>
 </div>
 </div>
@@ -98,6 +103,11 @@ cssclasses:
 <div class="knight-characteristic"><span>Dextérité</span><strong>2</strong><small>OD 0</small></div>
 <div class="knight-characteristic"><span>Perception</span><strong>3</strong><small>OD 0</small></div>
 </div></section>
+<section class="knight-contacts knight-domain print-only knight-contacts-print">
+<h3>Contacts</h3>
+<ul><li><strong>Admin Knight Korrigan (1)</strong></li>
+<li><strong>Franklin Ilianov</strong> <span>— cousin éloigné</span></li></ul>
+</section>
 </div>
 <div class="knight-nods"><strong>NODs</strong>
 <span>Soin <b>3D6</b><em class="knight-counter" aria-label="3 utilisations"><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i><i class="knight-check-box" aria-hidden="true"></i></em></span>
@@ -167,8 +177,6 @@ cssclasses:
 </table>
 <p class="knight-range-legend"><strong>Portées :</strong> <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/contact"><strong>C — Contact</strong> : distance de mêlée</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/courte"><strong>CT — Courte</strong> : 2–15 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/moyenne"><strong>M — Moyenne</strong> : 15–50 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/longue"><strong>L — Longue</strong> : 50–300 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/lointaine"><strong>LT — Lointaine</strong> : plus de 300 m</a></p>
 
-
-<div class="knight-page-two" aria-hidden="true"></div>
 
 ## Méta-armure — Priest
 

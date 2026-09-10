@@ -1,5 +1,7 @@
 [CmdletBinding()]
-param()
+param(
+    [string]$VaultDirectory
+)
 
 $ErrorActionPreference = "Stop"
 
@@ -7,6 +9,20 @@ $ErrorActionPreference = "Stop"
 # depuis lequel PowerShell a été ouvert.
 $ScriptDirectory = $PSScriptRoot
 $ConverterPath = Join-Path $ScriptDirectory "convert-foundry-knight.mjs"
+$StylePath = [System.IO.Path]::GetFullPath(
+    (Join-Path $ScriptDirectory "../quartz/styles/fiche-personnage.scss")
+)
+$ProjectDirectory = [System.IO.Path]::GetFullPath(
+    (Join-Path $ScriptDirectory "..")
+)
+if ([string]::IsNullOrWhiteSpace($VaultDirectory)) {
+    $VaultDirectory = $ProjectDirectory
+}
+else {
+    $VaultDirectory = [System.IO.Path]::GetFullPath($VaultDirectory)
+}
+$ObsidianSnippetsDirectory = Join-Path $VaultDirectory ".obsidian/snippets"
+$ObsidianStylePath = Join-Path $ObsidianSnippetsDirectory "fiche-personnage-obsidian.css"
 $CharactersDirectory = [System.IO.Path]::GetFullPath(
     (Join-Path $ScriptDirectory "../data/characters")
 )
@@ -39,11 +55,30 @@ if (-not (Test-Path -LiteralPath $ConverterPath -PathType Leaf)) {
     throw "Convertisseur introuvable : $ConverterPath"
 }
 
+if (-not (Test-Path -LiteralPath $StylePath -PathType Leaf)) {
+    throw "Feuille de style introuvable : $StylePath"
+}
+
 if (-not (Test-Path -LiteralPath $CharactersDirectory -PathType Container)) {
     throw "Répertoire des exports Foundry introuvable : $CharactersDirectory"
 }
 
 New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null
+New-Item -ItemType Directory -Path $ObsidianSnippetsDirectory -Force | Out-Null
+
+# Produit automatiquement le snippet Obsidian depuis la feuille Quartz afin
+# que les deux versions restent synchronisées.
+$QuartzStyle = Get-Content -LiteralPath $StylePath -Raw -Encoding UTF8
+$ObsidianStyle = $QuartzStyle.Replace(
+    "article:has(.knight-sheet-marker)",
+    ".markdown-preview-view.fiche-personnage .markdown-preview-sizer:has(.knight-sheet-marker)"
+)
+[System.IO.File]::WriteAllText(
+    $ObsidianStylePath,
+    $ObsidianStyle,
+    [System.Text.UTF8Encoding]::new($false)
+)
+Write-Host "Snippet Obsidian mis à jour : $ObsidianStylePath"
 
 $JsonFiles = @(
     Get-ChildItem -LiteralPath $CharactersDirectory -File -Filter "*.json" |
@@ -106,4 +141,3 @@ Write-Host "Fiches créées dans : $OutputDirectory"
 if ($FailureCount -gt 0) {
     exit 1
 }
-

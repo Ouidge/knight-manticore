@@ -4,9 +4,15 @@
 
 ```text
 projet/
+├── .obsidian/
+│   └── snippets/
+│       └── fiche-personnage-obsidian.css
 ├── data/
 │   └── characters/
 ├── fiches/
+├── quartz/
+│   └── styles/
+│       └── fiche-personnage.scss
 └── scripts/
     ├── convert-foundry-knight.mjs
     └── convert-all-characters.ps1
@@ -20,6 +26,23 @@ Depuis PowerShell, dans le dossier `scripts` :
 .\convert-all-characters.ps1
 ```
 
+Le script génère les fiches Markdown et met également à jour :
+
+```text
+.obsidian/snippets/fiche-personnage-obsidian.css
+```
+
+Si le coffre Obsidian n’est pas le dossier parent de `scripts`, préciser son
+chemin :
+
+```powershell
+.\convert-all-characters.ps1 -VaultDirectory "C:\chemin\vers\mon-coffre"
+```
+
+Dans Obsidian, activer ensuite `fiche-personnage-obsidian` dans
+**Paramètres → Apparence → Extraits CSS**. Cette activation n’est nécessaire
+qu’une fois ; le contenu du snippet sera ensuite actualisé automatiquement.
+
 En cas de blocage par la politique d’exécution Windows :
 
 ```powershell
@@ -28,11 +51,12 @@ powershell -ExecutionPolicy Bypass -File .\convert-all-characters.ps1
 
 ## Installation du style dans Quartz
 
-1. Copier `fiche-personnage.scss` dans `quartz/styles/`.
+1. Copier `fiche-personnage.scss` dans `quartz/styles/`. Le script batch utilise
+   précisément ce fichier pour générer également le snippet Obsidian.
 2. Ajouter cette ligne **tout en haut** de `quartz/styles/custom.scss` :
 
 ```scss
-@use "../quartz/styles/fiche-personnage";
+@use "./fiche-personnage";
 ```
 
 3. Reconstruire Quartz :
@@ -55,5 +79,5 @@ Réglages conseillés :
 - arrière-plans graphiques activés si le navigateur le propose.
 
 La feuille de style masque automatiquement le portrait et les descriptions
-narratives, puis force la partie consacrée à la méta-armure sur la deuxième
-page.
+narratives. La pagination est laissée au navigateur afin d’utiliser au mieux
+l’espace disponible.

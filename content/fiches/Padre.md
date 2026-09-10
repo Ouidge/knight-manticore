@@ -34,8 +34,8 @@ cssclasses:
 <span><strong>PX</strong> 58 / 109</span>
 </div>
 <div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
-<span><strong title="Points de contact">PC</strong> 1</span>
-<span><strong title="Points d’héroïsme">PH</strong> 0 / 6</span>
+<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 0 / 6</span>
+<span class="knight-pc"><strong title="Points de contact">PC</strong> 1</span>
 </div>
 </aside>
 </section>
@@ -53,8 +53,8 @@ cssclasses:
 </div>
 <div class="knight-stat-table">
 <div class="knight-stat-cells knight-combat-cells">
-<div><span>Défense <small>MA / G</small></span><strong>2 / 2</strong></div>
-<div><span>Réaction <small>MA / G</small></span><strong>7 / 6</strong></div>
+<div><span>Défense</span><strong>2 / 2</strong></div>
+<div><span>Réaction</span><strong>7 / 6</strong></div>
 <div class="knight-initiative-cell"><span>Initiative</span><strong>3D6 + 2</strong></div>
 </div>
 </div>
@@ -164,8 +164,6 @@ cssclasses:
 </table>
 <p class="knight-range-legend"><strong>Portées :</strong> <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/contact"><strong>C — Contact</strong> : distance de mêlée</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/courte"><strong>CT — Courte</strong> : 2–15 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/moyenne"><strong>M — Moyenne</strong> : 15–50 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/longue"><strong>L — Longue</strong> : 50–300 m</a> · <a href="https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/lointaine"><strong>LT — Lointaine</strong> : plus de 300 m</a></p>
 
-
-<div class="knight-page-two" aria-hidden="true"></div>
 
 ## Méta-armure — Warmaster
 

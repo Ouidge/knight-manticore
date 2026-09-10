@@ -477,10 +477,24 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   border-radius: 4px;
 }
 
+.knight-personal-points .knight-ph {
+  order: 1;
+}
+
+.knight-personal-points .knight-pc {
+  order: 2;
+}
+
+.knight-personal-points {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
 .knight-domain-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.6rem;
+  align-items: start;
 }
 
 .knight-domain {
@@ -533,6 +547,40 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
 .knight-traits:not(.knight-capabilities) > .knight-trait:only-of-type {
   grid-column: 1 / -1;
+}
+
+.knight-contacts {
+  min-width: 0;
+  padding: 0.42rem 0.55rem;
+}
+
+.knight-contacts h3 {
+  margin: 0 0 0.18rem;
+  font-size: 0.85rem;
+}
+
+.knight-contacts ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.12rem 0.8rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.74rem;
+  line-height: 1.12;
+  list-style: none;
+}
+
+.knight-contacts li {
+  min-width: min(14rem, 100%);
+}
+
+.knight-contacts-screen {
+  margin: 0.4rem 0 0;
+  padding: 0.35rem 0 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid rgb(112 134 155 / 38%);
+  border-radius: 0;
 }
 
 .knight-traits > h2 {
@@ -1229,6 +1277,41 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     row-gap: 0.5mm;
   }
 
+  .knight-contacts {
+    margin: 0;
+    padding: 0.45mm 0.8mm;
+    break-inside: avoid;
+  }
+
+  .knight-contacts-print {
+    align-self: stretch;
+  }
+
+  .knight-contacts h3 {
+    margin: 0 0 0.1mm !important;
+    padding: 0 !important;
+    font-size: 6.2pt;
+    line-height: 0.92 !important;
+  }
+
+  .knight-contacts ul {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 5.3pt;
+    line-height: 0.9 !important;
+  }
+
+  .knight-contacts li,
+  .knight-contacts li + li {
+    display: block !important;
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0.9 !important;
+    white-space: nowrap;
+  }
+
   .knight-traits:not(.knight-capabilities) > h2 {
     display: none !important;
     height: 0 !important;
@@ -1397,11 +1480,6 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   .knight-falcon-choices li {
     margin-bottom: 0.4mm;
     line-height: 1.02;
-  }
-
-  .knight-page-two {
-    break-before: page;
-    page-break-before: always;
   }
 
   article:has(.knight-sheet-marker) hr {

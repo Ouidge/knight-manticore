@@ -689,6 +689,22 @@ function traitSection(title, selectedItems) {
   return `<section class="knight-traits"><h2>${escapeHtml(title)}</h2>\n${content}\n</section>`;
 }
 
+function contactsSection(contacts, visibilityClass = "") {
+  if (!contacts.length) return "";
+  const rows = contacts
+    .map((contact) => {
+      const description = htmlToMarkdown(contact.system?.description);
+      return `<li><strong>${escapeHtml(contact.name || "Contact sans nom")}</strong>${description ? ` <span>— ${escapeHtml(description.replace(/\s+/gu, " ").trim())}</span>` : ""}</li>`;
+    })
+    .join("\n");
+  return [
+    `<section class="knight-contacts knight-domain ${visibilityClass}">`,
+    "<h3>Contacts</h3>",
+    `<ul>${rows}</ul>`,
+    "</section>",
+  ].join("\n");
+}
+
 function armorEvolutionsSection(armorItem) {
   const evolutions = armorItem?.system?.evolutions ?? {};
   const acquired = [];
@@ -1053,6 +1069,7 @@ function moduleMechanicalSummary(item) {
 
 const armor = items.find((item) => item.type === "armure");
 const distinctions = items.filter((item) => item.type === "distinction" && meaningfulItem(item));
+const contacts = items.filter((item) => item.type === "contact" && item.name?.trim());
 const minorMotivations = items.filter((item) => item.type === "motivationMineure");
 const personalAdvantages = items.filter(
   (item) => item.type === "avantage" && item.system?.type !== "ia" && meaningfulItem(item),
@@ -1199,6 +1216,7 @@ if (minorMotivations.length) {
   out.push("</ul></dd></div>");
 }
 out.push("</dl>");
+if (contacts.length) out.push(contactsSection(contacts, "screen-only knight-contacts-screen"));
 out.push("</div>");
 out.push('<aside class="knight-profile-side">');
 if (actor.img) {
@@ -1211,8 +1229,8 @@ out.push(`<span><strong>PG</strong> ${gloryRemaining} / ${gloryTotal}</span>`);
 out.push(`<span><strong>PX</strong> ${experienceRemaining} / ${experienceTotal}</span>`);
 out.push("</div>");
 out.push('<div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">');
-out.push(`<span><strong title="Points de contact">PC</strong> ${escapeHtml(system.contacts?.actuel ?? "—")}</span>`);
-out.push(`<span><strong title="Points d’héroïsme">PH</strong> ${number(system.heroisme?.value)} / ${number(system.heroisme?.max)}</span>`);
+out.push(`<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> ${number(system.heroisme?.value)} / ${number(system.heroisme?.max)}</span>`);
+out.push(`<span class="knight-pc"><strong title="Points de contact">PC</strong> ${escapeHtml(system.contacts?.actuel ?? "—")}</span>`);
 out.push("</div>");
 out.push("</aside>");
 out.push("</section>");
@@ -1232,9 +1250,9 @@ out.push('<div class="knight-stat-table">');
 const armorInitiative = `${initiativeDice}D6${armorInitiativeFixed ? ` + ${armorInitiativeFixed}` : ""}`;
 const guardianInitiative = `${initiativeDice}D6${guardianInitiativeFixed ? ` + ${guardianInitiativeFixed}` : ""}`;
 out.push('<div class="knight-stat-cells knight-combat-cells">');
-out.push(`<div><span>Défense <small>MA / G</small></span><strong>${armorDefense} / ${guardianDefense}</strong></div>`);
-out.push(`<div><span>Réaction <small>MA / G</small></span><strong>${armorReaction} / ${guardianReaction}</strong></div>`);
-out.push(`<div class="knight-initiative-cell"><span>Initiative${armorInitiative === guardianInitiative ? "" : " <small>MA / G</small>"}</span><strong>${armorInitiative === guardianInitiative ? armorInitiative : `${armorInitiative} / ${guardianInitiative}`}</strong></div>`);
+out.push(`<div><span>Défense</span><strong>${armorDefense} / ${guardianDefense}</strong></div>`);
+out.push(`<div><span>Réaction</span><strong>${armorReaction} / ${guardianReaction}</strong></div>`);
+out.push(`<div class="knight-initiative-cell"><span>Initiative</span><strong>${armorInitiative === guardianInitiative ? armorInitiative : `${armorInitiative} / ${guardianInitiative}`}</strong></div>`);
 out.push("</div>");
 out.push("</div>");
 out.push("</div>");
@@ -1252,6 +1270,7 @@ for (const [domain, characteristics] of Object.entries(DOMAIN_CHARACTERISTICS)) 
   }
   out.push("</div></section>");
 }
+if (contacts.length) out.push(contactsSection(contacts, "print-only knight-contacts-print"));
 out.push("</div>");
 
 const nods = system.combat?.nods ?? {};
@@ -1290,7 +1309,6 @@ if (distinctions.length) {
 
 if (weaponGroups.size || grenadeMaximum > 0) out.push(`\n${arsenalSection(weaponGroups)}\n`);
 
-out.push('\n<div class="knight-page-two" aria-hidden="true"></div>');
 out.push(`\n## Méta-armure — ${armor?.name || system.metaarmure || "—"}\n`);
 if (armor?.system?.description) {
   out.push(
