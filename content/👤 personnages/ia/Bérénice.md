@@ -12,7 +12,7 @@ handicaps:
 ---
 <!-- BEGIN IA INFOBOX -->
 >[!tldr] Bérénice
-> PJ :[[ Yurei]]
+> PJ :[[PJ/Yurei]]
 > Code : `G.D.V.O.N.`
 > Caractère : L’IA de l’armure possède une personnalité plutôt maternelle envers le personnage qu’elle considère comme son enfant, même s’il est adulte. Elle veille sur lui et lui procure des conseils souvent avisés.
 

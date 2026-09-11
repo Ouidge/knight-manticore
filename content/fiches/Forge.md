@@ -1,6 +1,10 @@
 ---
 title: "Forge"
 type: pj
+visibility: public
+coterie: manticore
+portrait: "Forge-portrait.png"
+portrait-meta-armure: "Forge-armure-nobg.png"
 archetype: "Génie"
 blason: "Corbeau"
 section: "Giant"

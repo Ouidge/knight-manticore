@@ -1,6 +1,10 @@
 ---
 title: "Maggot"
 type: pj
+visibility: public
+coterie: manticore
+portrait: "Maggot-portrait.png"
+portrait-meta-armure: "Maggot-armure-nobg.png"
 archetype: "Hors-la-loi"
 blason: "Lion"
 section: "Tarasque"

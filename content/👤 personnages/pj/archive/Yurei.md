@@ -1,6 +1,6 @@
 ---
 type: pj
-visibility: public
+visibility: private
 nom: Toshiro Kaiji
 joueur: Lolo
 portrait: "[[Yurei-portrait.png]]"
@@ -9,24 +9,26 @@ statut: En vie
 coterie: manticore
 faction: Knight
 blason: Loup
-fiche: [[Yurei.pdf]]
+fiche:
+  - - Yurei.pdf
 section: Ogre
-ia: [[Bérénice]]
+ia:
+  - - Bérénice
 metaarmure:
-  - [[Rogue]]
+  - - - Rogue
 portrait-armure: "![[Yurei-armure.png]]"
-fiche-joueur: "[[__public/👤 personnages/pj/Yurei.pdf]]"
+fiche-joueur: "[[__public/👤 personnages/pj/archive/Yurei.pdf]]"
 peurs:
   - Peur d'être forcé
   - Peur de la perte de contrôle
 inconvenients:
-  - [[Cauchemars]]
-  - [[Marqué par les ténèbres]]
+  - - - Cauchemars
+  - - - Marqué par les ténèbres
 avantages:
-  - [[Instinct animal]]
-  - [[Menteur professionnel]]
+  - - - Instinct animal
+  - - - Menteur professionnel
 motivationmajeure: Eliminer [[Kenji Oda]]
-motivations: 
+motivations:
   - Protéger un chevalier en danger
   - Résoudre un meurtre
   - Garder son honneur
@@ -48,7 +50,7 @@ liens:
 > Motivations mineures :  Protéger un chevalier en danger,Résoudre un meurtre,Garder son honneur
 
 ![[Loup]]
-![[Yurei.pdf]]
+![[__public/👤 personnages/pj/archive/Yurei.pdf]]
 ![[Instinct animal]]
 ![[Menteur professionnel]]![[Cauchemars]]
 ![[Marqué par les ténèbres]]<!-- END PJ INFOBOX -->

@@ -1,6 +1,6 @@
 ---
 type: pj
-visibility: public
+visibility: private
 nom: Salomé Edensmith
 joueur: Wh0
 metaarmure: [[Ranger]]
@@ -39,7 +39,7 @@ motivations:
 > Motivations mineures :  Protéger ses coéquipiers,Promouvoir le Knight,Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué
 
 ![[Aigle]]
-![[Raptor.pdf]]
+![[__public/👤 personnages/pj/archive/Raptor.pdf]]
 ![[Forteresse spirituelle]]
 ![[Connaissance secrète occulte]]![[Esprit de contradiction]]
 ![[Sensible à l'Anathème]]<!-- END PJ INFOBOX -->

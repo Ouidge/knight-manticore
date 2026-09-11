@@ -1,6 +1,6 @@
 ---
 type: pj
-visibility: public
+visibility: private
 nom: Titus Agamemnon
 joueur: Phaphane
 metaarmure: [[Paladin]]
@@ -37,7 +37,7 @@ motivations:
 > Motivations mineures :  Respecter la loi locale et ne jamais mentir,Empêcher un allié d’être blessé,Donner de l’espoir à un allié
 
 ![[Dragon]]
-![[Sarge.pdf]]
+![[__public/👤 personnages/pj/archive/Sarge.pdf]]
 ![[Guérison rapide]]
 ![[Esprit d’acier]]![[Colérique]]
 ![[Surprotecteur]]<!-- END PJ INFOBOX -->

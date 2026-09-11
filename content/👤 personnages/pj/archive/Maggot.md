@@ -1,6 +1,6 @@
 ---
 type: pj
-visibility: public
+visibility: private
 nom: Peter Waitts
 joueur: Rob
 metaarmure:
@@ -41,6 +41,6 @@ motivations:
 > Motivations mineures :  Protéger ses coéquipiers,Ne jamais fuir devant un ennemi s’il met des innocents en danger,Apporter une aide significative à un rebut
 
 ![[Lion]]
-![[Maggot.pdf]]
+![[__public/👤 personnages/pj/archive/Maggot.pdf]]
 ![[Chanceux]]
 ![[Dur à cuire]]![[Fou dangereux]]<!-- END PJ INFOBOX -->

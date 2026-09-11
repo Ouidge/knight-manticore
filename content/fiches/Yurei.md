@@ -1,6 +1,10 @@
 ---
 title: "Yurei"
 type: pj
+visibility: public
+coterie: manticore
+portrait: "Yurei-portrait.png"
+portrait-meta-armure: "Yurei-armure-nobg.png"
 archetype: "Agent du Nodachi"
 blason: "Loup"
 section: "Ogre"

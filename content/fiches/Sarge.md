@@ -2,7 +2,7 @@
 title: "Sarge"
 type: pj
 visibility: public
-coterie: manticore
+coterie: 
 portrait: "Sarge-portrait.png"
 portrait-meta-armure: "Sarge-armure-nobg.png"
 archetype: "Habitant des territoires libres (NAU)"

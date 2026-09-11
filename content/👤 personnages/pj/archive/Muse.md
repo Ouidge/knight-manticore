@@ -1,6 +1,6 @@
 ---
 type: pj
-visibility: public
+visibility: private
 nom: Rosa Diakité
 joueur: Zidget
 metaarmure: [[Wizard]]
@@ -41,7 +41,7 @@ motivations:
 > Motivations mineures :  Réaliser une œuvre,Empêcher la mort d’un être humain,Aider les nécessiteux,Retrouver des œuvres d’art
 
 ![[Ours]]
-![[Muse.pdf]]
+![[__public/👤 personnages/pj/archive/Muse.pdf]]
 ![[Créateur-né]]
 ![[Sûr de soi]]![[Surprotecteur]]
 ![[Ennemi juré]]<!-- END PJ INFOBOX -->

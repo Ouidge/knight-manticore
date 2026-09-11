@@ -1,6 +1,6 @@
 ---
 type: pj
-visibility: public
+visibility: private
 nom: Sergueï Ilianov
 joueur: Jerem
 metaarmure: [[Priest]]
@@ -39,7 +39,7 @@ motivations:
 > Motivations mineures :  Découvrir les secrets de l’Anathème,Participer à la résolution d’un crime,Promouvoir le Knight
 
 ![[Corbeau]]
-![[Forge.pdf]]
+![[__public/👤 personnages/pj/archive/Forge.pdf]]
 ![[Bon sens]]
 ![[Mémoire efficace]]![[Trop prudent]]
 ![[Rat d'atelier]]<!-- END PJ INFOBOX -->

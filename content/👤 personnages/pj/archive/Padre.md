@@ -1,6 +1,6 @@
 ---
 type: pj
-visibility: public
+visibility: private
 nom: Marco Orlanda
 joueur: Nolive
 metaarmure: [[Warmaster]]
@@ -39,7 +39,7 @@ motivations:
 > Motivations mineures :  Obéir aux ordres des chevaliers et d’Arthur,Combattre le désespoir,Apaiser les tensions
 
 ![[Cerf]]
-![[Padre.pdf]]
+![[__public/👤 personnages/pj/archive/Padre.pdf]]
 ![[Rayonnement]]
 ![[Magnétique]]![[Fanatique]]
 ![[Humaniste]]<!-- END PJ INFOBOX -->

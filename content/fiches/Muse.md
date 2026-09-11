@@ -1,6 +1,10 @@
 ---
 title: "Muse"
 type: pj
+visibility: public
+coterie: manticore
+portrait: "Muse-portrait.png"
+portrait-meta-armure: "Muse-armure-nobg.png"
 archetype: "Rosa Diakité"
 blason: "Ours"
 section: "Gargoyle"

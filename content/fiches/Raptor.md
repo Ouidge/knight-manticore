@@ -1,6 +1,10 @@
 ---
 title: "Raptor"
 type: pj
+visibility: public
+coterie: manticore
+portrait: "Raptor-portrait.png"
+portrait-meta-armure: "Raptor-armure-nobg.png"
 archetype: "Indépendant"
 blason: "Aigle"
 section: "Cyclope"

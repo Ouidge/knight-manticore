@@ -1,6 +1,10 @@
 ---
 title: "Padre"
 type: pj
+visibility: public
+coterie: manticore
+portrait: "Padre-portrait.png"
+portrait-meta-armure: "Padre-armure-nobg.png"
 archetype: "Religieux"
 blason: "Cerf"
 section: "Dragon"

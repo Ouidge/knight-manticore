@@ -12,7 +12,7 @@ handicaps:
 ---
 <!-- BEGIN IA INFOBOX -->
 >[!tldr] Gabriel
-> PJ :[[ Padre]]
+> PJ :[[PJ/Padre]]
 > Code : `X.I.V.N.R.`
 > Caractère : L’IA de l’armure veille sur son porteur à la manière d’un père sur ses enfants. Elle procure de nombreux conseils et fait en sorte qu’ils soient entendus par son porteur.
 

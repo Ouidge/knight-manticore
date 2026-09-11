@@ -12,7 +12,7 @@ handicaps:
 ---
 <!-- BEGIN IA INFOBOX -->
 >[!tldr] Goat
-> PJ :[[ Muse]]
+> PJ :[[PJ/Muse]]
 > Code : `S.V.G.A.O.`
 > Caractère : Elle est l’IA de tous les excès, elle aime la vie et la débauche, elle apprécie que son porteur soit fougueux, enivré et passionné. Elle favorise ces instincts et lui fait souvent prendre des risques inconsidérés pour assouvir ses désirs, mais s’il survit, les plus grandes victoires seront alors à sa portée !
 

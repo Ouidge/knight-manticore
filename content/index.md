@@ -12,9 +12,9 @@ Prochaine Session : *à déterminer*
 ## À explorer 
 
 → [[⚜️ campagne]] 
+→ [[Fiches]]
 → [[👤 personnages/pj|👤PJ]]
 → [[👤 personnages/pnj|👤 PNJ]]
-→ [[👾 bestiaire]]
 → [[📐 aides de jeu]]
 
 ---
