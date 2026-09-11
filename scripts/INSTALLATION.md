@@ -7,6 +7,8 @@ projet/
 ├── .obsidian/
 │   └── snippets/
 │       └── fiche-personnage-obsidian.css
+├── __public/
+│   └── fiches/
 ├── data/
 │   └── characters/
 ├── fiches/
@@ -26,14 +28,22 @@ Depuis PowerShell, dans le dossier `scripts` :
 .\convert-all-characters.ps1
 ```
 
-Le script génère les fiches Markdown et met également à jour :
+Le script génère les fiches Markdown dans `fiches/`, copie automatiquement
+chaque fiche dans le coffre public :
+
+```text
+__public/fiches/
+```
+
+et met également à jour :
 
 ```text
 .obsidian/snippets/fiche-personnage-obsidian.css
 ```
 
 Si le coffre Obsidian n’est pas le dossier parent de `scripts`, préciser son
-chemin :
+chemin. Ce chemin détermine à la fois la destination des fiches publiques et
+celle du snippet CSS :
 
 ```powershell
 .\convert-all-characters.ps1 -VaultDirectory "C:\chemin\vers\mon-coffre"

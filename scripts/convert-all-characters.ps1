@@ -9,9 +9,7 @@ $ErrorActionPreference = "Stop"
 # depuis lequel PowerShell a été ouvert.
 $ScriptDirectory = $PSScriptRoot
 $ConverterPath = Join-Path $ScriptDirectory "convert-foundry-knight.mjs"
-$StylePath = [System.IO.Path]::GetFullPath(
-    (Join-Path $ScriptDirectory "../quartz/styles/fiche-personnage.scss")
-)
+$StylePath = Join-Path $ScriptDirectory "../quartz/styles/fiche-personnage.scss"
 $ProjectDirectory = [System.IO.Path]::GetFullPath(
     (Join-Path $ScriptDirectory "..")
 )
@@ -23,6 +21,7 @@ else {
 }
 $ObsidianSnippetsDirectory = Join-Path $VaultDirectory ".obsidian/snippets"
 $ObsidianStylePath = Join-Path $ObsidianSnippetsDirectory "fiche-personnage-obsidian.css"
+$PublicSheetsDirectory = Join-Path $VaultDirectory "__public/fiches"
 $CharactersDirectory = [System.IO.Path]::GetFullPath(
     (Join-Path $ScriptDirectory "../data/characters")
 )
@@ -65,6 +64,7 @@ if (-not (Test-Path -LiteralPath $CharactersDirectory -PathType Container)) {
 
 New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $ObsidianSnippetsDirectory -Force | Out-Null
+New-Item -ItemType Directory -Path $PublicSheetsDirectory -Force | Out-Null
 
 # Produit automatiquement le snippet Obsidian depuis la feuille Quartz afin
 # que les deux versions restent synchronisées.
@@ -126,6 +126,10 @@ foreach ($JsonFile in $JsonFiles) {
             throw "Le convertisseur Node.js a retourné le code $LASTEXITCODE."
         }
 
+        $PublicOutputPath = Join-Path $PublicSheetsDirectory $OutputName
+        Copy-Item -LiteralPath $OutputPath -Destination $PublicOutputPath -Force
+        Write-Host "Copie publique : $PublicOutputPath"
+
         $SuccessCount++
     }
     catch {
@@ -137,6 +141,7 @@ foreach ($JsonFile in $JsonFiles) {
 Write-Host ""
 Write-Host "Conversion terminée : $SuccessCount réussite(s), $FailureCount échec(s)."
 Write-Host "Fiches créées dans : $OutputDirectory"
+Write-Host "Copies publiques créées dans : $PublicSheetsDirectory"
 
 if ($FailureCount -gt 0) {
     exit 1
