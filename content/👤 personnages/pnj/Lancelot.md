@@ -3,7 +3,7 @@ type: pnj
 visibility: public
 subtype: cdltr
 faction: Knight
-portrait: "[[Lancelot.png]]"
+portrait: "[[Lancelot.webp]]"
 musique: "[[Lancelot.mp3]]"
 statut: En vie
 section: Dragon
@@ -14,7 +14,7 @@ description: Chevalier de la Table Ronde, chef de la section Dragon
 # Lancelot
 
 
-<img src="Lancelot.png" align="right" width="200" style="margin-left: 15px; margin-bottom: 10px;">
+<img src="Lancelot.webp" align="right" width="200" style="margin-left: 15px; margin-bottom: 10px;">
 
 Diego Omessa
 Chevalier de la Table Ronde, chef de la section Dragon
