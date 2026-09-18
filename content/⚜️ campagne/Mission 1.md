@@ -15,6 +15,8 @@ PJ:
 ---
 #  Session du 24 juillet 2026
 
+![[M1-Svartcrown.webp]]
+
 ## Résumé des épisodes précédents
 
 Les PJ ont sauvé [[PNJ/Gideon MacTavish,]] le neveu d’Arthur, lors d’un violent combat dans la ville de **Dublin**.

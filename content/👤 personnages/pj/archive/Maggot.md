@@ -7,7 +7,7 @@ metaarmure:
   - - Barbarian
 ia:
   - - Nimué
-portrait: "[[Maggot-portrait.png]]"
+portrait: "[[Assets/Coterie/Maggot-portrait.png]]"
 image: "[[Maggot.png]]"
 fiche:
   - - Maggot.pdf

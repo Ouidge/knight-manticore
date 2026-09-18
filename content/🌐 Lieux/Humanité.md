@@ -1,5 +1,6 @@
 ---
 type: lieu
+subtype: arche
 image: londres.bmp
 visibility: public
 nom: Londres

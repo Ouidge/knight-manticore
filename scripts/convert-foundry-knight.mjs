@@ -1181,8 +1181,8 @@ out.push(`title: ${JSON.stringify(actor.name || "Personnage")}`);
 out.push("type: pj");
 out.push("visibility: public");
 out.push("coterie: manticore");
-out.push(`portrait: ${JSON.stringify(`${actor.name || "Personnage"}-portrait.png`)}`);
-out.push(`portrait-meta-armure: ${JSON.stringify(`${actor.name || "Personnage"}-armure-nobg.png`)}`);
+out.push(`portrait: ${JSON.stringify(`[[${actor.name || "Personnage"}-portrait.png]]`)}`);
+out.push(`portrait-armure: ${JSON.stringify(`[[${actor.name || "Personnage"}-armure.png]]`)}`);
 out.push(`archetype: ${JSON.stringify(system.archetype ?? "")}`);
 out.push(`blason: ${JSON.stringify(system.blason ?? "")}`);
 out.push(`section: ${JSON.stringify(system.section ?? "")}`);
@@ -1223,11 +1223,10 @@ out.push("</dl>");
 if (contacts.length) out.push(contactsSection(contacts, "screen-only knight-contacts-screen"));
 out.push("</div>");
 out.push('<aside class="knight-profile-side">');
-if (actor.img) {
-  out.push(
-    `<div class="knight-portrait"><img src="${escapeHtml(actor.img)}" alt="Portrait de ${escapeHtml(actor.name)}"></div>`,
-  );
-}
+const portraitFileName = `${actor.name || "Personnage"}-portrait.png`;
+out.push(
+  `<div class="knight-portrait"><img src="../__images/pj/${encodeURIComponent(portraitFileName)}" alt="Portrait de ${escapeHtml(actor.name)}"></div>`,
+);
 out.push('<div class="knight-progression" aria-label="Progression">');
 out.push(`<span><strong>PG</strong> ${gloryRemaining} / ${gloryTotal}</span>`);
 out.push(`<span><strong>PX</strong> ${experienceRemaining} / ${experienceTotal}</span>`);

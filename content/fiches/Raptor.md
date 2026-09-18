@@ -3,8 +3,8 @@ title: "Raptor"
 type: pj
 visibility: public
 coterie: manticore
-portrait: "Raptor-portrait.png"
-portrait-meta-armure: "Raptor-armure-nobg.png"
+portrait: "[[Raptor-portrait.png]]"
+portrait-armure: "[[Raptor-armure.png]]"
 archetype: "Indépendant"
 blason: "Aigle"
 section: "Cyclope"
@@ -32,7 +32,7 @@ cssclasses:
 </dl>
 </div>
 <aside class="knight-profile-side">
-<div class="knight-portrait"><img src="https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Raptor-portrait.png" alt="Portrait de Raptor"></div>
+<div class="knight-portrait"><img src="../__images/pj/Raptor-portrait.png" alt="Portrait de Raptor"></div>
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 45 / 105</span>
 <span><strong>PX</strong> 34 / 73</span>

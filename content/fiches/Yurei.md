@@ -3,8 +3,8 @@ title: "Yurei"
 type: pj
 visibility: public
 coterie: manticore
-portrait: "Yurei-portrait.png"
-portrait-meta-armure: "Yurei-armure-nobg.png"
+portrait: "[[Yurei-portrait.png]]"
+portrait-armure: "[[Yurei-armure.png]]"
 archetype: "Agent du Nodachi"
 blason: "Loup"
 section: "Ogre"
@@ -32,7 +32,7 @@ cssclasses:
 </dl>
 </div>
 <aside class="knight-profile-side">
-<div class="knight-portrait"><img src="https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Yurei-portrait.png" alt="Portrait de Yurei"></div>
+<div class="knight-portrait"><img src="../__images/pj/Yurei-portrait.png" alt="Portrait de Yurei"></div>
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 75 / 225</span>
 <span><strong>PX</strong> 47 / 154</span>

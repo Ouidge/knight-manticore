@@ -4,7 +4,8 @@ visibility: public
 nom: "Fiona Intyre"
 statut: En vie
 portrait: "[[Fiona Intyre - armure.png]]"
-faction: 
+image: 
+faction: "*Faction inconnue*"
 description: "Chevaleresse noire (?), rencontrée lors de la traque de la Chasse Sauvage dans les montagnes d'Europe lors de la [[Mission 1]]."
 ---
 <!-- BEGIN PNJ INFOBOX -->

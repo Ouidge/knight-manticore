@@ -3,8 +3,8 @@ title: "Forge"
 type: pj
 visibility: public
 coterie: manticore
-portrait: "Forge-portrait.png"
-portrait-meta-armure: "Forge-armure-nobg.png"
+portrait: "[[Forge-portrait.png]]"
+portrait-armure: "[[Forge-armure.png]]"
 archetype: "Génie"
 blason: "Corbeau"
 section: "Giant"
@@ -37,7 +37,7 @@ cssclasses:
 </section>
 </div>
 <aside class="knight-profile-side">
-<div class="knight-portrait"><img src="https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Forge-portrait.png" alt="Portrait de Forge"></div>
+<div class="knight-portrait"><img src="../__images/pj/Forge-portrait.png" alt="Portrait de Forge"></div>
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 55 / 225</span>
 <span><strong>PX</strong> 48 / 154</span>

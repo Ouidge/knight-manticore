@@ -3,8 +3,8 @@ title: "Maggot"
 type: pj
 visibility: public
 coterie: manticore
-portrait: "Maggot-portrait.png"
-portrait-meta-armure: "Maggot-armure-nobg.png"
+portrait: "[[Maggot-portrait.png]]"
+portrait-armure: "[[Maggot-armure.png]]"
 archetype: "Hors-la-loi"
 blason: "Lion"
 section: "Tarasque"
@@ -38,7 +38,7 @@ cssclasses:
 </section>
 </div>
 <aside class="knight-profile-side">
-<div class="knight-portrait"><img src="https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Maggot-portrait.png" alt="Portrait de Maggot"></div>
+<div class="knight-portrait"><img src="../__images/pj/Maggot-portrait.png" alt="Portrait de Maggot"></div>
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 75 / 225</span>
 <span><strong>PX</strong> 35 / 154</span>

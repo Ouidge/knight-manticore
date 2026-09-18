@@ -3,8 +3,8 @@ title: "Padre"
 type: pj
 visibility: public
 coterie: manticore
-portrait: "Padre-portrait.png"
-portrait-meta-armure: "Padre-armure-nobg.png"
+portrait: "[[Padre-portrait.png]]"
+portrait-armure: "[[Padre-armure.png]]"
 archetype: "Religieux"
 blason: "Cerf"
 section: "Dragon"
@@ -32,7 +32,7 @@ cssclasses:
 </dl>
 </div>
 <aside class="knight-profile-side">
-<div class="knight-portrait"><img src="https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Padre-portrait.png" alt="Portrait de Padre"></div>
+<div class="knight-portrait"><img src="../__images/pj/Padre-portrait.png" alt="Portrait de Padre"></div>
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 85 / 165</span>
 <span><strong>PX</strong> 58 / 109</span>

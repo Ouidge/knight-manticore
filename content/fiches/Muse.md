@@ -3,8 +3,8 @@ title: "Muse"
 type: pj
 visibility: public
 coterie: manticore
-portrait: "Muse-portrait.png"
-portrait-meta-armure: "Muse-armure-nobg.png"
+portrait: "[[Muse-portrait.png]]"
+portrait-armure: "[[Muse-armure.png]]"
 archetype: "Rosa Diakité"
 blason: "Ours"
 section: "Gargoyle"
@@ -33,7 +33,7 @@ cssclasses:
 </dl>
 </div>
 <aside class="knight-profile-side">
-<div class="knight-portrait"><img src="https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Muse-portrait.png" alt="Portrait de Muse"></div>
+<div class="knight-portrait"><img src="../__images/pj/Muse-portrait.png" alt="Portrait de Muse"></div>
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 45 / 195</span>
 <span><strong>PX</strong> 26 / 127</span>

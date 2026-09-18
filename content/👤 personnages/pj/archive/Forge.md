@@ -3,23 +3,26 @@ type: pj
 visibility: private
 nom: Sergueï Ilianov
 joueur: Jerem
-metaarmure: [[Priest]]
-ia: [[Maman]]
-portrait: "[[Forge-portrait.png]]"
+metaarmure:
+  - - Priest
+ia:
+  - - Maman
+portrait: "[[Assets/Coterie/Forge-portrait.png]]"
 image: "[[Forge.webp]]"
 statut: En vie
 coterie: manticore
 blason: Corbeau
 section: Giant
-fiche: [[Forge.pdf]]
-avantages: 
-  - [[Bon sens]]
-  - [[Mémoire efficace]]
-inconvenients: 
-  - [[Trop prudent]]
-  - [[Rat d'atelier]]
+fiche:
+  - - Forge.pdf
+avantages:
+  - - - Bon sens
+  - - - Mémoire efficace
+inconvenients:
+  - - - Trop prudent
+  - - - Rat d'atelier
 motivationmajeure: Mettre au point une nouvelle méta-armure
-motivations: 
+motivations:
   - Découvrir les secrets de l’Anathème
   - Participer à la résolution d’un crime
   - Promouvoir le Knight
