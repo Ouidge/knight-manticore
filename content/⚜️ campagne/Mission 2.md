@@ -3,7 +3,7 @@ type: mission
 visibility: public
 status: in progress
 name: Rome
-code: M1
+code: M2
 arc: Bête
 image: "[[M2-Rome.webp]]"
 PG:
