@@ -4,7 +4,7 @@ visibility: private
 nom: Toshiro Kaiji
 joueur: Lolo
 portrait: "[[Yurei-portrait.png]]"
-image: "[[Yurei.webp]]"
+image: "[[Yurei-old.webp]]"
 statut: En vie
 coterie: manticore
 faction: Knight
@@ -37,7 +37,7 @@ liens:
 ---
 <!-- BEGIN PJ INFOBOX -->
 >[!tldr] Yurei
-> ![[Yurei.webp]]
+> ![[Yurei-old.webp]]
 > *Toshiro Kaiji*
 > Joueur : Lolo
 > Méta-armure : **[Rogue](https://knight-jdr-systeme.fr/fr/armour/Rogue/)**

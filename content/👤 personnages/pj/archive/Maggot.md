@@ -7,19 +7,19 @@ metaarmure:
   - - Barbarian
 ia:
   - - Nimué
-portrait: "[[Assets/Coterie/Maggot-portrait.png]]"
-image: "[[Maggot.png]]"
+portrait: "[[Maggot-portrait.png]]"
+image: "[[Maggot-armure.png]]"
 fiche:
-  - - Maggot.pdf
+  - Maggot.pdf
 statut: En vie
 coterie: manticore
 blason: Lion
 section: Tarasque
 avantages:
-  - - - Chanceux
-  - - - Dur à cuire
+  - Chanceux
+  - Dur à cuire
 inconvenients:
-  - - - Fou dangereux
+  - Fou dangereux
 motivationmajeure: Création d'un réseau de leaders rebuts
 motivations:
   - Protéger ses coéquipiers
@@ -28,7 +28,7 @@ motivations:
 ---
 <!-- BEGIN PJ INFOBOX -->
 >[!tldr] Maggot
-> ![[Maggot.png]]
+> ![[Maggot-old.png]]
 > *Peter Waitts*
 > Joueur : Rob
 > Méta-armure : **[Barbarian](https://knight-jdr-systeme.fr/fr/armour/Barbarian/)**

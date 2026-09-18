@@ -10,4 +10,4 @@ views:
       - file.name
       - type
       - statut
-    image: note.portrait-meta-armure
+    image: note.portrait-armure

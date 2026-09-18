@@ -7,8 +7,8 @@ metaarmure:
   - - Priest
 ia:
   - - Maman
-portrait: "[[Assets/Coterie/Forge-portrait.png]]"
-image: "[[Forge.webp]]"
+portrait: "[[Forge-portrait.png]]"
+image: "[[Forge-armure.png]]"
 statut: En vie
 coterie: manticore
 blason: Corbeau
@@ -29,7 +29,7 @@ motivations:
 ---
 <!-- BEGIN PJ INFOBOX -->
 >[!tldr] Forge
-> ![[Forge.webp]]
+> ![[Forge-old.webp]]
 > *Sergueï Ilianov*
 > Joueur : Jerem
 > Méta-armure : **[Priest](https://knight-jdr-systeme.fr/fr/armour/Priest/)**

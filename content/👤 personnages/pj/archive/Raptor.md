@@ -3,30 +3,34 @@ type: pj
 visibility: private
 nom: Salomé Edensmith
 joueur: Wh0
-metaarmure: [[Ranger]]
-ia: [[Raimundo]]
+metaarmure:
+  - - Ranger
+ia:
+  - - Raimundo
 portrait: "[[Raptor-portrait.png]]"
-image: "[[Raptor.webp]]"
-fiche: [[Raptor.pdf]]
+image: "[[Raptor-armure.png]]"
+fiche:
+  - - Raptor.pdf
 statut: En vie
-blason: [[Aigle]]
+blason:
+  - - Aigle
 coterie: manticore
 section: Cyclope
 inconvenients:
-  - [[Esprit de contradiction]]
-  - [[Sensible à l'Anathème]]
+  - - - Esprit de contradiction
+  - - - Sensible à l'Anathème
 avantages:
-  - [[Forteresse spirituelle]]
-  - [[Connaissance secrète occulte]]
+  - - - Forteresse spirituelle
+  - - - Connaissance secrète occulte
 motivationmajeure: Devenir un chevalier de la Table Ronde
-motivations: 
+motivations:
   - Protéger ses coéquipiers
   - Promouvoir le Knight
   - Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué
 ---
 <!-- BEGIN PJ INFOBOX -->
 >[!tldr] Raptor
-> ![[Raptor.webp]]
+> ![[Raptor-old.webp]]
 > *Salomé Edensmith*
 > Joueur : Wh0
 > Méta-armure : **[Ranger](https://knight-jdr-systeme.fr/fr/armour/Ranger/)**

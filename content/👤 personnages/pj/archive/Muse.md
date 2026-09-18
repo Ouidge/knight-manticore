@@ -6,7 +6,7 @@ joueur: Zidget
 metaarmure: [[Wizard]]
 ia: [[Goat]]
 portrait: "[[Muse-portrait.png]]"
-image: "[[Muse.webp]]"
+image: "[[Muse-armure.png]]"
 fiche: [[Muse.pdf]]
 statut: En vie
 blason: Ours
@@ -27,8 +27,7 @@ motivations:
 ---
 <!-- BEGIN PJ INFOBOX -->
 >[!tldr] Muse
-> ![[Muse.webp]]
-> ![[Muse-portrait.png|250]]![[Muse-armure.png|250]]
+> ![[Muse-old.webp]]
 > *Rosa Diakité*
 > Joueur : Zidget
 > Méta-armure : **[Wizard](https://knight-jdr-systeme.fr/fr/armour/Wizard/)**
