@@ -5,8 +5,8 @@
 ![[coterie-manticore-banner.png]]
 # Bienvenue sur le site de la Coterie Manticore !
 
-Mission en cours : [[Mission 1]]
-Prochaine Session : *à déterminer* 
+Mission en cours : [[Mission 2]]
+Prochaine Session : 2026-09-25
 
 ---
 ## À explorer 

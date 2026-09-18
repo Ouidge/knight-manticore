@@ -6,7 +6,7 @@ statut: En vie
 portrait: "[[Deirdre.png]]"
 faction: Dublin
 description: Proche du du maire de Dublin, Karl Colley, et amie de Maggot
-------
+---
 <!-- BEGIN PNJ INFOBOX -->
 # Deirdre
 
