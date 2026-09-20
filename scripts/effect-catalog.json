@@ -1,0 +1,626 @@
+{
+  "annihilation": {
+    "title": "Annihilation",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/annihilation/",
+    "summary": "Contre un ennemi de type salopard, l’arme inflige toujours le résultat maximal des dés de dégâts, comme si chacun des dés avait fait 6. Les dés ne sont simplement pas lancés. Si l’arme possède l’effet dispersion, chaque cible adverse/de type salopard touchée subit le maximum de dégâts. Ceci se cumule avec Oblitération si plusieurs cibles sont visées par la même attaque."
+  },
+  "antianatheme": {
+    "title": "Anti-anathème",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/anti-anatheme/",
+    "summary": "L’arme ignore purement et simplement la valeur de bouclier et de Chair exceptionnelle (qu’elle soit majeure ou mineure) de la créature de l’Anathème prise pour cible. Les PA, puis la santé de la cible sont directement touchés. Lorsqu’une arme de ce type touche une bande de créatures de l’Anathème, ses scores de bouclier et de Chair exceptionnelle sont ignorés."
+  },
+  "antivehicule": {
+    "title": "Anti-véhicule",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/anti-vehicule/",
+    "summary": "Les armes possédant cet effet sont conçues pour détruire les véhicules, les blindés et abattre les ennemis de type colosse. Lorsque l’arme tire sur un véhicule ou un colosse, elle inflige ses dégâts normaux et n’a pas besoin d’infliger des tranches de 10 points de dégâts pour en infliger 1 à ces énormes ennemis."
+  },
+  "artillerie": {
+    "title": "Artillerie",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/artillerie/",
+    "summary": "Si la cible a préalablement été désignée, l’arme peut tirer sans les malus de portée et sans ligne de vue (il faut quand même une ligne de tir direct). La cible ne bénéficie d’aucun bonus de couvert. Attention, il faut que la munition puisse atteindre la cible d’une manière ou d’une autre et qu’un test de tir soit effectué. Une cible préalablement désignée est toujours atteignable, quelle que soit la distance et le « couvert », sans avoir besoin de ligne de tir dégagée."
+  },
+  "assassin": {
+    "title": "Assassin",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/assassin-x/",
+    "summary": "Ajoute XD6 aux dégâts lors des attaques surprises."
+  },
+  "assistancealattaque": {
+    "title": "Assistance à l'attaque",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/assistance-a-lattaque/",
+    "summary": "Lorsqu’un jet pour toucher est effectué avec cette arme, chaque réussite excédentaire au-dessus du score de réaction (dans le cas d’un tir) ou de défense (dans le cas d’une attaque au contact) de la cible permet de lui infliger 1 point de dégât (ou de violence dans le cas d’une bande) supplémentaire."
+  },
+  "barrage": {
+    "title": "Barrage",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/barrage-x/",
+    "summary": "Au lieu de faire une attaque, le chevalier peut décider, au prix de son action de combat, de diminuer la défense et la réaction de la bande ou du PNJ ciblé d’un nombre de points égal à X jusqu’au début de son prochain tour, permettant ainsi à ses alliés de toucher plus facilement. L’effet s’applique automatiquement. Aucun autre effet, et aucun dégât de l’arme ne s’applique. Plusieurs effets barrage peuvent s’appliquer sur une même cible et se cumulent. Mais attention, l’effet barrage infligé par l’arme d’un PJ prend fin au début de son tour de jeu suivant (dès que c’est à lui de jouer de nouveau)."
+  },
+  "boost": {
+    "title": "Boost",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/boost-x/",
+    "summary": "Par action de combat, lorsqu’il attaque, le PJ peut ajoute 1D6 de dégât ou de violence pour chaque PE utilisé pour cet effet, dans la limite de XD6."
+  },
+  "bourreau": {
+    "title": "Bourreau",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/bourreau-x/",
+    "summary": "Lorsque le PJ lance ses dés de dégâts, tout résultat inférieur ou égal à X est considéré comme un 4."
+  },
+  "briserlaresilience": {
+    "title": "Briser la résilience",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/briser-la-resilience/",
+    "summary": "Le personnage, s’il décide d’attaquer normalement la cible, fait baisser en plus la résilience de la cible de 1D6 points. Cette règle s’applique en plus des dégâts éventuellement infligés. Si le personnage décide de faire baisser la résilience de la cible, alors il ajoute 1D6 supplémentaire aux points de résilience qu’il retire."
+  },
+  "cadence": {
+    "title": "Cadence",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/cadence-x/",
+    "summary": "L’arme est très rapide et peut cibler X adversaires par action de combat au lieu d’un seul. Une attaque doit être réalisée pour chacune des cibles, avec 3 dés de malus. Chacune des cibles ne peut être distante de plus de 2 mètres."
+  },
+  "cataclysme": {
+    "title": "Cataclysme",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/cataclysme/",
+    "summary": "Une fois par tour, lorsque le PJ attaque, il peut choisir de cibler tous les ennemis à portée courte de type hostiles et salopards en plus d’une bande éventuellement présente. Toutes les cibles touchées par l’attaque se voient infliger une quantité de dégâts (violence dans le cas de la bande) égale au résultat des dés de violence de son arme."
+  },
+  "chargeur": {
+    "title": "Chargeur",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/chargeur-x/",
+    "summary": "L’arme ou le module dispose d’un nombre d’utilisations indiqué par X. Une fois utilisé autant de fois que X, on estime qu’il n’a plus de munitions et ne peut donc plus faire feu. L’arme ou le module doit être rechargé (gratuitement) à Camelot entre deux missions."
+  },
+  "chirurgical": {
+    "title": "Chirurgical",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/chirurgical/",
+    "summary": "Lorsque l’arme est utilisée, son utilisateur ajoute sa caractéristique Savoir (+1 point de dégâts par overdrive) (ou Machine divisée par 2, arrondi à l’entier supérieur, pour un PNJ) lorsqu’il détermine les dégâts, en plus d’autres caractéristiques déjà incluses (comme la Force et les éventuels OD de Force). Il n’a pas besoin d’utiliser cette caractéristique dans son combo."
+  },
+  "choc": {
+    "title": "Choc",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/choc-x/",
+    "summary": "Si le jet pour toucher avec l’arme est supérieur au score de l’aspect Chair (divisé par 2 pour un PNJ) de la cible, celle-ci perd ses X prochaines actions. Cet effet ne fonctionne pas contre les bandes. Attention, l’effet ne peut pas se cumuler alors que la cible est déjà sous l’effet choc. Dans certaines circonstances, l’effet choc peut être considéré comme automatique et ne prend donc pas en compte le score de l’aspect Chair. Lorsque l’effet choc est censé s’appliquer automatiquement, il faut tout de même que le personnage touche sa cible. En revanche, son résultat n’a pas besoin d’égaler l’aspect Chair divisé par deux de la cible pour que l’effet fonctionne. En fonction des circonstances, le MJ peut décider qu’un personnage sous l’effet choc subit un malus de 2 à sa réaction et à sa défense. L’effet ne se cumule pas avec parasitage X."
+  },
+  "conviction": {
+    "title": "Conviction",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/conviction/",
+    "summary": "Lorsqu’un PJ élimine une créature de l’Anathème ennemie, il gagne 1 PES pour un hostile ou un salopard, 2 PES pour une bande non humaine, 3 PES pour un patron, un colosse ou un patron-colosse."
+  },
+  "defense": {
+    "title": "Défense",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/defense-x/",
+    "summary": "L’utilisateur reçoit un modificateur de défense, X représentant cette valeur, tant qu’il utilise cette arme ou module. Les modificateurs reçus peuvent se cumuler tant que le personnage peut recevoir l’effet."
+  },
+  "deferlante": {
+    "title": "Déferlante",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/deferlante/",
+    "summary": "À chaque attaque réussie à la suite sur une même cible, le PJ gagne +3 dégâts fixes cumulables (limité à +24 dégâts). Ce bonus s’accumule tant que le PJ n’est pas interrompu, qu’il ne change pas de cible, qu’il ne subit pas d’effet lui faisant perdre une action (choc, soumission, etc.) ou qu’il ne rate pas son attaque. Si le PJ est interrompu, rate son attaque ou s’il perd l’effet déferlante, le cumul de dégâts de déferlante retombe à zéro. Si un PJ utilise le style ambidextrie sur deux cibles différentes, l’effet est annulé. Si le PJ attaque une même cible avec deux armes possédant l’effet déferlante, le bonus de dégâts fixes se cumule à chaque attaque. Ainsi, durant le même tour, en ambidextrie, le chevalier peut activer deux fois l’effet sur une même cible."
+  },
+  "degatscontinus": {
+    "title": "Dégâts continus",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/degats-continus-x/",
+    "summary": "L’arme inflige X points de dégâts à chaque tour durant 1D6 tours. Les dégâts sont subis par la cible à chacun de ses tours de jeu et ignorent les éventuels scores de CdF ou de bouclier. Au regard de la technologie utilisée, l’effet ne peut se stopper que si la cible reçoit les soins appropriés ou s’il se termine de lui-même. Typiquement, cet effet se retrouve sur les armes causant des brûlures. Cet effet ne peut être cumulé sur une même créature tant que l’effet est déjà présent au moins une fois."
+  },
+  "demoralisant": {
+    "title": "Démoralisant",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/demoralisant/",
+    "summary": "Avec une attaque réussie, l’arme enlève 2 points au score de débordement que les bandes composées d’humains infligent, avant calcul des dégâts effectifs. Les dégâts effectifs du tour sont donc égaux débordement moins 2 multiplié par le nombre de tours écoulés à ce tour. Autrement dit, démoralisant réduit le débordement pour le tour en cours, et uniquement le tour en cours. Précision : Si l’effet démoralisant est appliqué plusieurs fois, cela se cumule en ajoutant un tour de durée (et non pas en soustrayant des points supplémentaires au débordement de la bande ciblée)."
+  },
+  "designation": {
+    "title": "Désignation",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/designation/",
+    "summary": "L’arme peut désigner une cible (une seule cible, pas une bande) une fois par tour. Son utilisateur et ses alliés reçoivent un bonus de 1 réussite automatique pour toucher la cible et ignorent toujours les éventuels échecs critiques qu’ils pourraient subir lorsqu’ils tentent de la toucher. Désigner une cible ne coûte pas d’action. Il n’y a aucun test à effectuer pour désigner une cible et la portée de la désignation est celle de l’arme utilisée. La cible demeure désignée durant toute la scène ou toute la phase de conflit. Une fois désignée, l’armure va suivre les mouvements et les bruits de la cible et représenter sa position, ce qui permet au chevalier de lui tirer dessus avec une arme disposant de l’effet artillerie notamment, ou d’utiliser automatiquement tout effet venant de ses éventuelles visions alternatives. L’effet permet par exemple, couplé avec un module de type vision prédatrice, de voir la cible à travers les murs, silhouettée sur la visière à Réalité Augmentée de la méta-armure. Tant que la signature de la cible reste visible par la méta-armure, la cible reste désignée. Attention : L’effet ne peut être cumulé sur une même cible."
+  },
+  "destructeur": {
+    "title": "Destructeur",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/destructeur/",
+    "summary": "Lorsque les dégâts impactent les points d’armure de la cible, si elle a des PA, on ajoute 2D6 au total de dégâts. Si un seul point de dégâts passe le bouclier et le CdF de la cible, l’effet est appliqué."
+  },
+  "deuxmains": {
+    "title": "Deux mains",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/deux-mains/",
+    "summary": "Cet effet signifie simplement que le chevalier doit utiliser ses deux mains pour frapper ou tirer avec l’arme. Utiliser à une main une arme possédant cet effet est impossible, l’arme étant trop lourde ou possédant trop de recul pour toucher efficacement."
+  },
+  "devastation": {
+    "title": "Dévastation",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/devastation-x/",
+    "summary": "Quand un PJ lance les dés de Violence, tout résultat inférieur ou égal à X est considéré comme un 5."
+  },
+  "deviation": {
+    "title": "Déviation",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/deviation/",
+    "summary": "Si un ennemi cible le PJ au tir, à portée courte ou moyenne, et rate son tir, alors le PJ peut dépenser 4 PE et renvoyer les dégâts de l’attaque à l’assaillant. Le MJ lance les dés de dégâts et ajoute les bonus fixes de dégâts (sans les effets) de l’attaque qui aurait dû blesser le PJ si elle l’avait touché. Cet effet ne fonctionne pas contre les attaques avec l’effet dispersion X, contre les dégâts des bandes et contre tous les effets de zones ou impliquant des éléments de décor (au choix du MJ)."
+  },
+  "dispersion": {
+    "title": "Dispersion",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/dispersion-x/",
+    "summary": "L’arme peut toucher plusieurs ennemis et ses dégâts peuvent donc s’appliquer à plusieurs du moment que ces ennemis sont à moins de deux mètres les uns des autres. X représente le nombre d’ennemis que l’arme peut toucher dans une même action. Un seul jet d’attaque est à effectuer contre un seul ennemi. Les autres ennemis proches subissent automatiquement les dégâts et les autres effets que dispersion, à condition que le résultat du test d’attaque dépasse leur score d’opposition. Typiquement, les lance-flammes ou les armes explosives infligent cet effet. Cet effet n’affecte pas les bandes contre lesquelles seule la violence peut s’appliquer. Attention : Si l’effet est utilisé contre des ennemis au contact avec un autre PJ, ce dernier subit aussi les dégâts de la dispersion."
+  },
+  "enchaine": {
+    "title": "En chaîne",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/en-chaine/",
+    "summary": "Lorsque le PJ utilisant cette arme réussit à éliminer (pas forcément à tuer, neutraliser suffit) un hostile ou un salopard, il peut effectuer au prix de 3 PE, au même tour et à la même initiative, une autre attaque sur un autre hostile ou un autre salopard qui se trouve à portée de son arme (un test pour toucher est de nouveau nécessaire). Si cette deuxième attaque élimine la cible, l’effet peut s’appliquer une nouvelle fois et ainsi de suite. Le coût en énergie intervient en plus de l’éventuel coût en énergie de l’arme. Chaque nouvelle attaque doit donner lieu à une dépense d’énergie en conséquence. Dans le cas où plusieurs ennemis sont éliminés en même temps, l’effet en chaîne ne s’applique qu’une seule fois."
+  },
+  "esperance": {
+    "title": "Espérance",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/esperance/",
+    "summary": "Contre des désespérés, l’équipement est extrêmement puissant. S’il le veut, un PJ peut décider d’échanger les dégâts qu’il devrait infliger contre l’application de l’effet espérance. L’arme, plutôt que d’infliger des dégâts, traverse alors le corps du désespéré, arrachant une partie de son désespoir. S’il le fait, chaque PNJ désespéré touché par l’attaque peut effectuer un test de Bête difficulté ardu (5) (ou Hargne combo Sang-Froid dans le cas d’un PJ) pour combattre le désespoir. Chaque attaque supplémentaire infligée par l’équipement à un même désespéré et appliquant l’effet espérance fait baisser le niveau de difficulté du test de 1. Si le désespéré réussit son test, alors il a réussi à vaincre le désespoir et n’est plus un ennemi. Il peut se joindre aux chevaliers ou rester terrorisé par ce qu’il a commis ou par ce qui lui est arrivé (au choix du MJ). Contre une bande de désespérés, on considère que l’équipement fait simplement baisser sa cohésion. Cependant, si le personnage utilisant un équipement avec l’effet espérance a infligé assez de violence à une bande pour qu’elle tombe à 0 point de cohésion, les désespérés qui la composent reprennent espoir et retrouvent simplement leurs esprits. Ils se souviendront tout de même des actes qu’ils ont commis. Contre les autres types d’ennemis, les équipements possédant l’effet espérance infligent des dégâts et de la violence de manière normale."
+  },
+  "excellence": {
+    "title": "Excellence",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/excellence/",
+    "summary": "Lorsqu’un jet pour toucher est effectué avec cette arme, chaque réussite excédentaire au-dessus du score de réaction (dans le cas d’un tir) ou de défense (dans le cas d’une attaque au contact) de la cible permet de lui infliger 3 point de dégât (ou de violence dans le cas d’une bande) supplémentaire."
+  },
+  "exposer": {
+    "title": "Exposer",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/exposer/",
+    "summary": "Lorsque le PJ réussit son attaque sur une cible, celle-ci est exposée. La cible est exposée jusqu’au début de son prochain tour. Toute attaque qui devrait infliger des dégâts contre elle reçoit un bonus de 12 dégâts. Une même cible ne peut être exposée plusieurs fois dans un même tour."
+  },
+  "fatal": {
+    "title": "Fatal",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/fatal/",
+    "summary": "En sacrifiant 2D6 lors de son test d’attaque, si le test d’attaque est un succès, le chevalier met hors combat un hostile humain ciblé à portée de l’attaque. L’effet fatal peut être cumulé pour cibler plusieurs hostiles d’un coup en sacrifiant pour chacun 2D6. Les dés sont sacrifiés en même temps. Si le test est un échec, l’attaque rate tout simplement."
+  },
+  "frappeaportee": {
+    "title": "Frappe à portée",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/frappe-a-portee/",
+    "summary": "L’arme peut effectuer une attaque sur une cible située à portée courte de la même façon que si elle se trouvait à portée contact."
+  },
+  "fureur": {
+    "title": "Fureur",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/fureur/",
+    "summary": "Lorsque l’arme est utilisée contre une bande avec un score d’aspect Chair de 10 ou plus, la violence de l’arme est augmentée de 4D6."
+  },
+  "hecatombe": {
+    "title": "Hécatombe",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/hecatombe/",
+    "summary": "Lorsqu’un PJ inflige de la violence à une bande, celle-ci subit toujours au minimum la moitié (arrondie à l’inférieur) du total de violence possible sur les dés lancés. Ainsi, si un PJ devrait infligé 24 de violence maximum, car il lance 4 dés, il en infligera toujours au minimum 12 et plus si les résultats sur ses dés de violence sont meilleurs."
+  },
+  "ignorearmure": {
+    "title": "Ignore armure",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/ignore-armure/",
+    "summary": "L’arme ignore purement et simplement la valeur de points d’armure d’un adversaire. La santé de la cible est directement touchée si les dégâts passent le CdF ou le bouclier."
+  },
+  "ignorecdf": {
+    "title": "Ignore cdf",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/ignore-cdf/",
+    "summary": "L’arme ignore purement et simplement le champ de force d’un adversaire. Les PS de la cible sont directement touchée si les dégâts passent les PA ou le bouclier."
+  },
+  "immobilisation": {
+    "title": "Immobilisation",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/immobilisation-x/",
+    "summary": "Après avoir touché une cible avec une arme possédant l’effet immobilisation X, celle-ci est entravée et ne peut plus se déplacer. Pour se libérer de l’effet Immobilisation, la cible touchée doit, à son tour, au prix d’une action de déplacement, réussir un test base Déplacement ou Dextérité (aspect Chair ou Masque) difficulté X."
+  },
+  "intimidante": {
+    "title": "Intimidante",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/intimidante/",
+    "summary": "Lorsque l’arme est utilisée contre des bandes ciblées par son type, le score de la caractéristique Aura (plus les éventuels OD) du PJ est ajouté à la violence. Dans le cas des PNJ, c’est la moitié du score de Dame (plus le score de Dame exceptionnel éventuel) qui est ajoutée à la violence."
+  },
+  "jumeleakimbo": {
+    "title": "Jumelé (akimbo)",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/jumele-akimbo/",
+    "summary": "Lorsqu’on utilise deux exemplaires de cette arme en style akimbo, le malus est diminué de 2 (soit 1 dé de malus au lieu de 3)."
+  },
+  "jumeleambidextrie": {
+    "title": "Jumelé (ambidextrie)",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/jumele-ambidextrie/",
+    "summary": "Lorsqu’on utilise deux armes disposant de cet effet en style ambidextre, le malus est diminué de 2 (soit 1 dé de malus au lieu de 3)."
+  },
+  "leste": {
+    "title": "Lesté",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/leste/",
+    "summary": "Lorsque l’arme est utilisée, son utilisateur ajoute le score de la caractéristique Force multipliée par deux (ou Chair complet pour un PNJ) lorsqu’il détermine les dégâts plutôt que sa Force seule (ou Chair divisé par 2). Seuls les PJ ayant un score de Force égal ou supérieur à 4 ou possédant un overdrive de Force peuvent utiliser une arme avec un tel effet."
+  },
+  "lourd": {
+    "title": "Lourd",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/lourd/",
+    "summary": "Pour utiliser cette arme, vous devez dépenser une (et une seule) action de déplacement et une (et une seule) action de combat. Les actions supplémentaires acquises ne sont pas touchées par cet effet."
+  },
+  "lumiere": {
+    "title": "Lumière",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/lumiere-x/",
+    "summary": "Lorsque l’arme frappe une créature de l’Anathème ou une bande de l’Anathème, ses scores de défense et de réaction sont réduits d’une certaine valeur jusqu’à la fin du prochain tour du PJ qui a infligé l’effet lumière. X représente cette valeur. Cet effet ne peut pas se cumuler sur une même cible."
+  },
+  "meurtrier": {
+    "title": "Meurtrier",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/meurtrier/",
+    "summary": "Lorsque les dégâts impactent la santé de la cible, on ajoute 2D6 au total des dégâts. Si un seul point de dégâts passe l’armure, le bouclier et le CdF de la cible, l’effet meurtrier est appliqué."
+  },
+  "mobile": {
+    "title": "Mobile",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/mobile/",
+    "summary": "L’arme perd l’effet lourd et les malus qui lui sont attachés. Si elle l’avait, elle conserve l’effet deux mains."
+  },
+  "nonletal": {
+    "title": "Non létal",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/non-letal/",
+    "summary": "Si un ennemi atteint 0 PS en subissant les dégâts de cette arme, il ne meurt pas, mais tombe simplement inconscient pour 1D6 heures avant de reprendre ses esprits avec 1 point de santé."
+  },
+  "obliteration": {
+    "title": "Oblitération",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/obliteration/",
+    "summary": "Ces équipements particulièrement puissants infligent des dégâts considérables aux cibles les moins résistantes. Contre un ennemi de type hostile, ils infligent toujours le résultat maximal des dés de dégâts, comme si chacun des dés avait fait 6. Les dés ne sont simplement pas lancés. Si l’arme possède l’effet dispersion, chaque cible hostile touchée subit le maximum de dégâts."
+  },
+  "orfevrerie": {
+    "title": "Orfèvrerie",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/orfevrerie/",
+    "summary": "Lorsque l’arme est utilisée, son utilisateur ajoute sa caractéristique Dextérité (+ 1 point de dégâts par overdrive) (ou Masque divisé par 2, arrondi à l’entier supérieur, pour un PNJ) lorsqu’il détermine les dégâts en plus d’autres caractéristiques déjà incluses."
+  },
+  "parasitage": {
+    "title": "Parasitage",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/parasitage-x/",
+    "summary": "Cet effet s’applique uniquement aux méta-armures, exosquelettes, robots, véhicules, créatures de la Machine et tous les ennemis possédant la capacité sensibilité IEM. La cible touchée par une attaque avec parasitage X perd automatiquement ses X prochaines actions. Attention : l’effet ne peut pas se cumuler alors que la cible est déjà sous l’effet parasitage X et ne se cumule pas avec l’effet choc X. Variante Arsenal de Légende L’effet Parasitage n’enlève plus qu’une seule action (le X disparaît, ou est considéré comme 1 constant)."
+  },
+  "penetrant": {
+    "title": "Pénétrant",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/penetrant-x/",
+    "summary": "L’arme ignore une certaine valeur de champ de force, X représentant cette valeur. Si la valeur est égale ou supérieure au champ de force de l’ennemi, celui-ci est tout simplement ignoré et les points d’armure (ou les points de santé si la cible n’a pas de PA) sont directement touchés. Cet effet ne fonctionne pas contre le score de bouclier d’une cible."
+  },
+  "percearmure": {
+    "title": "Perce armure",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/perce-armure-x/",
+    "summary": "L’arme ignore une certaine valeur d’armure, X représentant cette valeur. Si la valeur est égale ou supérieure aux points d’armure de l’ennemi, le total de PA est simplement ignoré et la santé est directement touchée."
+  },
+  "pillage": {
+    "title": "Pillage",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/pillage/",
+    "summary": "Lorsque le PJ réussit une attaque contre un ou plusieurs PNJ, il récupère 3 PE. Cet effet ne fonctionne qu’une seule fois par attaque. Même avec l’effet dipersion 6, si le personnage réussit à toucher 6 cibles, il ne récupère que 3 PE."
+  },
+  "precision": {
+    "title": "Précision",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/precision/",
+    "summary": "Lorsque l’arme est utilisée, son utilisateur ajoute sa caractéristique Tir (+ 1 point de dégâts par overdrive) (ou Machine divisé par 2, arrondi à l’entier supérieur, pour un PNJ) lorsqu’il détermine les dégâts."
+  },
+  "reaction": {
+    "title": "Réaction",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/reaction-x/",
+    "summary": "L’utilisateur bénéficie d’un bonus en réaction, X représentant cette valeur, tant qu’il utilise cette arme ou module. Les bonus reçus peuvent se cumuler tant que le personnage peut bénéficier de l’effet."
+  },
+  "regularite": {
+    "title": "Régularité",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/regularite/",
+    "summary": "Sur un test d’attaque, base Tir ou Combat, chaque 6 ajoute +3 aux dégâts."
+  },
+  "rempart": {
+    "title": "Rempart",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/rempart/",
+    "summary": "Lorsque le PJ réussit à toucher un ennemi de type hostile ou salopard, il peut décider de le provoquer. L’ennemi doit alors attaquer le PJ (et uniquement lui, sauf capacités et effets ciblant plusieurs victimes) en priorité lors de son prochain tour ou fuir, malgré ce qu’indique sa tactique."
+  },
+  "retribution": {
+    "title": "Rétribution",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/retribution/",
+    "summary": "Si un ennemi cible le PJ au contact et rate son attaque, alors le PJ peut dépenser 3 PE et renvoyer les dégâts de l’attaque à l’assaillant. Le MJ lance les dés de dégâts et ajoute les bonus fixes de dégâts (sans les effets) de l’attaque qui aurait dû blesser le PJ si elle l’avait touché. Cet effet ne fonctionne pas contre les attaques avec l’effet dispersion X, contre les dégâts des bandes et contre tous les effets de zone ou impliquant des éléments de décor (au choix du MJ)."
+  },
+  "sensitif": {
+    "title": "Sensitif",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/sensitif/",
+    "summary": "Lorsque l’arme est utilisée, son utilisateur ajoute sa caractéristique Perception (+1 point de dégâts par overdrive) (ou Masque divisé par 2, arrondi à l’entier supérieur, pour un PNJ) lorsqu’il détermine les dégâts en plus d’autres caractéristiques déjà incluses (comme la Force et les éventuels OD de Force). Il n’a pas besoin d’utiliser cette caractéristique dans son combo."
+  },
+  "silencieux": {
+    "title": "Silencieux",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/silencieux/",
+    "summary": "Le personnage ne peut être repéré par un autre personnage parce qu’il utilise son arme. Lorsque cet effet est utilisé pendant une attaque surprise, une invisibilité, un mode Ghost ou un mode Changeling, le score de la caractéristique Discrétion (plus les éventuels OD) du PJ est ajouté aux dégâts. Dans le cas des PNJ, c’est la moitié du score de Masque (plus le score de Masque exceptionnel éventuel) qui est ajouté aux dégâts. Cet effet peut s’ajouter à ceux du mode Ghost et du niveau 2 de l’overdrive de Discrétion."
+  },
+  "soumission": {
+    "title": "Soumission",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/soumission/",
+    "summary": "Après avoir touché sa cible avec un effet soumission, l’attaquant peut soumettre sa cible physiquement et l’empêcher de se déplacer ou d’attaquer qui que ce soit d’autre que l’attaquant, et ce au contact. Pour se libérer de l’effet soumission, la cible touchée doit, à son tour, réussir un test base Déplacement ou Combat (aspect Chair ou Bête) dont la difficulté est définie par le nombre de réussites de l’attaquant. Si la cible n’a pas pu se libérer à son tour, l’attaquant peut maintenir la soumission sans relancer les dés et infliger des dégâts normalement, ou relancer un test d’attaque afin de renforcer sa prise. Si le jet est à nouveau réussi, les dégâts sont infligés sans prendre en considération tout éventuel champ de force ou bouclier (pour les créatures de l’Anathème). L’effet soumission ne peut impacter les colosses."
+  },
+  "sournois": {
+    "title": "Sournois",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/sournois/",
+    "summary": "Même s’il a été repéré par sa cible, le PJ peut faire une attaque surprise s’il est dans son dos ou si un autre chevalier est engagé avec elle. Attention : le PJ ne peut appliquer qu’un seul effet sournois par tour de jeu."
+  },
+  "specialiste": {
+    "title": "Spécialiste",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/specialiste-x/",
+    "summary": "Lorsque le personnage effectue un jet d’attaque avec l’arme, il peut relancer X dés de son choix. Cette relance de X dé ne peut être effectuée qu’une seule fois par attaque."
+  },
+  "tenebricide": {
+    "title": "Ténébricide",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/tenebricide/",
+    "summary": "L’équipement a été pensé pour anéantir les créatures de l’Anathème et uniquement celles-ci. Contre des ennemis humains (de n’importe quel type), il n’inflige que la moitié de ses dés de dégâts et de ses dés de violence."
+  },
+  "terrifiant": {
+    "title": "Terrifiant",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/terrifiant/",
+    "summary": "Le débordement de la bande ciblée par l’attaque est divisé (arrondi au supérieur) par deux jusqu’au prochain tour du PJ. Plusieurs effets terrifiant ne peuvent se cumuler sur une même bande. La division s’effectue avant une éventuelle baisse due à des effets comme démoralisant."
+  },
+  "tirdelite": {
+    "title": "Tir d'élite",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/tir-delite/",
+    "summary": "Une fois par tour, lorsque le chevalier obtient un exploit en effectuant un tir sur une cible de type nuisible, hostile ou salopard (hors Colosse), s’il passe sa réaction, celle-ci est automatiquement éliminée, ou passe à la phase suivante si elle en a plusieurs."
+  },
+  "tirenrafale": {
+    "title": "Tir en rafale",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/tir-en-rafale/",
+    "summary": "Lors du calcul des dégâts, il est possible, une fois par attaque, d’annuler tous les résultats et de relancer les dés. Le nouveau résultat remplace le premier et doit être conservé. Il n’est pas possible de prendre la moyenne des dégâts en utilisant cet effet."
+  },
+  "tirensecurite": {
+    "title": "Tir en sécurité",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/tir-en-securite/",
+    "summary": "Grâce à une caméra sur le bout du canon ou à un canon déformable, le porteur de l’arme peut tirer tout en bénéficiant des bonus du style à couvert sans subir de malus au tir."
+  },
+  "titanicide": {
+    "title": "Titanicide",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/titanicide/",
+    "summary": "Lorsque le personnage attaque un ennemi possédant de la résilience, s’il lui inflige des dégâts, il peut dépenser 3 PE à chaque pour faire baisser la résilence de 15."
+  },
+  "ultraviolence": {
+    "title": "Ultraviolence",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/ultraviolence/",
+    "summary": "Lorsque l’arme est utilisée contre une bande avec un score d’aspect Chair de moins de 10, la violence de l’arme est augmentée de 2D6."
+  },
+  "unemain": {
+    "title": "Une main",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/une-main/",
+    "summary": "Supprime simplement l’effet deux mains."
+  },
+  "adversite": {
+    "title": "Adversité",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/adversite-x/",
+    "summary": "La difficulté des tirs est augmentée de X (comme si la réaction des ennemis était augmentée de 3 points)."
+  },
+  "allegement": {
+    "title": "Allègement",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/allegement/",
+    "summary": "L’arme perd l’effet deux mains et peut donc être manipulée à une main."
+  },
+  "alourdissement": {
+    "title": "Alourdissement",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/alourdissement/",
+    "summary": "Une arme légère gagne l’effet deux mains, une arme à deux mains gagne l’effet lourd."
+  },
+  "antiemeute": {
+    "title": "Anti-émeute",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/anti-emeute/",
+    "summary": "Lorsque l’arme est utilisée, son utilisateur ajoute sa caractéristique Dextérité (+ 1 point de dégâts par overdrive) (ou Masque divisé par 2, arrondi à l’entier supérieur, pour un PNJ) lorsqu’il détermine la violence en plus d’autres caractéristiques déjà incluses."
+  },
+  "armeindestructible": {
+    "title": "Arme indestructible",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/arme-indestructible/",
+    "summary": "L’arme est indestructible. Elle ne peut pas être brisée, broyée, cassée, démantelée, brûlée, etc."
+  },
+  "bonusautir": {
+    "title": "Bonus au tir",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/bonus-au-tir-x/",
+    "summary": "L’arme procure un bonus de XD6 au test du tireur."
+  },
+  "bonusdegats": {
+    "title": "Bonus dégâts",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/bonus-degats-x/",
+    "summary": "Donne un bonus de dégâts fixe de +X"
+  },
+  "champdeforce": {
+    "title": "Champ de Force",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/champ-de-force-x/",
+    "summary": "L’utilisateur de l’arme ou du module gagne +X CdF. Voir la description complète de l’arme ou du module pour plus de détails."
+  },
+  "cibleprioritaire": {
+    "title": "Cible prioritaire",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/cible-prioritaire/",
+    "summary": "La cible de l’effet devient la cible de tous les ennemis dans un certain rayon. Cet effet peut dépendre d’un score d’aspect maximal au delà duquel l’effet est ignoré."
+  },
+  "contrecoup": {
+    "title": "Contrecoup",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/contrecoup-x/",
+    "summary": "Le chevalier ajoute 1D6 de dégât pour chaque PE utilisé pour cet effet, dans la limite de XD6 par action. L’attaque a un contre-coup détruisant un peu l’armure du chevalier, à raison de X×2 PA."
+  },
+  "endurci": {
+    "title": "Endurci",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/endurci-x/",
+    "summary": "Les pertes d’espoir sont réduites de X points. Ce bonus peut se cumuler avec d’autres réductions."
+  },
+  "ersatzbarbarian": {
+    "title": "Ersatz Barbarian",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/ersatz-barbarian/",
+    "summary": "Ajoute 1 overdrive en Force et en Endurance. Pour les armes improvisées, il est admis que l’armure possède au moins 3 overdrives en Force."
+  },
+  "ersatzbard": {
+    "title": "Ersatz Bard",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/ersatz-bard/",
+    "summary": "Le module génère une fausse apparence à partir d’éléments provenant d’une base de données standard (pas de copie d’apparence). Cette fausse apparence peut réajuster légèrement la taille de l’armure et crée une enveloppe molle, en mouvement perpétuel. Au contact, il est aisé de repérer la supercherie. À distance, pour percer l’illusion, un PNJ doit réussir un test d’aspect Machine difficulté difficile (6). Les PJ, quant à eux, doivent réussir un test base Perception difficulté normal (3)."
+  },
+  "ersatzrogue": {
+    "title": "Ersatz Rogue",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/ersatz-rogue/",
+    "summary": "Le chevalier est invisible et indétectable par l’ouïe, sauf par les personnages bénéficiant de l’aspect Machine exceptionnelle contre lesquels il bénéficie de 3 réussites automatiques à ses tests pour passer inaperçu (mais pas pour les attaques de toute sorte). Si un test est raté, l’ennemi détecte la présence du chevalier. Les PNJ disposant d’une vision alternative (vision de nuit, vision thermique) ou d’une ouïe surdéveloppée (comme les chiens, les félins, etc.) sont considérés comme possédant 3 points d’aspect Machine supplémentaires pour détecter le chevalier. Lorsque le PJ effectue une attaque de contact ou à distance, les effets du module s’arrêtent. L’attaque (uniquement avec des armes de tir possédant l’effet silencieux et toutes les armes de contact sauf celles possédant l’effet lumière) reçoit cependant un bonus en dés aux tests et un bonus fixe aux dégâts égal à la Discrétion du porteur, overdrives compris (le score de Discrétion s’ajoute une nouvelle fois dans le combo si ce score est déjà utilisé pour l’attaque)."
+  },
+  "explosivite": {
+    "title": "Explosivité",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/explosivite/",
+    "summary": "Contre les objets inanimés et les véhicules, les dégâts sont augmentés de 3D6."
+  },
+  "fierte": {
+    "title": "Fierté",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/fierte-x/",
+    "summary": "Désormais, lorsque le chevalier accomplit la motivation mineure liée à son blason, il gagne X points d’espoir supplémentaires à ajouter à sa valeur actuelle."
+  },
+  "ignorecouvert": {
+    "title": "Ignore couvert",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/ignore-couvert/",
+    "summary": "Ignore les bonus de réaction apportés par les couverts"
+  },
+  "mainlibre": {
+    "title": "Main libre",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/main-libre/",
+    "summary": "L’équipement n’occupe pas la main. Un chevalier peut donc utiliser une arme à deux mains ou deux armes à une main avec, à l’exception des boucliers."
+  },
+  "malusaction": {
+    "title": "Malus action",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/malus-action-x/",
+    "summary": "La cible subit un malus de XD6 à ses actions."
+  },
+  "overclock": {
+    "title": "Overclock",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/overclock-x/",
+    "summary": "Le chevalier ajoute 1D6 de dégât ou de violence par tranche de 2PE utilisés pour cet effet, dans la limite de XD6 par action"
+  },
+  "porteeamelioree": {
+    "title": "Portée améliorée",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/portee-amelioree-x/",
+    "summary": "La portée de l’arme augmente de +X"
+  },
+  "rapprochement": {
+    "title": "Rapprochement",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/rapprochement/",
+    "summary": "Lorsque l’effet se déclenche, le rang de distance séparant la cible et la source de l’effet est réduit d’une unité (moyenne passe à courte, courte à contact, etc)."
+  },
+  "retourdeflammes": {
+    "title": "Retour de flammes",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/retour-de-flammes/",
+    "summary": "Sur un échec critique d’attaque, l’attaquant subit les dégâts de l’arme à la place de sa cible"
+  },
+  "reussiteautomatique": {
+    "title": "Réussite automatique",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/reussite-automatique-x/",
+    "summary": "Attribue automatiquement X réussite(s) sur le jet. Le jet doit au moins avoir une réussite pour que l’effet soit ajouté (n’empêche donc pas les échecs critiques)."
+  },
+  "sansarmure": {
+    "title": "Sans armure",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/sans-armure/",
+    "summary": "L’arme peut être utilisée sans méta-armure."
+  },
+  "soinautomatique": {
+    "title": "Soin automatique",
+    "variable": true,
+    "url": "https://beta.knightools.fr/fr/effect/soin-automatique-x/",
+    "summary": "Lorsque le personnage tombe à 0 points de santé, l’effet régénère automatiquement XD6 points de santé."
+  },
+  "special": {
+    "title": "Spécial",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/special/",
+    "summary": "Voir la description ou la condition"
+  },
+  "surmesure": {
+    "title": "Sur mesure",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/sur-mesure/",
+    "summary": "Désormais, lorsqu’il touche une cible avec cette arme, le personnage ajoute son score dans la caractéristique Combat (overdrives inclus) aux dégâts qu’il lui inflige."
+  },
+  "surete": {
+    "title": "Sûreté",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/surete/",
+    "summary": "Les tests ne peuvent jamais faire d’échecs critiques"
+  },
+  "tank": {
+    "title": "Tank",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/tank/",
+    "summary": "En style défensif, le malus d’attaque passe à 1D6 (au lieu de 3D6)."
+  },
+  "visionheartbeat": {
+    "title": "Vision heartbeat",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/vision-heartbeat/",
+    "summary": "Permet de repérer les battements de cœur à travers les obstacles, ceux-ci servent de sonar, annule les éventuels malus environnementaux impactant la visibilité lorsqu’il s’agit de repérer ou d’attaquer des êtres ayant un cœur battant."
+  },
+  "visionmagnetique": {
+    "title": "Vision magnétique",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/vision-magnetique/",
+    "summary": "Permet de repérer les éléments métalliques à travers les obstacles, annule les malus environnementaux impactant la visibilité lorsqu’il s’agit de repérer ou d’attaquer des choses ou des êtres portant du métal."
+  },
+  "visionpredatrice": {
+    "title": "Vision prédatrice",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/vision-predatrice/",
+    "summary": "Permet de désigner un ennemi et de le suivre à travers les obstacles jusqu’à une distance de 2 kilomètres"
+  },
+  "visionthermique": {
+    "title": "Vision thermique",
+    "variable": false,
+    "url": "https://beta.knightools.fr/fr/effect/vision-thermique/",
+    "summary": "Permet de repérer les sources de chaleur à travers des obstacles peu épais, annule les malus environnementaux impactant la visibilité (pluie, fumée…)."
+  }
+}

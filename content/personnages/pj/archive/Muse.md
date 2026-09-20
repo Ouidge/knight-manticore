@@ -1,0 +1,46 @@
+---
+type: pj
+visibility: private
+nom: Rosa Diakité
+joueur: Zidget
+metaarmure: [[Wizard]]
+ia: [[Goat]]
+portrait: "[[Muse-portrait.png]]"
+image: "[[Muse-armure.png]]"
+fiche: [[Muse.pdf]]
+statut: En vie
+blason: Ours
+coterie: manticore
+section: Gargoyle
+inconvenients:
+  - [[Surprotecteur]]
+  - [[Ennemi juré]]
+avantages:
+  - [[Créateur-né]]
+  - [[Sûr de soi]]
+motivationmajeure: Éliminer le Collectionneur
+motivations: 
+  - Réaliser une œuvre
+  - Empêcher la mort d’un être humain
+  - Aider les nécessiteux
+  - Retrouver des œuvres d’art
+---
+<!-- BEGIN PJ INFOBOX -->
+>[!tldr] Muse
+> ![[Muse-old.webp]]
+> *Rosa Diakité*
+> Joueur : Zidget
+> Méta-armure : **[Wizard](https://knight-jdr-systeme.fr/fr/armour/Wizard/)**
+> I.A. : [[Goat]]
+> Blason : Ours
+> Section d'origine : **[Gargoyle](https://knight-jdr-systeme.fr/fr/division/Gargoyle/)**
+> Avantages : Créateur-né,Sûr de soi
+> Inconvénients : Surprotecteur,Ennemi juré
+> Motivation majeure :  Éliminer le Collectionneur
+> Motivations mineures :  Réaliser une œuvre,Empêcher la mort d’un être humain,Aider les nécessiteux,Retrouver des œuvres d’art
+
+![[_ADJ/blasons/Ours]]
+![[__public/personnages/pj/archive/Muse.pdf]]
+![[Créateur-né]]
+![[Sûr de soi]]![[_ADJ/inconvénients/Surprotecteur]]
+![[_ADJ/inconvénients/Ennemi juré]]<!-- END PJ INFOBOX -->

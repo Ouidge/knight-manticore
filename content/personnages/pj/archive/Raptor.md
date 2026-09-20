@@ -1,0 +1,49 @@
+---
+type: pj
+visibility: private
+nom: Salomé Edensmith
+joueur: Wh0
+metaarmure:
+  - - Ranger
+ia:
+  - - Raimundo
+portrait: "[[Raptor-portrait.png]]"
+image: "[[Raptor-armure.png]]"
+fiche:
+  - - Raptor.pdf
+statut: En vie
+blason:
+  - - Aigle
+coterie: manticore
+section: Cyclope
+inconvenients:
+  - - - Esprit de contradiction
+  - - - Sensible à l'Anathème
+avantages:
+  - - - Forteresse spirituelle
+  - - - Connaissance secrète occulte
+motivationmajeure: Devenir un chevalier de la Table Ronde
+motivations:
+  - Protéger ses coéquipiers
+  - Promouvoir le Knight
+  - Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué
+---
+<!-- BEGIN PJ INFOBOX -->
+>[!tldr] Raptor
+> ![[Raptor-old.webp]]
+> *Salomé Edensmith*
+> Joueur : Wh0
+> Méta-armure : **[Ranger](https://knight-jdr-systeme.fr/fr/armour/Ranger/)**
+> I.A. : [[Raimundo]]
+> Blason : Aigle
+> Section d'origine : **[Cyclope](https://knight-jdr-systeme.fr/fr/division/Cyclope/)**
+> Avantages : Forteresse spirituelle,Connaissance secrète occulte
+> Inconvénients : Esprit de contradiction,Sensible à l'Anathème
+> Motivation majeure :  Devenir un chevalier de la Table Ronde
+> Motivations mineures :  Protéger ses coéquipiers,Promouvoir le Knight,Faire respecter le code d’honneur du Knight lorsqu’il semble bafoué
+
+![[_ADJ/blasons/Aigle]]
+![[__public/personnages/pj/archive/Raptor.pdf]]
+![[_ADJ/avantages/Forteresse spirituelle]]
+![[Connaissance secrète occulte]]![[_ADJ/inconvénients/Esprit de contradiction]]
+![[_ADJ/inconvénients/Sensible à l'Anathème]]<!-- END PJ INFOBOX -->

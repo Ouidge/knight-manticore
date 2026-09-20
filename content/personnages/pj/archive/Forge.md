@@ -1,0 +1,48 @@
+---
+type: pj
+visibility: private
+nom: Sergueï Ilianov
+joueur: Jerem
+metaarmure:
+  - - Priest
+ia:
+  - - Maman
+portrait: "[[Forge-portrait.png]]"
+image: "[[Forge-armure.png]]"
+statut: En vie
+coterie: manticore
+blason: Corbeau
+section: Giant
+fiche:
+  - - Forge.pdf
+avantages:
+  - - - Bon sens
+  - - - Mémoire efficace
+inconvenients:
+  - - - Trop prudent
+  - - - Rat d'atelier
+motivationmajeure: Mettre au point une nouvelle méta-armure
+motivations:
+  - Découvrir les secrets de l’Anathème
+  - Participer à la résolution d’un crime
+  - Promouvoir le Knight
+---
+<!-- BEGIN PJ INFOBOX -->
+>[!tldr] Forge
+> ![[Forge-old.webp]]
+> *Sergueï Ilianov*
+> Joueur : Jerem
+> Méta-armure : **[Priest](https://knight-jdr-systeme.fr/fr/armour/Priest/)**
+> I.A. : [[Maman]]
+> Blason : Corbeau
+> Section d'origine : **[Giant](https://knight-jdr-systeme.fr/fr/division/Giant/)**
+> Avantages : Bon sens,Mémoire efficace
+> Inconvénients : Trop prudent,Rat d'atelier
+> Motivation majeure :  Mettre au point une nouvelle méta-armure
+> Motivations mineures :  Découvrir les secrets de l’Anathème,Participer à la résolution d’un crime,Promouvoir le Knight
+
+![[_ADJ/blasons/Corbeau]]
+![[__public/personnages/pj/archive/Forge.pdf]]
+![[Bon sens]]
+![[Mémoire efficace]]![[_ADJ/inconvénients/Trop prudent]]
+![[_ADJ/inconvénients/Rat d'atelier]]<!-- END PJ INFOBOX -->

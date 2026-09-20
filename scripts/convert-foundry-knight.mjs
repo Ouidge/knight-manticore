@@ -13,6 +13,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { effectPresentation } from "./effect-normalization.mjs";
 
 const inputPath = process.argv[2];
 if (!inputPath || ["-h", "--help"].includes(inputPath)) {
@@ -325,16 +326,17 @@ function slugify(value = "") {
 }
 
 function quartzNoteSlug(value = "") {
-  // Quartz conserve les caractères Unicode des noms de fichiers dans ses slugs.
-  // On encode donc le nom sans retirer les accents, contrairement aux liens du
-  // site de règles externe qui utilisent des slugs ASCII.
-  const slug = String(value)
-    .trim()
-    .toLocaleLowerCase("fr")
-    .replace(/\s+/g, "-")
+  // Reproduit slugifyPath() de Quartz v5 pour un nom de note : les accents,
+  // apostrophes et parenthèses sont conservés ; seuls les espaces et quelques
+  // caractères réservés sont transformés ou retirés.
+  return String(value)
+    .replace(/\s/g, "-")
+    .replace(/&/g, "-and-")
+    .replace(/%/g, "-percent")
+    .replace(/\?/g, "")
     .replace(/#/g, "")
-    .replace(/\?/g, "");
-  return encodeURIComponent(slug);
+    .replace(/[<>:"|*]/g, "")
+    .toLowerCase();
 }
 
 function weaponMode(name = "") {
@@ -374,7 +376,7 @@ function moduleUrl(name) {
 }
 
 function rangeHelpUrl(range) {
-  return `https://ouidge.github.io/knight-manticore/%F0%9F%93%90-aides-de-jeu/port%C3%A9es/${range}`;
+  return `https://ouidge.github.io/knight-manticore/aides-de-jeu/port%C3%A9es/${range}`;
 }
 
 function grenadeModuleBonus(grenadeKey, statistic) {
@@ -486,78 +488,23 @@ function conditionalDamageBonuses(bonuses = []) {
   );
 }
 
-const EFFECT_PRESENTATIONS = {
-  antianatheme: ["Anti-Anathème", "Anti-Anathème"],
-  antivehicule: ["Anti-véhicule", "Anti-véhicule"],
-  assistanceattaque: ["Assistance à l’attaque", "Assistance à l'attaque"],
-  barrage: ["Barrage", "Barrage X"],
-  chargeur: ["Chargeur", "Chargeur X"],
-  choc: ["Choc", "Choc X"],
-  defense: ["Défense", "Défense X"],
-  degatscontinus: ["Dégâts continus", "Dégâts continus X"],
-  demoralisant: ["Démoralisant", "Démoralisant"],
-  designation: ["Désignation", "Désignation"],
-  destructeur: ["Destructeur", "Destructeur"],
-  deuxmains: ["Deux mains", "Deux mains"],
-  dispersion: ["Dispersion", "Dispersion"],
-  electrifiee: ["Choc 1 (Électrifiée)", "Choc X"],
-  enchaine: ["En chaîne", "En chaîne"],
-  fureur: ["Fureur", "Fureur"],
-  ignorearmure: ["Ignore armure", "Ignore armure"],
-  ignorecdf: ["Ignore CdF", "Ignore CdF"],
-  jumeleakimbo: ["Jumelé (akimbo)", "Jumelé (akimbo)"],
-  jumeleambidextrie: ["Jumelé (ambidextrie)", "Jumelé (ambidextrie)"],
-  leste: ["Lesté", "Lesté"],
-  lourd: ["Lourd", "Lourd"],
-  lumiere: ["Lumière", "Lumière X"],
-  meurtrier: ["Meurtrier", "Meurtrier"],
-  orfevrerie: ["Orfèvrerie", "Orfèvrerie"],
-  parasitage: ["Parasitage", "Parasitage X"],
-  penetrant: ["Pénétrant", "Pénétrant X"],
-  percearmure: ["Perce-armure", "Perce armure X"],
-  precision: ["Précision", "Précision"],
-  reaction: ["Réaction", "Réaction X"],
-  silencieux: ["Silencieux", "Silencieux"],
-  soumission: ["Soumission", "Soumission"],
-  tirenrafale: ["Tir en rafale", "Tir en rafale"],
-  tirensecurite: ["Tir en sécurité", "Tir en sécurité"],
-  ultraviolence: ["Ultraviolence", "Ultraviolence"],
-};
-
-const UNLINKED_EFFECT_LABELS = {
-  boucliergrave: "Bouclier gravé",
-  canonlong: "Canon long",
-  faucheusegravee: "Faucheuse gravée",
-  jumelle: "Jumelle",
-  pointeurlaser: "Pointeur laser",
-  soeur: "Sœur",
-  surmesure: "Sur mesure",
-  tenebricide: "Ténébricide",
-};
-
-function effectPresentation(effect) {
-  const raw = String(effect ?? "").trim();
-  const match = raw.match(/^(.*?)(?:\s+(-?\d+))?$/);
-  const key = normalizeKey(match?.[1] ?? raw);
-  const value = match?.[2] ?? "";
-  if (key === "aucundegatsviolence") return null;
-  const known = EFFECT_PRESENTATIONS[key];
-  const label = known?.[0] ?? UNLINKED_EFFECT_LABELS[key] ?? raw.replace(/^./u, (c) => c.toLocaleUpperCase("fr"));
-  return {
-    label: `${label}${value ? ` ${value}` : ""}`,
-    note: known?.[1] ?? null,
-  };
-}
-
-function effectsHtml(effects = []) {
-  const rendered = effects.map(effectPresentation).filter(Boolean).map(({ label, note }) => {
-    if (!note) return escapeHtml(label);
+function effectsHtml(effects = [], separator = ", ") {
+  const rendered = effects.map(effectPresentation).filter(Boolean).map(({ label, noteTitle }) => {
+    if (!noteTitle) return escapeHtml(label);
     // Quartz ajoute lui-même le préfixe du site GitHub Pages (`/knight-manticore`).
     // Le conserver ici produirait un chemin doublé après le rendu.
-    const href = `/%F0%9F%93%90-aides-de-jeu/effets/${quartzNoteSlug(note)}`;
+    const href = `/aides-de-jeu/effets/${quartzNoteSlug(noteTitle)}`;
     return `<a class="internal knight-effect-link" href="${href}">${escapeHtml(label)}</a>`;
   });
-  return rendered.join(", ") || "—";
+  return rendered.join(separator) || "—";
+}
+
+function effectsMarkdown(effects = [], separator = ", ") {
+  const rendered = effects.map(effectPresentation).filter(Boolean).map(({ label, noteTitle }) => {
+    if (!noteTitle) return label;
+    return `[${label}](/aides-de-jeu/effets/${quartzNoteSlug(noteTitle)})`;
+  });
+  return rendered.join(separator) || "—";
 }
 
 function arsenalSection(groups) {
@@ -748,6 +695,9 @@ function armorCapabilitiesSection(armorItem) {
     const add = (name, value) => {
       if (value !== undefined && value !== null && value !== "") rows.push(`<p><strong>${escapeHtml(name)} :</strong> ${escapeHtml(value)}</p>`);
     };
+    const addHtml = (name, value) => {
+      if (value !== undefined && value !== null && value !== "") rows.push(`<p><strong>${escapeHtml(name)} :</strong> ${value}</p>`);
+    };
     const fields = (value, unit = "") => {
       if (value == null) return "";
       if (typeof value !== "object") return `${label(value)}${unit}`;
@@ -828,7 +778,7 @@ function armorCapabilitiesSection(armorItem) {
           ? `+${forceBonus} réussite${forceBonus > 1 ? "s" : ""} chacune`
           : `Force +${forceBonus} / Endurance +${enduranceBonus}`;
         const special = rackHeight && height >= rackHeight
-          ? "Anti-véhicule · armes rackées (modules utilisables)"
+          ? `${effectsHtml(["Anti-véhicule"])} · armes rackées (modules utilisables)`
           : "—";
         tableRows.push(
           `<tr><td>${height} m</td><td>${energyPerMeter * gain} PE</td><td>${characteristicBonus}<small>+${5 * gain} t soulevées</small></td><td>+${damagePerMeter * gain}D6 / +${violencePerMeter * gain}D6</td><td>+${forceFieldPerMeter * gain}</td><td>${defensePerMeter ? `−${defensePerMeter * gain}` : "—"} / ${reactionPerMeter ? `−${reactionPerMeter * gain}` : "—"}</td><td>${special}</td></tr>`,
@@ -850,12 +800,11 @@ function armorCapabilitiesSection(armorItem) {
       const effectRows = [];
       for (const [effectKey, effects] of Object.entries(capability.effets ?? {})) {
         if (effects.acces === false) continue;
-        const names = [...(effects.raw ?? []), ...(effects.custom ?? [])]
-          .map(effectPresentation).filter(Boolean).map(({ label }) => label);
-        if (names.length) effectRows.push([
+        const rawEffects = [...(effects.raw ?? []), ...(effects.custom ?? [])];
+        if (rawEffects.length) effectRows.push([
           effectKey === "base" ? "Base" : escapeHtml(effectKey.replace("liste", "Liste ")),
           effects.energie == null ? "—" : `${number(effects.energie)} PE`,
-          escapeHtml(names.join(" · ")),
+          effectsHtml(rawEffects, " · "),
         ]);
       }
       supplementalHtml = `${table(["Réglage", "Plage actuelle", "Coût"], adjustmentRows, "knight-capability-table-wide")}${table(["Effets", "Coût", "Choix disponibles"], effectRows, "knight-capability-table-wide knight-capability-effects-table")}`;
@@ -864,22 +813,23 @@ function armorCapabilitiesSection(armorItem) {
       const support = capability.support ?? {};
       const offensive = capability.offensif ?? {};
       const utility = capability.utilitaire ?? {};
-      const offensiveEffects = [...(offensive.effets?.raw ?? []), ...(offensive.effets?.custom ?? [])]
-        .map(effectPresentation).filter(Boolean).map(({ label }) => label).join(" · ");
+      const offensiveEffects = effectsHtml(
+        [...(offensive.effets?.raw ?? []), ...(offensive.effets?.custom ?? [])],
+        " · ",
+      );
       supplementalHtml = table(
         ["Usage", "Activation", "Durée", "Coût", "Effet"],
         [
-          ["Support", escapeHtml(label(support.activation)), escapeHtml(support.duree || "—"), `${number(support.energie?.base)} PE<small>+${number(support.energie?.allie)} PE par allié supplémentaire</small>`, "Anti-Anathème sur les armes utilisées"],
-          ["Offensif", escapeHtml(label(offensive.activation)), escapeHtml(offensive.duree || "—"), `${number(offensive.energie)} PE`, `${escapeHtml(formatDice(offensive.degats))} dégâts / ${escapeHtml(formatDice(offensive.violence))} violence<small>Portée ${escapeHtml(offensive.portee || "—")} · ${escapeHtml(offensiveEffects)}</small>`],
+          ["Support", escapeHtml(label(support.activation)), escapeHtml(support.duree || "—"), `${number(support.energie?.base)} PE<small>+${number(support.energie?.allie)} PE par allié supplémentaire</small>`, `${effectsHtml(["Anti-Anathème"])} sur les armes utilisées`],
+          ["Offensif", escapeHtml(label(offensive.activation)), escapeHtml(offensive.duree || "—"), `${number(offensive.energie)} PE`, `${escapeHtml(formatDice(offensive.degats))} dégâts / ${escapeHtml(formatDice(offensive.violence))} violence<small>Portée ${escapeHtml(offensive.portee || "—")} · ${offensiveEffects}</small>`],
           ["Utilitaire", escapeHtml(label(utility.activation)), escapeHtml(utility.duree || "—"), `${number(utility.energie)} PE`, "Manipulation du plasma<small>Éclairage, fusion, feu ou formes simples</small>"],
         ],
         "knight-capability-table-wide",
       );
     }
     if (key === "oriflamme") {
-      const effectNames = [...(capability.effets?.raw ?? []), ...(capability.effets?.custom ?? [])]
-        .map(effectPresentation).filter(Boolean).map(({ label }) => label);
-      if (effectNames.length) add("Effets", effectNames.join(" · "));
+      const rawEffects = [...(capability.effets?.raw ?? []), ...(capability.effets?.custom ?? [])];
+      if (rawEffects.length) addHtml("Effets", effectsHtml(rawEffects, " · "));
     }
     if (key === "warlord") {
       const impulses = capability.impulsions ?? {};
@@ -1060,8 +1010,7 @@ function moduleMechanicalSummary(item) {
     ...(data.effets?.custom ?? []),
   ];
   if (effects.length) {
-    const formattedEffects = effects.map(effectPresentation).filter(Boolean).map(({ label }) => label);
-    details.push(`Effets : ${formattedEffects.join(", ")}`);
+    details.push(`Effets : ${effectsMarkdown(effects)}`);
   }
 
   return details.join(" ; ") || "Voir la description du module";
@@ -1197,7 +1146,7 @@ out.push('<div class="knight-title-line">');
 out.push(`<h1>${escapeHtml(actor.name || "Personnage")}</h1>`);
 const blasonName = String(system.blason ?? "").replace(/[\[\]]/g, "").trim();
 const blasonLink = blasonName
-  ? `<a class="internal" href="/%F0%9F%93%90-aides-de-jeu/blasons/${slugify(blasonName)}">${escapeHtml(blasonName)}</a>`
+  ? `<a class="internal" href="/aides-de-jeu/blasons/${slugify(blasonName)}">${escapeHtml(blasonName)}</a>`
   : "—";
 const armorName = armor?.name || system.metaarmure || "";
 const armorProfileLink = armorName

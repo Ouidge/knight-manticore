@@ -1,0 +1,12 @@
+views:
+  - type: cards
+    name: Blasons
+    filters:
+      and:
+        - type == "adj"
+        - subtype == "blason"
+        - visibility == "public"
+    order:
+      - file.name
+      - voeu
+    image: note.image-logo

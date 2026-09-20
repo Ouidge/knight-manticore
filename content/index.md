@@ -11,11 +11,11 @@ Prochaine Session : 2026-09-25
 ---
 ## À explorer 
 
-→ [[⚜️ campagne]] 
+→ [[campagne]] 
 → [[Fiches]]
-→ [[👤 personnages/pj|👤PJ]]
-→ [[👤 personnages/pnj|👤 PNJ]]
-→ [[📐 aides de jeu]]
+→ [[personnages/pj|👤PJ]]
+→ [[personnages/pnj|👤 PNJ]]
+→ [[aides de jeu]]
 
 ---
 ## Liens externes
