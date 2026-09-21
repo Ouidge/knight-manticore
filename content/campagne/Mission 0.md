@@ -20,7 +20,7 @@ La coterie Manticore est missionnée pour retrouver Gideon et sauver les populat
 
 ### Session 1
 
-- A Dublin, la coterie fait la connaissance du maire, Karl Colley, accompagné de [[PNJ/Deirdre]], une amie chère de [[PJ/Maggot]].
+- A Dublin, la coterie fait la connaissance du maire, Karl Colley, accompagné de [[PNJ/Deirdre]], une amie chère de [[Personnages/PJ/Maggot]].
 - Les Manticore avertissent le Knight que 2 probables "doubles" des chevaliers de la coterie de Gideon,  [[Cristo]] et [[Snow]], sont au Knight.
 - Les Korrigan prennent leur appel et mettent les 2 sous chevaliers surveillance à l'infirmerie.
 - Les PJ rencontrent une **Triarche de l'Arbitre**, [[#La Parole]], qui les mène au sein du piège du Masque, là où les habitants de [[Dublin]] ont disparu. 

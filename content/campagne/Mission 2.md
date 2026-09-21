@@ -9,10 +9,10 @@ image: "[[M2-Rome.webp]]"
 PG:
 PX:
 PJ:
-  - "[[PJ/Forge]]"
-  - "[[PJ/Yurei]]"
-  - "[[PJ/Maggot]]"
-  - "[[PJ/Padre]]"
+  - "[[Personnages/PJ/Forge]]"
+  - "[[Personnages/PJ/Yurei]]"
+  - "[[Personnages/PJ/Maggot]]"
+  - "[[Personnages/PJ/Padre]]"
 ---
 
 # Mission 2 - Rome
@@ -34,3 +34,9 @@ PJ:
 - Graziella Santoni
 - [[PNJ/Denis de la Barthe]]
 - [[Salute]]
+
+#
+
+![[M2-Fresque-Lancelot.png]]
+
+

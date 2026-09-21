@@ -9,9 +9,9 @@ image: "[[M1-Svartcrown.webp]]"
 PG: 15
 PX: 13
 PJ:
-  - "[[PJ/Forge]]"
-  - "[[PJ/Yurei]]"
-  - "[[PJ/Maggot]]"
+  - "[[Personnages/PJ/Forge]]"
+  - "[[Personnages/PJ/Yurei]]"
+  - "[[Personnages/PJ/Maggot]]"
 ---
 #  Session du 24 juillet 2026
 

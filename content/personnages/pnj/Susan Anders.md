@@ -7,7 +7,7 @@ portrait: "[[Susan Anders.png]]"
 image: 
 faction: Réseaux RA de l’arche de MOQ
 description: "Journaliste très populaire, éprise de justice et de vérité"
-------
+---
 <!-- BEGIN PNJ INFOBOX -->
 # Susan Anders
 
