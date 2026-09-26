@@ -2,7 +2,7 @@
   "folder": "OXFOZtZltbSL67Z3",
   "name": "Muse",
   "type": "knight",
-  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Muse-portrait.png",
+  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Muse-portrait.png",
   "system": {
     "combat": {
       "armesimprovisees": {
@@ -1244,10 +1244,10 @@
   },
   "prototypeToken": {
     "name": "Muse",
-    "displayName": 50,
+    "displayName": 40,
     "actorLink": true,
     "texture": {
-      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/tokenizer/npc-images/muse.Token.webp",
+      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Muse-portrait.png",
       "scaleX": 1,
       "scaleY": 1,
       "tint": "#ffffff",
@@ -1459,10 +1459,10 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
-        "scale": 1,
-        "texture": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/tokens/knights/muse.token.webp?1785419509396"
+        "scale": 0.76,
+        "texture": null
       }
     },
     "turnMarker": {
@@ -10190,65 +10190,7 @@
       }
     }
   ],
-  "effects": [
-    {
-      "statuses": [
-        "choc"
-      ],
-      "name": "Choc",
-      "img": "systems/knight/assets/icons/effects/choc.svg",
-      "_id": "NiiW3i4NwtOUvI6x",
-      "type": "base",
-      "system": {
-        "changes": []
-      },
-      "disabled": false,
-      "duration": {
-        "value": null,
-        "units": "seconds",
-        "expiry": null,
-        "expired": false
-      },
-      "description": "",
-      "origin": null,
-      "tint": "#ffffff",
-      "transfer": false,
-      "sort": 0,
-      "flags": {
-        "statuscounter": {
-          "counter": {
-            "tokenId": null,
-            "path": "systems/knight/assets/icons/effects/choc.svg",
-            "type": "statuscounter.simple",
-            "visible": true,
-            "value": 2,
-            "actorId": "BxZU1ExOZFLjn64c"
-          }
-        }
-      },
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "14.365",
-        "systemId": "knight",
-        "systemVersion": "3.36.1",
-        "createdTime": 1750690583939,
-        "modifiedTime": 1750690583939,
-        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
-        "exportSource": null
-      },
-      "showIcon": 2,
-      "start": {
-        "combat": null,
-        "round": null,
-        "time": 0,
-        "turn": null,
-        "combatant": null,
-        "initiative": null
-      },
-      "folder": null
-    }
-  ],
+  "effects": [],
   "ownership": {
     "default": 0
   },
@@ -10258,7 +10200,7 @@
     "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1682525026486,
-    "modifiedTime": 1788111192842,
+    "modifiedTime": 1790170061553,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": null,
     "duplicateSource": null,

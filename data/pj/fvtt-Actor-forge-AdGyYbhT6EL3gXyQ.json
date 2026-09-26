@@ -1,7 +1,7 @@
 {
   "name": "Forge",
   "type": "knight",
-  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Forge-portrait.png",
+  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Forge-portrait.png",
   "system": {
     "combat": {
       "armesimprovisees": {
@@ -790,7 +790,7 @@
       },
       "bonusValue": 0,
       "malusValue": 0,
-      "value": 25,
+      "value": 34,
       "max": 0,
       "base": 0,
       "mod": 0,
@@ -818,7 +818,7 @@
       "flux": false
     },
     "armure": {
-      "value": 5,
+      "value": 70,
       "base": 0,
       "mod": 0,
       "max": 0,
@@ -1009,7 +1009,7 @@
           "malus": {
             "user": 0
           },
-          "value": 17
+          "value": 70
         },
         "champDeForce": {
           "bonus": {
@@ -1040,7 +1040,7 @@
           "malus": {
             "user": 0
           },
-          "value": 31
+          "value": 60
         },
         "id": "5mFJ3OnDwa9aUvmt",
         "idLegende": "0"
@@ -1165,7 +1165,7 @@
         "armure": 0
       },
       "malus": {
-        "user": 0,
+        "user": 3,
         "desavantages": 0,
         "blessures": 0,
         "companions": 0
@@ -1184,13 +1184,13 @@
       "reduction": 0
     },
     "heroisme": {
-      "value": 2,
+      "value": 3,
       "max": 6
     },
     "restrictions": {},
     "progression": {
       "gloire": {
-        "total": 225,
+        "total": 239,
         "depense": {
           "total": 0,
           "liste": {},
@@ -1218,7 +1218,7 @@
         "actuel": 55
       },
       "experience": {
-        "total": 154,
+        "total": 166,
         "depense": {
           "total": 0,
           "liste": {
@@ -1339,10 +1339,10 @@
   },
   "prototypeToken": {
     "name": "Forge",
-    "displayName": 50,
+    "displayName": 40,
     "actorLink": true,
     "texture": {
-      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/tokenizer/npc-images/forge.Token.webp",
+      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Forge-portrait.png",
       "scaleX": 1,
       "scaleY": 1,
       "tint": "#ffffff",
@@ -1554,7 +1554,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/tokens/knights/forge.token.webp?1785419257848"
@@ -14046,7 +14046,7 @@
     "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679575810748,
-    "modifiedTime": 1788111231924,
+    "modifiedTime": 1790419577625,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": "Actor.5zuAo37jUrtqjAHI",
     "duplicateSource": null,

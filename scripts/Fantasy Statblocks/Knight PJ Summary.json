@@ -1,0 +1,206 @@
+{
+  "blocks": [
+    {
+      "type": "group",
+      "id": "b948cb9a1a38",
+      "properties": [],
+      "nested": [
+        {
+          "type": "heading",
+          "id": "c9c9b95bebfb",
+          "properties": [
+            "name"
+          ],
+          "size": 1,
+          "fallback": "-"
+        },
+        {
+          "type": "group",
+          "id": "9b99394a09d8",
+          "properties": [],
+          "nested": [
+            {
+              "type": "subheading",
+              "id": "a86969e91bf8",
+              "properties": [
+                "realname"
+              ],
+              "fallback": "-",
+              "conditioned": true
+            },
+            {
+              "type": "subheading",
+              "id": "ea7b5aa8d8da",
+              "properties": [
+                "méta-armure",
+                "blason"
+              ],
+              "fallback": "-",
+              "separator": ", blason "
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "3b699ac8bb8a",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "e92a38dbfa38",
+          "properties": [],
+          "nested": [
+            {
+              "type": "property",
+              "id": "0a8a2988d9cb",
+              "properties": [
+                "defense"
+              ],
+              "fallback": "-",
+              "display": "Déf"
+            },
+            {
+              "type": "property",
+              "id": "e92a3a3a9bba",
+              "properties": [
+                "reaction"
+              ],
+              "fallback": "-",
+              "display": "Réac"
+            },
+            {
+              "type": "property",
+              "id": "984b7ad88b2a",
+              "properties": [
+                "initiative"
+              ],
+              "fallback": "-",
+              "display": "Init"
+            },
+            {
+              "type": "property",
+              "id": "a9aa79483b9a",
+              "properties": [
+                "pe"
+              ],
+              "fallback": "-",
+              "display": "PE",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "bb0af88b1aeb",
+              "properties": [
+                "pa"
+              ],
+              "fallback": "-",
+              "display": "PA",
+              "conditioned": false
+            },
+            {
+              "type": "property",
+              "id": "29c9da8ba9cb",
+              "properties": [
+                "cdf"
+              ],
+              "fallback": "-",
+              "display": "CdF"
+            },
+            {
+              "type": "property",
+              "id": "0b8bc8e87a2a",
+              "properties": [
+                "ps"
+              ],
+              "fallback": "-",
+              "display": "PS"
+            },
+            {
+              "type": "property",
+              "id": "e94b28d858aa",
+              "properties": [
+                "bouclier"
+              ],
+              "fallback": "-",
+              "display": "Bouclier",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "sumpc0000001",
+              "properties": [
+                "pc"
+              ],
+              "fallback": "-",
+              "display": "PC",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "sumpes000001",
+              "properties": [
+                "pes"
+              ],
+              "fallback": "-",
+              "display": "PEs",
+              "conditioned": true
+            }
+          ],
+          "heading": "",
+          "hasRule": false
+        }
+      ],
+      "heading": ""
+    },
+    {
+      "type": "group",
+      "id": "e87a2a0b1a98",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "7a7938ea98b9",
+          "properties": [
+            "avantages"
+          ],
+          "fallback": "-",
+          "heading": "Avantages",
+          "markdown": true,
+          "conditioned": true
+        },
+        {
+          "type": "traits",
+          "id": "096b09992a39",
+          "properties": [
+            "inconvénients"
+          ],
+          "fallback": "-",
+          "markdown": true,
+          "heading": "Inconvénients",
+          "conditioned": true
+        },
+        {
+          "type": "traits",
+          "id": "summotiv0001",
+          "properties": [
+            "motivations"
+          ],
+          "fallback": "-",
+          "heading": "Motivations",
+          "markdown": true,
+          "conditioned": true
+        }
+      ],
+      "heading": "Profil"
+    }
+  ],
+  "name": "Knight PJ Summary",
+  "id": "aa2b1948bafa",
+  "cssProperties": {
+    "backgroundColor": "#080a54",
+    "primaryColor": "#9bb2bf",
+    "ruleColor": "#b53b12"
+  }
+}

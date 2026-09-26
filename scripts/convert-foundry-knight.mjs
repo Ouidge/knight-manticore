@@ -23,8 +23,12 @@ if (!inputPath || ["-h", "--help"].includes(inputPath)) {
 
 const absoluteInput = path.resolve(inputPath);
 const actor = JSON.parse(fs.readFileSync(absoluteInput, "utf8"));
+const mjOutputArgument = process.argv.find((argument) => argument.startsWith("--mj-output="));
+const summaryOutputArgument = process.argv.find((argument) => argument.startsWith("--summary-output="));
 const outputPath = path.resolve(
-  process.argv[3] ?? path.join(path.dirname(absoluteInput), `${safeFilename(actor.name || "personnage")}.md`),
+  process.argv[3] && !process.argv[3].startsWith("--")
+    ? process.argv[3]
+    : path.join(path.dirname(absoluteInput), `${safeFilename(actor.name || "personnage")}.md`),
 );
 
 const DOMAIN_CHARACTERISTICS = {
@@ -1307,8 +1311,128 @@ if (injuries.length) {
 out.push(`\n<div class="screen-only knight-generation-note"><hr><p><em>Fiche générée depuis un export Foundry VTT — système Knight ${escapeHtml(actor._stats?.systemVersion ?? "version inconnue")}.</em></p></div>`);
 out.push('\n<div class="screen-only knight-print-actions"><button type="button" class="knight-print-button" onclick="window.print()" aria-label="Imprimer la fiche">🖨 Imprimer la fiche</button></div>');
 
+function yamlString(value) {
+  return JSON.stringify(String(value ?? ""));
+}
+
+function statblockTraits(lines, key, selectedItems, descriptionCallback = null, nameCallback = null) {
+  if (!selectedItems.length) return;
+  lines.push(`${key}:`);
+  for (const item of selectedItems) {
+    const description = descriptionCallback
+      ? descriptionCallback(item)
+      : htmlToMarkdown(item.system?.description) || mechanicalSummary(item) || "";
+    const name = nameCallback ? nameCallback(item) : item.name || "—";
+    lines.push(`  - name: ${yamlString(name)}`);
+    if (description) lines.push(`    desc: ${yamlString(description)}`);
+  }
+}
+
+function characteristicDisplay(domain, characteristic) {
+  const value = characteristicValue(domain, characteristic);
+  const od = overdriveValue(domain, characteristic);
+  return od ? `${value} (${od})` : String(value);
+}
+
+function pjStatblock(layout) {
+  const armorName = armor?.name || system.metaarmure || "";
+  const realName = [system.prenom, system.nom].filter(Boolean).join(" ") || system.identite || "";
+  const armorForceField = number(armor?.system?.champDeForce?.base) + weaponFlatModifier("cdf");
+  const guardianForceField = number(system.equipements?.guardian?.champDeForce?.base) + weaponFlatModifier("cdf");
+  const lines = [
+    "```statblock",
+    `layout: ${layout}`,
+    "columns: 2",
+    "columnWidth: 350",
+    "forceColumns: true",
+    `name: ${yamlString(actor.name || "Personnage")}`,
+  ];
+  if (realName) lines.push(`realname: ${yamlString(realName)}`);
+  lines.push("type: pj");
+  lines.push("coterie: Manticore");
+  if (system.section) lines.push(`section: ${yamlString(system.section)}`);
+  if (armorName) lines.push(`méta-armure: ${yamlString(`[[${armorName}]]`)}`);
+  if (system.blason) lines.push(`blason: ${yamlString(`[[${system.blason}]]`)}`);
+
+  lines.push(`defense: ${yamlString(`${armorDefense}/${guardianDefense}`)}`);
+  lines.push(`reaction: ${yamlString(`${armorReaction}/${guardianReaction}`)}`);
+  lines.push(`initiative: ${yamlString(`${armorInitiative}/${guardianInitiative}`)}`);
+  lines.push(`pc: ${number(system.contacts?.actuel)}`);
+  lines.push(`ps: ${healthMaximum}`);
+  lines.push(`pes: ${yamlString(`${number(system.espoir?.value)}/${hopeMaximum}`)}`);
+  lines.push(`cdf: ${yamlString(`${armorForceField}/${guardianForceField}`)}`);
+  lines.push(`pa: ${number(armor?.system?.armure?.base)}`);
+  lines.push(`pe: ${number(armor?.system?.energie?.base)}`);
+
+  if (layout === "Knight PJ") {
+    lines.push(`aspects: [${["chair", "bete", "machine", "dame", "masque"].map(domainValue).join(", ")}]`);
+    for (const [domain, characteristics] of Object.entries(DOMAIN_CHARACTERISTICS)) {
+      for (const characteristic of characteristics) {
+        const key = LABELS[characteristic].toLocaleLowerCase("fr");
+        lines.push(`${key}: ${yamlString(characteristicDisplay(domain, characteristic))}`);
+      }
+    }
+    const armorCapabilities = Object.values(armor?.system?.capacites?.selected ?? {}).map((capability) => ({
+      name: capability.label || capability.key,
+      system: { description: capability.description || "" },
+    }));
+    statblockTraits(lines, "skills", armorCapabilities);
+    statblockTraits(lines, "modules", displayedModules, moduleMechanicalSummary);
+    statblockTraits(lines, "armes", weapons, (weapon) => {
+      const effects = [...(weapon.system?.effets?.raw ?? []), ...(weapon.system?.effets?.custom ?? [])];
+      return [
+        `Type : ${weapon.system?.type || "—"}`,
+        `Portée : ${weapon.system?.portee || "—"}`,
+        `Dégâts : ${formatDice(weapon.system?.degats)}`,
+        `Violence : ${formatDice(weapon.system?.violence)}`,
+        effects.length ? `Effets : ${effectsMarkdown(effects)}` : "",
+      ].filter(Boolean).join(" · ");
+    });
+  }
+
+  const summaryNamesOnly = layout === "Knight PJ Summary" ? () => "" : null;
+  const traitWikiLink = (item) => `[[${item.name || "—"}]]`;
+  statblockTraits(lines, "avantages", personalAdvantages, summaryNamesOnly, traitWikiLink);
+  statblockTraits(lines, "inconvénients", personalDisadvantages, summaryNamesOnly, traitWikiLink);
+  if (layout === "Knight PJ Summary") {
+    const motivations = [
+      ...(system.motivations?.majeure ? [{ name: "Motivation majeure", system: { description: system.motivations.majeure } }] : []),
+      ...minorMotivations.map((item, index) => ({
+        name: item.name && item.name !== "Motivation Mineure" ? item.name : `Motivation mineure ${index + 1}`,
+        system: { description: item.system?.description || "" },
+      })),
+    ];
+    statblockTraits(lines, "motivations", motivations);
+  }
+  lines.push("```");
+  return lines.join("\n");
+}
+
+fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 fs.writeFileSync(outputPath, `${out.join("\n").replace(/\n{4,}/g, "\n\n\n")}\n`, "utf8");
 console.log(`Fiche générée : ${outputPath}`);
+
+if (mjOutputArgument) {
+  const mjOutputPath = path.resolve(mjOutputArgument.slice("--mj-output=".length));
+  fs.mkdirSync(path.dirname(mjOutputPath), { recursive: true });
+  const frontmatter = [
+    "---",
+    "type: fiche",
+    "subtype: pj",
+    `pj: ${yamlString(actor.name || "Personnage")}`,
+    `nom: ${yamlString(actor.name || "Personnage")}`,
+    "---",
+    "",
+  ].join("\n");
+  fs.writeFileSync(mjOutputPath, `${frontmatter}${pjStatblock("Knight PJ")}\n`, "utf8");
+  console.log(`Fiche MJ générée : ${mjOutputPath}`);
+}
+
+if (summaryOutputArgument) {
+  const summaryOutputPath = path.resolve(summaryOutputArgument.slice("--summary-output=".length));
+  fs.mkdirSync(path.dirname(summaryOutputPath), { recursive: true });
+  fs.writeFileSync(summaryOutputPath, `${pjStatblock("Knight PJ Summary")}\n`, "utf8");
+}
 
 // Permet aussi d'importer ce fichier depuis un autre script.
 export { htmlToMarkdown, slugify, weaponBaseName, weaponUrl };

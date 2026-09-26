@@ -1,0 +1,420 @@
+{
+  "blocks": [
+    {
+      "type": "heading",
+      "id": "78db98da4bf8",
+      "properties": [
+        "name"
+      ],
+      "conditioned": true,
+      "size": 1
+    },
+    {
+      "type": "group",
+      "id": "9b99394a09d8",
+      "properties": [],
+      "nested": [
+        {
+          "type": "subheading",
+          "id": "a86969e91bf8",
+          "properties": [
+            "realname"
+          ],
+          "fallback": "-",
+          "conditioned": true
+        },
+        {
+          "type": "subheading",
+          "id": "ea7b5aa8d8da",
+          "properties": [
+            "méta-armure",
+            "blason"
+          ],
+          "fallback": "-",
+          "separator": ", blason "
+        },
+        {
+          "type": "subheading",
+          "id": "1bc87b991968",
+          "properties": [
+            "section",
+            "coterie"
+          ],
+          "fallback": "-",
+          "separator": ", coterie "
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "id": "3b699ac8bb8a",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "e92a38dbfa38",
+          "properties": [],
+          "nested": [
+            {
+              "type": "property",
+              "id": "0a8a2988d9cb",
+              "properties": [
+                "defense"
+              ],
+              "fallback": "-",
+              "display": "Déf"
+            },
+            {
+              "type": "property",
+              "id": "e92a3a3a9bba",
+              "properties": [
+                "reaction"
+              ],
+              "fallback": "-",
+              "display": "Réac"
+            },
+            {
+              "type": "property",
+              "id": "984b7ad88b2a",
+              "properties": [
+                "initiative"
+              ],
+              "fallback": "-",
+              "display": "Init"
+            },
+            {
+              "type": "property",
+              "id": "a9aa79483b9a",
+              "properties": [
+                "pe"
+              ],
+              "fallback": "-",
+              "display": "PE",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "bb0af88b1aeb",
+              "properties": [
+                "pa"
+              ],
+              "fallback": "-",
+              "display": "PA",
+              "conditioned": false
+            },
+            {
+              "type": "property",
+              "id": "29c9da8ba9cb",
+              "properties": [
+                "cdf"
+              ],
+              "fallback": "-",
+              "display": "CdF"
+            },
+            {
+              "type": "property",
+              "id": "0b8bc8e87a2a",
+              "properties": [
+                "ps"
+              ],
+              "fallback": "-",
+              "display": "PS"
+            },
+            {
+              "type": "property",
+              "id": "e94b28d858aa",
+              "properties": [
+                "bouclier"
+              ],
+              "fallback": "-",
+              "display": "Bouclier",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "pjpc00000001",
+              "properties": [
+                "pc"
+              ],
+              "fallback": "-",
+              "display": "PC",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "pjpes0000001",
+              "properties": [
+                "pes"
+              ],
+              "fallback": "-",
+              "display": "PEs",
+              "conditioned": true
+            }
+          ],
+          "heading": "",
+          "hasRule": false
+        }
+      ],
+      "heading": "Valeurs dérivées"
+    },
+    {
+      "type": "group",
+      "id": "293a8949293b",
+      "properties": [],
+      "nested": [
+        {
+          "type": "table",
+          "id": "d9d8a8b9fb79",
+          "properties": [
+            "aspects"
+          ],
+          "headers": [
+            "CHAIR",
+            "BÊTE",
+            "MACHINE",
+            "DAME",
+            "MASQUE"
+          ],
+          "calculate": false,
+          "hasRule": false,
+          "conditioned": true
+        }
+      ],
+      "heading": "Aspects",
+      "hasRule": false
+    },
+    {
+      "type": "inline",
+      "id": "38b90afbca7a",
+      "properties": [],
+      "nested": [
+        {
+          "type": "property",
+          "id": "c9b9a9f85b88",
+          "properties": [
+            "déplacement"
+          ],
+          "fallback": "-",
+          "display": "Déplacement"
+        },
+        {
+          "type": "property",
+          "id": "8b5acbda69bb",
+          "properties": [
+            "force"
+          ],
+          "fallback": "-",
+          "display": "Force"
+        },
+        {
+          "type": "property",
+          "id": "9ab8ebeb3a09",
+          "properties": [
+            "endurance"
+          ],
+          "fallback": "-",
+          "display": "Endurance"
+        }
+      ],
+      "heading": "Chair"
+    },
+    {
+      "type": "inline",
+      "id": "2a78a9bb59da",
+      "properties": [],
+      "nested": [
+        {
+          "type": "property",
+          "id": "4979cbeaf8e8",
+          "properties": [
+            "hargne"
+          ],
+          "fallback": "-",
+          "display": "Hargne"
+        },
+        {
+          "type": "property",
+          "id": "ba49c9f98b18",
+          "properties": [
+            "combat"
+          ],
+          "fallback": "-",
+          "display": "Combat"
+        },
+        {
+          "type": "property",
+          "id": "ba78a86bf818",
+          "properties": [
+            "instinct"
+          ],
+          "fallback": "-",
+          "display": "Instinct"
+        }
+      ],
+      "heading": "Bête"
+    },
+    {
+      "type": "inline",
+      "id": "29e979ab7939",
+      "properties": [],
+      "nested": [
+        {
+          "type": "property",
+          "id": "3a58b8d82bb9",
+          "properties": [
+            "tir"
+          ],
+          "fallback": "-",
+          "display": "Tir"
+        },
+        {
+          "type": "property",
+          "id": "aaba68d9683b",
+          "properties": [
+            "savoir"
+          ],
+          "fallback": "-",
+          "display": "Savoir"
+        },
+        {
+          "type": "property",
+          "id": "9bd898bada08",
+          "properties": [
+            "technique"
+          ],
+          "fallback": "-",
+          "display": "Technique"
+        }
+      ],
+      "heading": "Machine"
+    },
+    {
+      "type": "inline",
+      "id": "3a78ba2a9888",
+      "properties": [],
+      "nested": [
+        {
+          "type": "property",
+          "id": "dad9aacb6809",
+          "properties": [
+            "aura"
+          ],
+          "fallback": "-",
+          "display": "Aura"
+        },
+        {
+          "type": "property",
+          "id": "98f87a592be9",
+          "properties": [
+            "parole"
+          ],
+          "fallback": "-",
+          "display": "Parole"
+        },
+        {
+          "type": "property",
+          "id": "b9d8b8391a09",
+          "properties": [
+            "sang-froid"
+          ],
+          "fallback": "-",
+          "display": "Sang-froid"
+        }
+      ],
+      "heading": "Dame"
+    },
+    {
+      "type": "inline",
+      "id": "9bca9b688af9",
+      "properties": [],
+      "nested": [
+        {
+          "type": "property",
+          "id": "4ae8ca3b79e8",
+          "properties": [
+            "discrétion"
+          ],
+          "fallback": "-",
+          "display": "Discrétion"
+        },
+        {
+          "type": "property",
+          "id": "f919cb5aca3b",
+          "properties": [
+            "dextérité"
+          ],
+          "fallback": "-",
+          "display": "Dextérité"
+        },
+        {
+          "type": "property",
+          "id": "69b8eaea1a9b",
+          "properties": [
+            "perception"
+          ],
+          "fallback": "-",
+          "display": "Perception"
+        }
+      ],
+      "heading": "Masque"
+    },
+    {
+      "type": "traits",
+      "id": "c9bac81889a9",
+      "properties": [
+        "skills"
+      ],
+      "heading": "Capacités",
+      "conditioned": true,
+      "markdown": true,
+      "dice": false,
+      "fallback": "-"
+    },
+    {
+      "type": "traits",
+      "id": "ab0a0b899ab9",
+      "properties": [
+        "modules"
+      ],
+      "fallback": "-",
+      "heading": "Modules",
+      "markdown": true,
+      "conditioned": true
+    },
+    {
+      "type": "traits",
+      "id": "5969fbbb5b9a",
+      "properties": [
+        "armes"
+      ],
+      "fallback": "-",
+      "heading": "Armes",
+      "markdown": true,
+      "conditioned": true
+    },
+    {
+      "type": "traits",
+      "id": "7a7938ea98b9",
+      "properties": [
+        "avantages"
+      ],
+      "fallback": "-",
+      "heading": "Avantages",
+      "markdown": true,
+      "conditioned": true
+    },
+    {
+      "type": "traits",
+      "id": "096b09992a39",
+      "properties": [
+        "inconvénients"
+      ],
+      "fallback": "-",
+      "markdown": true,
+      "heading": "Inconvénients",
+      "conditioned": true
+    }
+  ],
+  "name": "Knight PJ",
+  "id": "ca29b9ca6af8"
+}

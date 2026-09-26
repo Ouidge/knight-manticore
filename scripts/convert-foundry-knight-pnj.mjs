@@ -17,12 +17,13 @@ if (!inputPath || args.includes("--help") || args.includes("-h")) {
 
 const absoluteInput = path.resolve(inputPath);
 const actor = JSON.parse(fs.readFileSync(absoluteInput, "utf8"));
-if (actor.type !== "pnj") throw new Error(`L’acteur « ${actor.name ?? "sans nom"} » n’est pas de type pnj.`);
+if (!["pnj", "creature"].includes(actor.type)) throw new Error(`L’acteur « ${actor.name ?? "sans nom"} » n’est ni un PNJ ni une créature.`);
+const isCreature = actor.type === "creature";
 
 const vaultDirectory = path.resolve(vaultArgument?.slice("--vault=".length) || path.join(path.dirname(absoluteInput), "../.."));
 const safeName = safeFilename(actor.name || "PNJ");
-const outputPath = path.resolve(outputArgument?.slice("--output=".length) || path.join(vaultDirectory, "Personnages", "PNJ", `${safeName}.md`));
-const portraitDirectory = path.join(vaultDirectory, "Assets", "pnj");
+const outputPath = path.resolve(outputArgument?.slice("--output=".length) || path.join(vaultDirectory, "Acteurs", isCreature ? "Bestiaire" : "PNJ", `${safeName}.md`));
+const portraitDirectory = path.join(vaultDirectory, "Assets", isCreature ? "bestiaire" : "pnj");
 const system = actor.system ?? {};
 const items = Array.isArray(actor.items) ? actor.items : [];
 
@@ -60,6 +61,10 @@ function escapeCell(value) {
   return String(value ?? "—").replaceAll("|", "\\|").replace(/\s*\n\s*/g, " ");
 }
 
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function effectLink(rawEffect) {
   return effectWikiLink(rawEffect);
 }
@@ -75,11 +80,7 @@ function diceValue(stat = {}) {
 }
 
 function generatedBlock() {
-  const out = ["<!-- BEGIN FOUNDRY -->", "", "## Présentation", "", htmlToMarkdown(system.description) || "—"];
-  const tactic = htmlToMarkdown(system.tactique);
-  if (tactic) out.push("", "### Tactique", "", tactic);
-
-  out.push("", "## Profil technique", "", "| Santé | Armure | Énergie | Champ de force | Défense | Réaction | Initiative |", "|---:|---:|---:|---:|---:|---:|---:|", `| ${statBase(system.sante)} | ${statBase(system.armure)} | ${statBase(system.energie)} | ${statBase(system.champDeForce)} | ${statBase(system.defense)} | ${statBase(system.reaction)} | ${system.initiative?.complet || `${number(system.initiative?.diceBase, number(system.initiative?.dice, 3))}D6`} |`);
+  const out = ["<!-- BEGIN FOUNDRY -->", "", "## Profil technique", "", "| Santé | Armure | Énergie | Champ de force | Défense | Réaction | Initiative |", "|---:|---:|---:|---:|---:|---:|---:|", `| ${statBase(system.sante)} | ${statBase(system.armure)} | ${statBase(system.energie)} | ${statBase(system.champDeForce)} | ${statBase(system.defense)} | ${statBase(system.reaction)} | ${system.initiative?.complet || `${number(system.initiative?.diceBase, number(system.initiative?.dice, 3))}D6`} |`];
 
   out.push("", "## Aspects", "", "| Aspect | Valeur | AE mineur | AE majeur |", "|---|---:|---:|---:|");
   for (const [key, label] of [["chair", "Chair"], ["bete", "Bête"], ["machine", "Machine"], ["dame", "Dame"], ["masque", "Masque"]]) {
@@ -108,9 +109,132 @@ function generatedBlock() {
   return out.join("\n");
 }
 
+function generatedPresentationBlock() {
+  const description = String(system.description || "").trim() || "<p>—</p>";
+  const tactic = String(system.tactique || "").trim() || "<p>—</p>";
+  const lines = [
+    "<!-- BEGIN PNJ PRESENTATION -->",
+    "",
+    '<div class="pnj-presentation-grid">',
+    '<section class="pnj-presentation-card">',
+    "<h2>Présentation</h2>",
+    description,
+    "</section>",
+    '<aside class="pnj-tactique-card">',
+    "<h2>Tactique</h2>",
+    tactic,
+    "</aside>",
+    "</div>",
+    "",
+    "<!-- END PNJ PRESENTATION -->",
+  ];
+  return lines.join("\n");
+}
+
+function ensurePresentation(markdown, presentation) {
+  let updated = markdown.replace(/\n?<!-- BEGIN PNJ PRESENTATION -->[\s\S]*?<!-- END PNJ PRESENTATION -->\n?/g, "\n");
+  const dataviewEnd = "<!-- END PNJ DATAVIEW -->";
+  if (updated.includes(dataviewEnd)) {
+    updated = updated.replace(dataviewEnd, `${dataviewEnd}\n\n${presentation}`);
+  } else {
+    updated = `${updated.trimEnd()}\n\n${presentation}\n`;
+  }
+  return updated.replace(/\n{3,}/g, "\n\n");
+}
+
+function yamlString(value) {
+  return JSON.stringify(String(value ?? ""));
+}
+
+function appendStatblockTraits(lines, key, entries) {
+  if (!entries.length) return;
+  lines.push(`${key}:`);
+  for (const entry of entries) {
+    lines.push(`  - name: ${yamlString(entry.name)}`);
+    lines.push(`    desc: ${yamlString(entry.desc || "—")}`);
+  }
+}
+
+function generatedStatblock() {
+  const aspectKeys = ["chair", "bete", "machine", "dame", "masque"];
+  const aspects = aspectKeys.map((key) => number(system.aspects?.[key]?.value, number(system.aspects?.[key]?.base)));
+  const aeMineurs = aspectKeys.map((key) => number(system.aspects?.[key]?.ae?.mineur?.value));
+  const aeMajeurs = aspectKeys.map((key) => number(system.aspects?.[key]?.ae?.majeur?.value));
+  const capacities = items
+    .filter((item) => item.type === "capacite")
+    .map((item) => ({ name: item.name, desc: htmlToMarkdown(item.system?.description) }));
+  const modules = items
+    .filter((item) => item.type === "module")
+    .map((item) => ({ name: item.name, desc: htmlToMarkdown(item.system?.description) }));
+  const weapons = items.filter((item) => item.type === "arme").map((weapon) => {
+    const effects = [...(weapon.system?.effets?.raw ?? []), ...(weapon.system?.effets?.custom ?? [])];
+    const details = [
+      `**Type :** ${weapon.system?.type || "—"}`,
+      `**Portée :** ${weapon.system?.portee || "—"}`,
+      `**Dégâts :** ${diceValue(weapon.system?.degats)}${weapon.system?.degats?.addchair ? " + Chair" : ""}`,
+      `**Violence :** ${diceValue(weapon.system?.violence)}`,
+      `**Effets :** ${effects.map(effectLink).join(", ") || "—"}`,
+    ];
+    const description = htmlToMarkdown(weapon.system?.description);
+    if (description) details.push(description);
+    return { name: weapon.name, desc: details.join("  \n") };
+  });
+
+  const lines = [
+    "<!-- BEGIN PNJ STATBLOCK -->",
+    "```statblock",
+    `layout: ${isCreature ? "Knight Bestiaire" : "Knight PNJ"}`,
+    `name: ${yamlString(actor.name || "PNJ")}`,
+    `type: ${isCreature ? "Créature" : "PNJ"}`,
+  ];
+  const subtype = system.type || system.archetype || "";
+  if (subtype) lines.push(`subtype: ${yamlString(subtype)}`);
+  const weakPoint = htmlToMarkdown(system.pointsFaibles || system.pointfaible);
+  if (weakPoint) lines.push(`pointfaible: ${yamlString(weakPoint)}`);
+  lines.push(`aspects: [${aspects.join(", ")}]`);
+  lines.push(`ae_mineurs: [${aeMineurs.join(", ")}]`);
+  lines.push(`ae_majeurs: [${aeMajeurs.join(", ")}]`);
+  lines.push(`defense: ${statBase(system.defense)}`);
+  lines.push(`reaction: ${statBase(system.reaction)}`);
+  lines.push(`initiative: ${yamlString(system.initiative?.complet || `${number(system.initiative?.diceBase, number(system.initiative?.dice, 3))}D6`)}`);
+  lines.push(`ps: ${statBase(system.sante)}`);
+  lines.push(`pa: ${statBase(system.armure)}`);
+  lines.push(`pe: ${statBase(system.energie)}`);
+  lines.push(`cdf: ${statBase(system.champDeForce)}`);
+  const shield = statBase(system.bouclier);
+  if (shield) lines.push(`bouclier: ${shield}`);
+  if (system.cohesion != null) lines.push(`cohesion: ${number(system.cohesion?.value, number(system.cohesion?.base, number(system.cohesion)))}`);
+  if (system.debordement != null) lines.push(`debordement: ${number(system.debordement?.value, number(system.debordement?.base, number(system.debordement)))}`);
+  appendStatblockTraits(lines, "capacites", capacities);
+  appendStatblockTraits(lines, "modules", modules);
+  appendStatblockTraits(lines, "armes", weapons);
+  lines.push("```", "<!-- END PNJ STATBLOCK -->");
+  return lines.join("\n");
+}
+
+function ensureStatblock(markdown, statblock) {
+  let updated = markdown.replace(/\n?<!-- BEGIN PNJ STATBLOCK -->[\s\S]*?<!-- END PNJ STATBLOCK -->\n?/g, "\n");
+  const presentationEnd = "<!-- END PNJ PRESENTATION -->";
+  const dataviewEnd = "<!-- END PNJ DATAVIEW -->";
+  if (updated.includes(presentationEnd)) {
+    updated = updated.replace(presentationEnd, `${presentationEnd}\n\n${statblock}`);
+  } else if (updated.includes(dataviewEnd)) {
+    updated = updated.replace(dataviewEnd, `${dataviewEnd}\n\n${statblock}`);
+  } else {
+    updated = `${updated.trimEnd()}\n\n${statblock}\n`;
+  }
+  return updated.replace(/\n{3,}/g, "\n\n");
+}
+
 function replaceOrAppendGeneratedBlock(existing, block) {
   const pattern = /<!-- BEGIN FOUNDRY -->[\s\S]*?<!-- END FOUNDRY -->/;
   return pattern.test(existing) ? existing.replace(pattern, block) : `${existing.trimEnd()}\n\n${block}\n`;
+}
+
+function removeCampaignTag(markdown) {
+  return markdown
+    .replace(/^#campagne[ \t]*\r?\n(?:\r?\n)?/m, "")
+    .replace(/\n{3,}/g, "\n\n");
 }
 
 function setFrontmatterField(markdown, key, yamlValue) {
@@ -123,8 +247,91 @@ function setFrontmatterField(markdown, key, yamlValue) {
   return `---\n${updated}\n---${markdown.slice(end + 4)}`;
 }
 
+function ensureFrontmatterField(markdown, key, yamlValue) {
+  if (!markdown.startsWith("---\n")) return setFrontmatterField(markdown, key, yamlValue);
+  const end = markdown.indexOf("\n---", 4);
+  if (end < 0) return markdown;
+  const frontmatter = markdown.slice(4, end);
+  const expression = new RegExp(`^${key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}:`, "m");
+  return expression.test(frontmatter) ? markdown : setFrontmatterField(markdown, key, yamlValue);
+}
+
+function ensurePnjHeader(markdown, portraitFileName) {
+  const summary = [
+    "`= this.nom`, `= this.titre`",
+    "`= this.faction` (`= this.lieu`)",
+    "`= this.ref`",
+  ].join("\n");
+  const block = `<!-- BEGIN PNJ DATAVIEW -->
+\`\`\`dataview
+table without ID embed(link(meta(portrait).path, "150")) as Portrait, traits as Traits, motivations as Motivations
+FROM -"__plugins/templates"
+where file.path = this.file.path
+\`\`\`
+<!-- END PNJ DATAVIEW -->`;
+
+  let updated = markdown
+    .replace(/\n?<!-- BEGIN PNJ DATAVIEW -->[\s\S]*?<!-- END PNJ DATAVIEW -->\n?/g, "\n")
+    .replace(/\n?\`\`\`dataview\r?\n\s*table without ID (?:portrait|embed\(link\(meta\(portrait\)\.path,\s*"150"\)\)) as Portrait,\s*traits as Traits,\s*motivations as Motivations\s*\r?\n\s*FROM -"__plugins\/templates"\s*\r?\n\s*where file\.(?:name|path) = this\.file\.(?:name|path)\s*\r?\n\`\`\`\n?/gi, "\n");
+
+  const portraitPattern = new RegExp(
+    `^!\\[\\[${escapeRegExp(portraitFileName)}\\|200\\]\\][ \\t]*\\r?\\n(?:\\r?\\n)?`,
+    "m",
+  );
+  updated = updated.replace(portraitPattern, "");
+
+  const oldSummaryPattern = /^`= this\.nom`, `= this\.titre`\r?\n`= this\.faction` \(`= this\.lieu`\)\r?\n(?:Réf\.\s*:\s*)?`= this\.ref`\r?\n*/m;
+  updated = updated.replace(oldSummaryPattern, "");
+
+  const titlePattern = /^#(?!#)\s+.*$/m;
+  if (titlePattern.test(updated)) {
+    updated = updated.replace(titlePattern, `# \`= this.file.name\`\n${summary}\n\n${block}`);
+  } else {
+    const frontmatterEnd = updated.startsWith("---\n") ? updated.indexOf("\n---", 4) : -1;
+    if (frontmatterEnd >= 0) {
+      const insertionPoint = frontmatterEnd + 4;
+      updated = `${updated.slice(0, insertionPoint)}\n# \`= this.file.name\`\n${summary}\n\n${block}${updated.slice(insertionPoint)}`;
+    } else {
+      updated = `# \`= this.file.name\`\n${summary}\n\n${block}\n\n${updated}`;
+    }
+  }
+
+  return updated
+    .replace(/^(---\n[\s\S]*?\n---)\n+#[ \t]/, "$1\n# ")
+    .replace(/(<!-- END PNJ DATAVIEW -->)\n(?!\n)/, "$1\n\n")
+    .replace(/\n{3,}/g, "\n\n");
+}
+
+function ensureCreatureHeader(markdown) {
+  const title = "# `= this.file.name`";
+  if (/^#(?!#)\s+.*$/m.test(markdown)) return markdown.replace(/^#(?!#)\s+.*$/m, title);
+  const frontmatterEnd = markdown.startsWith("---\n") ? markdown.indexOf("\n---", 4) : -1;
+  if (frontmatterEnd >= 0) {
+    const insertionPoint = frontmatterEnd + 4;
+    return `${markdown.slice(0, insertionPoint)}\n${title}${markdown.slice(insertionPoint)}`.replace(/\n{3,}/g, "\n\n");
+  }
+  return `${title}\n\n${markdown}`;
+}
+
+function ensureCampaignNotes(markdown) {
+  const notesPattern = /^> \[!note\][+-]?[ \t]+Notes de campagne[^\r\n]*(?:\r?\n>[^\r\n]*)*/mi;
+  const existing = markdown.match(notesPattern)?.[0]?.trimEnd();
+  const notes = existing || "> [!note] Notes de campagne\n> Cette zone reste entièrement manuelle.";
+  let updated = markdown.replace(notesPattern, "").replace(/\n{3,}/g, "\n\n");
+  const dataviewStart = "<!-- BEGIN PNJ DATAVIEW -->";
+  if (updated.includes(dataviewStart)) {
+    updated = updated.replace(dataviewStart, `${notes}\n\n${dataviewStart}`);
+  } else {
+    updated = `${updated.trimEnd()}\n\n${notes}\n`;
+  }
+  return updated.replace(/\n{3,}/g, "\n\n");
+}
+
 function newNote(portraitFileName) {
-  return `---\ntype: pnj\nfaction: ""\nstatut: ""\nportrait: ${JSON.stringify(`[[${portraitFileName}]]`)}\n---\n\n#campagne\n\n# ${actor.name || "PNJ"}\n\n![[${portraitFileName}|200]]\n\n> [!note] Notes de campagne\n> Cette zone reste entièrement manuelle.\n`;
+  if (isCreature) {
+    return `---\ntype: fiche\nsubtype: creature\nnom: ${JSON.stringify(actor.name || "Créature")}\nportrait: ${JSON.stringify(`[[${portraitFileName}]]`)}\n---\n# \`= this.file.name\`\n`;
+  }
+  return `---\ntype: pnj\nsubtype: \nnom: \ntitre: \nfaction: "Knight"\nstatut: \nportrait: ${JSON.stringify(`[[${portraitFileName}]]`)}\nmusique: \nref: \ntraits: []\nmotivations: []\nlieu: \n---\n# \`= this.file.name\`\n\n> [!note] Notes de campagne\n> Cette zone reste entièrement manuelle.\n`;
 }
 
 function imageExtension(url) {
@@ -150,9 +357,34 @@ async function downloadPortrait() {
 const portraitFileName = await downloadPortrait();
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 let markdown = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, "utf8") : newNote(portraitFileName);
-markdown = setFrontmatterField(markdown, "type", "pnj");
+markdown = removeCampaignTag(markdown);
 markdown = setFrontmatterField(markdown, "portrait", JSON.stringify(`[[${portraitFileName}]]`));
+if (isCreature) {
+  markdown = setFrontmatterField(markdown, "type", "fiche");
+  markdown = setFrontmatterField(markdown, "subtype", "creature");
+  markdown = ensureFrontmatterField(markdown, "nom", JSON.stringify(actor.name || "Créature"));
+  markdown = ensureCreatureHeader(markdown);
+} else {
+  markdown = setFrontmatterField(markdown, "type", "pnj");
+  markdown = ensureFrontmatterField(markdown, "subtype", "");
+  markdown = ensureFrontmatterField(markdown, "nom", "");
+  markdown = ensureFrontmatterField(markdown, "titre", "");
+  markdown = ensureFrontmatterField(markdown, "faction", JSON.stringify("Knight"));
+  markdown = ensureFrontmatterField(markdown, "statut", "");
+  markdown = ensureFrontmatterField(markdown, "musique", "");
+  markdown = ensureFrontmatterField(markdown, "ref", "");
+  markdown = ensureFrontmatterField(markdown, "traits", "[]");
+  markdown = ensureFrontmatterField(markdown, "motivations", "[]");
+  markdown = ensureFrontmatterField(markdown, "lieu", "");
+  if (Object.hasOwn(actor._knightExport ?? {}, "folderName")) {
+    markdown = setFrontmatterField(markdown, "faction", JSON.stringify(actor._knightExport.folderName ?? ""));
+  }
+  markdown = ensurePnjHeader(markdown, portraitFileName);
+}
+markdown = ensureCampaignNotes(markdown);
+markdown = ensurePresentation(markdown, generatedPresentationBlock());
+markdown = ensureStatblock(markdown, generatedStatblock());
 markdown = replaceOrAppendGeneratedBlock(markdown, generatedBlock());
 fs.writeFileSync(outputPath, `${markdown.trimEnd()}\n`, "utf8");
-console.log(`Fiche PNJ mise à jour : ${outputPath}`);
+console.log(`Fiche ${isCreature ? "Bestiaire" : "PNJ"} mise à jour : ${outputPath}`);
 if (!skipImage) console.log(`Portrait remplacé : ${path.join(portraitDirectory, portraitFileName)}`);

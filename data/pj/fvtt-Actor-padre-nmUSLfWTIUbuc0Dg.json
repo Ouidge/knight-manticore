@@ -1,7 +1,7 @@
 {
   "name": "Padre",
   "type": "knight",
-  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Padre-portrait.png",
+  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Padre-portrait.png",
   "system": {
     "combat": {
       "armesimprovisees": {
@@ -1139,13 +1139,13 @@
       "reduction": 0
     },
     "heroisme": {
-      "value": 0,
+      "value": 1,
       "max": 6
     },
     "restrictions": {},
     "progression": {
       "gloire": {
-        "total": 165,
+        "total": 179,
         "depense": {
           "total": 0,
           "liste": {},
@@ -1161,7 +1161,7 @@
         "actuel": 35
       },
       "experience": {
-        "total": 109,
+        "total": 121,
         "depense": {
           "total": 0,
           "liste": {
@@ -1252,10 +1252,10 @@
   },
   "prototypeToken": {
     "name": "Padre",
-    "displayName": 50,
+    "displayName": 40,
     "actorLink": true,
     "texture": {
-      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/tokenizer/npc-images/padre.Token.webp",
+      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Padre-portrait.png",
       "scaleX": 1,
       "scaleY": 1,
       "tint": "#ffffff",
@@ -1467,7 +1467,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/tokens/knights/padre.token.webp?1785419579718"
@@ -10522,7 +10522,7 @@
     "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679599687720,
-    "modifiedTime": 1788111205842,
+    "modifiedTime": 1790419752313,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": null,
     "duplicateSource": null,

@@ -16,8 +16,10 @@ else {
 }
 
 $PnjDataDirectory = Join-Path $ProjectDirectory "data/pnj"
-$PnjNotesDirectory = Join-Path $VaultDirectory "Personnages/PNJ"
+$PnjNotesDirectory = Join-Path $VaultDirectory "Acteurs/PNJ"
+$BestiaryNotesDirectory = Join-Path $VaultDirectory "Acteurs/Bestiaire"
 $PnjAssetsDirectory = Join-Path $VaultDirectory "Assets/pnj"
+$BestiaryAssetsDirectory = Join-Path $VaultDirectory "Assets/bestiaire"
 
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
     throw "Node.js est introuvable. Installez Node.js ou ajoutez la commande 'node' au PATH."
@@ -28,7 +30,9 @@ if (-not (Test-Path -LiteralPath $ConverterPath -PathType Leaf)) {
 
 New-Item -ItemType Directory -Path $PnjDataDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $PnjNotesDirectory -Force | Out-Null
+New-Item -ItemType Directory -Path $BestiaryNotesDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $PnjAssetsDirectory -Force | Out-Null
+New-Item -ItemType Directory -Path $BestiaryAssetsDirectory -Force | Out-Null
 
 $JsonFiles = @(Get-ChildItem -LiteralPath $PnjDataDirectory -File -Filter "*.json" | Sort-Object Name)
 if ($JsonFiles.Count -eq 0) {
@@ -60,7 +64,7 @@ function Invoke-PnjConversion {
 foreach ($JsonFile in $JsonFiles) {
     try {
         $JsonContent = Get-Content -LiteralPath $JsonFile.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
-        if ([string]$JsonContent.format -eq "knight-pnj-bundle" -and $null -ne $JsonContent.actors) {
+        if ([string]$JsonContent.format -in @("knight-pnj-bundle", "knight-actor-bundle") -and $null -ne $JsonContent.actors) {
             $Actors = @($JsonContent.actors)
             Write-Host "Lot Foundry détecté : $($Actors.Count) PNJ."
             foreach ($Actor in $Actors) {
@@ -91,5 +95,6 @@ foreach ($JsonFile in $JsonFiles) {
 Write-Host ""
 Write-Host "Conversion PNJ terminée : $SuccessCount réussite(s), $FailureCount échec(s)."
 Write-Host "Fiches : $PnjNotesDirectory"
+Write-Host "Bestiaire : $BestiaryNotesDirectory"
 Write-Host "Portraits : $PnjAssetsDirectory"
 if ($FailureCount -gt 0) { exit 1 }

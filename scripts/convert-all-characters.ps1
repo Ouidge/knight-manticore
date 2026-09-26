@@ -25,6 +25,13 @@ $CharactersDirectory = [System.IO.Path]::GetFullPath(
     (Join-Path $ScriptDirectory "../data/pj")
 )
 $OutputDirectory = Join-Path $VaultDirectory "__public/personnages/pj"
+$MjOutputDirectory = Join-Path $VaultDirectory "Acteurs/PJ"
+$EAcute = [char]0x00E9
+$SummaryLabel = "R${EAcute}sum${EAcute} PJ"
+$SummaryType = "r${EAcute}sum${EAcute}"
+$SummaryOutputPath = Join-Path $MjOutputDirectory "_${SummaryLabel}.md"
+$LegacySummaryOutputPath = Join-Path $MjOutputDirectory "${SummaryLabel}.md"
+$SummaryFragmentsDirectory = Join-Path ([System.IO.Path]::GetTempPath()) ("knight-pj-summary-" + [guid]::NewGuid().ToString("N"))
 
 function ConvertTo-SafeFileName {
     param([Parameter(Mandatory)][string]$Name)
@@ -60,6 +67,8 @@ if (-not (Test-Path -LiteralPath $CharactersDirectory -PathType Container)) {
 }
 
 New-Item -ItemType Directory -Path $OutputDirectory -Force | Out-Null
+New-Item -ItemType Directory -Path $MjOutputDirectory -Force | Out-Null
+New-Item -ItemType Directory -Path $SummaryFragmentsDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $ObsidianSnippetsDirectory -Force | Out-Null
 
 # Produit automatiquement le snippet Obsidian depuis la feuille Quartz afin
@@ -114,9 +123,11 @@ foreach ($JsonFile in $JsonFiles) {
         }
 
         $OutputPath = Join-Path $OutputDirectory $OutputName
+        $MjOutputPath = Join-Path $MjOutputDirectory ("Fiche " + $OutputName)
+        $SummaryFragmentPath = Join-Path $SummaryFragmentsDirectory $OutputName
 
         Write-Host "Conversion : $($JsonFile.Name) -> $OutputName"
-        & node $ConverterPath $JsonFile.FullName $OutputPath
+        & node $ConverterPath $JsonFile.FullName $OutputPath "--mj-output=$MjOutputPath" "--summary-output=$SummaryFragmentPath"
 
         if ($LASTEXITCODE -ne 0) {
             throw "Le convertisseur Node.js a retourné le code $LASTEXITCODE."
@@ -130,9 +141,33 @@ foreach ($JsonFile in $JsonFiles) {
     }
 }
 
+if ($SuccessCount -gt 0) {
+    $Summary = [System.Text.StringBuilder]::new()
+    [void]$Summary.AppendLine("---")
+    [void]$Summary.AppendLine("type: $SummaryType")
+    [void]$Summary.AppendLine("subtype: pj")
+    [void]$Summary.AppendLine("---")
+    [void]$Summary.AppendLine("# $SummaryLabel")
+    [void]$Summary.AppendLine()
+    foreach ($Fragment in (Get-ChildItem -LiteralPath $SummaryFragmentsDirectory -File -Filter "*.md" | Sort-Object Name)) {
+        [void]$Summary.AppendLine((Get-Content -LiteralPath $Fragment.FullName -Raw -Encoding UTF8).Trim())
+        [void]$Summary.AppendLine()
+    }
+    [System.IO.File]::WriteAllText($SummaryOutputPath, $Summary.ToString(), [System.Text.UTF8Encoding]::new($false))
+    if (Test-Path -LiteralPath $LegacySummaryOutputPath -PathType Leaf) {
+        Remove-Item -LiteralPath $LegacySummaryOutputPath -Force
+    }
+    Write-Host "$SummaryLabel généré : $SummaryOutputPath"
+}
+
+if (Test-Path -LiteralPath $SummaryFragmentsDirectory) {
+    Remove-Item -LiteralPath $SummaryFragmentsDirectory -Recurse -Force
+}
+
 Write-Host ""
 Write-Host "Conversion terminée : $SuccessCount réussite(s), $FailureCount échec(s)."
 Write-Host "Fiches créées dans : $OutputDirectory"
+Write-Host "Fiches MJ créées dans : $MjOutputDirectory"
 
 if ($FailureCount -gt 0) {
     exit 1

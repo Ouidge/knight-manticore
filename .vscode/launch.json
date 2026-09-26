@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "name": "Quartz: serve",
       "type": "node-terminal",
@@ -60,6 +61,15 @@
       "type": "node-terminal",
       "request": "launch",
       "command": "powershell -ExecutionPolicy Bypass -File .\\scripts\\convert-all-pnj.ps1 -VaultDirectory \"F:\\Vaults\\Knight\"",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Convert Bestiaire",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "powershell -ExecutionPolicy Bypass -File .\\scripts\\convert-all-bestiaire.ps1 -VaultDirectory \"F:\\Vaults\\Knight\"",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"

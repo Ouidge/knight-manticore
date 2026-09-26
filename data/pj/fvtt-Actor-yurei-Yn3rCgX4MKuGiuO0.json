@@ -1,7 +1,7 @@
 {
   "name": "Yurei",
   "type": "knight",
-  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/pj/Yurei-portrait.png",
+  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Yurei-portrait.png",
   "system": {
     "combat": {
       "armesimprovisees": {
@@ -1018,7 +1018,7 @@
           "malus": {
             "user": 0
           },
-          "value": 37
+          "value": 35
         },
         "id": "dadO0lKNUn7AvNAI",
         "idLegende": "0"
@@ -1161,13 +1161,13 @@
       "reduction": 0
     },
     "heroisme": {
-      "value": 4,
+      "value": 5,
       "max": 6
     },
     "restrictions": {},
     "progression": {
       "gloire": {
-        "total": 225,
+        "total": 239,
         "depense": {
           "total": 0,
           "liste": {},
@@ -1189,7 +1189,7 @@
         "actuel": 5
       },
       "experience": {
-        "total": 154,
+        "total": 166,
         "depense": {
           "total": 0,
           "liste": {
@@ -1305,10 +1305,10 @@
   },
   "prototypeToken": {
     "name": "Yurei",
-    "displayName": 50,
+    "displayName": 40,
     "actorLink": true,
     "texture": {
-      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/tokenizer/npc-images/yurei.Token.webp",
+      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Yurei-portrait.png",
       "scaleX": 1,
       "scaleY": 1,
       "tint": "#ffffff",
@@ -1520,7 +1520,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/tokens/knights/yurei.token.webp?1785419285225"
@@ -5040,11 +5040,11 @@
       },
       "_stats": {
         "systemId": "knight",
-        "systemVersion": "3.54.4",
+        "systemVersion": "3.58.35",
         "coreVersion": "14.365",
         "createdTime": 1666890021845,
-        "modifiedTime": 1787428694105,
-        "lastModifiedBy": "i1Epf1qJsSzYFrV0",
+        "modifiedTime": 1790354035454,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.armours-base.ab4ca364b78e8d5d",
         "duplicateSource": null,
         "exportSource": null
@@ -12651,7 +12651,7 @@
     "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679573468977,
-    "modifiedTime": 1788113387915,
+    "modifiedTime": 1790419852459,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": null,
     "duplicateSource": null,
