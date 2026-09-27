@@ -32,6 +32,8 @@ projet/
     │   │   ├── Knight Bestiaire.json
     │   │   ├── Knight Bestiaire Combat.json
     │   │   ├── Knight PJ.json
+    │   │   ├── Knight PJ Recto.json
+    │   │   ├── Knight PJ Verso.json
     │   │   └── Knight PJ Summary.json
     │   └── snippets/
     │       └── knight-statblocks.css
@@ -70,7 +72,7 @@ Pour importer uniquement le bestiaire, placer les exports JSON dans
 ```
 
 Le script accepte un export individuel ou le lot produit par la macro Foundry.
-Dans un lot mixte, seuls les acteurs de type `creature` sont importés.
+Dans un lot mixte, seuls les acteurs de type `creature` ou `bande` sont importés.
 
 Les scripts PNJ et Bestiaire génèrent désormais deux notes par acteur :
 
@@ -78,8 +80,13 @@ Les scripts PNJ et Bestiaire génèrent désormais deux notes par acteur :
 - une fiche de combat autonome nommée `Fiche <Nom>.md` dans le sous-dossier
   `Fiches/` correspondant.
 
+Les notes narratives du Bestiaire portent `type: bestiaire` et conservent le
+sous-type Foundry : `subtype: creature` ou `subtype: bande`.
+Pour une bande, les points contenus dans `system.sante` sont exportés sous le
+libellé `Cohésion` et accompagnés de son score de `Débordement`.
+
 Les fiches de combat portent les métadonnées `type: fiche` et
-`subtype: pnj` ou `subtype: creature`. Elles contiennent uniquement le
+`subtype: pnj`, `subtype: creature` ou `subtype: bande`. Elles contiennent uniquement le
 statblock afin de pouvoir être imprimées ou exportées en PDF sans le reste de
 la note narrative.
 
@@ -91,8 +98,8 @@ Pour exporter uniquement le bestiaire depuis Foundry :
 4. placer ce fichier dans `data/bestiaire/` ;
 5. lancer `.\convert-all-bestiaire.ps1`.
 
-La macro n’exporte que les acteurs de type `creature`. Comme pour les PNJ, les
-créatures placées dans un dossier dont le nom commence par `_`, ou dans l’un de
+La macro exporte les acteurs de type `creature` et `bande`. Comme pour les PNJ, les
+entrées placées dans un dossier dont le nom commence par `_`, ou dans l’un de
 ses sous-dossiers, sont ignorées.
 
 ### Export groupé depuis Foundry
@@ -184,10 +191,56 @@ aspects, aspects exceptionnels, combat, armes, modules, puis une carte pleine
 largeur pour chaque capacité. Sur un écran étroit, les grilles internes sont
 automatiquement replacées sur une seule colonne.
 
-Dans **Fantasy Statblocks → Manage layouts**, importer les six fichiers du
+Dans **Fantasy Statblocks → Manage layouts**, importer les huit fichiers du
 dossier `scripts/Fantasy Statblocks/templates/` :
 `Knight PNJ.json`, `Knight PNJ Combat.json`, `Knight Bestiaire.json`,
-`Knight Bestiaire Combat.json`, `Knight PJ.json` et `Knight PJ Summary.json`.
+`Knight Bestiaire Combat.json`, `Knight PJ.json`, `Knight PJ Recto.json`,
+`Knight PJ Verso.json` et `Knight PJ Summary.json`.
+
+Le layout `Knight PJ` place désormais le profil puis le combat sur toute la
+largeur. Les cinq aspects sont réunis dans un tableau : chaque colonne affiche
+la valeur de l’aspect puis ses trois caractéristiques, à raison d’une
+caractéristique par ligne. Les capacités/modules, les armes et les
+avantages/inconvénients restent ensuite dans des sections distinctes.
+
+### Deux cartes PJ A5 en recto-verso
+
+La méthode recommandée utilise QuickAdd et fonctionne même si aucune note
+n'est ouverte :
+
+1. Installer et activer le plugin communautaire QuickAdd.
+2. Copier `scripts/QuickAdd/quickadd-planche-pj-duplex.js` dans un dossier du
+   Vault qui n'est ni caché ni situé dans `.obsidian`, par exemple
+   `/scripts/QuickAdd`.
+3. Dans `Réglages > QuickAdd`, créer une Choice de type `Macro` nommée
+   `Planche PJ recto-verso`.
+4. Ouvrir la configuration de cette macro, ajouter `User Script`, puis choisir
+   `quickadd-planche-pj-duplex.js`.
+5. Activer l'éclair de la Choice pour l'ajouter à la palette de commandes.
+
+La commande demande deux fiches PJ et génère
+`Personnages/PJ/Planche PJ recto-verso A4.md`, sans nécessiter d'éditeur actif.
+Elle copie directement les blocs Fantasy Statblocks dans la planche afin que
+les quatre faces soient entièrement rendues avant l'export PDF. Après une mise
+à jour du script QuickAdd, il faut relancer la commande pour régénérer la note.
+Les cartes utilisent deux layouts dédiés : `Knight PJ Recto` contient le
+combat, les aspects et toutes les armes ; `Knight PJ Verso` contient les
+capacités, les modules, les avantages et les inconvénients. Ces deux layouts
+doivent être importés dans Fantasy Statblocks avant de lancer QuickAdd.
+
+Le modèle Templater `scripts/Templater/Planche PJ A4 - 2 cartes recto verso.md`
+reste fourni comme solution de secours.
+
+À l'impression, choisir A4 portrait, marges « Aucune », échelle 100 %,
+recto-verso et retournement sur le bord long. La première page contient les deux rectos et la seconde les
+deux versos aux mêmes positions. Une ligne pointillée marque la découpe entre
+les deux cartes A5 paysage.
+
+Le layout privé `Knight PJ` utilise une structure explicite : résumé sur toute
+la largeur, puis trois colonnes pour les caractéristiques, l'équipement et les
+éléments narratifs de jeu. Cette disposition remplace la répartition automatique
+déséquilibrée de Fantasy Statblocks. Dans tous les statblocks, les armes ne
+reprennent que leurs données techniques ; leur description narrative est omise.
 Une fiche de combat PNJ utilise `Knight PNJ Combat`, une fiche de combat du
 bestiaire utilise `Knight Bestiaire Combat`; une fiche PJ privée utilise le layout complet `Knight PJ`;
 la note agrégée `_Résumé PJ.md` utilise `Knight PJ Summary`.
@@ -290,3 +343,27 @@ Réglages conseillés :
 La feuille de style masque automatiquement le portrait et les descriptions
 narratives. La pagination est laissée au navigateur afin d’utiliser au mieux
 l’espace disponible.
+
+## Imprimer deux fiches A5 sur une page A4
+
+Cette fonction nécessite le plugin Obsidian **Templater**.
+
+1. Copier `scripts/Templater/Planche impression A4 - 2 fiches.md` dans le
+   dossier de modèles du Vault : `__plugins/templates/`.
+2. Vérifier que `knight-statblocks.css` est actif dans
+   **Paramètres → Apparence → Extraits CSS**.
+3. Dans Obsidian, exécuter la commande Templater d’insertion du modèle
+   `Planche impression A4 - 2 fiches`.
+4. Choisir successivement la fiche supérieure puis la fiche inférieure.
+5. Le modèle crée ou remplace `Acteurs/_Planche impression A4.md` et l’ouvre.
+
+Le sélecteur propose les fiches de combat portant `subtype: pnj`,
+`subtype: creature` ou `subtype: bande`. Il est donc possible de mélanger deux
+catégories sur la même planche.
+6. Imprimer cette note en A4 portrait, à l’échelle 100 %, sans en-têtes ni
+   pieds de page.
+
+Chaque moitié de la page correspond à une fiche A5 paysage. Les descriptions
+complètes restent présentes et le contenu est réduit à 72 %. Pour une fiche
+exceptionnellement longue, utiliser l’export standard A4 paysage afin de
+conserver une taille de lecture confortable.

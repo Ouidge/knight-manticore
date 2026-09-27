@@ -8,6 +8,7 @@ const args = process.argv.slice(2);
 const inputPath = args.find((arg) => !arg.startsWith("--"));
 const vaultArgument = args.find((arg) => arg.startsWith("--vault="));
 const outputArgument = args.find((arg) => arg.startsWith("--output="));
+const bestiaryFolderArgument = args.find((arg) => arg.startsWith("--bestiary-folder="));
 const skipImage = args.includes("--no-image");
 const combatSheet = args.includes("--combat-sheet");
 
@@ -18,12 +19,15 @@ if (!inputPath || args.includes("--help") || args.includes("-h")) {
 
 const absoluteInput = path.resolve(inputPath);
 const actor = JSON.parse(fs.readFileSync(absoluteInput, "utf8"));
-if (!["pnj", "creature"].includes(actor.type)) throw new Error(`L’acteur « ${actor.name ?? "sans nom"} » n’est ni un PNJ ni une créature.`);
-const isCreature = actor.type === "creature";
+if (!["pnj", "creature", "bande"].includes(actor.type)) throw new Error(`L’acteur « ${actor.name ?? "sans nom"} » n’est ni un PNJ ni une entrée du bestiaire.`);
+const isCreature = ["creature", "bande"].includes(actor.type);
+const isBand = actor.type === "bande";
+const bestiarySubtype = isBand ? "bande" : "creature";
 
 const vaultDirectory = path.resolve(vaultArgument?.slice("--vault=".length) || path.join(path.dirname(absoluteInput), "../.."));
+const bestiaryFolderName = bestiaryFolderArgument?.slice("--bestiary-folder=".length) || "Bestiaire";
 const safeName = safeFilename(actor.name || "PNJ");
-const actorDirectory = path.join(vaultDirectory, "Acteurs", isCreature ? "Bestiaire" : "PNJ");
+const actorDirectory = path.join(vaultDirectory, "Acteurs", isCreature ? bestiaryFolderName : "PNJ");
 const defaultOutputPath = combatSheet
   ? path.join(actorDirectory, "Fiches", `Fiche ${safeName}.md`)
   : path.join(actorDirectory, `${safeName}.md`);
@@ -377,8 +381,6 @@ function generatedStatblock() {
       `**Violence :** ${diceValue(weapon.system?.violence)}`,
       `**Effets :** ${effects.map(effectLink).join(", ") || "—"}`,
     ];
-    const description = htmlToMarkdown(weapon.system?.description);
-    if (description) details.push(description);
     return { name: weapon.name, desc: details.join("  \n") };
   });
 
@@ -391,12 +393,16 @@ function generatedStatblock() {
     "columnWidth: 810",
     "forceColumns: true",
     `name: ${yamlString(actor.name || "PNJ")}`,
-    `type: ${isCreature ? "Créature" : "PNJ"}`,
+    `type: ${isCreature ? (isBand ? "Bande" : "Créature") : "PNJ"}`,
   ];
   const subtype = system.type || system.archetype || "";
   if (subtype) lines.push(`subtype: ${yamlString(subtype)}`);
   if (combatSheet) {
-    const profileSuffix = [isCreature ? "Créature" : "PNJ", subtype].filter(Boolean).join(", ");
+    const profileKind = isCreature ? (isBand ? "Bande" : "Créature") : "PNJ";
+    const subtypeAlreadyIncludesKind = subtype && new RegExp(`^${profileKind}\\b`, "i").test(subtype);
+    const profileSuffix = subtypeAlreadyIncludesKind
+      ? subtype
+      : [profileKind, subtype].filter(Boolean).join(", ");
     lines.push(`profile: ${yamlString(`${actor.name || "PNJ"} — ${profileSuffix}`)}`);
   }
   const weakPoint = htmlToMarkdown(system.pointsFaibles || system.pointfaible);
@@ -406,13 +412,17 @@ function generatedStatblock() {
   lines.push(`defense: ${derivedDefense()}`);
   lines.push(`reaction: ${derivedReaction()}`);
   lines.push(`initiative: ${yamlString(system.initiative?.complet || `${number(system.initiative?.diceBase, number(system.initiative?.dice, 3))}D6`)}`);
-  lines.push(`ps: ${statBase(system.sante)}`);
+  if (!isBand) lines.push(`ps: ${statBase(system.sante)}`);
   lines.push(`pa: ${statBase(system.armure)}`);
   lines.push(`pe: ${statBase(system.energie)}`);
   lines.push(`cdf: ${statBase(system.champDeForce)}`);
   const shield = statBase(system.bouclier);
   if (shield) lines.push(`bouclier: ${shield}`);
-  if (system.cohesion != null) lines.push(`cohesion: ${number(system.cohesion?.value, number(system.cohesion?.base, number(system.cohesion)))}`);
+  if (isBand) {
+    lines.push(`cohesion: ${statBase(system.sante)}`);
+  } else if (system.cohesion != null) {
+    lines.push(`cohesion: ${number(system.cohesion?.value, number(system.cohesion?.base, number(system.cohesion)))}`);
+  }
   if (system.debordement != null) lines.push(`debordement: ${number(system.debordement?.value, number(system.debordement?.base, number(system.debordement)))}`);
   appendStatblockTraits(lines, "capacites", capacities);
   appendStatblockTraits(lines, "modules", modules);
@@ -576,7 +586,7 @@ function ensureCampaignNotes(markdown) {
 
 function newNote(portraitFileName) {
   if (isCreature) {
-    return `---\ntype: fiche\nsubtype: creature\nnom: ${JSON.stringify(actor.name || "Créature")}\nportrait: ${JSON.stringify(`[[${portraitFileName}]]`)}\n---\n# \`= this.file.name\`\n`;
+    return `---\ntype: bestiaire\nsubtype: ${bestiarySubtype}\nnom: ${JSON.stringify(actor.name || (isBand ? "Bande" : "Créature"))}\nportrait: ${JSON.stringify(`[[${portraitFileName}]]`)}\n---\n# \`= this.file.name\`\n`;
   }
   return `---\ntype: pnj\nsubtype: \nnom: \ntitre: \nfaction: "Knight"\nstatut: \nportrait: ${JSON.stringify(`[[${portraitFileName}]]`)}\nmusique: \nref: \ntraits: []\nmotivations: []\nlieu: \n---\n# \`= this.file.name\`\n\n> [!note] Notes de campagne\n> Cette zone reste entièrement manuelle.\n`;
 }
@@ -604,11 +614,11 @@ async function downloadPortrait() {
 const portraitFileName = await downloadPortrait();
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 if (combatSheet) {
-  const subjectKey = isCreature ? "creature" : "pnj";
+  const subjectKey = isCreature ? (isBand ? "bande" : "creature") : "pnj";
   const frontmatter = [
     "---",
     "type: fiche",
-    `subtype: ${isCreature ? "creature" : "pnj"}`,
+    `subtype: ${isCreature ? bestiarySubtype : "pnj"}`,
     `${subjectKey}: ${yamlString(actor.name || (isCreature ? "Créature" : "PNJ"))}`,
     `nom: ${yamlString(actor.name || (isCreature ? "Créature" : "PNJ"))}`,
     `source: ${yamlString(`[[${actor.name || (isCreature ? "Créature" : "PNJ")}]]`)}`,
@@ -624,9 +634,9 @@ let markdown = fs.existsSync(outputPath) ? fs.readFileSync(outputPath, "utf8") :
 markdown = removeCampaignTag(markdown);
 markdown = setFrontmatterField(markdown, "portrait", JSON.stringify(`[[${portraitFileName}]]`));
 if (isCreature) {
-  markdown = setFrontmatterField(markdown, "type", "fiche");
-  markdown = setFrontmatterField(markdown, "subtype", "creature");
-  markdown = ensureFrontmatterField(markdown, "nom", JSON.stringify(actor.name || "Créature"));
+  markdown = setFrontmatterField(markdown, "type", "bestiaire");
+  markdown = setFrontmatterField(markdown, "subtype", bestiarySubtype);
+  markdown = ensureFrontmatterField(markdown, "nom", JSON.stringify(actor.name || (isBand ? "Bande" : "Créature")));
   markdown = ensureCreatureHeader(markdown);
 } else {
   markdown = setFrontmatterField(markdown, "type", "pnj");

@@ -471,26 +471,31 @@
 }
 
 .statblock.knight-pj .knight-pj-summary-grid {
-  display: grid !important;
-  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
-  gap: 1rem;
-  align-items: start;
+  display: block !important;
   width: 100%;
 }
 
 .statblock.knight-pj .knight-pj-main-grid {
-  display: grid !important;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr) minmax(0, 1.15fr);
-  gap: 1rem;
-  align-items: start;
   width: 100%;
 }
 
+.statblock.knight-pj .knight-pj-profile {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  display: block !important;
+  width: auto;
+  max-width: calc(100% - 14rem);
+  margin: 0 !important;
+  text-align: right;
+  white-space: nowrap;
+}
+
 .statblock.knight-pj :is(
-  .knight-pj-derived,
-  .knight-pj-aspects,
+  .knight-pj-combat-row,
   .knight-pj-characteristics,
   .knight-pj-equipment,
+  .knight-pj-weapons,
   .knight-pj-assets
 ) {
   display: block !important;
@@ -502,11 +507,47 @@
   border-left: 1px solid rgba(94, 194, 214, 0.2);
 }
 
-.statblock.knight-pj .knight-pj-characteristics [class*="statblock-item-inline"] {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.3rem;
+.statblock.knight-pj .knight-pj-characteristics {
   width: 100%;
+}
+
+.statblock.knight-pj .knight-pj-combat-row {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(max-content, 1fr));
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.statblock.knight-pj .knight-pj-combat-row > .statblock-inline-item:empty {
+  display: none !important;
+}
+
+.statblock.knight-pj .knight-pj-characteristics table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.statblock.knight-pj .knight-pj-characteristics thead {
+  display: none;
+}
+
+.statblock.knight-pj .traits-container > .statblock-section-heading {
+  margin: 0.95rem 0 0.45rem !important;
+  padding: 0 0 0.28rem !important;
+  border-bottom: 1px solid rgba(232, 195, 106, 0.38) !important;
+}
+
+.statblock.knight-pj .traits-container > .statblock-section-heading .section-header {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #e8c36a !important;
+  border: 0 !important;
+  font-family: var(--font-interface) !important;
+  font-size: 1rem !important;
+  font-variant: small-caps;
+  font-weight: 700 !important;
+  letter-spacing: 0.055em;
+  line-height: 1.15 !important;
 }
 
 @media screen {
@@ -713,13 +754,30 @@
   }
 
   .statblock.knight-pj .knight-pj-summary-grid {
-    grid-template-columns: minmax(0, 1.15fr) minmax(65mm, 0.85fr);
-    gap: 3mm;
+    display: block !important;
   }
 
   .statblock.knight-pj .knight-pj-main-grid {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr) minmax(0, 1.15fr);
     gap: 3mm;
+  }
+
+  .statblock.knight-pj .knight-pj-combat-row {
+    display: grid !important;
+    grid-template-columns: repeat(12, minmax(max-content, 1fr));
+    gap: 1.5mm;
+  }
+
+  .statblock.knight-pj .traits-container > .statblock-section-heading {
+    margin: 2mm 0 1mm !important;
+    padding-bottom: 0.8mm !important;
+    border-bottom-color: #9b7a28 !important;
+  }
+
+  .statblock.knight-pj .traits-container > .statblock-section-heading .section-header {
+    color: #172b49 !important;
+    font-size: 7.5pt !important;
+    line-height: 1.1 !important;
   }
 
   .statblock.knight-pj .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
@@ -861,6 +919,305 @@
 }
 
 /* -------------------------------------------------------------------------
+   Planche PJ recto-verso : deux cartes A5 paysage sur deux pages A4 portrait.
+   Page 1 : deux rectos. Page 2 : les deux versos aux mêmes positions.
+   ------------------------------------------------------------------------- */
+
+@page knight-pj-duplex-a5 {
+  size: A4 portrait;
+  margin: 5mm;
+}
+
+@media screen {
+  .knight-print-pj-duplex-a5 .knight-pj-front-marker,
+  .knight-print-pj-duplex-a5 .knight-pj-back-marker {
+    display: none;
+  }
+
+  .knight-print-pj-duplex-a5 .internal-embed {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto 1.25rem;
+    padding: 0.5rem;
+    border: 1px dashed var(--background-modifier-border);
+  }
+}
+
+@media print {
+  .markdown-preview-view.knight-print-pj-duplex-a5,
+  .markdown-preview-view:has(.knight-print-pj-duplex-a5),
+  .knight-print-pj-duplex-a5 {
+    page: knight-pj-duplex-a5;
+  }
+
+  .knight-print-pj-duplex-a5 :is(
+    .markdown-preview-pusher,
+    .mod-header,
+    .inline-title,
+    .metadata-container,
+    .embed-title,
+    .markdown-embed-title,
+    .knight-pj-front-marker,
+    .knight-pj-back-marker
+  ) {
+    display: none !important;
+  }
+
+  .knight-print-pj-duplex-a5 > .markdown-preview-sizer,
+  .knight-print-pj-duplex-a5 .markdown-preview-sizer:first-child {
+    display: block !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .knight-print-pj-duplex-a5 .markdown-preview-sizer > .internal-embed {
+    display: block !important;
+    width: 100% !important;
+    height: 134mm !important;
+    min-height: 0 !important;
+    margin: 0 0 3mm !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .knight-print-pj-duplex-a5 .knight-pj-back-marker + .internal-embed {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  .knight-print-pj-duplex-a5 .internal-embed .markdown-embed-content,
+  .knight-print-pj-duplex-a5 .internal-embed .markdown-preview-view,
+  .knight-print-pj-duplex-a5 .internal-embed .markdown-preview-sizer {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .knight-print-pj-duplex-a5 .internal-embed .statblock.knight-pj {
+    position: relative;
+    width: 100% !important;
+    max-width: none !important;
+    height: 134mm !important;
+    margin: 0 !important;
+    padding: 2.5mm 3mm !important;
+    overflow: hidden !important;
+    font-size: 6.4pt;
+    line-height: 1.08;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .knight-print-pj-duplex-a5 .statblock.knight-pj .knight-pj-profile {
+    top: 2.5mm;
+    right: 3mm;
+    max-width: calc(100% - 38mm);
+    font-size: 6.2pt;
+  }
+
+  /* Rectos : informations immédiatement utiles en combat. */
+  .knight-print-pj-duplex-a5 :is(
+    .knight-pj-front-marker + .internal-embed,
+    .knight-pj-front-marker + .internal-embed + .internal-embed
+  ) .statblock.knight-pj :is(
+    .knight-pj-capacities,
+    .knight-pj-modules,
+    .knight-pj-advantages,
+    .knight-pj-disadvantages
+  ) {
+    display: none !important;
+  }
+
+  /* Versos : capacités et traits ; les données de combat restent au recto. */
+  .knight-print-pj-duplex-a5 :is(
+    .knight-pj-back-marker + .internal-embed,
+    .knight-pj-back-marker + .internal-embed + .internal-embed
+  ) .statblock.knight-pj :is(
+    .knight-pj-combat-row,
+    .knight-pj-characteristics,
+    .knight-pj-weapons-list
+  ) {
+    display: none !important;
+  }
+
+  .knight-print-pj-duplex-a5 :is(
+    .knight-pj-back-marker + .internal-embed,
+    .knight-pj-back-marker + .internal-embed + .internal-embed
+  ) .statblock.knight-pj .statblock-section-heading:has(+ :is(
+    .knight-pj-combat-row,
+    .knight-pj-characteristics,
+    .knight-pj-weapons-list
+  )) {
+    display: none !important;
+  }
+
+  .knight-print-pj-duplex-a5 :is(
+    .knight-pj-front-marker + .internal-embed,
+    .knight-pj-back-marker + .internal-embed
+  ) {
+    padding-bottom: 2mm !important;
+    border-bottom: 0.25mm dashed #8b95a3 !important;
+  }
+}
+
+/* Imposition robuste QuickAdd : les callouts sont les quatre cartes physiques. */
+@page knight-pj-duplex-a5 {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media screen {
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] {
+    max-width: 1200px;
+    margin: 0 auto 1.25rem;
+    border: 1px dashed var(--background-modifier-border);
+    background: transparent;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] > .callout-title {
+    display: none;
+  }
+}
+
+@media print {
+  .markdown-preview-view.knight-print-pj-duplex-a5 {
+    width: 210mm !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .markdown-preview-view.knight-print-pj-duplex-a5 > .markdown-preview-sizer {
+    display: block !important;
+    width: 210mm !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .markdown-preview-view.knight-print-pj-duplex-a5
+    > .markdown-preview-sizer
+    > *:not(.callout[data-callout^="pj-"]) {
+    display: none !important;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 210mm !important;
+    height: 148.5mm !important;
+    min-height: 148.5mm !important;
+    max-height: 148.5mm !important;
+    margin: 0 !important;
+    padding: 5mm !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .knight-print-pj-duplex-a5
+    .callout[data-callout="pj-front"]
+    + .callout[data-callout="pj-back"] {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] > .callout-title {
+    display: none !important;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] > .callout-content,
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .internal-embed,
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .markdown-embed-content,
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .markdown-preview-view,
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .markdown-preview-sizer {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .statblock.knight-pj {
+    box-sizing: border-box !important;
+    width: 200mm !important;
+    max-width: 200mm !important;
+    height: 138.5mm !important;
+    margin: 0 !important;
+    padding: 2.5mm 3mm !important;
+    overflow: hidden !important;
+    font-size: 5.8pt !important;
+    line-height: 1.06 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .knight-pj-combat-row {
+    gap: 0.8mm;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .knight-pj-profile {
+    top: 2.5mm;
+    right: 3mm;
+    max-width: calc(100% - 38mm);
+    font-size: 5.6pt;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout="pj-front"]
+    .statblock.knight-pj :is(
+      .knight-pj-capacities,
+      .knight-pj-modules,
+      .knight-pj-advantages,
+      .knight-pj-disadvantages,
+      .traits-container:has(.skills),
+      .traits-container:has(.modules),
+      .traits-container:has(.avantages),
+      .traits-container:has(.inconvénients)
+    ) {
+    display: none !important;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout="pj-back"]
+    .statblock.knight-pj :is(
+      .knight-pj-combat-row,
+      .knight-pj-characteristics,
+      .knight-pj-weapons-list,
+      .traits-container:has(.armes)
+    ) {
+    display: none !important;
+  }
+
+  .knight-print-pj-duplex-a5 .callout[data-callout="pj-back"]
+    .statblock.knight-pj .statblock-section-heading:has(+ :is(
+      .knight-pj-combat-row,
+      .knight-pj-characteristics,
+      .knight-pj-weapons-list
+    )) {
+    display: none !important;
+  }
+
+  .knight-print-pj-duplex-a5
+    .callout[data-callout^="pj-"]:nth-of-type(odd) {
+    border-bottom: 0.25mm dashed #8b95a3 !important;
+  }
+}
+
+/* -------------------------------------------------------------------------
    Planche d'impression : deux fiches A5 paysage sur une page A4 portrait.
    La note est générée par le modèle Templater "Planche impression A4 -
    2 fiches" et reçoit la classe knight-print-double-a5.
@@ -869,6 +1226,125 @@
 @page knight-double-a5 {
   size: A4 portrait;
   margin: 5mm;
+}
+
+/* -------------------------------------------------------------------------
+   Planche PJ duplex v2.
+   Les statblocks sont copiés directement dans quatre callouts par QuickAdd :
+   deux rectos sur la première page, puis deux versos aux mêmes positions.
+   ------------------------------------------------------------------------- */
+
+@page knight-pj-duplex-a5-v2 {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media screen {
+  .markdown-preview-view.knight-print-pj-duplex-a5
+    .callout[data-callout^="pj-"] > .callout-title {
+    display: none !important;
+  }
+}
+
+@media print {
+  .markdown-preview-view.knight-print-pj-duplex-a5,
+  .markdown-preview-view.knight-print-pj-duplex-a5 > .markdown-preview-sizer {
+    box-sizing: border-box !important;
+    width: 210mm !important;
+    min-width: 210mm !important;
+    max-width: 210mm !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .markdown-preview-view.knight-print-pj-duplex-a5 {
+    page: knight-pj-duplex-a5-v2;
+  }
+
+  .markdown-preview-view.knight-print-pj-duplex-a5
+    > .markdown-preview-sizer
+    > *:not(.callout[data-callout^="pj-"]) {
+    display: none !important;
+  }
+
+  .callout[data-callout="pj-front"],
+  .callout[data-callout="pj-back"] {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 210mm !important;
+    height: 148.5mm !important;
+    min-height: 148.5mm !important;
+    max-height: 148.5mm !important;
+    margin: 0 !important;
+    padding: 5mm !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .callout[data-callout="pj-front"] + .callout[data-callout="pj-back"] {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  .callout[data-callout="pj-front"] > .callout-title,
+  .callout[data-callout="pj-back"] > .callout-title {
+    display: none !important;
+  }
+
+  .callout[data-callout="pj-front"] > .callout-content,
+  .callout[data-callout="pj-back"] > .callout-content {
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .callout[data-callout="pj-front"] .statblock:has(.knight-pj-main-grid),
+  .callout[data-callout="pj-back"] .statblock:has(.knight-pj-main-grid) {
+    box-sizing: border-box !important;
+    width: 200mm !important;
+    max-width: 200mm !important;
+    height: 138.5mm !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 2.5mm 3mm !important;
+    overflow: hidden !important;
+    font-size: 5.8pt !important;
+    line-height: 1.06 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .callout[data-callout="pj-front"] :is(
+    .knight-pj-capacities,
+    .knight-pj-modules,
+    .knight-pj-advantages,
+    .knight-pj-disadvantages
+  ) {
+    display: none !important;
+  }
+
+  .callout[data-callout="pj-back"] :is(
+    .knight-pj-summary-grid,
+    .knight-pj-characteristics,
+    .knight-pj-weapons
+  ) {
+    display: none !important;
+  }
+
+  .callout[data-callout="pj-front"]:first-of-type,
+  .callout[data-callout="pj-back"]:first-of-type {
+    border-bottom: 0.25mm dashed #8b95a3 !important;
+  }
 }
 
 @media screen {

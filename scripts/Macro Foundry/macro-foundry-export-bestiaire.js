@@ -1,5 +1,5 @@
 // Macro « Script » pour Foundry VTT v14 — système Knight.
-// Exporte en un seul fichier toutes les créatures du monde courant.
+// Exporte en un seul fichier toutes les créatures et bandes du monde courant.
 // Ignore les acteurs classés dans un dossier dont le nom commence par « _ ».
 
 if (!game.user.isGM) {
@@ -41,7 +41,8 @@ function isInIgnoredFolder(actor) {
   return false;
 }
 
-const worldCreatures = game.actors.filter((actor) => actor.type === "creature");
+const BESTIARY_ACTOR_TYPES = new Set(["creature", "bande"]);
+const worldCreatures = game.actors.filter((actor) => BESTIARY_ACTOR_TYPES.has(String(actor.type).toLowerCase()));
 const ignoredCreatures = worldCreatures.filter(isInIgnoredFolder);
 const actors = worldCreatures
   .filter((actor) => !isInIgnoredFolder(actor))
@@ -57,7 +58,7 @@ const actors = worldCreatures
 if (!actors.length) {
   const reason = ignoredCreatures.length
     ? `Toutes les créatures du monde (${ignoredCreatures.length}) sont rangées dans des dossiers ignorés.`
-    : "Aucun acteur de type « creature » n’a été trouvé dans ce monde.";
+    : "Aucun acteur de type « creature » ou « bande » n’a été trouvé dans ce monde.";
   ui.notifications.warn(reason);
   return;
 }
@@ -82,4 +83,4 @@ foundry.utils.saveDataToFile(
 const ignoredMessage = ignoredCreatures.length
   ? ` ${ignoredCreatures.length} créature(s) ignorée(s), car classée(s) dans un dossier commençant par « _ ».`
   : "";
-ui.notifications.info(`${actors.length} créature(s) exportée(s) dans knight-bestiaire-export.json.${ignoredMessage}`);
+ui.notifications.info(`${actors.length} entrée(s) du bestiaire exportée(s) dans knight-bestiaire-export.json.${ignoredMessage}`);

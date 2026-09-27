@@ -17,32 +17,12 @@
       "nested": [
         {
           "type": "subheading",
-          "id": "a86969e91bf8",
+          "id": "knightpjprofileline",
           "properties": [
-            "realname"
+            "profil"
           ],
           "fallback": "-",
           "conditioned": true
-        },
-        {
-          "type": "subheading",
-          "id": "ea7b5aa8d8da",
-          "properties": [
-            "méta-armure",
-            "blason"
-          ],
-          "fallback": "-",
-          "separator": ", blason "
-        },
-        {
-          "type": "subheading",
-          "id": "1bc87b991968",
-          "properties": [
-            "section",
-            "coterie"
-          ],
-          "fallback": "-",
-          "separator": ", coterie "
         }
       ],
       "cls": "knight-pj-profile"
@@ -192,35 +172,8 @@
               "hasRule": false
             }
           ],
-          "heading": "Valeurs dérivées",
-          "cls": "knight-pj-derived"
-        },
-        {
-          "type": "group",
-          "id": "293a8949293b",
-          "properties": [],
-          "nested": [
-            {
-              "type": "table",
-              "id": "d9d8a8b9fb79",
-              "properties": [
-                "aspects"
-              ],
-              "headers": [
-                "CHAIR",
-                "BÊTE",
-                "MACHINE",
-                "DAME",
-                "MASQUE"
-              ],
-              "calculate": false,
-              "hasRule": false,
-              "conditioned": true
-            }
-          ],
-          "heading": "Aspects",
-          "hasRule": false,
-          "cls": "knight-pj-aspects"
+          "heading": "Combat",
+          "cls": "knight-pj-combat-row"
         }
       ],
       "heading": "",
@@ -238,182 +191,24 @@
           "properties": [],
           "nested": [
             {
-              "type": "inline",
-              "id": "38b90afbca7a",
-              "properties": [],
-              "nested": [
-                {
-                  "type": "property",
-                  "id": "c9b9a9f85b88",
-                  "properties": [
-                    "déplacement"
-                  ],
-                  "fallback": "-",
-                  "display": "Déplacement"
-                },
-                {
-                  "type": "property",
-                  "id": "8b5acbda69bb",
-                  "properties": [
-                    "force"
-                  ],
-                  "fallback": "-",
-                  "display": "Force"
-                },
-                {
-                  "type": "property",
-                  "id": "9ab8ebeb3a09",
-                  "properties": [
-                    "endurance"
-                  ],
-                  "fallback": "-",
-                  "display": "Endurance"
-                }
+              "type": "table",
+              "id": "knightpjaspectstable",
+              "properties": [
+                "profils-aspects"
               ],
-              "heading": "Chair"
-            },
-            {
-              "type": "inline",
-              "id": "2a78a9bb59da",
-              "properties": [],
-              "nested": [
-                {
-                  "type": "property",
-                  "id": "4979cbeaf8e8",
-                  "properties": [
-                    "hargne"
-                  ],
-                  "fallback": "-",
-                  "display": "Hargne"
-                },
-                {
-                  "type": "property",
-                  "id": "ba49c9f98b18",
-                  "properties": [
-                    "combat"
-                  ],
-                  "fallback": "-",
-                  "display": "Combat"
-                },
-                {
-                  "type": "property",
-                  "id": "ba78a86bf818",
-                  "properties": [
-                    "instinct"
-                  ],
-                  "fallback": "-",
-                  "display": "Instinct"
-                }
+              "headers": [
+                "",
+                "",
+                "",
+                "",
+                ""
               ],
-              "heading": "Bête"
-            },
-            {
-              "type": "inline",
-              "id": "29e979ab7939",
-              "properties": [],
-              "nested": [
-                {
-                  "type": "property",
-                  "id": "3a58b8d82bb9",
-                  "properties": [
-                    "tir"
-                  ],
-                  "fallback": "-",
-                  "display": "Tir"
-                },
-                {
-                  "type": "property",
-                  "id": "aaba68d9683b",
-                  "properties": [
-                    "savoir"
-                  ],
-                  "fallback": "-",
-                  "display": "Savoir"
-                },
-                {
-                  "type": "property",
-                  "id": "9bd898bada08",
-                  "properties": [
-                    "technique"
-                  ],
-                  "fallback": "-",
-                  "display": "Technique"
-                }
-              ],
-              "heading": "Machine"
-            },
-            {
-              "type": "inline",
-              "id": "3a78ba2a9888",
-              "properties": [],
-              "nested": [
-                {
-                  "type": "property",
-                  "id": "dad9aacb6809",
-                  "properties": [
-                    "aura"
-                  ],
-                  "fallback": "-",
-                  "display": "Aura"
-                },
-                {
-                  "type": "property",
-                  "id": "98f87a592be9",
-                  "properties": [
-                    "parole"
-                  ],
-                  "fallback": "-",
-                  "display": "Parole"
-                },
-                {
-                  "type": "property",
-                  "id": "b9d8b8391a09",
-                  "properties": [
-                    "sang-froid"
-                  ],
-                  "fallback": "-",
-                  "display": "Sang-froid"
-                }
-              ],
-              "heading": "Dame"
-            },
-            {
-              "type": "inline",
-              "id": "9bca9b688af9",
-              "properties": [],
-              "nested": [
-                {
-                  "type": "property",
-                  "id": "4ae8ca3b79e8",
-                  "properties": [
-                    "discrétion"
-                  ],
-                  "fallback": "-",
-                  "display": "Discrétion"
-                },
-                {
-                  "type": "property",
-                  "id": "f919cb5aca3b",
-                  "properties": [
-                    "dextérité"
-                  ],
-                  "fallback": "-",
-                  "display": "Dextérité"
-                },
-                {
-                  "type": "property",
-                  "id": "69b8eaea1a9b",
-                  "properties": [
-                    "perception"
-                  ],
-                  "fallback": "-",
-                  "display": "Perception"
-                }
-              ],
-              "heading": "Masque"
+              "calculate": false,
+              "hasRule": false,
+              "conditioned": true
             }
           ],
-          "heading": "Caractéristiques",
+          "heading": "Aspects et caractéristiques",
           "hasRule": false,
           "cls": "knight-pj-characteristics"
         },
@@ -432,7 +227,8 @@
               "conditioned": true,
               "markdown": true,
               "dice": false,
-              "fallback": "-"
+              "fallback": "-",
+              "cls": "knight-pj-capacities"
             },
             {
               "type": "traits",
@@ -443,7 +239,8 @@
               "fallback": "-",
               "heading": "Modules",
               "markdown": true,
-              "conditioned": true
+              "conditioned": true,
+              "cls": "knight-pj-modules"
             }
           ],
           "heading": "",
@@ -452,7 +249,7 @@
         },
         {
           "type": "group",
-          "id": "knightpjassets",
+          "id": "knightpjweapons",
           "properties": [],
           "nested": [
             {
@@ -464,8 +261,19 @@
               "fallback": "-",
               "heading": "Armes",
               "markdown": true,
-              "conditioned": true
-            },
+              "conditioned": true,
+              "cls": "knight-pj-weapons-list"
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-pj-weapons"
+        },
+        {
+          "type": "group",
+          "id": "knightpjassets",
+          "properties": [],
+          "nested": [
             {
               "type": "traits",
               "id": "7a7938ea98b9",
@@ -475,7 +283,8 @@
               "fallback": "-",
               "heading": "Avantages",
               "markdown": true,
-              "conditioned": true
+              "conditioned": true,
+              "cls": "knight-pj-advantages"
             },
             {
               "type": "traits",
@@ -486,7 +295,8 @@
               "fallback": "-",
               "markdown": true,
               "heading": "Inconvénients",
-              "conditioned": true
+              "conditioned": true,
+              "cls": "knight-pj-disadvantages"
             }
           ],
           "heading": "",

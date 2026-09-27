@@ -75,6 +75,15 @@
       "internalConsoleOptions": "neverOpen"
     },
     {
+      "name": "Convert Bestiaire custom",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "powershell -ExecutionPolicy Bypass -File .\\scripts\\convert-all-bestiaire-custom.ps1 -VaultDirectory \"F:\\Vaults\\Knight\"",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
       "name": "Export effects",
       "type": "node-terminal",
       "request": "launch",

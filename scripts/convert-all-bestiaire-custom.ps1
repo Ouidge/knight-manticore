@@ -15,8 +15,8 @@ else {
     $VaultDirectory = [System.IO.Path]::GetFullPath($VaultDirectory)
 }
 
-$DataDirectory = Join-Path $ProjectDirectory "data/bestiaire"
-$NotesDirectory = Join-Path $VaultDirectory "Acteurs/Bestiaire"
+$DataDirectory = Join-Path $ProjectDirectory "data/bestiaire-custom"
+$NotesDirectory = Join-Path $VaultDirectory "Acteurs/Bestiaire (custom)"
 $CombatSheetsDirectory = Join-Path $NotesDirectory "Fiches"
 $AssetsDirectory = Join-Path $VaultDirectory "Assets/bestiaire"
 
@@ -34,7 +34,7 @@ New-Item -ItemType Directory -Path $AssetsDirectory -Force | Out-Null
 
 $JsonFiles = @(Get-ChildItem -LiteralPath $DataDirectory -File -Filter "*.json" | Sort-Object Name)
 if ($JsonFiles.Count -eq 0) {
-    Write-Warning "Aucun export du bestiaire trouvé dans : $DataDirectory"
+    Write-Warning "Aucun export du bestiaire custom trouvé dans : $DataDirectory"
     exit 0
 }
 
@@ -59,9 +59,9 @@ function Invoke-CreatureConversion {
         $ActorJson = $Actor | ConvertTo-Json -Depth 100
         [System.IO.File]::WriteAllText($TemporaryPath, $ActorJson, [System.Text.UTF8Encoding]::new($false))
         Write-Host "Conversion Bestiaire : $DisplayName"
-        & node $ConverterPath $TemporaryPath "--vault=$VaultDirectory"
+        & node $ConverterPath $TemporaryPath "--vault=$VaultDirectory" "--bestiary-folder=Bestiaire (custom)"
         if ($LASTEXITCODE -ne 0) { throw "Le convertisseur Node.js a retourné le code $LASTEXITCODE." }
-        & node $ConverterPath $TemporaryPath "--vault=$VaultDirectory" "--combat-sheet" "--no-image"
+        & node $ConverterPath $TemporaryPath "--vault=$VaultDirectory" "--bestiary-folder=Bestiaire (custom)" "--combat-sheet" "--no-image"
         if ($LASTEXITCODE -ne 0) { throw "La génération de la fiche de combat a retourné le code $LASTEXITCODE." }
         $script:SuccessCount++
     }
@@ -98,7 +98,7 @@ foreach ($JsonFile in $JsonFiles) {
 }
 
 Write-Host ""
-Write-Host "Import Bestiaire terminé : $SuccessCount réussite(s), $SkippedCount ignoré(s), $FailureCount échec(s)."
+Write-Host "Import Bestiaire custom terminé : $SuccessCount réussite(s), $SkippedCount ignoré(s), $FailureCount échec(s)."
 Write-Host "Fiches : $NotesDirectory"
 Write-Host "Fiches de combat : $CombatSheetsDirectory"
 Write-Host "Portraits : $AssetsDirectory"

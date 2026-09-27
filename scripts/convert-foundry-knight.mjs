@@ -1342,8 +1342,8 @@ function pjStatblock(layout) {
   const lines = [
     "```statblock",
     `layout: ${layout}`,
-    "columns: 2",
-    "columnWidth: 350",
+    `columns: ${layout === "Knight PJ" ? 1 : 2}`,
+    `columnWidth: ${layout === "Knight PJ" ? 1100 : 350}`,
     "forceColumns: true",
     `name: ${yamlString(actor.name || "Personnage")}`,
   ];
@@ -1353,6 +1353,16 @@ function pjStatblock(layout) {
   if (system.section) lines.push(`section: ${yamlString(system.section)}`);
   if (armorName) lines.push(`méta-armure: ${yamlString(`[[${armorName}]]`)}`);
   if (system.blason) lines.push(`blason: ${yamlString(`[[${system.blason}]]`)}`);
+  if (layout === "Knight PJ") {
+    const profileParts = [
+      realName,
+      [armorName ? `[[${armorName}]]` : "", system.blason ? `blason [[${system.blason}]]` : ""]
+        .filter(Boolean)
+        .join(", "),
+      [system.section || "", "coterie Manticore"].filter(Boolean).join(", "),
+    ].filter(Boolean);
+    lines.push(`profil: ${yamlString(profileParts.join(" — "))}`);
+  }
 
   lines.push(`defense: ${yamlString(`${armorDefense}/${guardianDefense}`)}`);
   lines.push(`reaction: ${yamlString(`${armorReaction}/${guardianReaction}`)}`);
@@ -1369,7 +1379,16 @@ function pjStatblock(layout) {
 
   if (layout === "Knight PJ") {
     lines.push(`aspects: [${["chair", "bete", "machine", "dame", "masque"].map(domainValue).join(", ")}]`);
+    const domainEntries = Object.entries(DOMAIN_CHARACTERISTICS);
+    const aspectProfiles = domainEntries.map(([domain, characteristics]) => {
+      const rows = characteristics.map((characteristic) =>
+        `${LABELS[characteristic]} ${characteristicDisplay(domain, characteristic)}`,
+      );
+      return yamlString(`<strong>${LABELS[domain]} ${domainValue(domain)}</strong><br>${rows.join("<br>")}`);
+    });
+    lines.push(`profils-aspects: [${aspectProfiles.join(", ")}]`);
     for (const [domain, characteristics] of Object.entries(DOMAIN_CHARACTERISTICS)) {
+      lines.push(`${LABELS[domain].toLocaleLowerCase("fr")}: ${domainValue(domain)}`);
       for (const characteristic of characteristics) {
         const key = LABELS[characteristic].toLocaleLowerCase("fr");
         lines.push(`${key}: ${yamlString(characteristicDisplay(domain, characteristic))}`);
