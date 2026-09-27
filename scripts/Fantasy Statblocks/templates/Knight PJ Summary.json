@@ -146,6 +146,36 @@
               "fallback": "-",
               "display": "PEs",
               "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "sumpg0000001",
+              "properties": [
+                "pg"
+              ],
+              "fallback": "-",
+              "display": "PG",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "sumpx0000001",
+              "properties": [
+                "px"
+              ],
+              "fallback": "-",
+              "display": "PX",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "sumph0000001",
+              "properties": [
+                "ph"
+              ],
+              "fallback": "-",
+              "display": "PH",
+              "conditioned": true
             }
           ],
           "heading": "",

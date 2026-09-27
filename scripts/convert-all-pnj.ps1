@@ -17,6 +17,7 @@ else {
 
 $PnjDataDirectory = Join-Path $ProjectDirectory "data/pnj"
 $PnjNotesDirectory = Join-Path $VaultDirectory "Acteurs/PNJ"
+$PnjCombatSheetsDirectory = Join-Path $PnjNotesDirectory "Fiches"
 $BestiaryNotesDirectory = Join-Path $VaultDirectory "Acteurs/Bestiaire"
 $PnjAssetsDirectory = Join-Path $VaultDirectory "Assets/pnj"
 $BestiaryAssetsDirectory = Join-Path $VaultDirectory "Assets/bestiaire"
@@ -30,6 +31,7 @@ if (-not (Test-Path -LiteralPath $ConverterPath -PathType Leaf)) {
 
 New-Item -ItemType Directory -Path $PnjDataDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $PnjNotesDirectory -Force | Out-Null
+New-Item -ItemType Directory -Path $PnjCombatSheetsDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $BestiaryNotesDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $PnjAssetsDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $BestiaryAssetsDirectory -Force | Out-Null
@@ -53,6 +55,8 @@ function Invoke-PnjConversion {
         Write-Host "Conversion PNJ : $DisplayName"
         & node $ConverterPath $JsonPath "--vault=$VaultDirectory"
         if ($LASTEXITCODE -ne 0) { throw "Le convertisseur Node.js a retourné le code $LASTEXITCODE." }
+        & node $ConverterPath $JsonPath "--vault=$VaultDirectory" "--combat-sheet" "--no-image"
+        if ($LASTEXITCODE -ne 0) { throw "La génération de la fiche de combat a retourné le code $LASTEXITCODE." }
         $script:SuccessCount++
     }
     catch {
@@ -95,6 +99,7 @@ foreach ($JsonFile in $JsonFiles) {
 Write-Host ""
 Write-Host "Conversion PNJ terminée : $SuccessCount réussite(s), $FailureCount échec(s)."
 Write-Host "Fiches : $PnjNotesDirectory"
+Write-Host "Fiches de combat : $PnjCombatSheetsDirectory"
 Write-Host "Bestiaire : $BestiaryNotesDirectory"
 Write-Host "Portraits : $PnjAssetsDirectory"
 if ($FailureCount -gt 0) { exit 1 }

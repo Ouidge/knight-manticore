@@ -1,0 +1,284 @@
+{
+  "blocks": [
+    {
+      "type": "inline",
+      "id": "knight3colroot",
+      "properties": [],
+      "nested": [
+        {
+          "type": "group",
+          "id": "knight3colone",
+          "properties": [],
+          "nested": [
+            {
+              "type": "heading",
+              "id": "78db98da4bf8",
+              "properties": [
+                "name"
+              ],
+              "conditioned": true,
+              "size": 1
+            },
+            {
+              "type": "subheading",
+              "id": "3aa90b8a388b",
+              "properties": [
+                "type",
+                "subtype"
+              ],
+              "conditioned": true,
+              "fallback": "-",
+              "separator": ", "
+            },
+            {
+              "type": "text",
+              "id": "a838899b6918",
+              "properties": [
+                "pointfaible"
+              ],
+              "text": null,
+              "fallback": "-",
+              "heading": "Point faible",
+              "hasRule": false,
+              "conditioned": true,
+              "markdown": true
+            },
+            {
+              "type": "group",
+              "id": "293a8949293b",
+              "properties": [],
+              "nested": [
+                {
+                  "type": "table",
+                  "id": "d9d8a8b9fb79",
+                  "properties": [
+                    "aspects"
+                  ],
+                  "headers": [
+                    "CHAIR",
+                    "BÊTE",
+                    "MACHINE",
+                    "DAME",
+                    "MASQUE"
+                  ],
+                  "calculate": false,
+                  "hasRule": false,
+                  "conditioned": true,
+                  "markdown": true
+                }
+              ],
+              "heading": "Aspects",
+              "hasRule": false,
+              "cls": "aspect"
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-layout-column-1"
+        },
+        {
+          "type": "group",
+          "id": "knight3coltwo",
+          "properties": [],
+          "nested": [
+            {
+              "type": "group",
+              "id": "aecompactgroup",
+              "properties": [],
+              "nested": [
+                {
+                  "type": "traits",
+                  "id": "aecompact001",
+                  "properties": [
+                    "aspects_exceptionnels"
+                  ],
+                  "fallback": "-",
+                  "heading": "",
+                  "conditioned": true,
+                  "markdown": true
+                }
+              ],
+              "heading": "Aspects exceptionnels",
+              "hasRule": false,
+              "cls": "aspect"
+            },
+            {
+              "type": "traits",
+              "id": "c9bac81889a9",
+              "properties": [
+                "capacites"
+              ],
+              "heading": "Capacités",
+              "conditioned": true,
+              "markdown": true,
+              "dice": false,
+              "fallback": "-"
+            },
+            {
+              "type": "traits",
+              "id": "ab0a0b899ab9",
+              "properties": [
+                "modules"
+              ],
+              "fallback": "-",
+              "heading": "Modules",
+              "conditioned": true,
+              "markdown": true
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-layout-column-2"
+        },
+        {
+          "type": "group",
+          "id": "knight3colthree",
+          "properties": [],
+          "nested": [
+            {
+              "type": "group",
+              "id": "f82a1ab829ab",
+              "properties": [],
+              "nested": [
+                {
+                  "type": "inline",
+                  "id": "e92a38dbfa38",
+                  "properties": [],
+                  "nested": [
+                    {
+                      "type": "property",
+                      "id": "0a8a2988d9cb",
+                      "properties": [
+                        "defense"
+                      ],
+                      "fallback": "-",
+                      "display": "Défense"
+                    },
+                    {
+                      "type": "property",
+                      "id": "e92a3a3a9bba",
+                      "properties": [
+                        "reaction"
+                      ],
+                      "fallback": "-",
+                      "display": "Réaction"
+                    },
+                    {
+                      "type": "property",
+                      "id": "984b7ad88b2a",
+                      "properties": [
+                        "initiative"
+                      ],
+                      "fallback": "-",
+                      "display": "Initiative"
+                    },
+                    {
+                      "type": "property",
+                      "id": "0b8bc8e87a2a",
+                      "properties": [
+                        "ps"
+                      ],
+                      "fallback": "-",
+                      "display": "PS",
+                      "conditioned": true
+                    },
+                    {
+                      "type": "property",
+                      "id": "a9aa79483b9a",
+                      "properties": [
+                        "pe"
+                      ],
+                      "fallback": "-",
+                      "display": "PE",
+                      "conditioned": true
+                    }
+                  ],
+                  "heading": "",
+                  "hasRule": false
+                },
+                {
+                  "type": "inline",
+                  "id": "d9c9c9db0a9b",
+                  "properties": [],
+                  "nested": [
+                    {
+                      "type": "property",
+                      "id": "bb0af88b1aeb",
+                      "properties": [
+                        "pa"
+                      ],
+                      "fallback": "-",
+                      "display": "PA",
+                      "conditioned": true
+                    },
+                    {
+                      "type": "property",
+                      "id": "29c9da8ba9cb",
+                      "properties": [
+                        "cdf"
+                      ],
+                      "fallback": "-",
+                      "display": "CdF",
+                      "conditioned": true
+                    },
+                    {
+                      "type": "property",
+                      "id": "e94b28d858aa",
+                      "properties": [
+                        "bouclier"
+                      ],
+                      "fallback": "-",
+                      "display": "Bouclier",
+                      "conditioned": true
+                    },
+                    {
+                      "type": "property",
+                      "id": "bab9582a6ba8",
+                      "properties": [
+                        "cohesion"
+                      ],
+                      "fallback": "-",
+                      "display": "Cohésion",
+                      "conditioned": true
+                    },
+                    {
+                      "type": "property",
+                      "id": "99e9990bb978",
+                      "properties": [
+                        "debordement"
+                      ],
+                      "fallback": "-",
+                      "display": "Débordement",
+                      "conditioned": true
+                    }
+                  ]
+                }
+              ],
+              "heading": "Combat",
+              "hasRule": true
+            },
+            {
+              "type": "traits",
+              "id": "5969fbbb5b9a",
+              "properties": [
+                "armes"
+              ],
+              "fallback": "-",
+              "heading": "Armes",
+              "conditioned": true,
+              "markdown": true
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-layout-column-3"
+        }
+      ],
+      "heading": "",
+      "hasRule": false,
+      "cls": "knight-layout-three-columns"
+    }
+  ],
+  "name": "Knight PNJ",
+  "id": "daaac9f9c978"
+}

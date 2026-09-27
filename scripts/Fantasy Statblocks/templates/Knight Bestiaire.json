@@ -1,0 +1,300 @@
+{
+  "blocks": [
+    {
+      "type": "group",
+      "id": "bestiaireprofilsection",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "bestiaireprofilrow",
+          "properties": [],
+          "nested": [
+            {
+              "type": "group",
+              "id": "bestiaireidentity",
+              "properties": [],
+              "nested": [
+                {
+                  "type": "heading",
+                  "id": "bestiaireheading",
+                  "properties": [
+                    "name"
+                  ],
+                  "conditioned": true,
+                  "size": 1
+                },
+                {
+                  "type": "subheading",
+                  "id": "bestiairesubheading",
+                  "properties": [
+                    "type",
+                    "subtype"
+                  ],
+                  "fallback": "-",
+                  "separator": ", ",
+                  "conditioned": true
+                },
+                {
+                  "type": "text",
+                  "id": "bestiaireweakpoint",
+                  "properties": [
+                    "pointfaible"
+                  ],
+                  "text": null,
+                  "fallback": "-",
+                  "heading": "Point faible",
+                  "hasRule": false,
+                  "conditioned": true,
+                  "markdown": true
+                }
+              ],
+              "heading": "",
+              "hasRule": false,
+              "cls": "knight-bestiaire-identity"
+            },
+            {
+              "type": "group",
+              "id": "bestiaireaspects",
+              "properties": [],
+              "nested": [
+                {
+                  "type": "table",
+                  "id": "bestiaireaspectstable",
+                  "properties": [
+                    "aspects"
+                  ],
+                  "headers": [
+                    "CHAIR",
+                    "BÊTE",
+                    "MACHINE",
+                    "DAME",
+                    "MASQUE"
+                  ],
+                  "calculate": false,
+                  "hasRule": false,
+                  "conditioned": true,
+                  "markdown": true
+                }
+              ],
+              "heading": "Aspects",
+              "hasRule": false,
+              "cls": "knight-bestiaire-aspects"
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-bestiaire-profile-row"
+        }
+      ],
+      "heading": "",
+      "hasRule": false,
+      "cls": "knight-bestiaire-section knight-bestiaire-profile"
+    },
+    {
+      "type": "group",
+      "id": "bestiaireexceptionalsection",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "bestiaireexceptionaltraits",
+          "properties": [
+            "aspects_exceptionnels"
+          ],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true
+        }
+      ],
+      "heading": "Aspects exceptionnels",
+      "hasRule": false,
+      "cls": "aspect knight-bestiaire-section knight-bestiaire-exceptional"
+    },
+    {
+      "type": "group",
+      "id": "bestiairecombatsection",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "bestiairecombatrowone",
+          "properties": [],
+          "nested": [
+            {
+              "type": "property",
+              "id": "bestiairedefense",
+              "properties": [
+                "defense"
+              ],
+              "fallback": "-",
+              "display": "Défense"
+            },
+            {
+              "type": "property",
+              "id": "bestiairereaction",
+              "properties": [
+                "reaction"
+              ],
+              "fallback": "-",
+              "display": "Réaction"
+            },
+            {
+              "type": "property",
+              "id": "bestiaireinitiative",
+              "properties": [
+                "initiative"
+              ],
+              "fallback": "-",
+              "display": "Initiative"
+            },
+            {
+              "type": "property",
+              "id": "bestiaireps",
+              "properties": [
+                "ps"
+              ],
+              "fallback": "-",
+              "display": "PS",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "bestiairepa",
+              "properties": [
+                "pa"
+              ],
+              "fallback": "-",
+              "display": "PA",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "bestiairepe",
+              "properties": [
+                "pe"
+              ],
+              "fallback": "-",
+              "display": "PE",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "bestiairecdf",
+              "properties": [
+                "cdf"
+              ],
+              "fallback": "-",
+              "display": "CdF",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "bestiairebouclier",
+              "properties": [
+                "bouclier"
+              ],
+              "fallback": "-",
+              "display": "Bouclier",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "bestiairecohesion",
+              "properties": [
+                "cohesion"
+              ],
+              "fallback": "-",
+              "display": "Cohésion",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "bestiairedebordement",
+              "properties": [
+                "debordement"
+              ],
+              "fallback": "-",
+              "display": "Débordement",
+              "conditioned": true
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-bestiaire-combat-row"
+        }
+      ],
+      "heading": "Combat",
+      "hasRule": false,
+      "cls": "knight-bestiaire-section knight-bestiaire-combat"
+    },
+    {
+      "type": "group",
+      "id": "bestiaireweaponssection",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "bestiaireweapons",
+          "properties": [
+            "armes"
+          ],
+          "fallback": "-",
+          "heading": "",
+          "markdown": true,
+          "conditioned": true
+        }
+      ],
+      "heading": "Armes",
+      "hasRule": false,
+      "cls": "knight-bestiaire-section knight-bestiaire-weapons"
+    },
+    {
+      "type": "group",
+      "id": "bestiairemodulessection",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "bestiairemodules",
+          "properties": [
+            "modules"
+          ],
+          "fallback": "-",
+          "heading": "",
+          "markdown": true,
+          "conditioned": true
+        }
+      ],
+      "heading": "Modules",
+      "hasRule": false,
+      "cls": "knight-bestiaire-section knight-bestiaire-modules"
+    },
+    {
+      "type": "group",
+      "id": "bestiairecapacitiessection",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "bestiairecapacities",
+          "properties": [
+            "capacites"
+          ],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "dice": false
+        }
+      ],
+      "heading": "Capacités",
+      "hasRule": false,
+      "cls": "knight-bestiaire-section knight-bestiaire-capacities"
+    }
+  ],
+  "name": "Knight Bestiaire",
+  "id": "5be9ea08590a"
+}
+

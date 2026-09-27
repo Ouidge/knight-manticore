@@ -17,6 +17,7 @@ else {
 
 $DataDirectory = Join-Path $ProjectDirectory "data/bestiaire"
 $NotesDirectory = Join-Path $VaultDirectory "Acteurs/Bestiaire"
+$CombatSheetsDirectory = Join-Path $NotesDirectory "Fiches"
 $AssetsDirectory = Join-Path $VaultDirectory "Assets/bestiaire"
 
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
@@ -28,6 +29,7 @@ if (-not (Test-Path -LiteralPath $ConverterPath -PathType Leaf)) {
 
 New-Item -ItemType Directory -Path $DataDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $NotesDirectory -Force | Out-Null
+New-Item -ItemType Directory -Path $CombatSheetsDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $AssetsDirectory -Force | Out-Null
 
 $JsonFiles = @(Get-ChildItem -LiteralPath $DataDirectory -File -Filter "*.json" | Sort-Object Name)
@@ -59,6 +61,8 @@ function Invoke-CreatureConversion {
         Write-Host "Conversion Bestiaire : $DisplayName"
         & node $ConverterPath $TemporaryPath "--vault=$VaultDirectory"
         if ($LASTEXITCODE -ne 0) { throw "Le convertisseur Node.js a retourné le code $LASTEXITCODE." }
+        & node $ConverterPath $TemporaryPath "--vault=$VaultDirectory" "--combat-sheet" "--no-image"
+        if ($LASTEXITCODE -ne 0) { throw "La génération de la fiche de combat a retourné le code $LASTEXITCODE." }
         $script:SuccessCount++
     }
     catch {
@@ -96,5 +100,6 @@ foreach ($JsonFile in $JsonFiles) {
 Write-Host ""
 Write-Host "Import Bestiaire terminé : $SuccessCount réussite(s), $SkippedCount ignoré(s), $FailureCount échec(s)."
 Write-Host "Fiches : $NotesDirectory"
+Write-Host "Fiches de combat : $CombatSheetsDirectory"
 Write-Host "Portraits : $AssetsDirectory"
 if ($FailureCount -gt 0) { exit 1 }

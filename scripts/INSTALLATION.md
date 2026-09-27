@@ -25,11 +25,22 @@ projet/
 │   └── styles/
 │       └── fiche-personnage.scss
 └── scripts/
+    ├── Fantasy Statblocks/
+    │   ├── templates/
+    │   │   ├── Knight PNJ.json
+    │   │   ├── Knight PNJ Combat.json
+    │   │   ├── Knight Bestiaire.json
+    │   │   ├── Knight Bestiaire Combat.json
+    │   │   ├── Knight PJ.json
+    │   │   └── Knight PJ Summary.json
+    │   └── snippets/
+    │       └── knight-statblocks.css
+    ├── Macro Foundry/
+    │   ├── macro-foundry-export-pnj.js
+    │   └── macro-foundry-export-bestiaire.js
     ├── convert-foundry-knight.mjs
     ├── convert-foundry-knight-pnj.mjs
     ├── effect-normalization.mjs
-    ├── macro-foundry-export-pnj.js
-    ├── macro-foundry-export-bestiaire.js
     ├── export-foundry-effects.mjs
     ├── convert-all-characters.ps1
     ├── convert-all-pnj.ps1
@@ -60,6 +71,17 @@ Pour importer uniquement le bestiaire, placer les exports JSON dans
 
 Le script accepte un export individuel ou le lot produit par la macro Foundry.
 Dans un lot mixte, seuls les acteurs de type `creature` sont importés.
+
+Les scripts PNJ et Bestiaire génèrent désormais deux notes par acteur :
+
+- la note narrative habituelle dans `Acteurs/PNJ/` ou `Acteurs/Bestiaire/` ;
+- une fiche de combat autonome nommée `Fiche <Nom>.md` dans le sous-dossier
+  `Fiches/` correspondant.
+
+Les fiches de combat portent les métadonnées `type: fiche` et
+`subtype: pnj` ou `subtype: creature`. Elles contiennent uniquement le
+statblock afin de pouvoir être imprimées ou exportées en PDF sans le reste de
+la note narrative.
 
 Pour exporter uniquement le bestiaire depuis Foundry :
 
@@ -103,27 +125,72 @@ Le bloc manuel « Notes de campagne » est conservé juste sous ce résumé et a
 la Dataview. Le convertisseur peut le déplacer à cet emplacement, mais ne
 remplace jamais son contenu.
 
-Le convertisseur maintient également un bloc `statblock` utilisant le layout
-`Knight PNJ` de Fantasy Statblocks. La présentation et la tactique restent dans
-le corps de la note, juste avant ce statblock compact, dans une grille 60/40
-qui repasse automatiquement sur une seule colonne en affichage étroit. Celui-ci reprend les
-aspects et aspects exceptionnels, les valeurs de combat, les capacités, les
-modules et les armes. Le portrait reste affiché dans la Dataview en tête de
-fiche et n’est pas répété dans le statblock. Le layout ne contient plus de blocs
-`description`, `image` ou `tactique`. Le statblock est délimité par
-`BEGIN/END PNJ STATBLOCK` et peut donc être remplacé sans toucher aux notes
-manuelles.
+Les notes narratives PNJ et Bestiaire ne contiennent plus de bloc Fantasy
+Statblocks. Un lien vers leur fiche de combat autonome est ajouté directement
+sous le titre principal. La présentation et la tactique restent dans le corps
+de la note, dans une grille 60/40 qui
+repasse automatiquement sur une seule colonne en affichage étroit. La fiche de
+combat autonome située dans `Acteurs/PNJ/Fiches/` utilise le layout
+`Knight PNJ Combat` et reprend les aspects, les aspects exceptionnels, les
+valeurs de combat, les capacités, les modules et les armes. Lors d'une nouvelle
+conversion, un ancien bloc délimité par `BEGIN/END PNJ STATBLOCK` est supprimé
+des notes narratives sans toucher aux notes manuelles.
 
-Pour appliquer le rendu Knight, copier `knight-statblocks.css` dans le
+Dans les notes Bestiaire, le portrait de la créature est affiché sous le lien
+vers la fiche de combat. La présentation et la tactique sont systématiquement
+replacées avant le bloc technique Foundry (`Profil technique`, aspects, armes et
+capacités), y compris lors de la mise à jour d'une note existante.
+
+Les aspects exceptionnels sont intégrés directement dans la ligne des aspects.
+Leur valeur est un wikilien vers un bloc de la note correspondante, par exemple
+`[[Bête exceptionnelle#^majeur|6+]]`. Pour obtenir un aperçu compact au survol,
+ajouter dans chacune des notes `Chair exceptionnelle`, `Bête exceptionnelle`,
+`Machine exceptionnelle`, `Dame exceptionnelle` et `Masque exceptionnel` :
+
+```markdown
+**Bête majeure** — `= this.majeur` ^majeur
+
+**Bête mineure** — `= this.mineur` ^mineur
+```
+
+Adapter seulement le libellé visible au nom de l’aspect. Les identifiants
+`^majeur` et `^mineur` restent identiques dans les cinq notes.
+
+Lors de la conversion, le script recherche ces cinq notes dans le coffre et lit
+leurs métadonnées `majeur` et `mineur`. Pour chaque aspect exceptionnel possédé
+par l’acteur, il recopie la description dans une section imprimable « Aspects
+exceptionnels » placée immédiatement sous la ligne des aspects. Les valeurs
+YAML simples, entre guillemets ou écrites sur plusieurs lignes avec `>` ou `|`
+sont prises en charge.
+
+Pour appliquer le rendu Knight, copier
+`scripts/Fantasy Statblocks/snippets/knight-statblocks.css` dans le
 dossier `.obsidian/snippets/` du coffre, puis l’activer dans **Paramètres →
-Apparence → Extraits CSS**. Le style cible les quatre layouts Knight sans
+Apparence → Extraits CSS**. Le style cible les six layouts Knight sans
 modifier les autres statblocks du coffre.
 
-Dans **Fantasy Statblocks → Manage layouts**, importer les quatre fichiers
-`Knight PNJ.json`, `Knight Bestiaire.json`, `Knight PJ.json` et
-`Knight PJ Summary.json`. Une fiche du bestiaire utilise le layout compact
-`Knight Bestiaire`; une fiche PJ privée utilise le layout complet `Knight PJ`;
-la note agrégée `Résumé PJ.md` utilise `Knight PJ Summary`.
+Dans Obsidian Desktop, afficher la note en mode lecture puis lancer la commande
+**Exporter au format PDF** pour imprimer son statblock. Le CSS Knight remplace
+automatiquement le fond bleu nuit par un fond blanc, utilise du texte sombre et
+des titres bleu marine avec un filet doré. La page est configurée en A4 paysage.
+Les layouts compacts Knight PNJ Combat, Knight Bestiaire Combat et Knight PJ Summary sont
+resserrés pour tenir sur une page dans les cas usuels. Il évite autant que
+possible de couper une section au changement de page.
+
+Les anciennes notes narratives conservent le statblock PNJ en trois colonnes.
+Les fiches autonomes `Knight PNJ Combat` et `Knight Bestiaire Combat` suivent
+un flux vertical : profil et
+aspects, aspects exceptionnels, combat, armes, modules, puis une carte pleine
+largeur pour chaque capacité. Sur un écran étroit, les grilles internes sont
+automatiquement replacées sur une seule colonne.
+
+Dans **Fantasy Statblocks → Manage layouts**, importer les six fichiers du
+dossier `scripts/Fantasy Statblocks/templates/` :
+`Knight PNJ.json`, `Knight PNJ Combat.json`, `Knight Bestiaire.json`,
+`Knight Bestiaire Combat.json`, `Knight PJ.json` et `Knight PJ Summary.json`.
+Une fiche de combat PNJ utilise `Knight PNJ Combat`, une fiche de combat du
+bestiaire utilise `Knight Bestiaire Combat`; une fiche PJ privée utilise le layout complet `Knight PJ`;
+la note agrégée `_Résumé PJ.md` utilise `Knight PJ Summary`.
 
 Les clés techniques Foundry sont normalisées en français pour les exports PJ et
 PNJ. Par exemple, `Degatscontinus 3` devient le lien Obsidian
@@ -146,7 +213,8 @@ __public/personnages/pj/
 La même exécution génère les fiches MJ `Fiche <Nom>.md` et la synthèse
 `_Résumé PJ.md` dans `Acteurs/PJ/`. Le préfixe `_` place la synthèse en tête du
 dossier sans apparaître dans son titre. Les fiches MJ utilisent respectivement les
-layouts `Knight PJ` et `Knight PJ Summary`.
+layouts `Knight PJ` et `Knight PJ Summary`. Les deux layouts affichent les PG
+et PX au format `restant/total`, ainsi que les PH au format `actuel/max`.
 
 et met également à jour :
 

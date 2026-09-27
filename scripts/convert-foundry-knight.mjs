@@ -1358,6 +1358,9 @@ function pjStatblock(layout) {
   lines.push(`reaction: ${yamlString(`${armorReaction}/${guardianReaction}`)}`);
   lines.push(`initiative: ${yamlString(`${armorInitiative}/${guardianInitiative}`)}`);
   lines.push(`pc: ${number(system.contacts?.actuel)}`);
+  lines.push(`pg: ${yamlString(`${gloryRemaining}/${gloryTotal}`)}`);
+  lines.push(`px: ${yamlString(`${experienceRemaining}/${experienceTotal}`)}`);
+  lines.push(`ph: ${yamlString(`${number(system.heroisme?.value)}/${number(system.heroisme?.max)}`)}`);
   lines.push(`ps: ${healthMaximum}`);
   lines.push(`pes: ${yamlString(`${number(system.espoir?.value)}/${hopeMaximum}`)}`);
   lines.push(`cdf: ${yamlString(`${armorForceField}/${guardianForceField}`)}`);

@@ -1,0 +1,959 @@
+/*
+ * Fantasy Statblocks — layouts Knight
+ * Knight PNJ, Knight PNJ Combat, Knight Bestiaire, Knight Bestiaire Combat,
+ * Knight PJ et Knight PJ Summary.
+ */
+.pnj-presentation-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(240px, 2fr);
+  gap: 1rem;
+  margin: 1rem 0 1.25rem;
+  color: var(--text-normal);
+}
+
+.pnj-presentation-card,
+.pnj-tactique-card {
+  min-width: 0;
+  padding: 1rem 1.1rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--background-secondary) 88%, #243b5a 12%);
+  border: 1px solid color-mix(in srgb, var(--background-modifier-border) 72%, #d8b861 28%);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.pnj-tactique-card {
+  position: relative;
+  background: color-mix(in srgb, var(--background-secondary) 82%, #294c72 18%);
+  border-left: 4px solid #d8b861;
+}
+
+.pnj-presentation-grid h2 {
+  margin: 0 0 0.65rem;
+  padding: 0 0 0.38rem;
+  color: color-mix(in srgb, var(--text-normal) 74%, #e8c36a 26%);
+  border-bottom: 1px solid color-mix(in srgb, var(--background-modifier-border) 58%, #d8b861 42%);
+  font-family: var(--font-interface);
+  font-size: 1.05rem;
+  font-variant: small-caps;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+}
+
+.pnj-presentation-grid p {
+  margin: 0 0 0.62rem;
+  line-height: 1.58;
+}
+
+.pnj-presentation-grid p:last-child {
+  margin-bottom: 0;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
+  --statblock-primary-color: #e8c36a;
+  --statblock-rule-color: rgba(232, 195, 106, 0.46);
+  --statblock-bar-color: #4e81bd;
+  --statblock-background-color: #111827;
+  --knight-stat-label-color: #9dbbe0;
+  box-sizing: border-box;
+  padding: 1.2rem 1.35rem;
+  color: #e8edf6;
+  background:
+    radial-gradient(circle at 92% 4%, rgba(68, 105, 158, 0.22), transparent 32%),
+    linear-gradient(145deg, #18243a 0%, #111827 55%, #0c1321 100%) !important;
+  border: 1px solid rgba(232, 195, 106, 0.48);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.035);
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  line-height: 1.48;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  padding: 0 0.65rem;
+  background: transparent !important;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column + .column {
+  border-left: 1px solid rgba(232, 195, 106, 0.18);
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-heading"] {
+  margin: 0 0 0.1rem;
+  color: #fff4d4;
+  font-family: var(--font-interface);
+  font-size: 1.7rem;
+  font-variant: small-caps;
+  font-weight: 750;
+  letter-spacing: 0.045em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-subheading"] {
+  margin-bottom: 0.85rem;
+  color: #aab7cb;
+  font-size: 0.82rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container {
+  margin-block: 0.35rem;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h1,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h2,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h3,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h4,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h5,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h6,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
+  margin: 0.95rem 0 0.45rem;
+  padding: 0 0 0.28rem;
+  color: #e8c36a;
+  border-bottom: 1px solid rgba(232, 195, 106, 0.38);
+  font-family: var(--font-interface);
+  font-size: 1rem;
+  font-variant: small-caps;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) p {
+  margin-block: 0.35rem;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) img {
+  width: 118px !important;
+  height: 148px !important;
+  margin: 0.15rem 0 0.65rem 0.9rem;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid rgba(232, 195, 106, 0.65);
+  border-radius: 8px !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.38);
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table {
+  width: 100%;
+  margin: 0.35rem 0 0.7rem;
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table th {
+  padding: 0.28rem 0.2rem;
+  color: #aebbd0;
+  background: transparent;
+  border: 0;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.035em;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table td {
+  padding: 0.35rem 0.2rem;
+  color: #f5f8ff !important;
+  background: rgba(78, 129, 189, 0.13);
+  border: 1px solid rgba(108, 151, 204, 0.17);
+  border-radius: 5px;
+  font-size: 0.93rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] {
+  display: inline-flex;
+  gap: 0.32rem;
+  align-items: baseline;
+  margin: 0.14rem 0.45rem 0.14rem 0;
+  padding: 0.25rem 0.48rem;
+  color: #f5f8ff !important;
+  background: rgba(78, 129, 189, 0.13);
+  border: 1px solid rgba(108, 151, 204, 0.18);
+  border-radius: 5px;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] strong,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="property-name"] {
+  color: var(--knight-stat-label-color);
+  font-weight: 650;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] {
+  margin-top: 0.7rem;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] strong,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="trait-name"] {
+  color: #f5f8ff !important;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) :is(
+  .knight-bestiaire-exceptional,
+  .knight-bestiaire-weapons,
+  .knight-bestiaire-capacities
+) :is(
+  [class*="statblock-item-traits"] strong,
+  [class*="trait-name"]
+) {
+  color: var(--knight-stat-label-color) !important;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) .knight-combat-colored-names :is(
+  strong,
+  b,
+  [class*="trait-name"]
+) {
+  color: var(--knight-stat-label-color) !important;
+}
+
+/* Dans les layouts de combat, Fantasy Statblocks rend les noms de traits
+   comme du texte fort. Cette règle doit venir après la règle blanche commune
+   ci-dessus afin que les aspects, armes et capacités reprennent bien la
+   couleur des libellés de combat. */
+.statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+  [class*="statblock-item-traits"] :is(strong, b, [class*="trait-name"]) {
+  color: var(--knight-stat-label-color) !important;
+}
+
+/* En mode Markdown, le plugin rend le nom du trait en italique au début du
+   paragraphe (aspects exceptionnels, armes et capacités). */
+.statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+  [class*="statblock-item-traits"] p > em:first-child {
+  color: var(--knight-stat-label-color) !important;
+}
+
+/* Le thème du layout peut appliquer une couleur directement à l'italique
+   placé dans trait-name : il faut donc cibler le descendant lui-même. */
+.statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+  [class*="trait-name"] :is(em, strong, b),
+.statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+  :is(em, strong, b)[class*="trait-name"] {
+  color: var(--knight-stat-label-color) !important;
+  font-style: normal !important;
+}
+
+.statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+  [class*="trait-name"],
+.statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+  [class*="trait-name"] * {
+  color: var(--knight-stat-label-color) !important;
+  font-style: normal !important;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link {
+  color: #82b6ef;
+  text-decoration: none;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a:hover,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link:hover {
+  color: #b9d8fa;
+  text-decoration: underline;
+}
+
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) hr {
+  height: 1px;
+  margin: 0.65rem 0;
+  background: linear-gradient(90deg, rgba(232, 195, 106, 0.55), rgba(232, 195, 106, 0.06));
+  border: 0;
+}
+
+.statblock.knight-pnj .knight-layout-three-columns {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  align-items: start;
+  width: 100%;
+}
+
+.statblock.knight-pnj :is(
+  .knight-layout-column-1,
+  .knight-layout-column-2,
+  .knight-layout-column-3
+) {
+  display: block !important;
+  min-width: 0;
+}
+
+.statblock.knight-pnj :is(
+  .knight-layout-column-2,
+  .knight-layout-column-3
+) {
+  padding-left: 0.9rem;
+  border-left: 1px solid rgba(232, 195, 106, 0.18);
+}
+
+/* Bestiaire : flux vertical, avec seulement des grilles internes compactes. */
+:is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) .knight-bestiaire-section {
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0 0 0.8rem;
+}
+
+:is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) .knight-bestiaire-profile-row {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(420px, 2fr);
+  gap: 1rem;
+  align-items: end;
+}
+
+:is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) :is(
+  .knight-bestiaire-identity,
+  .knight-bestiaire-aspects
+) {
+  display: block !important;
+  min-width: 0;
+}
+
+:is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) .knight-bestiaire-combat-row {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+:is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid))
+  .knight-bestiaire-combat-row [class*="statblock-item-property"] {
+  display: flex;
+  flex: 1 1 105px;
+  width: auto;
+  min-width: 105px;
+  margin-right: 0;
+  white-space: nowrap;
+}
+
+:is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid))
+  .knight-bestiaire-combat-row [class*="statblock-item-property"]:empty {
+  display: none !important;
+}
+
+:is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) :is(
+  .knight-bestiaire-exceptional,
+  .knight-bestiaire-weapons,
+  .knight-bestiaire-modules,
+  .knight-bestiaire-capacities
+) [class*="statblock-item-traits"] {
+  display: block;
+  width: 100%;
+  margin: 0.35rem 0;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(232, 195, 106, 0.16);
+  border-radius: 4px;
+  background: rgba(5, 12, 30, 0.22);
+}
+
+:is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) .knight-bestiaire-capacities [class*="statblock-item-traits"] {
+  padding: 0.65rem 0.8rem;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-actions-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-title-row {
+  display: block !important;
+  width: 100%;
+  min-width: 0;
+  white-space: nowrap;
+  margin: 0 0 0.45rem;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-title-row [class*="statblock-item-heading"] {
+  white-space: nowrap;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-title-row [class*="statblock-item-heading"],
+.statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-title-row [class*="statblock-item-subheading"] {
+  margin: 0;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-title-row [class*="statblock-item-heading"] {
+  font-size: 1.42rem;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-title-row [class*="statblock-item-subheading"] {
+  font-size: 0.78rem;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) :is(
+  .knight-bestiaire-actions-left,
+  .knight-bestiaire-capacities
+) {
+  display: block !important;
+  min-width: 0;
+}
+
+.statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-capacities [class*="statblock-item-traits"] {
+  font-size: 0.94em;
+  line-height: 1.25;
+}
+
+/* Fiche PNJ de combat : ambiance plus humaine et martiale à l'écran.
+   Les règles @media print situées plus bas rétablissent volontairement la
+   palette blanche commune aux fiches PNJ et Bestiaire. */
+.statblock:has(.knight-pnj-combat-marker) {
+  --statblock-primary-color: #efc17f;
+  --statblock-rule-color: rgba(221, 151, 105, 0.58);
+  --statblock-bar-color: #9a5849;
+  --knight-stat-label-color: #e6ad83;
+  background:
+    radial-gradient(circle at 92% 4%, rgba(151, 79, 64, 0.24), transparent 34%),
+    linear-gradient(145deg, #2b1c21 0%, #1b171d 56%, #111117 100%) !important;
+  border-color: rgba(225, 157, 105, 0.72);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.34), inset 0 0 0 1px rgba(255, 220, 187, 0.045);
+}
+
+.statblock:has(.knight-pnj-combat-marker) [class*="statblock-item-heading"] {
+  color: #fff0dc;
+}
+
+.statblock:has(.knight-pnj-combat-marker) :is(
+  .statblock-item-container > h1,
+  .statblock-item-container > h2,
+  .statblock-item-container > h3,
+  [class*="section-heading"]
+) {
+  color: #efc17f;
+  border-bottom-color: rgba(221, 151, 105, 0.48);
+}
+
+.statblock:has(.knight-pnj-combat-marker) table td,
+.statblock:has(.knight-pnj-combat-marker) [class*="statblock-item-property"] {
+  background: rgba(154, 88, 73, 0.18);
+  border-color: rgba(221, 151, 105, 0.2);
+}
+
+.statblock:has(.knight-pnj-combat-marker) [class*="property-name"] {
+  color: #e6ad83;
+}
+
+.statblock:has(.knight-pnj-combat-marker) :is(
+  .knight-bestiaire-exceptional,
+  .knight-bestiaire-weapons,
+  .knight-bestiaire-modules,
+  .knight-bestiaire-capacities
+) [class*="statblock-item-traits"] {
+  background: rgba(32, 13, 18, 0.28);
+  border-color: rgba(221, 151, 105, 0.18);
+}
+
+.statblock:has(.knight-pnj-combat-marker) a,
+.statblock:has(.knight-pnj-combat-marker) a.internal-link {
+  color: #e6a876;
+}
+
+/* Fiche PJ privée : présentation technique, lumineuse et distincte des PNJ
+   et du Bestiaire. La structure interne est explicitement organisée par le
+   layout Knight PJ afin d'éviter les colonnes automatiques déséquilibrées. */
+.statblock.knight-pj {
+  --statblock-primary-color: #e8c36a;
+  --statblock-rule-color: rgba(94, 194, 214, 0.48);
+  --statblock-bar-color: #5ec2d6;
+  --statblock-background-color: #0b1b28;
+  --knight-stat-label-color: #83cde3;
+  background:
+    radial-gradient(circle at 92% 4%, rgba(55, 151, 178, 0.2), transparent 34%),
+    linear-gradient(145deg, #102837 0%, #0b1b28 58%, #08131d 100%) !important;
+  border-color: rgba(94, 194, 214, 0.72);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.34), inset 0 0 0 1px rgba(180, 236, 247, 0.05);
+}
+
+.statblock.knight-pj .knight-pj-summary-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 1rem;
+  align-items: start;
+  width: 100%;
+}
+
+.statblock.knight-pj .knight-pj-main-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr) minmax(0, 1.15fr);
+  gap: 1rem;
+  align-items: start;
+  width: 100%;
+}
+
+.statblock.knight-pj :is(
+  .knight-pj-derived,
+  .knight-pj-aspects,
+  .knight-pj-characteristics,
+  .knight-pj-equipment,
+  .knight-pj-assets
+) {
+  display: block !important;
+  min-width: 0;
+}
+
+.statblock.knight-pj .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
+  padding-left: 1rem;
+  border-left: 1px solid rgba(94, 194, 214, 0.2);
+}
+
+.statblock.knight-pj .knight-pj-characteristics [class*="statblock-item-inline"] {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.3rem;
+  width: 100%;
+}
+
+@media screen {
+  .statblock.knight-pj {
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin-inline: auto;
+  }
+
+  .statblock.knight-pj :is(
+    p,
+    li,
+    td,
+    [class*="property-value"],
+    [class*="trait-description"]
+  ) {
+    color: #edf4fb !important;
+  }
+
+  .statblock.knight-pj .trait-name .statblock-markdown,
+  .statblock.knight-pj .trait-name .statblock-markdown :is(p, span, strong, em, b) {
+    color: var(--knight-stat-label-color) !important;
+  }
+
+  .statblock.knight-pj a,
+  .statblock.knight-pj a.internal-link {
+    color: #8ed8ff !important;
+  }
+}
+
+/* Les couleurs internes définies par Fantasy Statblocks peuvent sinon
+   réintroduire le rouge du thème du layout. Ces règles ne s'appliquent qu'à
+   l'écran : l'impression conserve sa palette blanche dédiée. */
+@media screen {
+  .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker)) {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin-inline: auto;
+  }
+
+  .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker)) :is(
+    p,
+    li,
+    td,
+    [class*="property-value"],
+    [class*="trait-description"]
+  ) {
+    color: #f2f5fa !important;
+  }
+
+  /* Les noms de traits sont rendus dans .trait-name > .statblock-markdown > p.
+     Cette règle doit suivre la couleur blanche générale des paragraphes. */
+  .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .trait-name .statblock-markdown,
+  .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .trait-name .statblock-markdown :is(p, span, strong, em, b) {
+    color: var(--knight-stat-label-color) !important;
+  }
+
+  .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker)) a,
+  .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker)) a.internal-link {
+    color: #9dccff !important;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+}
+
+@media (max-width: 760px) {
+  .pnj-presentation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
+    padding: 1rem;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column {
+    width: 100% !important;
+    padding: 0;
+    border-left: 0 !important;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) img {
+    width: 96px !important;
+    height: 120px !important;
+  }
+
+  .statblock.knight-pnj .knight-layout-three-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .statblock.knight-pnj :is(
+    .knight-layout-column-2,
+    .knight-layout-column-3
+  ) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  :is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) .knight-bestiaire-profile-row {
+    grid-template-columns: 1fr;
+  }
+
+  .statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .statblock.knight-pj :is(.knight-pj-summary-grid, .knight-pj-main-grid) {
+    grid-template-columns: 1fr;
+  }
+
+  .statblock.knight-pj .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 8mm;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
+    --statblock-primary-color: #172b49;
+    --statblock-rule-color: #9b7a28;
+    --statblock-bar-color: #dbe5f1;
+    --statblock-background-color: #ffffff;
+    --knight-stat-label-color: #294f7a;
+    width: 100% !important;
+    max-width: none !important;
+    color: #172033 !important;
+    background: #ffffff !important;
+    border: 1px solid #52647a;
+    box-shadow: none;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column + .column {
+    border-left-color: #c7d0dc;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-heading"],
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h1,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h2,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h3,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
+    color: #172b49 !important;
+    border-bottom-color: #9b7a28 !important;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-subheading"],
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table th {
+    color: #43546a !important;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table td,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] {
+    color: #172033 !important;
+    background: #f0f4f8 !important;
+    border-color: #c7d0dc;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] strong,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="property-name"] {
+    color: #294f7a !important;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] strong,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="trait-name"] {
+    color: #172033 !important;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link {
+    color: #174f8c !important;
+    text-decoration: underline;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) hr {
+    background: #9b7a28;
+  }
+
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"],
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
+    break-inside: avoid;
+  }
+
+  .statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj-summary) {
+    padding: 4.5mm 5mm;
+    font-size: 8pt;
+    line-height: 1.22;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .statblock.knight-pj {
+    padding: 3mm 4mm;
+    font-size: 7pt;
+    line-height: 1.15;
+  }
+
+  .statblock.knight-pj .knight-pj-summary-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(65mm, 0.85fr);
+    gap: 3mm;
+  }
+
+  .statblock.knight-pj .knight-pj-main-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr) minmax(0, 1.15fr);
+    gap: 3mm;
+  }
+
+  .statblock.knight-pj .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
+    padding-left: 3mm;
+    border-left-color: #c7d0dc;
+  }
+
+  .statblock:is(.knight-pnj, .knight-bestiaire) .column {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  .statblock.knight-pnj .knight-layout-three-columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4mm;
+  }
+
+  .statblock.knight-pnj :is(
+    .knight-layout-column-2,
+    .knight-layout-column-3
+  ) {
+    padding-left: 4mm;
+    border-left-color: #c7d0dc;
+  }
+
+  :is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) .knight-bestiaire-profile-row {
+    grid-template-columns: minmax(48mm, 0.8fr) minmax(110mm, 2fr);
+    gap: 4mm;
+  }
+
+  :is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) .knight-bestiaire-section {
+    margin-bottom: 2.5mm;
+  }
+
+  :is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) .knight-bestiaire-combat-row {
+    display: flex !important;
+    flex-wrap: nowrap;
+    gap: 1.5mm;
+    width: 100%;
+  }
+
+  :is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid))
+    .knight-bestiaire-combat-row [class*="statblock-item-property"] {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+  }
+
+  :is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) :is(
+    .knight-bestiaire-exceptional,
+    .knight-bestiaire-weapons,
+    .knight-bestiaire-modules,
+    .knight-bestiaire-capacities
+  ) [class*="statblock-item-traits"] {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    padding: 1.5mm 2mm;
+    border-color: #c7d0dc;
+    background: #f7f9fc !important;
+  }
+
+  .markdown-preview-view:has(.statblock .knight-bestiaire-actions-grid)
+    .markdown-preview-sizer > *:not(:has(.statblock .knight-bestiaire-actions-grid)) {
+    display: none !important;
+  }
+
+  /* Obsidian conserve normalement un espace de défilement avant le contenu.
+     À l'impression, cet espace suffit à repousser le statblock insécable sur
+     une deuxième page entièrement blanche. */
+  .markdown-preview-view:has(.statblock .knight-bestiaire-actions-grid)
+    .markdown-preview-pusher {
+    display: none !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .markdown-preview-view:has(.statblock .knight-bestiaire-actions-grid)
+    .markdown-preview-sizer {
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .statblock:has(.knight-bestiaire-actions-grid) {
+    padding: 3mm 4mm;
+    font-size: 7.2pt;
+    line-height: 1.12;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .statblock:has(.knight-bestiaire-actions-grid) > .column {
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+
+  .statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-actions-grid {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 3mm;
+  }
+
+  .statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-section {
+    margin-bottom: 1.5mm;
+  }
+
+  .statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-capacities [class*="statblock-item-traits"],
+  .statblock:has(.knight-bestiaire-actions-grid) .knight-bestiaire-weapons [class*="statblock-item-traits"] {
+    margin: 0.8mm 0;
+    padding: 1mm 1.5mm;
+    line-height: 1.12;
+  }
+
+  .statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj-summary) [class*="statblock-item-heading"],
+  .statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj-summary) [class*="section-heading"] {
+    margin-top: 0.32rem;
+    margin-bottom: 0.18rem;
+    padding-bottom: 0.12rem;
+  }
+
+  .statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj-summary) [class*="statblock-item-traits"] {
+    margin-top: 0.32rem;
+  }
+
+  .statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj-summary) table {
+    margin: 0.18rem 0 0.32rem;
+    border-spacing: 2px;
+  }
+
+  .statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj-summary) table th,
+  .statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj-summary) table td {
+    padding: 0.16rem 0.12rem;
+  }
+
+  .statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj-summary) p {
+    margin: 0.12rem 0;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Planche d'impression : deux fiches A5 paysage sur une page A4 portrait.
+   La note est générée par le modèle Templater "Planche impression A4 -
+   2 fiches" et reçoit la classe knight-print-double-a5.
+   ------------------------------------------------------------------------- */
+
+@page knight-double-a5 {
+  size: A4 portrait;
+  margin: 5mm;
+}
+
+@media screen {
+  .knight-print-double-a5 .internal-embed {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto 1.25rem;
+    padding: 0.5rem;
+    border: 1px dashed var(--background-modifier-border);
+  }
+}
+
+@media print {
+  .markdown-preview-view.knight-print-double-a5,
+  .markdown-preview-view:has(.knight-print-double-a5),
+  .knight-print-double-a5 {
+    page: knight-double-a5;
+  }
+
+  .markdown-preview-view.knight-print-double-a5 {
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .knight-print-double-a5 .markdown-preview-pusher,
+  .knight-print-double-a5 .mod-header,
+  .knight-print-double-a5 .inline-title,
+  .knight-print-double-a5 .metadata-container,
+  .knight-print-double-a5 .embed-title,
+  .knight-print-double-a5 .markdown-embed-title {
+    display: none !important;
+  }
+
+  .knight-print-double-a5 .markdown-preview-sizer {
+    display: grid !important;
+    grid-template-rows: 134mm 134mm;
+    gap: 3mm;
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .knight-print-double-a5 .markdown-preview-sizer > .internal-embed {
+    display: block !important;
+    width: 100% !important;
+    height: 134mm !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-before: auto !important;
+    page-break-before: auto !important;
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  .knight-print-double-a5 .internal-embed:first-of-type {
+    padding-bottom: 2mm !important;
+    border-bottom: 0.25mm dashed #8b95a3 !important;
+  }
+
+  .knight-print-double-a5 .internal-embed .markdown-embed-content,
+  .knight-print-double-a5 .internal-embed .markdown-preview-view,
+  .knight-print-double-a5 .internal-embed .markdown-preview-sizer {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .knight-print-double-a5 .internal-embed .statblock {
+    width: 142.857% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    zoom: 0.70;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+}
