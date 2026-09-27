@@ -26,13 +26,13 @@ PJ:
 
 ## Rencontres
 
-- [[Celeste Casarini 1]]
-- [[Paolo Van Kemps]]
+- Celeste Casarini
+- Paolo Van Kemps
 - Silvio Luditore - R.I.P. 💀
-- [[Cesare Di Marzio]]
+- [[__public/personnages/pnj/Cesare Di Marzio|Cesare Di Marzio]]
 - [[Saul Arentino]]
 - Graziella Santoni
-- [[Denis de la Barthe]]
+- Denis De La Barthe
 - Salute
 - Maia 15-6
 
