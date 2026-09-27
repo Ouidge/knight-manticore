@@ -30,7 +30,7 @@ motivations:
 > *Marco Orlanda*
 > Joueur : Nolive
 > Méta-armure : **[Warmaster](https://knight-jdr-systeme.fr/fr/armour/Warmaster/)**
-> I.A. : [[Personnages/PNJ/Gabriel]]
+> I.A. : [[Gabriel]]
 > Blason : Cerf
 > Section d'origine : **[Dragon](https://knight-jdr-systeme.fr/fr/division/Dragon/)**
 > Avantages : Rayonnement,Magnétique

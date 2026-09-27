@@ -34,11 +34,11 @@ cssclasses:
 <aside class="knight-profile-side">
 <div class="knight-portrait"><img src="../__images/pj/Yurei-portrait.png" alt="Portrait de Yurei"></div>
 <div class="knight-progression" aria-label="Progression">
-<span><strong>PG</strong> 75 / 225</span>
-<span><strong>PX</strong> 47 / 154</span>
+<span><strong>PG</strong> 89 / 239</span>
+<span><strong>PX</strong> 59 / 166</span>
 </div>
 <div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
-<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 4 / 6</span>
+<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 5 / 6</span>
 <span class="knight-pc"><strong title="Points de contact">PC</strong> 1</span>
 </div>
 </aside>

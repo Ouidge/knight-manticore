@@ -1,7 +1,7 @@
 ---
 type: mission
 visibility: public
-status: in progress
+status: done
 name: Rome
 code: M2
 arc: Bête
@@ -9,10 +9,10 @@ image: "[[M2-Rome.webp]]"
 PG:
 PX:
 PJ:
-  - "[[Personnages/PJ/Forge]]"
-  - "[[Personnages/PJ/Yurei]]"
-  - "[[Personnages/PJ/Maggot]]"
-  - "[[Personnages/PJ/Padre]]"
+  - "[[Forge]]"
+  - "[[Yurei]]"
+  - "[[Maggot]]"
+  - "[[Padre]]"
 ---
 
 # Mission 2 - Rome
@@ -26,17 +26,16 @@ PJ:
 
 ## Rencontres
 
-- [[Celeste Casarini]]
-- [[PNJ/Paolo Van Kemps]]
-- Silvio Luditore R.I.P. 💀
-- [[PNJ/Cesare Di Marzio]]
-- [[PNJ/Saul Arentino]]
+- [[Celeste Casarini 1]]
+- [[Paolo Van Kemps]]
+- Silvio Luditore - R.I.P. 💀
+- [[Cesare Di Marzio]]
+- [[Saul Arentino]]
 - Graziella Santoni
-- [[PNJ/Denis de la Barthe]]
-- [[Salute]]
+- [[Denis de la Barthe]]
+- Salute
+- Maia 15-6
 
 #
 
 ![[M2-Fresque-Lancelot.png]]
-
-

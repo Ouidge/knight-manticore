@@ -34,11 +34,11 @@ cssclasses:
 <aside class="knight-profile-side">
 <div class="knight-portrait"><img src="../__images/pj/Padre-portrait.png" alt="Portrait de Padre"></div>
 <div class="knight-progression" aria-label="Progression">
-<span><strong>PG</strong> 85 / 165</span>
-<span><strong>PX</strong> 58 / 109</span>
+<span><strong>PG</strong> 99 / 179</span>
+<span><strong>PX</strong> 70 / 121</span>
 </div>
 <div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
-<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 0 / 6</span>
+<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 1 / 6</span>
 <span class="knight-pc"><strong title="Points de contact">PC</strong> 1</span>
 </div>
 </aside>

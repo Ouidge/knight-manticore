@@ -11,7 +11,7 @@ description: Arche gérée par l'immortel [[Ismaël Jhélam]]
 # Humanité
 
 Londres
-Arche gérée par l'immortel [[PNJ/Ismaël Jhélam]]
+Arche gérée par l'immortel [[Ismaël Jhélam]]
 Humanité
 
  ![[londres.bmp]]

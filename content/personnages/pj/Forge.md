@@ -39,11 +39,11 @@ cssclasses:
 <aside class="knight-profile-side">
 <div class="knight-portrait"><img src="../__images/pj/Forge-portrait.png" alt="Portrait de Forge"></div>
 <div class="knight-progression" aria-label="Progression">
-<span><strong>PG</strong> 55 / 225</span>
-<span><strong>PX</strong> 48 / 154</span>
+<span><strong>PG</strong> 69 / 239</span>
+<span><strong>PX</strong> 60 / 166</span>
 </div>
 <div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
-<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 2 / 6</span>
+<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 3 / 6</span>
 <span class="knight-pc"><strong title="Points de contact">PC</strong> 1</span>
 </div>
 </aside>
@@ -54,7 +54,7 @@ cssclasses:
 <div class="knight-stat-table">
 <div class="knight-stat-cells">
 <div><span>PS</span><strong>34</strong></div>
-<div><span>PEs</span><strong>28 / 50</strong></div>
+<div><span>PEs</span><strong>28 / 47</strong></div>
 <div><span>PA</span><strong>70</strong></div>
 <div><span>PE</span><strong>60</strong></div>
 <div><span>CdF</span><strong>10</strong></div>

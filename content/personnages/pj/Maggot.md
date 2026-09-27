@@ -40,11 +40,11 @@ cssclasses:
 <aside class="knight-profile-side">
 <div class="knight-portrait"><img src="../__images/pj/Maggot-portrait.png" alt="Portrait de Maggot"></div>
 <div class="knight-progression" aria-label="Progression">
-<span><strong>PG</strong> 75 / 225</span>
-<span><strong>PX</strong> 35 / 154</span>
+<span><strong>PG</strong> 89 / 239</span>
+<span><strong>PX</strong> 47 / 166</span>
 </div>
 <div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
-<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 2 / 6</span>
+<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 3 / 6</span>
 <span class="knight-pc"><strong title="Points de contact">PC</strong> 1</span>
 </div>
 </aside>
@@ -229,6 +229,6 @@ cssclasses:
 </section>
 </section>
 
-<div class="screen-only knight-generation-note"><hr><p><em>Fiche générée depuis un export Foundry VTT — système Knight 3.54.4.</em></p></div>
+<div class="screen-only knight-generation-note"><hr><p><em>Fiche générée depuis un export Foundry VTT — système Knight 3.58.35.</em></p></div>
 
 <div class="screen-only knight-print-actions"><button type="button" class="knight-print-button" onclick="window.print()" aria-label="Imprimer la fiche">🖨 Imprimer la fiche</button></div>
