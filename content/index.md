@@ -12,8 +12,8 @@ Prochaine Session :
 ## À explorer 
 
 → [[campagne]] 
-→ [[personnages/pj|👤PJ]]
-→ [[personnages/pnj|👤 PNJ]]
+→ [[personnages/pj]]
+→ [[personnages/pnj]]
 → [[aides de jeu]]
 
 ---
