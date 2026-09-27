@@ -8,7 +8,6 @@ const args = process.argv.slice(2);
 const inputPath = args.find((arg) => !arg.startsWith("--"));
 const vaultArgument = args.find((arg) => arg.startsWith("--vault="));
 const outputArgument = args.find((arg) => arg.startsWith("--output="));
-const bestiaryFolderArgument = args.find((arg) => arg.startsWith("--bestiary-folder="));
 const skipImage = args.includes("--no-image");
 const combatSheet = args.includes("--combat-sheet");
 
@@ -25,9 +24,8 @@ const isBand = actor.type === "bande";
 const bestiarySubtype = isBand ? "bande" : "creature";
 
 const vaultDirectory = path.resolve(vaultArgument?.slice("--vault=".length) || path.join(path.dirname(absoluteInput), "../.."));
-const bestiaryFolderName = bestiaryFolderArgument?.slice("--bestiary-folder=".length) || "Bestiaire";
 const safeName = safeFilename(actor.name || "PNJ");
-const actorDirectory = path.join(vaultDirectory, "Acteurs", isCreature ? bestiaryFolderName : "PNJ");
+const actorDirectory = path.join(vaultDirectory, "Acteurs", isCreature ? "Bestiaire" : "PNJ");
 const defaultOutputPath = combatSheet
   ? path.join(actorDirectory, "Fiches", `Fiche ${safeName}.md`)
   : path.join(actorDirectory, `${safeName}.md`);

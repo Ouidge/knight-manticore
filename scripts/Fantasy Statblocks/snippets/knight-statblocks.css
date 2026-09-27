@@ -49,7 +49,7 @@
   margin-bottom: 0;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
   --statblock-primary-color: #e8c36a;
   --statblock-rule-color: rgba(232, 195, 106, 0.46);
   --statblock-bar-color: #4e81bd;
@@ -69,7 +69,7 @@
   line-height: 1.48;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column {
   width: 100% !important;
   max-width: none !important;
   min-width: 0;
@@ -77,11 +77,11 @@
   background: transparent !important;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column + .column {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column + .column {
   border-left: 1px solid rgba(232, 195, 106, 0.18);
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-heading"] {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-heading"] {
   margin: 0 0 0.1rem;
   color: #fff4d4;
   font-family: var(--font-interface);
@@ -92,7 +92,7 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-subheading"] {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-subheading"] {
   margin-bottom: 0.85rem;
   color: #aab7cb;
   font-size: 0.82rem;
@@ -101,17 +101,17 @@
   text-transform: uppercase;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container {
   margin-block: 0.35rem;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h1,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h2,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h3,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h4,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h5,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h6,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h1,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h2,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h3,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h4,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h5,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h6,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
   margin: 0.95rem 0 0.45rem;
   padding: 0 0 0.28rem;
   color: #e8c36a;
@@ -123,11 +123,11 @@
   letter-spacing: 0.055em;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) p {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) p {
   margin-block: 0.35rem;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) img {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) img {
   width: 118px !important;
   height: 148px !important;
   margin: 0.15rem 0 0.65rem 0.9rem;
@@ -138,14 +138,14 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.38);
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table {
   width: 100%;
   margin: 0.35rem 0 0.7rem;
   border-collapse: separate;
   border-spacing: 4px;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table th {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table th {
   padding: 0.28rem 0.2rem;
   color: #aebbd0;
   background: transparent;
@@ -155,7 +155,7 @@
   letter-spacing: 0.035em;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table td {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table td {
   padding: 0.35rem 0.2rem;
   color: #f5f8ff !important;
   background: rgba(78, 129, 189, 0.13);
@@ -166,7 +166,7 @@
   text-align: center;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] {
   display: inline-flex;
   gap: 0.32rem;
   align-items: baseline;
@@ -178,18 +178,18 @@
   border-radius: 5px;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] strong,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="property-name"] {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] strong,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="property-name"] {
   color: var(--knight-stat-label-color);
   font-weight: 650;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] {
   margin-top: 0.7rem;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] strong,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="trait-name"] {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] strong,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="trait-name"] {
   color: #f5f8ff !important;
 }
 
@@ -246,19 +246,19 @@
   font-style: normal !important;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link {
   color: #82b6ef;
   text-decoration: none;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a:hover,
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link:hover {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a:hover,
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link:hover {
   color: #b9d8fa;
   text-decoration: underline;
 }
 
-:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) hr {
+:is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) hr {
   height: 1px;
   margin: 0.65rem 0;
   background: linear-gradient(90deg, rgba(232, 195, 106, 0.55), rgba(232, 195, 106, 0.06));
@@ -457,7 +457,7 @@
 /* Fiche PJ privée : présentation technique, lumineuse et distincte des PNJ
    et du Bestiaire. La structure interne est explicitement organisée par le
    layout Knight PJ afin d'éviter les colonnes automatiques déséquilibrées. */
-.statblock.knight-pj {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) {
   --statblock-primary-color: #e8c36a;
   --statblock-rule-color: rgba(94, 194, 214, 0.48);
   --statblock-bar-color: #5ec2d6;
@@ -470,16 +470,16 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.34), inset 0 0 0 1px rgba(180, 236, 247, 0.05);
 }
 
-.statblock.knight-pj .knight-pj-summary-grid {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-summary-grid {
   display: block !important;
   width: 100%;
 }
 
-.statblock.knight-pj .knight-pj-main-grid {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-main-grid {
   width: 100%;
 }
 
-.statblock.knight-pj .knight-pj-profile {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-profile {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
@@ -491,7 +491,41 @@
   white-space: nowrap;
 }
 
-.statblock.knight-pj :is(
+/* Les ressources de progression ne font pas partie des statistiques de
+   combat. Elles occupent une seconde ligne compacte dans l'en-tête, sous le
+   profil et alignée à droite du nom. */
+:is(.statblock.knight-pj, .statblock.knight-pj-recto) .knight-pj-resources-header {
+  position: absolute;
+  top: 2.8rem;
+  right: 1.25rem;
+  display: block !important;
+  width: auto;
+  max-width: calc(100% - 14rem);
+  margin: 0 !important;
+  white-space: nowrap;
+}
+
+:is(.statblock.knight-pj, .statblock.knight-pj-recto) .knight-pj-resources-header > .inline-container {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-end;
+  gap: 0.55rem;
+}
+
+:is(.statblock.knight-pj, .statblock.knight-pj-recto) .knight-pj-resources-header .statblock-inline-item,
+:is(.statblock.knight-pj, .statblock.knight-pj-recto) .knight-pj-resources-header .line {
+  display: flex !important;
+  align-items: baseline;
+  width: auto !important;
+  min-width: 0 !important;
+  gap: 0.18rem;
+}
+
+:is(.statblock.knight-pj, .statblock.knight-pj-recto) .knight-pj-title {
+  margin-bottom: 2.5rem !important;
+}
+
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) :is(
   .knight-pj-combat-row,
   .knight-pj-characteristics,
   .knight-pj-equipment,
@@ -502,42 +536,42 @@
   min-width: 0;
 }
 
-.statblock.knight-pj .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
   padding-left: 1rem;
   border-left: 1px solid rgba(94, 194, 214, 0.2);
 }
 
-.statblock.knight-pj .knight-pj-characteristics {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-characteristics {
   width: 100%;
 }
 
-.statblock.knight-pj .knight-pj-combat-row {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-combat-row {
   display: grid !important;
-  grid-template-columns: repeat(12, minmax(max-content, 1fr));
+  grid-template-columns: repeat(8, minmax(max-content, 1fr));
   gap: 0.45rem;
   width: 100%;
 }
 
-.statblock.knight-pj .knight-pj-combat-row > .statblock-inline-item:empty {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-combat-row > .statblock-inline-item:empty {
   display: none !important;
 }
 
-.statblock.knight-pj .knight-pj-characteristics table {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-characteristics table {
   width: 100%;
   table-layout: fixed;
 }
 
-.statblock.knight-pj .knight-pj-characteristics thead {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-characteristics thead {
   display: none;
 }
 
-.statblock.knight-pj .traits-container > .statblock-section-heading {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .traits-container > .statblock-section-heading {
   margin: 0.95rem 0 0.45rem !important;
   padding: 0 0 0.28rem !important;
   border-bottom: 1px solid rgba(232, 195, 106, 0.38) !important;
 }
 
-.statblock.knight-pj .traits-container > .statblock-section-heading .section-header {
+:is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .traits-container > .statblock-section-heading .section-header {
   margin: 0 !important;
   padding: 0 !important;
   color: #e8c36a !important;
@@ -551,13 +585,13 @@
 }
 
 @media screen {
-  .statblock.knight-pj {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) {
     width: 100% !important;
     max-width: 1400px !important;
     margin-inline: auto;
   }
 
-  .statblock.knight-pj :is(
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) :is(
     p,
     li,
     td,
@@ -567,13 +601,13 @@
     color: #edf4fb !important;
   }
 
-  .statblock.knight-pj .trait-name .statblock-markdown,
-  .statblock.knight-pj .trait-name .statblock-markdown :is(p, span, strong, em, b) {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .trait-name .statblock-markdown,
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .trait-name .statblock-markdown :is(p, span, strong, em, b) {
     color: var(--knight-stat-label-color) !important;
   }
 
-  .statblock.knight-pj a,
-  .statblock.knight-pj a.internal-link {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) a,
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) a.internal-link {
     color: #8ed8ff !important;
   }
 }
@@ -621,17 +655,17 @@
     grid-template-columns: 1fr;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
     padding: 1rem;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column {
     width: 100% !important;
     padding: 0;
     border-left: 0 !important;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) img {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) img {
     width: 96px !important;
     height: 120px !important;
   }
@@ -656,11 +690,11 @@
     grid-template-columns: 1fr;
   }
 
-  .statblock.knight-pj :is(.knight-pj-summary-grid, .knight-pj-main-grid) {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) :is(.knight-pj-summary-grid, .knight-pj-main-grid) {
     grid-template-columns: 1fr;
   }
 
-  .statblock.knight-pj .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
     padding-left: 0;
     border-left: 0;
   }
@@ -672,7 +706,7 @@
     margin: 8mm;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {
     --statblock-primary-color: #172b49;
     --statblock-rule-color: #9b7a28;
     --statblock-bar-color: #dbe5f1;
@@ -688,54 +722,54 @@
     -webkit-print-color-adjust: exact;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column + .column {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .column + .column {
     border-left-color: #c7d0dc;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-heading"],
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h1,
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h2,
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h3,
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-heading"],
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h1,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h2,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) .statblock-item-container > h3,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
     color: #172b49 !important;
     border-bottom-color: #9b7a28 !important;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-subheading"],
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table th {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-subheading"],
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table th {
     color: #43546a !important;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table td,
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table td,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] {
     color: #172033 !important;
     background: #f0f4f8 !important;
     border-color: #c7d0dc;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] strong,
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="property-name"] {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-property"] strong,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="property-name"] {
     color: #294f7a !important;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] strong,
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="trait-name"] {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"] strong,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="trait-name"] {
     color: #172033 !important;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a,
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) a.internal-link {
     color: #174f8c !important;
     text-decoration: underline;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) hr {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) hr {
     background: #9b7a28;
   }
 
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"],
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table,
-  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="statblock-item-traits"],
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) table,
+  :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) [class*="section-heading"] {
     break-inside: avoid;
   }
 
@@ -747,40 +781,55 @@
     page-break-inside: avoid;
   }
 
-  .statblock.knight-pj {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) {
     padding: 3mm 4mm;
     font-size: 7pt;
     line-height: 1.15;
   }
 
-  .statblock.knight-pj .knight-pj-summary-grid {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-summary-grid {
     display: block !important;
   }
 
-  .statblock.knight-pj .knight-pj-main-grid {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-main-grid {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr) minmax(0, 1.15fr);
     gap: 3mm;
   }
 
-  .statblock.knight-pj .knight-pj-combat-row {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-combat-row {
     display: grid !important;
-    grid-template-columns: repeat(12, minmax(max-content, 1fr));
+    grid-template-columns: repeat(8, minmax(max-content, 1fr));
     gap: 1.5mm;
   }
 
-  .statblock.knight-pj .traits-container > .statblock-section-heading {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto) .knight-pj-resources-header {
+    top: 9mm;
+    right: 4mm;
+    max-width: calc(100% - 55mm);
+    font-size: 6.2pt;
+  }
+
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto) .knight-pj-resources-header > .inline-container {
+    gap: 2mm;
+  }
+
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto) .knight-pj-title {
+    margin-bottom: 7mm !important;
+  }
+
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .traits-container > .statblock-section-heading {
     margin: 2mm 0 1mm !important;
     padding-bottom: 0.8mm !important;
     border-bottom-color: #9b7a28 !important;
   }
 
-  .statblock.knight-pj .traits-container > .statblock-section-heading .section-header {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .traits-container > .statblock-section-heading .section-header {
     color: #172b49 !important;
     font-size: 7.5pt !important;
     line-height: 1.1 !important;
   }
 
-  .statblock.knight-pj .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
+  :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-main-grid > .statblock-item-container + .statblock-item-container {
     padding-left: 3mm;
     border-left-color: #c7d0dc;
   }
@@ -1002,7 +1051,7 @@
     overflow: visible !important;
   }
 
-  .knight-print-pj-duplex-a5 .internal-embed .statblock.knight-pj {
+  .knight-print-pj-duplex-a5 .internal-embed :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) {
     position: relative;
     width: 100% !important;
     max-width: none !important;
@@ -1016,7 +1065,7 @@
     page-break-inside: avoid !important;
   }
 
-  .knight-print-pj-duplex-a5 .statblock.knight-pj .knight-pj-profile {
+  .knight-print-pj-duplex-a5 :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .knight-pj-profile {
     top: 2.5mm;
     right: 3mm;
     max-width: calc(100% - 38mm);
@@ -1027,7 +1076,7 @@
   .knight-print-pj-duplex-a5 :is(
     .knight-pj-front-marker + .internal-embed,
     .knight-pj-front-marker + .internal-embed + .internal-embed
-  ) .statblock.knight-pj :is(
+  ) :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) :is(
     .knight-pj-capacities,
     .knight-pj-modules,
     .knight-pj-advantages,
@@ -1040,7 +1089,7 @@
   .knight-print-pj-duplex-a5 :is(
     .knight-pj-back-marker + .internal-embed,
     .knight-pj-back-marker + .internal-embed + .internal-embed
-  ) .statblock.knight-pj :is(
+  ) :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) :is(
     .knight-pj-combat-row,
     .knight-pj-characteristics,
     .knight-pj-weapons-list
@@ -1051,7 +1100,7 @@
   .knight-print-pj-duplex-a5 :is(
     .knight-pj-back-marker + .internal-embed,
     .knight-pj-back-marker + .internal-embed + .internal-embed
-  ) .statblock.knight-pj .statblock-section-heading:has(+ :is(
+  ) :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .statblock-section-heading:has(+ :is(
     .knight-pj-combat-row,
     .knight-pj-characteristics,
     .knight-pj-weapons-list
@@ -1153,7 +1202,7 @@
     overflow: visible !important;
   }
 
-  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .statblock.knight-pj {
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) {
     box-sizing: border-box !important;
     width: 200mm !important;
     max-width: 200mm !important;
@@ -1179,7 +1228,7 @@
   }
 
   .knight-print-pj-duplex-a5 .callout[data-callout="pj-front"]
-    .statblock.knight-pj :is(
+    :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) :is(
       .knight-pj-capacities,
       .knight-pj-modules,
       .knight-pj-advantages,
@@ -1193,7 +1242,7 @@
   }
 
   .knight-print-pj-duplex-a5 .callout[data-callout="pj-back"]
-    .statblock.knight-pj :is(
+    :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) :is(
       .knight-pj-combat-row,
       .knight-pj-characteristics,
       .knight-pj-weapons-list,
@@ -1203,7 +1252,7 @@
   }
 
   .knight-print-pj-duplex-a5 .callout[data-callout="pj-back"]
-    .statblock.knight-pj .statblock-section-heading:has(+ :is(
+    :is(.statblock.knight-pj, .statblock.knight-pj-recto, .statblock.knight-pj-verso) .statblock-section-heading:has(+ :is(
       .knight-pj-combat-row,
       .knight-pj-characteristics,
       .knight-pj-weapons-list
@@ -1308,8 +1357,8 @@
     overflow: hidden !important;
   }
 
-  .callout[data-callout="pj-front"] .statblock:has(.knight-pj-main-grid),
-  .callout[data-callout="pj-back"] .statblock:has(.knight-pj-main-grid) {
+  .callout[data-callout="pj-front"] .statblock.knight-pj-recto,
+  .callout[data-callout="pj-back"] .statblock.knight-pj-verso {
     box-sizing: border-box !important;
     width: 200mm !important;
     max-width: 200mm !important;

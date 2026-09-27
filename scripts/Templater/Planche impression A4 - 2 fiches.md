@@ -40,7 +40,8 @@ const second = await tp.system.suggester(
 if (!second) return;
 
 const withoutExtension = (path) => path.replace(/\.md$/i, "");
-const targetPath = "Acteurs/_Planche impression A4.md";
+const targetFolder = "_Print";
+const targetPath = `${targetFolder}/Planche impression A4.md`;
 const content = [
   "---",
   "type: impression",
@@ -54,6 +55,10 @@ const content = [
   `![[${withoutExtension(second.file.path)}]]`,
   "",
 ].join("\n");
+
+if (!app.vault.getAbstractFileByPath(targetFolder)) {
+  await app.vault.createFolder(targetFolder);
+}
 
 let target = app.vault.getAbstractFileByPath(targetPath);
 if (target) {

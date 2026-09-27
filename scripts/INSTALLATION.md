@@ -219,7 +219,9 @@ n'est ouverte :
 5. Activer l'éclair de la Choice pour l'ajouter à la palette de commandes.
 
 La commande demande deux fiches PJ et génère
-`Personnages/PJ/Planche PJ recto-verso A4.md`, sans nécessiter d'éditeur actif.
+`_Print/Planche PJ recto-verso A4.md`, sans nécessiter d'éditeur actif. Le
+dossier `_Print`, situé à la racine du Vault, est créé automatiquement s'il
+n'existe pas.
 Elle copie directement les blocs Fantasy Statblocks dans la planche afin que
 les quatre faces soient entièrement rendues avant l'export PDF. Après une mise
 à jour du script QuickAdd, il faut relancer la commande pour régénérer la note.
@@ -355,7 +357,9 @@ Cette fonction nécessite le plugin Obsidian **Templater**.
 3. Dans Obsidian, exécuter la commande Templater d’insertion du modèle
    `Planche impression A4 - 2 fiches`.
 4. Choisir successivement la fiche supérieure puis la fiche inférieure.
-5. Le modèle crée ou remplace `Acteurs/_Planche impression A4.md` et l’ouvre.
+5. Le modèle crée ou remplace `_Print/Planche impression A4.md` et l’ouvre. Le
+   dossier `_Print`, situé à la racine du Vault, est créé automatiquement s'il
+   n'existe pas.
 
 Le sélecteur propose les fiches de combat portant `subtype: pnj`,
 `subtype: creature` ou `subtype: bande`. Il est donc possible de mélanger deux

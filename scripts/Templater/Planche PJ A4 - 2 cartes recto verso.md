@@ -37,7 +37,8 @@ const second = await tp.system.suggester(
 if (!second) return;
 
 const withoutExtension = (path) => path.replace(/\.md$/i, "");
-const targetPath = "Personnages/PJ/Planche PJ recto-verso A4.md";
+const targetFolder = "_Print";
+const targetPath = `${targetFolder}/Planche PJ recto-verso A4.md`;
 const firstLink = `![[${withoutExtension(first.file.path)}]]`;
 const secondLink = `![[${withoutExtension(second.file.path)}]]`;
 const card = (face, link) => [`> [!pj-${face}]-`, `> ${link}`, ""];
@@ -54,6 +55,10 @@ const content = [
   ...card("back", firstLink),
   ...card("back", secondLink),
 ].join("\n");
+
+if (!app.vault.getAbstractFileByPath(targetFolder)) {
+  await app.vault.createFolder(targetFolder);
+}
 
 let target = app.vault.getAbstractFileByPath(targetPath);
 if (target) {

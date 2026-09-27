@@ -29,6 +29,75 @@
     },
     {
       "type": "group",
+      "id": "knightpjresourcesheader",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "knightpjresourcesinline",
+          "properties": [],
+          "nested": [
+            {
+              "type": "property",
+              "id": "pjpc00000001",
+              "properties": [
+                "pc"
+              ],
+              "fallback": "-",
+              "display": "PC",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "pjpes0000001",
+              "properties": [
+                "pes"
+              ],
+              "fallback": "-",
+              "display": "PEs",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "pjpg00000001",
+              "properties": [
+                "pg"
+              ],
+              "fallback": "-",
+              "display": "PG",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "pjpx00000001",
+              "properties": [
+                "px"
+              ],
+              "fallback": "-",
+              "display": "PX",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "pjph00000001",
+              "properties": [
+                "ph"
+              ],
+              "fallback": "-",
+              "display": "PH",
+              "conditioned": true
+            }
+          ],
+          "heading": "",
+          "hasRule": false
+        }
+      ],
+      "heading": "",
+      "hasRule": false,
+      "cls": "knight-pj-resources-header"
+    },
+    {
+      "type": "group",
       "id": "knightpjsummarygrid",
       "properties": [],
       "nested": [
@@ -115,56 +184,6 @@
                   ],
                   "fallback": "-",
                   "display": "Bouclier",
-                  "conditioned": true
-                },
-                {
-                  "type": "property",
-                  "id": "pjpc00000001",
-                  "properties": [
-                    "pc"
-                  ],
-                  "fallback": "-",
-                  "display": "PC",
-                  "conditioned": true
-                },
-                {
-                  "type": "property",
-                  "id": "pjpes0000001",
-                  "properties": [
-                    "pes"
-                  ],
-                  "fallback": "-",
-                  "display": "PEs",
-                  "conditioned": true
-                },
-                {
-                  "type": "property",
-                  "id": "pjpg00000001",
-                  "properties": [
-                    "pg"
-                  ],
-                  "fallback": "-",
-                  "display": "PG",
-                  "conditioned": true
-                },
-                {
-                  "type": "property",
-                  "id": "pjpx00000001",
-                  "properties": [
-                    "px"
-                  ],
-                  "fallback": "-",
-                  "display": "PX",
-                  "conditioned": true
-                },
-                {
-                  "type": "property",
-                  "id": "pjph00000001",
-                  "properties": [
-                    "ph"
-                  ],
-                  "fallback": "-",
-                  "display": "PH",
                   "conditioned": true
                 }
               ],

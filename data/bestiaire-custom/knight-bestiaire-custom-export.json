@@ -1,7 +1,7 @@
 {
   "format": "knight-bestiaire-bundle",
   "version": 1,
-  "exportedAt": "2026-09-27T13:55:35.735Z",
+  "exportedAt": "2026-09-27T14:35:54.330Z",
   "foundryVersion": "14.365",
   "systemId": "knight",
   "systemVersion": "3.58.35",
@@ -37377,7 +37377,7 @@
           "override": {},
           "addHalf": 0
         },
-        "description": "",
+        "description": "<p><span dir=\"auto\" style=\"box-sizing: border-box; scrollbar-width: var(--scrollbar-native-width); --csstools-light-dark-toggle--23: var(--csstools-color-scheme--dark) #0060df; --focus-ring-color: var(--csstools-light-dark-toggle--23, #0df); padding: 8px 0px 8px 12px; display: flex; gap: var(--size-4-1); font-size: 16px; color: var(--callout-color); line-height: var(--line-height-tight); align-items: flex-start; background-color: unset; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; caret-color: rgb(198, 198, 198); white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &#x27;??, Bookerly, Inter, Segoe UI, 霞鹜文楷 GB, LXGW WenKai, Microsoft YaHei, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Inter, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Microsoft YaHei Light, sans-serif&#x27;\" class=\"callout-title\"><span style=\"box-sizing: border-box; scrollbar-width: var(--scrollbar-native-width); --csstools-light-dark-toggle--23: var(--csstools-color-scheme--dark) #0060df; --focus-ring-color: var(--csstools-light-dark-toggle--23, #0df); --font-weight: var(--callout-title-weight); font-weight: var(--font-weight); color: var(--callout-title-color)\" class=\"callout-title-inner\">Extrait d’un rapport de la section Korrigan</span></span><span style=\"box-sizing: border-box; scrollbar-width: var(--scrollbar-native-width); --csstools-light-dark-toggle--23: var(--csstools-color-scheme--dark) #0060df; --focus-ring-color: var(--csstools-light-dark-toggle--23, #0df); overflow-x: auto; padding: 5px 10px; background-color: var(--callout-content-background); color: rgb(198, 198, 198); font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; caret-color: rgb(198, 198, 198); white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-family: &#x27;??, Bookerly, Inter, Segoe UI, 霞鹜文楷 GB, LXGW WenKai, Microsoft YaHei, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Inter, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Microsoft YaHei Light, sans-serif&#x27;\" class=\"callout-content\"><span dir=\"auto\" style=\"box-sizing: border-box; scrollbar-width: var(--scrollbar-native-width); --csstools-light-dark-toggle--23: var(--csstools-color-scheme--dark) #0060df; --focus-ring-color: var(--csstools-light-dark-toggle--23, #0df); margin-block-start: calc(var(--paragraph-spacing) * 1em); margin-block-end: calc(var(--paragraph-spacing) * 1em); unicode-bidi: plaintext; font-size: var(--font-size-preview-normal)\">La créature nommée « Wendigo » était autrefois humaine. C’était un chevalier méritant, équipée d’une armure Rogue. Elle avait pour habitude de se battre au couteau de combat, s’approchant à la fois rapidement et discrètement de sa proie pour l’éliminer. Elle ne laissait aucune chance à ses adversaires. Maintenant un chevalier noir de la Bête, elle allie les techniques de combat du Knight et certaines capacités issues de ténèbres. Sa lame semble être couverte d’un voile d’obscurité dansante. Et un simple regard de sa part est capable d’insinuer le désespoir même au plus courageux des combattants.</span></span></p>",
         "descriptionLimitee": "",
         "tactique": "",
         "type": "Patron (initié)",
@@ -38951,10 +38951,10 @@
       "flags": {},
       "_stats": {
         "systemId": "knight",
-        "systemVersion": "3.24.3",
+        "systemVersion": "3.58.35",
         "coreVersion": "14.365",
         "createdTime": 1705509986566,
-        "modifiedTime": 1790251002787,
+        "modifiedTime": 1790519635974,
         "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": null,
         "duplicateSource": null,

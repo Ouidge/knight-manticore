@@ -68,7 +68,7 @@ module.exports = async ({ app, quickAddApi }) => {
     "",
     ];
   };
-  const targetFolder = "Personnages/PJ";
+  const targetFolder = "_Print";
   const targetPath = `${targetFolder}/Planche PJ recto-verso A4.md`;
   const content = [
     "---",
