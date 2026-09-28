@@ -23,7 +23,8 @@ projet/
 │   └── Bestiaire/
 ├── quartz/
 │   └── styles/
-│       └── fiche-personnage.scss
+│       ├── fiche-personnage.scss
+│       └── fiche-personnage-print.scss
 └── scripts/
     ├── Fantasy Statblocks/
     │   ├── templates/
@@ -36,7 +37,8 @@ projet/
     │   │   ├── Knight PJ Verso.json
     │   │   └── Knight PJ Summary.json
     │   └── snippets/
-    │       └── knight-statblocks.css
+    │       ├── knight-statblocks.css
+    │       └── fiche-personnage-print.css
     ├── Macro Foundry/
     │   ├── macro-foundry-export-pnj.js
     │   └── macro-foundry-export-bestiaire.js
@@ -47,6 +49,7 @@ projet/
     ├── convert-all-characters.ps1
     ├── convert-all-pnj.ps1
     ├── convert-all-bestiaire.ps1
+    ├── sync-obsidian-assets.ps1
     └── export-effects.ps1
 ```
 
@@ -271,7 +274,7 @@ dossier sans apparaître dans son titre. Les fiches MJ utilisent respectivement 
 layouts `Knight PJ` et `Knight PJ Summary`. Les deux layouts affichent les PG
 et PX au format `restant/total`, ainsi que les PH au format `actuel/max`.
 
-et met également à jour :
+et met également à jour le snippet complet :
 
 ```text
 .obsidian/snippets/fiche-personnage-obsidian.css
@@ -285,9 +288,28 @@ snippet CSS :
 .\convert-all-characters.ps1 -VaultDirectory "C:\chemin\vers\mon-coffre"
 ```
 
-Dans Obsidian, activer ensuite `fiche-personnage-obsidian` dans
+Le script assemble automatiquement la feuille principale et les règles
+d'impression communes de `fiche-personnage-print.scss`. Dans Obsidian, activer
+ensuite `fiche-personnage-obsidian` dans
 **Paramètres → Apparence → Extraits CSS**. Cette activation n’est nécessaire
 qu’une fois ; le contenu du snippet sera ensuite actualisé automatiquement.
+Le sélecteur Obsidian repose sur le marqueur `.knight-sheet-marker` présent
+dans chaque fiche publique et reste donc actif dans le clone utilisé pour
+l'export PDF.
+
+Les trois scripts d'import `convert-all-characters.ps1`,
+`convert-all-pnj.ps1` et `convert-all-bestiaire.ps1` appellent aussi
+`sync-obsidian-assets.ps1`. À chaque lancement, celui-ci met à jour dans le
+Vault indiqué par `-VaultDirectory` :
+
+- `.obsidian/snippets/knight-statblocks.css` ;
+- les modèles Markdown de `scripts/Templater/` dans
+  `__plugins/templates/` ;
+- les scripts JavaScript de `scripts/QuickAdd/` dans
+  `__plugins/templates/`.
+
+Les fichiers portant le même nom sont remplacés. Les autres snippets et
+modèles personnels du Vault ne sont pas modifiés.
 
 En cas de blocage par la politique d’exécution Windows :
 
@@ -315,8 +337,9 @@ publique connue sont conservés sans URL inventée dans
 
 ## Installation du style dans Quartz
 
-1. Copier `fiche-personnage.scss` dans `quartz/styles/`. Le script batch utilise
-   précisément ce fichier pour générer également le snippet Obsidian.
+1. Copier `fiche-personnage.scss` et `fiche-personnage-print.scss` dans
+   `quartz/styles/`. Le script batch utilise ces deux fichiers pour générer
+   également le snippet Obsidian avec les mêmes règles d'impression.
 2. Ajouter cette ligne **tout en haut** de `quartz/styles/custom.scss` :
 
 ```scss

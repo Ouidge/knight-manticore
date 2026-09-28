@@ -6,6 +6,7 @@ param(
 $ErrorActionPreference = "Stop"
 $ScriptDirectory = $PSScriptRoot
 $ConverterPath = Join-Path $ScriptDirectory "convert-foundry-knight-pnj.mjs"
+$SyncObsidianAssetsPath = Join-Path $ScriptDirectory "sync-obsidian-assets.ps1"
 $ProjectDirectory = [System.IO.Path]::GetFullPath((Join-Path $ScriptDirectory ".."))
 
 if ([string]::IsNullOrWhiteSpace($VaultDirectory)) {
@@ -26,11 +27,16 @@ if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
 if (-not (Test-Path -LiteralPath $ConverterPath -PathType Leaf)) {
     throw "Convertisseur d'acteurs introuvable : $ConverterPath"
 }
+if (-not (Test-Path -LiteralPath $SyncObsidianAssetsPath -PathType Leaf)) {
+    throw "Script de synchronisation Obsidian introuvable : $SyncObsidianAssetsPath"
+}
 
 New-Item -ItemType Directory -Path $DataDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $NotesDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $CombatSheetsDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $AssetsDirectory -Force | Out-Null
+
+& $SyncObsidianAssetsPath -VaultDirectory $VaultDirectory
 
 $JsonFiles = @(Get-ChildItem -LiteralPath $DataDirectory -File -Filter "*.json" | Sort-Object Name)
 if ($JsonFiles.Count -eq 0) {

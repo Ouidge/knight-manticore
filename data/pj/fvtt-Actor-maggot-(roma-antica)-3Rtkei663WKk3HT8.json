@@ -1,0 +1,2666 @@
+{
+  "name": "Maggot (Roma Antica)",
+  "type": "knight",
+  "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/missions/M3%20-%20Sous%20les%20nu%C3%A9es/Maggot-roma-antica.png",
+  "system": {
+    "combat": {
+      "armesimprovisees": {
+        "aspect": "chair",
+        "contact": "combat",
+        "distance": "tir",
+        "liste": {
+          "ai1": {
+            "force": 1,
+            "chair": [
+              1,
+              2
+            ],
+            "liste": {
+              "1": {
+                "degats": {
+                  "dice": 4
+                },
+                "violence": {
+                  "dice": 4
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 3
+              },
+              "2": {
+                "degats": {
+                  "dice": 2
+                },
+                "violence": {
+                  "dice": 5
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 1
+              },
+              "3": {
+                "degats": {
+                  "dice": 4
+                },
+                "violence": {
+                  "dice": 4
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 2
+              }
+            }
+          },
+          "ai2": {
+            "force": 2,
+            "chair": [
+              3,
+              4
+            ],
+            "liste": {
+              "1": {
+                "degats": {
+                  "dice": 6
+                },
+                "violence": {
+                  "dice": 4
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 3
+              },
+              "2": {
+                "degats": {
+                  "dice": 4
+                },
+                "violence": {
+                  "dice": 6
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 1
+              },
+              "3": {
+                "degats": {
+                  "dice": 5
+                },
+                "violence": {
+                  "dice": 5
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 2
+              }
+            }
+          },
+          "ai3": {
+            "force": 3,
+            "chair": [
+              5,
+              6
+            ],
+            "liste": {
+              "1": {
+                "degats": {
+                  "dice": 7
+                },
+                "violence": {
+                  "dice": 5
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 3
+              },
+              "2": {
+                "degats": {
+                  "dice": 5
+                },
+                "violence": {
+                  "dice": 7
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 1
+              },
+              "3": {
+                "degats": {
+                  "dice": 6
+                },
+                "violence": {
+                  "dice": 6
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 2
+              }
+            }
+          },
+          "ai4": {
+            "force": 4,
+            "chair": [
+              7,
+              8
+            ],
+            "liste": {
+              "1": {
+                "degats": {
+                  "dice": 7
+                },
+                "violence": {
+                  "dice": 9
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 1
+              },
+              "2": {
+                "degats": {
+                  "dice": 8
+                },
+                "violence": {
+                  "dice": 8
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 2
+              }
+            }
+          },
+          "ai5": {
+            "force": 5,
+            "chair": [
+              9,
+              10
+            ],
+            "liste": {
+              "1": {
+                "degats": {
+                  "dice": 10
+                },
+                "violence": {
+                  "dice": 12
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 1
+              },
+              "2": {
+                "degats": {
+                  "dice": 11
+                },
+                "violence": {
+                  "dice": 11
+                },
+                "effets": {
+                  "raw": [],
+                  "custom": []
+                },
+                "utilisation": 2
+              }
+            }
+          }
+        }
+      },
+      "style": "ambidextre",
+      "data": {
+        "modificateur": 0,
+        "succesbonus": 0,
+        "degatsbonus": {
+          "dice": 0,
+          "fixe": 0
+        },
+        "violencebonus": {
+          "dice": 0,
+          "fixe": 0
+        },
+        "tourspasses": 1,
+        "sacrifice": 0,
+        "type": "degats"
+      },
+      "nods": {
+        "soin": {
+          "value": 2,
+          "max": 3,
+          "dices": "3D6"
+        },
+        "armure": {
+          "value": 2,
+          "max": 3,
+          "dices": "3D6"
+        },
+        "energie": {
+          "value": 3,
+          "max": 3,
+          "dices": "3D6"
+        }
+      },
+      "grenades": {
+        "quantity": {
+          "value": 0,
+          "max": 0
+        },
+        "liste": {
+          "antiblindage": {
+            "degats": {
+              "dice": 3
+            },
+            "violence": {
+              "dice": 3
+            },
+            "effets": {
+              "liste": [],
+              "raw": [
+                "destructeur",
+                "dispersion 6",
+                "penetrant 6",
+                "percearmure 20"
+              ],
+              "custom": []
+            }
+          },
+          "explosive": {
+            "degats": {
+              "dice": 3
+            },
+            "violence": {
+              "dice": 3
+            },
+            "effets": {
+              "liste": [],
+              "raw": [
+                "antivehicule",
+                "choc 1",
+                "dispersion 3"
+              ],
+              "custom": []
+            }
+          },
+          "flashbang": {
+            "degats": {
+              "dice": 0
+            },
+            "violence": {
+              "dice": 0
+            },
+            "effets": {
+              "liste": [],
+              "raw": [
+                "aucundegatsviolence",
+                "barrage 2",
+                "choc 1",
+                "dispersion 6"
+              ],
+              "custom": []
+            }
+          },
+          "iem": {
+            "degats": {
+              "dice": 0
+            },
+            "violence": {
+              "dice": 0
+            },
+            "effets": {
+              "liste": [],
+              "raw": [
+                "aucundegatsviolence",
+                "dispersion 6",
+                "parasitage 2"
+              ],
+              "custom": []
+            }
+          },
+          "shrapnel": {
+            "degats": {
+              "dice": 3
+            },
+            "violence": {
+              "dice": 3
+            },
+            "effets": {
+              "liste": [],
+              "raw": [
+                "dispersion 6",
+                "meurtrier",
+                "ultraviolence"
+              ],
+              "custom": []
+            }
+          }
+        }
+      },
+      "styleInfo": "",
+      "noMalusStyle": false
+    },
+    "aspects": {
+      "chair": {
+        "value": 2,
+        "max": 9,
+        "base": 5,
+        "bonus": {},
+        "malus": {},
+        "caracteristiques": {
+          "deplacement": {
+            "base": 3,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "force": {
+            "base": 5,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "endurance": {
+            "base": 3,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          }
+        },
+        "description": "",
+        "mod": 0,
+        "optimisation": {
+          "bonus": {},
+          "malus": {}
+        },
+        "override": {}
+      },
+      "bete": {
+        "value": 2,
+        "max": 9,
+        "base": 6,
+        "bonus": {},
+        "malus": {},
+        "caracteristiques": {
+          "hargne": {
+            "base": 5,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "combat": {
+            "base": 6,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "instinct": {
+            "base": 2,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          }
+        },
+        "description": "",
+        "mod": 0,
+        "optimisation": {
+          "bonus": {},
+          "malus": {}
+        },
+        "override": {}
+      },
+      "machine": {
+        "value": 2,
+        "max": 9,
+        "base": 2,
+        "bonus": {},
+        "malus": {},
+        "caracteristiques": {
+          "tir": {
+            "base": 1,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "savoir": {
+            "base": 1,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "technique": {
+            "base": 1,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          }
+        },
+        "description": "",
+        "mod": 0,
+        "optimisation": {
+          "bonus": {},
+          "malus": {}
+        },
+        "override": {}
+      },
+      "dame": {
+        "value": 2,
+        "max": 9,
+        "base": 3,
+        "bonus": {},
+        "malus": {},
+        "caracteristiques": {
+          "aura": {
+            "base": 3,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "parole": {
+            "base": 1,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "sangFroid": {
+            "base": 3,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          }
+        },
+        "description": "",
+        "mod": 0,
+        "optimisation": {
+          "bonus": {},
+          "malus": {}
+        },
+        "override": {}
+      },
+      "masque": {
+        "value": 2,
+        "max": 9,
+        "base": 2,
+        "bonus": {},
+        "malus": {},
+        "caracteristiques": {
+          "discretion": {
+            "base": 1,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "dexterite": {
+            "base": 1,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          },
+          "perception": {
+            "base": 1,
+            "bonus": {},
+            "malus": {},
+            "overdrive": {
+              "base": 0,
+              "bonus": {},
+              "malus": {},
+              "override": {},
+              "value": 0
+            },
+            "optimisation": {
+              "bonus": {},
+              "malus": {}
+            },
+            "value": 0,
+            "override": {}
+          }
+        },
+        "description": "",
+        "mod": 0,
+        "optimisation": {
+          "bonus": {},
+          "malus": {}
+        },
+        "override": {}
+      }
+    },
+    "initiative": {
+      "dice": 3,
+      "value": 0,
+      "diceBase": 3,
+      "diceBonus": {
+        "avantages": 0
+      },
+      "diceMalus": {
+        "desavantages": 0
+      },
+      "bonus": {
+        "user": 0,
+        "avantages": 0
+      },
+      "malus": {
+        "user": 0,
+        "desavantages": 0
+      },
+      "embuscade": {
+        "diceBonus": {},
+        "diceMalus": {},
+        "bonus": {},
+        "malus": {}
+      },
+      "complet": "3D6",
+      "base": 0,
+      "mod": 0,
+      "diceMod": 0
+    },
+    "reaction": {
+      "bonus": {
+        "user": 0,
+        "armes": 0,
+        "morph": 0,
+        "warlord": 0
+      },
+      "malus": {
+        "user": 0,
+        "armes": 0,
+        "goliath": 0,
+        "rage": 0
+      },
+      "value": 0,
+      "base": 0,
+      "valueWOMod": 0,
+      "mod": 0,
+      "malustotal": 0,
+      "iswatchtower": false,
+      "override": {}
+    },
+    "defense": {
+      "bonus": {
+        "user": 0,
+        "armes": 0,
+        "morph": 0,
+        "warlord": 0
+      },
+      "malus": {
+        "user": 0,
+        "armes": 0,
+        "goliath": 0,
+        "rage": 0
+      },
+      "value": 0,
+      "base": 0,
+      "valueWOMod": 0,
+      "mod": 0,
+      "malustotal": 0,
+      "iswatchtower": false,
+      "override": {}
+    },
+    "sante": {
+      "bonus": {
+        "user": 0,
+        "avantages": 5
+      },
+      "malus": {
+        "user": 0,
+        "desavantages": 0
+      },
+      "bonusValue": 0,
+      "malusValue": 0,
+      "value": 71,
+      "max": 0,
+      "base": 0,
+      "mod": 0,
+      "override": {},
+      "addHalf": 0
+    },
+    "description": "",
+    "descriptionLimitee": "",
+    "surnom": "Maggot",
+    "age": "32",
+    "archetype": "Hors-la-loi",
+    "hautFait": "Combat de Titans",
+    "section": "Tarasque",
+    "blason": "Lion",
+    "histoire": "<p>Peter a toujours &eacute;t&eacute; un truand. Tout jeune, il &eacute;tait d&eacute;j&agrave; voleur &agrave; Dublin pour ses oncles<br>de la mafia irlandaise. Adolescent, il &eacute;tait guetteur pour ces m&ecirc;mes oncles. Puis &agrave; peine<br>adulte, il est devenu leur gros bras. Cette v&eacute;ritable force de la nature n&rsquo;a jamais eu de souci<br>pour casser quelques dents et briser quelques c&ocirc;tes, tant il a de facilit&eacute;s pour le combat au<br>corps &agrave; corps, avec ou sans arme blanche.<br>Beaucoup de ceux qui connaissent Peter pensent qu&rsquo;il aurait d&ucirc; na&icirc;tre au Moyen-&Acirc;ge. Il aurait<br>alors brill&eacute; lors des tournois et des batailles rang&eacute;es et serait devenu un h&eacute;ros, peut-&ecirc;tre m&ecirc;me un<br>noble d&rsquo;&eacute;p&eacute;e. Malheureusement, Peter a tu&eacute; un homme &agrave; mains nues et malheureusement encore, il s&rsquo;est<br>fait attraper par la police. Pendant une dizaine d&rsquo;ann&eacute;es, jusqu&rsquo;&agrave; ses trente ans, Peter est rest&eacute; en prison.<br>Dans ce lieu dangereux, il a toujours r&eacute;ussi &agrave; se faire respecter, &agrave; la force de ses poings. Et puis, un jour,<br>l&rsquo;Anath&egrave;me est arriv&eacute; et a englouti la ville o&ugrave; il &eacute;tait dans l&rsquo;obscurit&eacute;. Peter et ses cod&eacute;tenus ont &eacute;t&eacute; laiss&eacute;s &agrave;<br>l&rsquo;abandon par les autres, les gens libres. Enferm&eacute;s, ils ont d&ucirc; survivre face aux t&eacute;n&egrave;bres.<br>C&rsquo;est gr&acirc;ce &agrave; Peter que de nombreux autres prisonniers s&rsquo;en sont sortis. Accul&eacute;s dans le noir par une<br>immense cr&eacute;ature humano&iuml;de pourvue d&rsquo;un corps d&rsquo;obsidienne et d&rsquo;un masque blanc, les d&eacute;tenus &eacute;taient<br>massacr&eacute;s par dizaine. C&rsquo;est l&agrave; que Peter est intervenu. Avec ses poings et sa rage seuls, il a r&eacute;ussi &agrave; massacrer<br>le monstre et &agrave; donner une chance aux hommes autour de lui de s&rsquo;enfuir.<br>Par cet acte de bravoure presque d&eacute;ment, Peter a &eacute;t&eacute; rep&eacute;r&eacute; par le Knight. Il reste toujours un prisonnier<br>dangereux et, pour s&rsquo;assurer qu&rsquo;il ne tente pas de s&rsquo;&eacute;chapper, la section Tarasque du Knight lui a implant&eacute;<br>un micro-explosif command&eacute; &agrave; distance capable de lui faire sauter la cervelle &agrave; la moindre incartade. Cela<br>ne d&eacute;range pas Peter, car il rach&egrave;tera ses p&ecirc;ch&eacute;s quoi qu&rsquo;il arrive.<br>Depuis qu&rsquo;il a &eacute;t&eacute; per&ccedil;u comme un h&eacute;ros, l&rsquo;homme semble s&rsquo;&ecirc;tre trouv&eacute; un nouveau but dans la vie et<br>m&ecirc;me s&rsquo;il reste une brute, pr&eacute;f&eacute;rant faire parler ses poings et ses armes plut&ocirc;t que r&eacute;fl&eacute;chir, il prot&eacute;gera ses<br>&eacute;quipiers et r&eacute;ussira &agrave; faire sa part pour la sauvegarde de l&rsquo;Humanit&eacute;.</p>",
+    "wear": "tenueCivile",
+    "jauges": {
+      "armure": false,
+      "champDeForce": false,
+      "energie": false,
+      "egide": false,
+      "sante": true,
+      "espoir": true,
+      "heroisme": true,
+      "flux": false
+    },
+    "armure": {
+      "value": 5,
+      "base": 0,
+      "mod": 0,
+      "max": 0,
+      "bonus": {
+        "user": 0
+      },
+      "malus": {
+        "user": 0
+      }
+    },
+    "champDeForce": {
+      "value": 0,
+      "base": 0,
+      "mod": 0,
+      "bonus": {
+        "user": 0
+      },
+      "malus": {
+        "user": 0
+      }
+    },
+    "egide": {
+      "base": 0,
+      "value": 0,
+      "bonus": {
+        "user": 0,
+        "armure": 0,
+        "distinction": 0,
+        "rage": 0
+      },
+      "malus": {
+        "user": 0
+      },
+      "valueWOMod": 0,
+      "mod": 0,
+      "malustotal": 0,
+      "iswatchtower": false,
+      "override": {}
+    },
+    "energie": {
+      "value": 60,
+      "malus": {},
+      "base": 0,
+      "mod": 0,
+      "max": 0,
+      "bonus": {
+        "user": 0
+      }
+    },
+    "flux": {
+      "value": 0
+    },
+    "equipements": {
+      "modules": {},
+      "ia": {
+        "code": "L.A.T.U.S",
+        "surnom": "Nimué",
+        "caractere": "<p>L&rsquo;IA de cette armure peut para&icirc;tre folle : elle dit souvent des choses &eacute;tranges, difficiles &agrave; comprendre au premier abord, mais qui se r&eacute;v&egrave;lent avoir une utilit&eacute; plus tard dans la vie du chevalier, de mani&egrave;re quasi-proph&eacute;tique. De plus, elle ne cesse de parler de sacrifice et d&rsquo;abn&eacute;gation, qui sont pour elle la vraie voie du chevalier.</p>"
+      },
+      "ascension": {
+        "armure": {
+          "value": 5,
+          "base": 5,
+          "bonus": {
+            "user": 0,
+            "modules": 0,
+            "YNNfX9Qc1bSSLlaM": 0,
+            "1qxtLn12NnvrB4S2": 0,
+            "IKbQR6uNxVwxEL5v": 0,
+            "QNxLyw0ssDFjK8YR": 0,
+            "pKoOt2gGOYHsFWRr": 0,
+            "NVdhwYxuuJjaLIuO": 0,
+            "k8XVfCz6IPUTwyHA": 0,
+            "oAndzN3my3I9RHv3": 0,
+            "KElqZyFBfOc9axuq": 0
+          },
+          "malus": {
+            "user": 0
+          }
+        },
+        "champDeForce": {
+          "value": 5,
+          "base": 5,
+          "bonus": {
+            "user": 0,
+            "modules": 0,
+            "armes": 0,
+            "YNNfX9Qc1bSSLlaM": 0,
+            "1qxtLn12NnvrB4S2": 0,
+            "IKbQR6uNxVwxEL5v": 0,
+            "QNxLyw0ssDFjK8YR": 0,
+            "pKoOt2gGOYHsFWRr": 0,
+            "NVdhwYxuuJjaLIuO": 0,
+            "k8XVfCz6IPUTwyHA": 0,
+            "oAndzN3my3I9RHv3": 0,
+            "KElqZyFBfOc9axuq": 0
+          },
+          "malus": {
+            "user": 0
+          }
+        },
+        "energie": {
+          "base": 0,
+          "bonus": {
+            "user": 0,
+            "modules": 0,
+            "YNNfX9Qc1bSSLlaM": 0,
+            "1qxtLn12NnvrB4S2": 0,
+            "IKbQR6uNxVwxEL5v": 0,
+            "QNxLyw0ssDFjK8YR": 0,
+            "pKoOt2gGOYHsFWRr": 0,
+            "NVdhwYxuuJjaLIuO": 0,
+            "k8XVfCz6IPUTwyHA": 0,
+            "oAndzN3my3I9RHv3": 0,
+            "KElqZyFBfOc9axuq": 0
+          },
+          "malus": {
+            "user": 0
+          },
+          "value": 0
+        }
+      },
+      "armure": {
+        "hasArmor": true,
+        "hasArmorLegende": false,
+        "label": "",
+        "capacites": {
+          "ascension": {
+            "id": "0",
+            "energie": 0
+          },
+          "borealis": {
+            "allie": 0
+          },
+          "changeling": {
+            "fauxetres": 0
+          },
+          "companions": {
+            "type": "",
+            "energie": 0,
+            "energieDisponible": []
+          },
+          "forward": 1,
+          "goliath": {
+            "metre": 0
+          },
+          "morph": {
+            "nbre": 0
+          },
+          "puppet": {
+            "cible": 0
+          },
+          "rage": {
+            "niveau": {
+              "colere": false,
+              "fureur": false,
+              "rage": false
+            }
+          },
+          "totem": {
+            "nombre": 0
+          },
+          "warlord": {
+            "energie": {
+              "nbre": 1
+            },
+            "force": {
+              "nbre": 1
+            },
+            "esquive": {
+              "nbre": 1
+            },
+            "guerre": {
+              "nbre": 1
+            }
+          },
+          "vision": {
+            "energie": 0
+          }
+        },
+        "special": {
+          "contrecoups": 0,
+          "impregnation": 0,
+          "flux": 1
+        },
+        "slots": {
+          "tete": 0,
+          "torse": 0,
+          "brasGauche": 0,
+          "brasDroit": 0,
+          "jambeGauche": 0,
+          "jambeDroite": 0
+        },
+        "armure": {
+          "bonus": {
+            "user": 0,
+            "modules": 0,
+            "YNNfX9Qc1bSSLlaM": 0,
+            "1qxtLn12NnvrB4S2": 0,
+            "IKbQR6uNxVwxEL5v": 0,
+            "QNxLyw0ssDFjK8YR": 0,
+            "pKoOt2gGOYHsFWRr": 0,
+            "NVdhwYxuuJjaLIuO": 0,
+            "k8XVfCz6IPUTwyHA": 0,
+            "oAndzN3my3I9RHv3": 0,
+            "KElqZyFBfOc9axuq": 0
+          },
+          "malus": {
+            "user": 0
+          },
+          "value": 14
+        },
+        "champDeForce": {
+          "bonus": {
+            "user": 0,
+            "modules": 0,
+            "armes": 0,
+            "goliath": 0,
+            "morph": 0,
+            "warlord": 0,
+            "YNNfX9Qc1bSSLlaM": 0,
+            "1qxtLn12NnvrB4S2": 0,
+            "IKbQR6uNxVwxEL5v": 0,
+            "QNxLyw0ssDFjK8YR": 0,
+            "pKoOt2gGOYHsFWRr": 0,
+            "NVdhwYxuuJjaLIuO": 0,
+            "k8XVfCz6IPUTwyHA": 0,
+            "oAndzN3my3I9RHv3": 0,
+            "KElqZyFBfOc9axuq": 0
+          },
+          "malus": {
+            "user": 0
+          }
+        },
+        "energie": {
+          "bonus": {
+            "user": 0,
+            "modules": 0,
+            "YNNfX9Qc1bSSLlaM": 0,
+            "1qxtLn12NnvrB4S2": 0,
+            "IKbQR6uNxVwxEL5v": 0,
+            "QNxLyw0ssDFjK8YR": 0,
+            "pKoOt2gGOYHsFWRr": 0,
+            "NVdhwYxuuJjaLIuO": 0,
+            "k8XVfCz6IPUTwyHA": 0,
+            "oAndzN3my3I9RHv3": 0,
+            "KElqZyFBfOc9axuq": 0
+          },
+          "malus": {
+            "user": 0
+          },
+          "value": 39
+        },
+        "id": "UBgNnANmCk9s3cZM",
+        "idLegende": "0"
+      },
+      "guardian": {
+        "jauges": {
+          "armure": true,
+          "champDeForce": true,
+          "energie": false,
+          "egide": false,
+          "sante": true,
+          "espoir": true,
+          "heroisme": true
+        },
+        "armure": {
+          "value": 5,
+          "base": 5,
+          "bonus": {
+            "user": 0
+          },
+          "malus": {
+            "user": 0
+          }
+        },
+        "champDeForce": {
+          "value": 5,
+          "base": 5,
+          "bonus": {
+            "user": 0
+          },
+          "malus": {
+            "user": 0
+          }
+        },
+        "energie": {
+          "value": 0,
+          "base": 0,
+          "bonus": {
+            "user": 0,
+            "system": 0
+          },
+          "malus": {
+            "user": 0,
+            "system": 0
+          }
+        }
+      },
+      "tenueCivile": {
+        "jauges": {
+          "armure": false,
+          "champDeForce": false,
+          "energie": false,
+          "egide": false,
+          "sante": true,
+          "espoir": true,
+          "heroisme": true
+        },
+        "energie": {
+          "value": 0,
+          "base": 0,
+          "bonus": {
+            "user": 0,
+            "system": 0
+          },
+          "malus": {
+            "user": 0,
+            "system": 0
+          }
+        },
+        "champDeForce": {
+          "value": 0,
+          "base": 0,
+          "bonus": {
+            "user": 0,
+            "system": 0
+          },
+          "malus": {
+            "user": 0,
+            "system": 0
+          }
+        }
+      }
+    },
+    "langues": {
+      "value": 0,
+      "mod": 0,
+      "bonus": {
+        "user": 0,
+        "system": 0
+      }
+    },
+    "contacts": {
+      "value": 0,
+      "mod": 0,
+      "actuel": 1,
+      "bonus": {
+        "user": 0,
+        "system": 0
+      }
+    },
+    "motivations": {
+      "majeure": "Création d'un réseau de leaders rebuts"
+    },
+    "combos": {
+      "interdits": {
+        "aspects": {},
+        "caracteristiques": {
+          "rage": []
+        }
+      },
+      "bonus": {
+        "aspects": {},
+        "caracteristiques": {
+          "rage": []
+        }
+      }
+    },
+    "espoir": {
+      "bonus": {
+        "user": 25,
+        "avantages": 0,
+        "armure": 0
+      },
+      "malus": {
+        "user": 0,
+        "desavantages": 0,
+        "blessures": 0,
+        "companions": 0
+      },
+      "value": 67,
+      "max": 0,
+      "recuperation": {
+        "bonus": 0,
+        "malus": 0,
+        "aucun": false
+      },
+      "perte": {
+        "saufAgonie": false
+      },
+      "mod": 0,
+      "reduction": 0
+    },
+    "heroisme": {
+      "value": 3,
+      "max": 6
+    },
+    "restrictions": {},
+    "progression": {
+      "gloire": {
+        "total": 239,
+        "depense": {
+          "total": 0,
+          "liste": {},
+          "autre": {
+            "1": {
+              "order": "21",
+              "nom": "Amélioration structurelle: soeur (griffe)",
+              "cout": 5,
+              "gratuit": "false"
+            },
+            "11": {
+              "order": "22",
+              "nom": " Amélioration structurelle: soeur (griffe)",
+              "cout": 5,
+              "gratuit": "false"
+            },
+            "111": {
+              "order": "23",
+              "nom": "Amélioration structurelle: sur mesure (griffe)",
+              "cout": 20,
+              "gratuit": "false"
+            },
+            "1111": {
+              "order": "24",
+              "nom": "Amélioration structurelle: sur mesure (griffe)",
+              "cout": 20,
+              "gratuit": "false"
+            }
+          }
+        },
+        "actuel": 45
+      },
+      "experience": {
+        "total": 166,
+        "depense": {
+          "total": 0,
+          "liste": {
+            "0": {
+              "nom": "chair",
+              "bonus": 1,
+              "cout": 30
+            },
+            "1": {
+              "nom": "chair",
+              "bonus": 1,
+              "cout": 35
+            },
+            "2": {
+              "nom": "force",
+              "bonus": 1,
+              "cout": 0
+            },
+            "3": {
+              "nom": "force",
+              "bonus": 1,
+              "cout": 14
+            },
+            "4": {
+              "nom": "chair",
+              "bonus": 1,
+              "cout": 40
+            },
+            "5": {
+              "nom": "parole",
+              "bonus": 1,
+              "cout": 0
+            }
+          }
+        },
+        "actuel": 25
+      }
+    },
+    "art": {
+      "oeuvres": {}
+    },
+    "options": {
+      "kraken": true,
+      "art": false,
+      "embuscadeSubis": false,
+      "embuscadePris": false,
+      "champDeForce": true,
+      "espoir": true,
+      "modules": false,
+      "wolfConfiguration": false,
+      "jetsSpeciaux": false
+    },
+    "bonusSiEmbuscade": {
+      "dice": 0,
+      "fixe": 0
+    },
+    "version": 2,
+    "limited": {
+      "showDescriptionFull": false,
+      "showDescriptionLimited": false
+    },
+    "otherMods": {},
+    "immunity": {
+      "manuel": [],
+      "auto": [],
+      "merge": []
+    },
+    "origin": "humain",
+    "metaarmure": "",
+    "configurationActive": "",
+    "wolf": {},
+    "jetsSpeciaux": [],
+    "colosse": false,
+    "patron": false,
+    "GM": {
+      "dontshow": false
+    }
+  },
+  "prototypeToken": {
+    "name": "Maggot",
+    "displayName": 40,
+    "actorLink": true,
+    "texture": {
+      "src": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/coterie/Maggot-portrait.png",
+      "scaleX": 1,
+      "scaleY": 1,
+      "tint": "#ffffff",
+      "anchorX": 0.5,
+      "anchorY": 0.5,
+      "fit": "contain",
+      "alphaThreshold": 0.75
+    },
+    "width": 1,
+    "height": 1,
+    "lockRotation": false,
+    "rotation": 0,
+    "alpha": 1,
+    "disposition": 1,
+    "displayBars": 50,
+    "bar1": {
+      "attribute": "sante"
+    },
+    "bar2": {
+      "attribute": "energie"
+    },
+    "light": {
+      "alpha": 0.5,
+      "angle": 360,
+      "bright": 0,
+      "color": null,
+      "coloration": 1,
+      "dim": 0,
+      "attenuation": 0.5,
+      "luminosity": 0.5,
+      "saturation": 0,
+      "contrast": 0,
+      "shadows": 0,
+      "animation": {
+        "type": null,
+        "speed": 5,
+        "intensity": 5,
+        "reverse": false
+      },
+      "darkness": {
+        "min": 0,
+        "max": 1
+      },
+      "negative": false,
+      "priority": 0
+    },
+    "sight": {
+      "enabled": true,
+      "range": 10,
+      "angle": 360,
+      "visionMode": "basic",
+      "color": null,
+      "attenuation": 0.1,
+      "brightness": 0,
+      "saturation": 0,
+      "contrast": 0
+    },
+    "detectionModes": {},
+    "flags": {
+      "barbrawl": {
+        "resourceBars": {
+          "bar1": {
+            "order": 0,
+            "id": "bar1",
+            "attribute": "sante",
+            "mincolor": "#800000",
+            "maxcolor": "#ff0000",
+            "position": "bottom-outer",
+            "otherVisibility": 50,
+            "ownerVisibility": 50,
+            "gmVisibility": -1,
+            "hideFull": false,
+            "hideEmpty": false,
+            "hideCombat": false,
+            "hideNoCombat": true,
+            "indentLeft": null,
+            "indentRight": null,
+            "shareHeight": false,
+            "style": "user",
+            "label": "",
+            "invert": false,
+            "invertDirection": false,
+            "subdivisions": null,
+            "subdivisionsOwner": false,
+            "fgImage": "",
+            "bgImage": "",
+            "opacity": null
+          },
+          "bar2": {
+            "order": 1,
+            "id": "bar2",
+            "attribute": "energie",
+            "mincolor": "#000080",
+            "maxcolor": "#42e0ff",
+            "position": "top-inner",
+            "otherVisibility": 50,
+            "ownerVisibility": 50,
+            "gmVisibility": -1,
+            "hideFull": false,
+            "hideEmpty": false,
+            "hideCombat": false,
+            "hideNoCombat": true,
+            "indentLeft": null,
+            "indentRight": null,
+            "shareHeight": false,
+            "style": "user",
+            "label": "",
+            "invert": false,
+            "invertDirection": false,
+            "subdivisions": null,
+            "subdivisionsOwner": false,
+            "fgImage": "",
+            "bgImage": "",
+            "opacity": null
+          },
+          "bar3": {
+            "order": 2,
+            "id": "bar3",
+            "attribute": "armure",
+            "mincolor": "#008000",
+            "maxcolor": "#00ff00",
+            "position": "bottom-inner",
+            "otherVisibility": 50,
+            "ownerVisibility": 50,
+            "gmVisibility": -1,
+            "hideFull": false,
+            "hideEmpty": false,
+            "hideCombat": false,
+            "hideNoCombat": true,
+            "indentLeft": null,
+            "indentRight": null,
+            "shareHeight": false,
+            "style": "user",
+            "label": "",
+            "invert": false,
+            "invertDirection": false,
+            "subdivisions": null,
+            "subdivisionsOwner": false,
+            "fgImage": "",
+            "bgImage": "",
+            "opacity": null
+          },
+          "bar4": {
+            "order": 3,
+            "id": "bar4",
+            "attribute": "espoir",
+            "mincolor": "#000000",
+            "maxcolor": "#ff80ff",
+            "position": "left-outer",
+            "otherVisibility": 30,
+            "ownerVisibility": 30,
+            "gmVisibility": -1,
+            "hideFull": false,
+            "hideEmpty": false,
+            "hideCombat": false,
+            "hideNoCombat": false,
+            "indentLeft": null,
+            "indentRight": null,
+            "shareHeight": false,
+            "style": "user",
+            "label": "",
+            "invert": false,
+            "invertDirection": false,
+            "subdivisions": null,
+            "subdivisionsOwner": false,
+            "fgImage": "",
+            "bgImage": "",
+            "opacity": null
+          },
+          "bar5": {
+            "order": 4,
+            "id": "bar5",
+            "attribute": "heroisme",
+            "mincolor": "#ff8000",
+            "maxcolor": "#ffff00",
+            "position": "left-inner",
+            "otherVisibility": 30,
+            "ownerVisibility": 30,
+            "gmVisibility": -1,
+            "hideFull": false,
+            "hideEmpty": false,
+            "hideCombat": false,
+            "hideNoCombat": false,
+            "indentLeft": null,
+            "indentRight": null,
+            "shareHeight": false,
+            "style": "user",
+            "label": "",
+            "invert": false,
+            "invertDirection": false,
+            "subdivisions": null,
+            "subdivisionsOwner": false,
+            "fgImage": "",
+            "bgImage": "",
+            "opacity": null
+          }
+        }
+      }
+    },
+    "randomImg": false,
+    "appendNumber": false,
+    "prependAdjective": false,
+    "occludable": {
+      "radius": 0
+    },
+    "ring": {
+      "enabled": true,
+      "colors": {
+        "ring": null,
+        "background": null
+      },
+      "effects": 0,
+      "subject": {
+        "scale": 1,
+        "texture": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/tokens/knights/maggot.token.webp?1785419161158"
+      }
+    },
+    "turnMarker": {
+      "mode": 1,
+      "animation": null,
+      "src": null,
+      "disposition": false
+    },
+    "movementAction": null,
+    "depth": 1
+  },
+  "items": [
+    {
+      "name": "Chanceux",
+      "type": "avantage",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/avantage.svg",
+      "system": {
+        "description": "<p>Le personnage possède une chance hors du commun. Il est capable de réussir des choses inattendues ou de gagner de manière totalement imprévue. En termes de jeu, une fois par partie, le PJ peut relancer gratuitement tous les dés d'un test qu'il a raté.</p>",
+        "type": "standard",
+        "bonus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsReduits": {
+            "has": false,
+            "aspect": {
+              "divise": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "divise": 0,
+              "value": 0
+            }
+          },
+          "noDmgSante": false,
+          "devasterAnatheme": false,
+          "bourreauTenebres": false,
+          "equilibrerBalance": false
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "0s7ioWnynJdja0ex",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.knight-compendium.knight-advantages-base.c531178e0e91ac4f",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "f8QRUOGTyK1P1aJf",
+      "sort": 0
+    },
+    {
+      "name": "Dur à cuire",
+      "type": "avantage",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/avantage.svg",
+      "system": {
+        "description": "<p>Le personnage est plus résistant que la moyenne et dispose d'une endurance presque hors du commun, pouvant subir plus de coups et de blessures que quiconque. En termes de jeu, le personnage dispose de 5 points de santé supplémentaires, ce qui augmente son total de points de santé de 5.</p>",
+        "type": "standard",
+        "bonus": {
+          "sante": 5,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsReduits": {
+            "has": false,
+            "aspect": {
+              "divise": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "divise": 0,
+              "value": 0
+            }
+          },
+          "noDmgSante": false,
+          "devasterAnatheme": false,
+          "bourreauTenebres": false,
+          "equilibrerBalance": false
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "4YbZMyrSp20bL8ut",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.knight-compendium.knight-advantages-base.7fdf9a949568350b",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "f8QRUOGTyK1P1aJf",
+      "sort": 0
+    },
+    {
+      "name": "Prisonnier",
+      "type": "inconvenient",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/inconvenient.svg",
+      "system": {
+        "description": "<p>Le personnage est un prisonnier, recruté par le Knight directement en prison. Pour s'assurer qu'il ne tente pas de s'échapper, la section Tarasque du Knight a implanté dans le héros un micro-explosif commandé à distance capable de lui faire sauter la cervelle à la moindre incartade. En termes de jeu, la motivation majeure du personnage doit être : Retrouver la liberté. Tant que cette motivation n'a pas été accomplie, le personnage ne peut pas récupérer ou gagner de points d'espoir (les conditions de l'accomplissement de cette motivation doivent être créées en concertation avec le MJ, il peut par exemple s'agir d'un nombre de missions accomplies, d'un acte particulièrement héroïque, etc.).</p>",
+        "type": "standard",
+        "limitations": {
+          "aspects": {
+            "all": {
+              "has": false,
+              "value": 9
+            },
+            "bete": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "chair": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "machine": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "dame": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "masque": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            }
+          },
+          "espoir": {
+            "aucunGain": false
+          }
+        },
+        "malus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsAugmentes": {
+            "has": false,
+            "aspect": {
+              "multiplie": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "multiplie": 0,
+              "value": 0
+            }
+          }
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "FVVqQgA4ZvadTSuT",
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.knight-compendium.knight-disadvantages-base.3ff95bd8963c86e5",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "O0eHkq4ctY9rZiHY",
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      }
+    },
+    {
+      "name": "Tarasque - Fou dangereux",
+      "type": "inconvenient",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/inconvenient.svg",
+      "system": {
+        "description": "<p>M&ecirc;me s&rsquo;il n&rsquo;est plus au sein de la section Tarasque, le chevalier reste surveill&eacute; par Sagramor et par les agents du Korrigan. &Agrave; la moindre incartade, au moindre signe de d&eacute;sespoir, il est automatiquement &laquo; neutralis&eacute; &raquo; par l&rsquo;explosif que la section Tarasque lui a plac&eacute; dans la t&ecirc;te. Pour repr&eacute;senter cela, si au d&eacute;but d&rsquo;une sc&egrave;ne le personnage est &agrave; moins de 10 points d&rsquo;espoir, il est automatiquement tu&eacute; par l&rsquo;explosif et retir&eacute; du jeu.</p>",
+        "type": "standard",
+        "limitations": {
+          "aspects": {
+            "all": {
+              "has": false,
+              "value": 9
+            },
+            "bete": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "chair": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "machine": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "dame": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "masque": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            }
+          },
+          "espoir": {
+            "aucunGain": false
+          }
+        },
+        "malus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsAugmentes": {
+            "has": false,
+            "aspect": {
+              "multiplie": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "multiplie": 0,
+              "value": 0
+            }
+          }
+        },
+        "show": false
+      },
+      "effects": [],
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.knight-compendium.section-disadvantages-base.kGyerOTluVeSQEiI",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "_id": "Ay8sCweIHovgEueo",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "folder": "UlfEFZRmkVTv0wCf",
+      "sort": 0
+    },
+    {
+      "name": "Ceste - Contact",
+      "type": "arme",
+      "img": "https://assets.forge-vtt.com/bazaar/modules/knight-compendium/assets/assets/weapons/marteau-epieu.webp",
+      "system": {
+        "description": "<p>Cette grosse arme est un lourd marteau intégralement en métal avec une tête octogonale d'un côté et un épieu recourbé de l'autre. Très courante chez les écuyers, elle sert tout autant d'outil que d'arme. Au cas où, une cartouche de calibre 8 est installée dans le prolongement du manche et permet un tir unique, mais dévastateur, de chevrotine incendiaire-lumineuse.</p>",
+        "rarete": "standard",
+        "type": "contact",
+        "portee": "contact",
+        "prix": 10,
+        "energie": 0,
+        "listes": {},
+        "options2mains": {
+          "has": false,
+          "actuel": "1main",
+          "1main": {
+            "degats": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "violence": {
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "2main": {
+            "degats": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "violence": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "has": false,
+            "actuel": "1main"
+          }
+        },
+        "optionsmunitions": {
+          "has": false,
+          "actuel": "0",
+          "value": 1,
+          "liste": {}
+        },
+        "tourelle": {
+          "has": false,
+          "attaque": {
+            "dice": 0,
+            "fixe": 0
+          }
+        },
+        "degats": {
+          "dice": 3,
+          "fixe": 0,
+          "variable": {
+            "has": false,
+            "min": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "max": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "cout": 0
+          },
+          "addchair": true
+        },
+        "violence": {
+          "dice": 1,
+          "fixe": 0,
+          "variable": {
+            "has": false,
+            "min": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "max": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "cout": 0
+          }
+        },
+        "effets": {
+          "liste": [],
+          "raw": [
+            "percearmure 1"
+          ],
+          "custom": [],
+          "chargeur": null,
+          "activable": []
+        },
+        "effets2mains": {
+          "liste": [],
+          "raw": [],
+          "custom": [],
+          "chargeur": null,
+          "activable": []
+        },
+        "distance": {
+          "liste": [],
+          "raw": [],
+          "custom": []
+        },
+        "ornementales": {
+          "liste": [],
+          "raw": [],
+          "custom": []
+        },
+        "structurelles": {
+          "liste": [],
+          "raw": [],
+          "custom": []
+        },
+        "addOrder": 3,
+        "gratuit": true,
+        "equipped": true,
+        "rack": false,
+        "whoActivate": "",
+        "chassis": ""
+      },
+      "effects": [],
+      "_id": "j3gdEf82wEH6MKqv",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.knight-compendium.weapons-standard.62a75eda8200a5e8",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "o8jWyiFXIxqFggLt",
+      "sort": 0
+    },
+    {
+      "name": "ITEM.TypeMotivationMineure",
+      "type": "motivationMineure",
+      "system": {
+        "description": "<p>Racheter ses p&eacute;ch&eacute;s</p>"
+      },
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/motivationMineure.svg",
+      "_id": "ipXWAVc7QQSSL50S",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "name": "ITEM.TypeMotivationMineure",
+      "type": "motivationMineure",
+      "system": {
+        "description": "<p>Prot&eacute;ger ses co&eacute;quipiers</p>"
+      },
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/motivationMineure.svg",
+      "_id": "CGE4NVTATANCR8pQ",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "name": "ITEM.TypeMotivationMineure",
+      "type": "motivationMineure",
+      "system": {
+        "description": "<p>Ne jamais fuir devant un ennemi s&rsquo;il met des innocents en danger</p>"
+      },
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/motivationMineure.svg",
+      "_id": "upCSqwNH92cOU2Y4",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "name": "Abnégation",
+      "type": "avantage",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/avantage.svg",
+      "system": {
+        "description": "<p>L'IA de l'armure est capable d'aller très loin pour sauver la vie de son chevalier, quitte à s'éteindre pour y parvenir. En termes de jeu, si le personnage est à l'agonie et tant que l'armure dispose de points d'énergie, celle-ci en dépense pour transformer les nanoC qui la composent en nanoM pour le soigner. Elle peut en utiliser au maximum 3D6 par tour, tant qu'il lui reste des points d'énergie. En revanche, chaque point de santé rendu réduit les points d'armure de un (en plus du point d'énergie que coûte la manœuvre), car l'armure se décompose pour soigner le chevalier.</p>",
+        "type": "ia",
+        "bonus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsReduits": {
+            "has": false,
+            "aspect": {
+              "divise": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "divise": 0,
+              "value": 0
+            }
+          },
+          "noDmgSante": false,
+          "devasterAnatheme": false,
+          "bourreauTenebres": false,
+          "equilibrerBalance": false
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "3XzTk6ZYhGXswrIk",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.knight-compendium.ai-advantages-base.85615ba969b87207",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "PKmkEpAzcNfNb97h",
+      "sort": 200000
+    },
+    {
+      "name": "Relais",
+      "type": "avantage",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/avantage.svg",
+      "system": {
+        "description": "<p>L'IA comprend qu'il y a des moments où le chevalier doit dormir et se reposer, volontairement ou forcé par des blessures ou des chocs. Une fois par mission, si le chevalier tombe inconscient pour une raison ou une autre (somnifère, agonie, choc, etc.) et que l'armure est défoldée, elle poursuit l'action en attendant son réveil pour un coût de 3 points d'énergie par tour (ou tranche de 10 secondes) et ce jusqu'à ce que l'armure n'ait plus d'énergie. Elle prend alors le contrôle total de l'armure et de ce qu'elle tient en main pour poursuivre l'action dans laquelle elle était engagée (terminer un combat, une joute verbale, etc...). Dès que le chevalier reprend conscience, le contrôle de l'armure lui est rendu.</p>",
+        "type": "ia",
+        "bonus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsReduits": {
+            "has": false,
+            "aspect": {
+              "divise": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "divise": 0,
+              "value": 0
+            }
+          },
+          "noDmgSante": false,
+          "devasterAnatheme": false,
+          "bourreauTenebres": false,
+          "equilibrerBalance": false
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "2xJ1WFJCGozXIHRy",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.knight-compendium.ai-advantages-base.d19a07df4267f3cf",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "PKmkEpAzcNfNb97h",
+      "sort": 1800000
+    },
+    {
+      "name": "Somnambule",
+      "type": "inconvenient",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/inconvenient.svg",
+      "system": {
+        "description": "<p>L'IA de l'armure, bien que consciente du besoin naturel et obligatoire de repos de son chevalier, s'arrange pour continuer à faire des découvertes pendant son sommeil. En termes de jeu, une fois par partie, quand le chevalier s'endort ou se repose, l'armure défolde et explore l'endroit où elle se trouve pendant une à deux heures avant de reprendre la place qui était la sienne. Si elle rencontre des personnes, elle communique comme s'il s'agissait du chevalier et, si elle doit entrer en action, elle s'exécute. Si elle déclenche une scène d'action mouvementée, telle qu'un combat par exemple, son porteur doit réussir un test base <em>Endurance</em> difficulté délicat (4) afin de se réveiller.</p>",
+        "type": "ia",
+        "limitations": {
+          "aspects": {
+            "all": {
+              "has": false,
+              "value": 9
+            },
+            "bete": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "chair": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "machine": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "dame": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            },
+            "masque": {
+              "has": false,
+              "value": 9,
+              "max": 9
+            }
+          },
+          "espoir": {
+            "aucunGain": false
+          }
+        },
+        "malus": {
+          "sante": 0,
+          "espoir": 0,
+          "initiative": {
+            "dice": 0,
+            "fixe": 0,
+            "ifEmbuscade": {
+              "has": false,
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "recuperation": {
+            "sante": 0,
+            "armure": 0,
+            "energie": 0,
+            "espoir": 0
+          },
+          "coutsAugmentes": {
+            "has": false,
+            "aspect": {
+              "multiplie": 0,
+              "value": 0
+            },
+            "caracteristique": {
+              "multiplie": 0,
+              "value": 0
+            }
+          }
+        },
+        "show": false
+      },
+      "effects": [],
+      "_id": "9KkEZW5h7LeVDcA1",
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {
+        "core": {}
+      },
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": "Compendium.knight-compendium.ai-disadvantages-base.5e2139b66378dd16",
+        "duplicateSource": null,
+        "exportSource": null
+      },
+      "folder": "qr0ZMwiAGOqtBSt4",
+      "sort": 0
+    },
+    {
+      "name": "Carte du destin",
+      "type": "carteheroique",
+      "img": "https://assets.forge-vtt.com/bazaar/systems/knight/assets/assets/icons/carteheroique.svg",
+      "system": {
+        "description": ""
+      },
+      "_id": "AalUbzbd7hHWIGOA",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "CTCyykLHgz0jsePi": 3
+      },
+      "flags": {},
+      "_stats": {
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "coreVersion": "14.365",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "name": "Deirdre",
+      "type": "contact",
+      "img": "systems/knight/assets/icons/contact.svg",
+      "system": {
+        "description": "<p>Dublin - Proche du maire </p>"
+      },
+      "_id": "RJJlLdGaGtqlxFRm",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "SYq7uyPjQaWolYA9": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Raoul",
+      "type": "contact",
+      "img": "systems/knight/assets/icons/contact.svg",
+      "system": {
+        "description": "<p>Paris - Truand</p>"
+      },
+      "_id": "dyOFKLULVMu0x5N9",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "SYq7uyPjQaWolYA9": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      }
+    },
+    {
+      "name": "Etoile de Dublin",
+      "type": "distinction",
+      "img": "https://assets.forge-vtt.com/67226f2eeb16c186f3bfbc03/worlds/knight/images/Distinctions/etoiledublin.png",
+      "_id": "0tHfyFFSBkdR6xWK",
+      "system": {
+        "description": "<p>Faite d'un métal rare, le <em>rhodium</em>, elle peut être placée sur l'<em>épaulière</em> de la méta armure.<br>Effet : +<strong>1 réussite automatique</strong> au jet de Parole lorsque le chevalier <strong>s’adresse à des membres du Knight ou</strong> des <strong>alliés du Knight</strong>.</p>",
+        "espoir": 0,
+        "egide": 0
+      },
+      "effects": [],
+      "folder": "HS4RyF9PhCyczepQ",
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "exportSource": null
+      }
+    },
+    {
+      "name": "Yin",
+      "type": "contact",
+      "img": "systems/knight/assets/icons/contact.svg",
+      "system": {
+        "description": ""
+      },
+      "_id": "KEUhJSAJtQrmkuwB",
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    },
+    {
+      "name": "Ceste - Contact",
+      "type": "arme",
+      "img": "systems/knight/assets/icons/arme.svg",
+      "system": {
+        "type": "contact",
+        "tourelle": {
+          "has": false,
+          "attaque": {
+            "dice": 0,
+            "fixe": 0
+          }
+        },
+        "addOrder": 25,
+        "description": "",
+        "gratuit": false,
+        "whoActivate": "",
+        "chassis": "",
+        "equipped": false,
+        "rack": false,
+        "rarete": "standard",
+        "portee": "contact",
+        "prix": 0,
+        "energie": 0,
+        "listes": {},
+        "options2mains": {
+          "has": false,
+          "actuel": "1main",
+          "1main": {
+            "degats": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "violence": {
+              "dice": 0,
+              "fixe": 0
+            }
+          },
+          "2main": {
+            "has": false,
+            "actuel": "1main",
+            "degats": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "violence": {
+              "dice": 0,
+              "fixe": 0
+            }
+          }
+        },
+        "optionsmunitions": {
+          "has": false,
+          "actuel": "0",
+          "value": 1,
+          "liste": {}
+        },
+        "degats": {
+          "addchair": true,
+          "dice": 3,
+          "fixe": 0,
+          "variable": {
+            "has": false,
+            "min": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "max": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "cout": 0
+          }
+        },
+        "violence": {
+          "dice": 1,
+          "fixe": 0,
+          "variable": {
+            "has": false,
+            "min": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "max": {
+              "dice": 0,
+              "fixe": 0
+            },
+            "cout": 0
+          }
+        },
+        "effets": {
+          "liste": [],
+          "raw": [
+            "percearmure 1"
+          ],
+          "custom": [],
+          "chargeur": null,
+          "activable": []
+        },
+        "effets2mains": {
+          "liste": [],
+          "raw": [],
+          "custom": [],
+          "chargeur": null,
+          "activable": []
+        },
+        "distance": {
+          "liste": [],
+          "raw": [],
+          "custom": []
+        },
+        "ornementales": {
+          "liste": [],
+          "raw": [],
+          "custom": []
+        },
+        "structurelles": {
+          "liste": [],
+          "raw": [],
+          "custom": []
+        }
+      },
+      "_id": "Vb271yBzncbFnanE",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "6wsFTIJxoaUnGBiN": 3
+      },
+      "flags": {},
+      "_stats": {
+        "coreVersion": "14.365",
+        "systemId": "knight",
+        "systemVersion": "3.58.35",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null
+      }
+    }
+  ],
+  "effects": [],
+  "folder": "4uiv7wEStsfWdCoy",
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "core": {}
+  },
+  "_stats": {
+    "systemId": "knight",
+    "systemVersion": "3.58.35",
+    "coreVersion": "14.365",
+    "createdTime": 1790588179739,
+    "modifiedTime": 1790588179739,
+    "lastModifiedBy": "6wsFTIJxoaUnGBiN",
+    "compendiumSource": "Actor.5P6oF0MwAzgFIskX",
+    "duplicateSource": "Actor.xYiHBVphRUc0fOZa",
+    "exportSource": {
+      "worldId": "knight",
+      "uuid": "Actor.3Rtkei663WKk3HT8",
+      "coreVersion": "14.365",
+      "systemId": "knight",
+      "systemVersion": "3.58.35"
+    }
+  }
+}

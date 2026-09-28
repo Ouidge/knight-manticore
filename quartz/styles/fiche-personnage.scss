@@ -4,6 +4,8 @@
  * @use "./fiche-personnage";
  */
 
+@use "./fiche-personnage-print";
+
 article:has(.knight-sheet-marker) {
   --knight-bg: #11161d;
   --knight-panel: #1b232d;
@@ -854,11 +856,6 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   }
 }
 
-@page {
-  size: A4 portrait;
-  margin: 12mm;
-}
-
 @media print {
   html:has(.knight-sheet-marker),
   body:has(.knight-sheet-marker) {
@@ -1112,7 +1109,7 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
     color: #111 !important;
     background: white !important;
     border: 1.2px solid #8a5b00 !important;
-    font-size: 7.7pt;
+    font-size: 7.7pt !important;
     table-layout: fixed;
     white-space: normal !important;
     break-inside: avoid;
@@ -1125,10 +1122,11 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
   article:has(.knight-sheet-marker) th,
   article:has(.knight-sheet-marker) td {
-    padding: 0.8mm 1.3mm;
+    padding: 0.8mm 1.3mm !important;
     color: #111 !important;
     border-color: #a87920 !important;
-    line-height: 1.08;
+    font-size: inherit !important;
+    line-height: 1.08 !important;
   }
 
   article:has(.knight-sheet-marker) tbody tr:nth-child(even) td {
@@ -1137,7 +1135,7 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
   article:has(.knight-sheet-marker) .knight-arsenal-table {
     margin-top: 4mm;
-    font-size: 6.8pt;
+    font-size: 6.8pt !important;
     break-inside: auto !important;
     page-break-inside: auto !important;
   }
@@ -1165,8 +1163,8 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
 
   article:has(.knight-sheet-marker) .knight-arsenal-table th,
   article:has(.knight-sheet-marker) .knight-arsenal-table td {
-    padding: 0.65mm 0.9mm;
-    line-height: 1.04;
+    padding: 0.65mm 0.9mm !important;
+    line-height: 1.04 !important;
   }
 
   article:has(.knight-sheet-marker) .knight-arsenal-table .knight-effects-cell {

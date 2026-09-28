@@ -9,7 +9,9 @@ $ErrorActionPreference = "Stop"
 # depuis lequel PowerShell a été ouvert.
 $ScriptDirectory = $PSScriptRoot
 $ConverterPath = Join-Path $ScriptDirectory "convert-foundry-knight.mjs"
+$SyncObsidianAssetsPath = Join-Path $ScriptDirectory "sync-obsidian-assets.ps1"
 $StylePath = Join-Path $ScriptDirectory "../quartz/styles/fiche-personnage.scss"
+$PrintStylePath = Join-Path $ScriptDirectory "../quartz/styles/fiche-personnage-print.scss"
 $ProjectDirectory = [System.IO.Path]::GetFullPath(
     (Join-Path $ScriptDirectory "..")
 )
@@ -57,6 +59,9 @@ if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
 if (-not (Test-Path -LiteralPath $ConverterPath -PathType Leaf)) {
     throw "Convertisseur introuvable : $ConverterPath"
 }
+if (-not (Test-Path -LiteralPath $SyncObsidianAssetsPath -PathType Leaf)) {
+    throw "Script de synchronisation Obsidian introuvable : $SyncObsidianAssetsPath"
+}
 
 if (-not (Test-Path -LiteralPath $StylePath -PathType Leaf)) {
     throw "Feuille de style introuvable : $StylePath"
@@ -71,12 +76,26 @@ New-Item -ItemType Directory -Path $MjOutputDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $SummaryFragmentsDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $ObsidianSnippetsDirectory -Force | Out-Null
 
-# Produit automatiquement le snippet Obsidian depuis la feuille Quartz afin
-# que les deux versions restent synchronisées.
+& $SyncObsidianAssetsPath -VaultDirectory $VaultDirectory
+
+# Produit automatiquement le snippet Obsidian depuis les mêmes feuilles que
+# Quartz afin que l'affichage et l'impression restent synchronisés.
 $QuartzStyle = Get-Content -LiteralPath $StylePath -Raw -Encoding UTF8
-$ObsidianStyle = $QuartzStyle.Replace(
+$SharedPrintStyle = Get-Content -LiteralPath $PrintStylePath -Raw -Encoding UTF8
+$QuartzStyleForObsidian = $QuartzStyle -replace '(?m)^@use\s+"\./fiche-personnage-print";\s*\r?\n', ''
+$ObsidianStyle = $QuartzStyleForObsidian + [Environment]::NewLine + $SharedPrintStyle
+$ObsidianRootSelector = ".markdown-preview-view:has(.knight-sheet-marker)"
+$ObsidianStyle = $ObsidianStyle.Replace(
     "article:has(.knight-sheet-marker)",
-    ".markdown-preview-view.fiche-personnage .markdown-preview-sizer:has(.knight-sheet-marker)"
+    $ObsidianRootSelector
+)
+$ObsidianStyle = $ObsidianStyle.Replace(
+    "body:has(.knight-sheet-marker)",
+    $ObsidianRootSelector
+)
+$ObsidianStyle = $ObsidianStyle.Replace(
+    "html:has(.knight-sheet-marker)",
+    $ObsidianRootSelector
 )
 [System.IO.File]::WriteAllText(
     $ObsidianStylePath,

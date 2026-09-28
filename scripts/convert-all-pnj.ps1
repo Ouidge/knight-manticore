@@ -6,6 +6,7 @@ param(
 $ErrorActionPreference = "Stop"
 $ScriptDirectory = $PSScriptRoot
 $ConverterPath = Join-Path $ScriptDirectory "convert-foundry-knight-pnj.mjs"
+$SyncObsidianAssetsPath = Join-Path $ScriptDirectory "sync-obsidian-assets.ps1"
 $ProjectDirectory = [System.IO.Path]::GetFullPath((Join-Path $ScriptDirectory ".."))
 
 if ([string]::IsNullOrWhiteSpace($VaultDirectory)) {
@@ -28,6 +29,9 @@ if (-not (Get-Command node -ErrorAction SilentlyContinue)) {
 if (-not (Test-Path -LiteralPath $ConverterPath -PathType Leaf)) {
     throw "Convertisseur PNJ introuvable : $ConverterPath"
 }
+if (-not (Test-Path -LiteralPath $SyncObsidianAssetsPath -PathType Leaf)) {
+    throw "Script de synchronisation Obsidian introuvable : $SyncObsidianAssetsPath"
+}
 
 New-Item -ItemType Directory -Path $PnjDataDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $PnjNotesDirectory -Force | Out-Null
@@ -35,6 +39,8 @@ New-Item -ItemType Directory -Path $PnjCombatSheetsDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $BestiaryNotesDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $PnjAssetsDirectory -Force | Out-Null
 New-Item -ItemType Directory -Path $BestiaryAssetsDirectory -Force | Out-Null
+
+& $SyncObsidianAssetsPath -VaultDirectory $VaultDirectory
 
 $JsonFiles = @(Get-ChildItem -LiteralPath $PnjDataDirectory -File -Filter "*.json" | Sort-Object Name)
 if ($JsonFiles.Count -eq 0) {

@@ -64,6 +64,10 @@ const LABELS = {
 
 const system = actor.system ?? {};
 const items = Array.isArray(actor.items) ? actor.items : [];
+// La suppression d'une méta-armure dans Foundry ne remet pas toujours à zéro
+// system.wear, system.equipements.armure ni les overdrive.base des aspects.
+// La présence de l'Item armure est donc la seule source de vérité fiable.
+const hasMetaArmor = items.some((item) => item.type === "armure");
 const xpHistory = Object.values(system.progression?.experience?.depense?.liste ?? {});
 
 function safeFilename(value) {
@@ -156,6 +160,7 @@ function moduleOd(item, domain, characteristic) {
 }
 
 function overdriveValue(domain, characteristic) {
+  if (!hasMetaArmor) return 0;
   const base = number(
     system.aspects?.[domain]?.caracteristiques?.[characteristic]?.overdrive?.base,
   );
@@ -1058,7 +1063,7 @@ const experienceTotal = number(progression.experience?.total);
 const gloryRemaining = gloryTotal - glorySpent();
 const experienceRemaining = experienceTotal - experienceSpent();
 const isKraken = Boolean(system.options?.kraken);
-const armorWorn = system.wear === "armure" || system.wear === "ascension";
+const armorWorn = hasMetaArmor && (system.wear === "armure" || system.wear === "ascension");
 const combatStyle = styleModifiers(system.combat?.style);
 
 const healthMaximum = Math.max(
@@ -1328,6 +1333,30 @@ function statblockTraits(lines, key, selectedItems, descriptionCallback = null, 
   }
 }
 
+function uniquelyNamedStatblockWeapons(selectedWeapons) {
+  const totals = new Map();
+  for (const weapon of selectedWeapons) {
+    const key = normalizeKey(weapon.name || "—");
+    totals.set(key, (totals.get(key) ?? 0) + 1);
+  }
+
+  const indexes = new Map();
+  return selectedWeapons.map((weapon) => {
+    const name = String(weapon.name || "—").trim();
+    const key = normalizeKey(name);
+    const total = totals.get(key) ?? 1;
+    const index = (indexes.get(key) ?? 0) + 1;
+    indexes.set(key, index);
+    return {
+      ...weapon,
+      // Fantasy Statblocks fusionne les traits portant exactement le même nom.
+      // Les espaces insécables de largeur nulle rendent les clés uniques sans
+      // ajouter de suffixe visible au nom affiché.
+      statblockName: total > 1 ? `${name}${"\u200B".repeat(index - 1)}` : name,
+    };
+  });
+}
+
 function characteristicDisplay(domain, characteristic) {
   const value = characteristicValue(domain, characteristic);
   const od = overdriveValue(domain, characteristic);
@@ -1400,7 +1429,7 @@ function pjStatblock(layout) {
     }));
     statblockTraits(lines, "skills", armorCapabilities);
     statblockTraits(lines, "modules", displayedModules, moduleMechanicalSummary);
-    statblockTraits(lines, "armes", weapons, (weapon) => {
+    statblockTraits(lines, "armes", uniquelyNamedStatblockWeapons(weapons), (weapon) => {
       const effects = [...(weapon.system?.effets?.raw ?? []), ...(weapon.system?.effets?.custom ?? [])];
       return [
         `Type : ${weapon.system?.type || "—"}`,
@@ -1409,7 +1438,7 @@ function pjStatblock(layout) {
         `Violence : ${formatDice(weapon.system?.violence)}`,
         effects.length ? `Effets : ${effectsMarkdown(effects)}` : "",
       ].filter(Boolean).join(" · ");
-    });
+    }, (weapon) => weapon.statblockName);
   }
 
   const summaryNamesOnly = layout === "Knight PJ Summary" ? () => "" : null;

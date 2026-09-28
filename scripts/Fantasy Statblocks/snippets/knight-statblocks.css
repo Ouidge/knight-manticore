@@ -700,10 +700,24 @@
   }
 }
 
+@page knight-statblock-landscape {
+  size: A4 landscape;
+  margin: 8mm;
+}
+
 @media print {
-  @page {
-    size: A4 landscape;
-    margin: 8mm;
+  .markdown-preview-view:has(
+    .statblock:is(
+      .knight-pnj,
+      .knight-bestiaire,
+      .knight-pj,
+      .knight-pj-recto,
+      .knight-pj-verso,
+      .knight-pj-summary
+    )
+  ),
+  .markdown-preview-view:has(.statblock .knight-bestiaire-actions-grid) {
+    page: knight-statblock-landscape;
   }
 
   :is(.statblock:is(.knight-pnj, .knight-bestiaire, .knight-pj, .knight-pj-recto, .knight-pj-verso, .knight-pj-summary), .statblock:has(.knight-bestiaire-actions-grid)) {

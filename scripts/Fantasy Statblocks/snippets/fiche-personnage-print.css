@@ -1,0 +1,40 @@
+/*
+ * Impression commune des fiches PJ publiques dans Obsidian et Quartz.
+ * Ce fichier ne contient que la géométrie de page commune aux deux moteurs.
+ */
+
+@page {
+  size: A4 portrait;
+  margin: 8mm;
+}
+
+@media print {
+  html:has(.knight-sheet-marker),
+  body:has(.knight-sheet-marker) {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  :is(article, .markdown-preview-view):has(.knight-sheet-marker) {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .markdown-preview-view:has(.knight-sheet-marker) .markdown-preview-sizer,
+  .markdown-preview-view:has(.knight-sheet-marker) .markdown-preview-section {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .markdown-preview-view:has(.knight-sheet-marker) .markdown-preview-sizer {
+    padding: 0 !important;
+  }
+}
