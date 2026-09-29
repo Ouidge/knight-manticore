@@ -128,6 +128,10 @@ function diceValue(stat = {}) {
   return `${dice ? `${dice}D6` : "0"}${fixed ? ` ${fixed > 0 ? "+" : "−"} ${Math.abs(fixed)}` : ""}`;
 }
 
+function highlightedDamage(value) {
+  return `<span class="knight-damage-value">${value}</span>`;
+}
+
 function compactText(value, maximum = 190) {
   const text = htmlToMarkdown(value).replace(/\s+/g, " ").trim();
   if (text.length <= maximum) return text;
@@ -168,10 +172,10 @@ function compactCapacityDescription(capability) {
 
   const structured = [];
   if (capability.system?.degats?.has) {
-    structured.push(`**Dégâts : ${diceValue(capability.system.degats.system)}**`);
+    structured.push(`**Dégâts :** ${highlightedDamage(diceValue(capability.system.degats.system))}`);
   }
   if (capability.system?.attaque?.has) {
-    structured.push(`**Dégâts : ${diceValue(capability.system.attaque.degats)}**`);
+    structured.push(`**Dégâts :** ${highlightedDamage(diceValue(capability.system.attaque.degats))}`);
     if (capability.system.attaque.portee) structured.push(`Portée ${capability.system.attaque.portee}`);
   }
   return structured.join(" · ") || compactText(capability.system?.description) || "—";
@@ -375,7 +379,7 @@ function generatedStatblock() {
     const details = [
       `**Type :** ${weapon.system?.type || "—"}`,
       `**Portée :** ${weapon.system?.portee || "—"}`,
-      `**Dégâts :** ${damage.value}${damage.breakdown ? ` *(${damage.breakdown})*` : ""}`,
+      `**Dégâts :** ${highlightedDamage(damage.value)}${damage.breakdown ? ` *(${damage.breakdown})*` : ""}`,
       `**Violence :** ${diceValue(weapon.system?.violence)}`,
       `**Effets :** ${effects.map(effectLink).join(", ") || "—"}`,
     ];

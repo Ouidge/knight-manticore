@@ -48,6 +48,15 @@
       "internalConsoleOptions": "neverOpen"
     },
     {
+      "name": "Sync Obsidian assets",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "powershell -ExecutionPolicy Bypass -File .\\scripts\\sync-obsidian-assets.ps1 -VaultDirectory \"F:\\Vaults\\Knight\"",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
       "name": "Convert PJs",
       "type": "node-terminal",
       "request": "launch",

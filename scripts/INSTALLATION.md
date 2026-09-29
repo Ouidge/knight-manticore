@@ -212,17 +212,18 @@ La méthode recommandée utilise QuickAdd et fonctionne même si aucune note
 n'est ouverte :
 
 1. Installer et activer le plugin communautaire QuickAdd.
-2. Copier `scripts/QuickAdd/quickadd-planche-pj-duplex.js` dans un dossier du
-   Vault qui n'est ni caché ni situé dans `.obsidian`, par exemple
-   `/scripts/QuickAdd`.
+2. Copier `scripts/QuickAdd/Impression - 2 PJ recto-verso A4.js` dans
+   `__plugins/templates/QuickAdd/`.
 3. Dans `Réglages > QuickAdd`, créer une Choice de type `Macro` nommée
    `Planche PJ recto-verso`.
 4. Ouvrir la configuration de cette macro, ajouter `User Script`, puis choisir
-   `quickadd-planche-pj-duplex.js`.
+   `Impression - 2 PJ recto-verso A4.js`.
 5. Activer l'éclair de la Choice pour l'ajouter à la palette de commandes.
 
-La commande demande deux fiches PJ et génère
-`_Print/Planche PJ recto-verso A4.md`, sans nécessiter d'éditeur actif. Le
+La commande demande deux fiches PJ et génère une note nommée automatiquement,
+par exemple `_Print/Impression PJ - Forge + Yurei - recto-verso A4.md`, sans
+nécessiter d'éditeur actif. Le nom est également enregistré dans la métadonnée
+`title` afin que le lecteur PDF affiche les deux PJ plutôt que le nom du script. Le
 dossier `_Print`, situé à la racine du Vault, est créé automatiquement s'il
 n'existe pas.
 Elle copie directement les blocs Fantasy Statblocks dans la planche afin que
@@ -233,8 +234,8 @@ combat, les aspects et toutes les armes ; `Knight PJ Verso` contient les
 capacités, les modules, les avantages et les inconvénients. Ces deux layouts
 doivent être importés dans Fantasy Statblocks avant de lancer QuickAdd.
 
-Le modèle Templater `scripts/Templater/Planche PJ A4 - 2 cartes recto verso.md`
-reste fourni comme solution de secours.
+L’ancien modèle Templater de planche PJ a été supprimé : la génération
+recto-verso utilise désormais uniquement QuickAdd.
 
 À l'impression, choisir A4 portrait, marges « Aucune », échelle 100 %,
 recto-verso et retournement sur le bord long. La première page contient les deux rectos et la seconde les
@@ -303,10 +304,8 @@ Les trois scripts d'import `convert-all-characters.ps1`,
 Vault indiqué par `-VaultDirectory` :
 
 - `.obsidian/snippets/knight-statblocks.css` ;
-- les modèles Markdown de `scripts/Templater/` dans
-  `__plugins/templates/` ;
 - les scripts JavaScript de `scripts/QuickAdd/` dans
-  `__plugins/templates/`.
+  `__plugins/templates/QuickAdd/`.
 
 Les fichiers portant le même nom sont remplacés. Les autres snippets et
 modèles personnels du Vault ne sont pas modifiés.
@@ -371,23 +370,28 @@ l’espace disponible.
 
 ## Imprimer deux fiches A5 sur une page A4
 
-Cette fonction nécessite le plugin Obsidian **Templater**.
+Cette fonction utilise le plugin Obsidian **QuickAdd** et ne dépend ni d’une
+note active ni du mode édition.
 
-1. Copier `scripts/Templater/Planche impression A4 - 2 fiches.md` dans le
-   dossier de modèles du Vault : `__plugins/templates/`.
+1. Copier `scripts/QuickAdd/Impression - 2 fiches PNJ-Bestiaire A4.js` dans le
+   dossier `__plugins/templates/QuickAdd/`.
 2. Vérifier que `knight-statblocks.css` est actif dans
    **Paramètres → Apparence → Extraits CSS**.
-3. Dans Obsidian, exécuter la commande Templater d’insertion du modèle
-   `Planche impression A4 - 2 fiches`.
-4. Choisir successivement la fiche supérieure puis la fiche inférieure.
-5. Le modèle crée ou remplace `_Print/Planche impression A4.md` et l’ouvre. Le
-   dossier `_Print`, situé à la racine du Vault, est créé automatiquement s'il
-   n'existe pas.
+3. Dans `Réglages > QuickAdd`, créer une Choice de type `Macro`, ajouter
+   `User Script`, puis sélectionner
+   `QuickAdd/Impression - 2 fiches PNJ-Bestiaire A4.js`.
+4. Activer l’éclair de cette Choice puis lancer la commande depuis la palette.
+5. Choisir successivement la fiche supérieure puis la fiche inférieure.
+6. Le script crée une note portant les noms des deux fiches, par exemple
+   `_Print/Impression PNJ-Bestiaire - Louve + Séraphin - A4.md`, puis l’ouvre.
+   Le même intitulé est ajouté à la métadonnée `title` pour être repris par le
+   PDF. Le dossier `_Print`, situé à la racine du Vault, est créé automatiquement
+   s'il n'existe pas.
 
 Le sélecteur propose les fiches de combat portant `subtype: pnj`,
 `subtype: creature` ou `subtype: bande`. Il est donc possible de mélanger deux
 catégories sur la même planche.
-6. Imprimer cette note en A4 portrait, à l’échelle 100 %, sans en-têtes ni
+7. Imprimer cette note en A4 portrait, à l’échelle 100 %, sans en-têtes ni
    pieds de page.
 
 Chaque moitié de la page correspond à une fiche A5 paysage. Les descriptions

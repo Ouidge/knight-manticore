@@ -23,6 +23,9 @@ module.exports = async ({ app, quickAddApi }) => {
   const labelFor = ({ file, frontmatter }) =>
     String(frontmatter.nom || frontmatter.pj || file.basename.replace(/^Fiche\s+/i, ""));
 
+  const safeFilename = (value) =>
+    String(value).replace(/[<>:"/\\|?*]/g, "-").trim().replace(/[. ]+$/g, "");
+
   const first = await quickAddApi.suggester(
     candidates.map(labelFor),
     candidates,
@@ -69,11 +72,15 @@ module.exports = async ({ app, quickAddApi }) => {
     ];
   };
   const targetFolder = "_Print";
-  const targetPath = `${targetFolder}/Planche PJ recto-verso A4.md`;
+  const firstName = labelFor(first);
+  const secondName = labelFor(second);
+  const documentTitle = `Impression PJ - ${firstName} + ${secondName} - recto-verso A4`;
+  const targetPath = `${targetFolder}/${safeFilename(documentTitle)}.md`;
   const content = [
     "---",
     "type: impression",
     "subtype: pj-double-a5-duplex",
+    `title: ${JSON.stringify(documentTitle)}`,
     "cssclasses:",
     "  - knight-print-pj-duplex-a5",
     "---",
@@ -98,6 +105,6 @@ module.exports = async ({ app, quickAddApi }) => {
   await app.workspace.getLeaf(false).openFile(target);
   await quickAddApi.infoDialog(
     "Planche PJ prête",
-    "Imprimer en A4 portrait, recto-verso avec retournement sur le bord long.",
+    `${documentTitle}\n\nImprimer en A4 portrait, recto-verso avec retournement sur le bord long.`,
   );
 };

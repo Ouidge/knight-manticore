@@ -336,6 +336,23 @@
   display: none !important;
 }
 
+/* Les rubriques de référence restent visibles même vides afin de conserver
+   une structure stable. Seuls les Modules, facultatifs et souvent sans objet
+   pour le Bestiaire, disparaissent lorsqu'aucune entrée n'est rendue. */
+.statblock :is(
+  .knight-bestiaire-modules,
+  .knight-pj-modules
+):not(:has(.statblock-trait-prop)) {
+  display: none !important;
+}
+
+/* Avec une propriété conditionnelle vide, certaines versions de Fantasy
+   Statblocks suppriment le conteneur Modules mais laissent son titre seul en
+   dernier enfant du groupe. */
+.statblock h3.section-header.modules:last-child {
+  display: none !important;
+}
+
 :is(.statblock.knight-bestiaire, .statblock:has(.knight-bestiaire-actions-grid)) :is(
   .knight-bestiaire-exceptional,
   .knight-bestiaire-weapons,
@@ -1151,6 +1168,15 @@
 }
 
 @media print {
+  .markdown-preview-view.knight-print-pj-duplex-a5,
+  .markdown-preview-view:has(.knight-print-pj-duplex-a5),
+  .knight-print-pj-duplex-a5,
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"],
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .callout-content,
+  .knight-print-pj-duplex-a5 .callout[data-callout^="pj-"] .statblock {
+    page: knight-pj-duplex-a5 !important;
+  }
+
   .markdown-preview-view.knight-print-pj-duplex-a5 {
     width: 210mm !important;
     min-height: 0 !important;
@@ -1424,7 +1450,18 @@
   .markdown-preview-view.knight-print-double-a5,
   .markdown-preview-view:has(.knight-print-double-a5),
   .knight-print-double-a5 {
-    page: knight-double-a5;
+    page: knight-double-a5 !important;
+  }
+
+  /* Une fiche embarquée conserve normalement sa page nommée A4 paysage.
+     Dans la planche double A5, tous les descendants doivent au contraire
+     appartenir à la page portrait de la planche. */
+  .knight-print-double-a5 .internal-embed,
+  .knight-print-double-a5 .internal-embed .markdown-embed-content,
+  .knight-print-double-a5 .internal-embed .markdown-preview-view,
+  .knight-print-double-a5 .internal-embed .markdown-preview-sizer,
+  .knight-print-double-a5 .internal-embed .statblock {
+    page: knight-double-a5 !important;
   }
 
   .markdown-preview-view.knight-print-double-a5 {
@@ -1488,11 +1525,134 @@
   }
 
   .knight-print-double-a5 .internal-embed .statblock {
-    width: 142.857% !important;
+    width: 135.135% !important;
     max-width: none !important;
     margin: 0 !important;
-    zoom: 0.70;
+    zoom: 0.74;
     break-inside: avoid !important;
     page-break-inside: avoid !important;
+  }
+
+  /* Lisibilité prioritaire sur les cartes A5 : les longues descriptions
+     restent compactes, tandis que les données consultées en jeu sont
+     renforcées après la réduction de la fiche dans sa demi-page. */
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-profile-row {
+    font-size: 10.8pt !important;
+    line-height: 1.12 !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-profile-row :is(
+      [class*="property-name"],
+      [class*="statblock-markdown"],
+      p,
+      span,
+      strong
+    ) {
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+
+  /* Les chiffres des cinq aspects doivent rester immédiatement lisibles sur
+     une carte A5. Une hauteur de ligne fixe permet d'agrandir uniquement les
+     glyphes, sans augmenter la hauteur des cellules du tableau. */
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-aspects p {
+    font-size: inherit !important;
+    font-weight: 750 !important;
+    line-height: 6.35pt !important;
+    width: 58.824% !important;
+    height: 6.35pt !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    zoom: 1.7;
+    overflow: visible !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-aspects p :is(a, span, strong, em) {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-combat-row {
+    font-size: 10.8pt !important;
+    font-weight: 650;
+    line-height: 1.12 !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-combat-row :is(
+      [class*="property-name"],
+      [class*="statblock-markdown"],
+      p,
+      strong
+    ) {
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-combat-row [class*="statblock-markdown"] p {
+    display: inline-block !important;
+    width: 66.667% !important;
+    height: 7.2pt !important;
+    margin: 0 !important;
+    font-size: inherit !important;
+    font-weight: 750 !important;
+    line-height: 7.2pt !important;
+    zoom: 1.5;
+    overflow: visible !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-damage-value {
+    display: inline-block !important;
+    height: 7.2pt !important;
+    font-size: inherit !important;
+    font-weight: 800 !important;
+    line-height: 7.2pt !important;
+    vertical-align: baseline;
+    zoom: 1.5;
+    overflow: visible !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-weapons {
+    font-size: 10.8pt !important;
+    line-height: 1.12 !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-weapons [class*="trait-name"] {
+    font-size: 11.2pt !important;
+    font-weight: 700;
+    line-height: 1.1 !important;
+  }
+
+  .knight-print-double-a5 .internal-embed
+    .statblock:has(:is(.knight-pnj-combat-marker, .knight-bestiaire-combat-marker))
+    .knight-bestiaire-weapons :is(
+      [class*="trait-description"],
+      [class*="statblock-markdown"],
+      p,
+      span,
+      strong
+    ) {
+    font-size: inherit !important;
+    line-height: inherit !important;
   }
 }
