@@ -32,6 +32,7 @@ projet/
     │   │   ├── Knight PNJ Combat.json
     │   │   ├── Knight Bestiaire.json
     │   │   ├── Knight Bestiaire Combat.json
+    │   │   ├── Knight Bestiaire Officiel.json
     │   │   ├── Knight PJ.json
     │   │   ├── Knight PJ Recto.json
     │   │   ├── Knight PJ Verso.json
@@ -176,7 +177,7 @@ sont prises en charge.
 Pour appliquer le rendu Knight, copier
 `scripts/Fantasy Statblocks/snippets/knight-statblocks.css` dans le
 dossier `.obsidian/snippets/` du coffre, puis l’activer dans **Paramètres →
-Apparence → Extraits CSS**. Le style cible les six layouts Knight sans
+Apparence → Extraits CSS**. Le style cible uniquement les layouts Knight sans
 modifier les autres statblocks du coffre.
 
 Dans Obsidian Desktop, afficher la note en mode lecture puis lancer la commande
@@ -194,11 +195,26 @@ aspects, aspects exceptionnels, combat, armes, modules, puis une carte pleine
 largeur pour chaque capacité. Sur un écran étroit, les grilles internes sont
 automatiquement replacées sur une seule colonne.
 
-Dans **Fantasy Statblocks → Manage layouts**, importer les huit fichiers du
+Dans **Fantasy Statblocks → Manage layouts**, importer les neuf fichiers du
 dossier `scripts/Fantasy Statblocks/templates/` :
 `Knight PNJ.json`, `Knight PNJ Combat.json`, `Knight Bestiaire.json`,
-`Knight Bestiaire Combat.json`, `Knight PJ.json`, `Knight PJ Recto.json`,
+`Knight Bestiaire Combat.json`, `Knight Bestiaire Officiel.json`, `Knight PJ.json`, `Knight PJ Recto.json`,
 `Knight PJ Verso.json` et `Knight PJ Summary.json`.
+
+`Knight Bestiaire Officiel` est une variante visuelle expérimentale de
+`Knight Bestiaire Combat`. Elle utilise exactement les mêmes propriétés
+(profil, aspects exceptionnels et liens, descriptions, combat, dégâts calculés,
+armes et capacités) mais les présente sous forme de tableau technique inspiré
+des fiches officielles. Pour l’essayer sans modifier une fiche existante,
+dupliquer la note puis remplacer uniquement :
+
+```yaml
+layout: Knight Bestiaire Officiel
+```
+
+L’accent est orange par défaut. La sélection automatique d’une couleur selon la
+famille Chair/Bête/Machine/Dame/Masque sera ajoutée lorsque cette information
+sera disponible dans l’export Foundry.
 
 Le layout `Knight PJ` place désormais le profil puis le combat sur toute la
 largeur. Les cinq aspects sont réunis dans un tableau : chaque colonne affiche

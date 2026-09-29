@@ -349,9 +349,9 @@ function generatedStatblock() {
     const minor = number(aspect.ae?.mineur?.value);
     const major = number(aspect.ae?.majeur?.value);
     if (minor > 0) {
-      exceptionalLinks.push(`[[${exceptionalAspectNotes[key]}#^mineur|${minor}+]]`);
+      exceptionalLinks.push(`[[${exceptionalAspectNotes[key]}#^mineur|${minor}]]`);
       exceptionalTraits.push({
-        name: `${exceptionalAspectLabels[key].mineur} (${minor}+)`,
+        name: `${exceptionalAspectLabels[key].mineur} (${minor})`,
         desc: exceptionalAspectDescription(exceptionalAspectNotes[key], "mineur") || `[[${exceptionalAspectNotes[key]}#^mineur|Consulter la description]]`,
       });
     }
@@ -389,7 +389,7 @@ function generatedStatblock() {
   const lines = [
     "<!-- BEGIN PNJ STATBLOCK -->",
     "```statblock",
-    `layout: ${combatSheet ? (isCreature ? "Knight Bestiaire Combat" : "Knight PNJ Combat") : (isCreature ? "Knight Bestiaire" : "Knight PNJ")}`,
+    `layout: ${combatSheet ? (isCreature ? "Knight Bestiaire Officiel" : "Knight PNJ Combat") : (isCreature ? "Knight Bestiaire" : "Knight PNJ")}`,
     // Les layouts PNJ et Bestiaire gèrent eux-mêmes leur structure interne.
     "columns: 1",
     "columnWidth: 810",
@@ -397,7 +397,13 @@ function generatedStatblock() {
     `name: ${yamlString(actor.name || "PNJ")}`,
     `type: ${isCreature ? (isBand ? "Bande" : "Créature") : "PNJ"}`,
   ];
-  const subtype = system.type || system.archetype || "";
+  const rawSubtype = system.type || system.archetype || "";
+  // Certains acteurs de type bande exportent deux libellés successifs, par
+  // exemple « Bande, Alliés (recrue) / Bande (recrue) ». Le premier contient
+  // déjà l'information la plus précise ; la seconde mention est redondante.
+  const subtype = isBand
+    ? String(rawSubtype).replace(/\s*\/\s*Bande\b.*$/iu, "").trim()
+    : rawSubtype;
   if (subtype) lines.push(`subtype: ${yamlString(subtype)}`);
   if (combatSheet) {
     const profileKind = isCreature ? (isBand ? "Bande" : "Créature") : "PNJ";

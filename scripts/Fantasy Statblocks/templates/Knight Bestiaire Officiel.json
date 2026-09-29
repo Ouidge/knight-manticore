@@ -1,0 +1,161 @@
+{
+  "blocks": [
+    {
+      "type": "group",
+      "id": "officialtitlegroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "heading",
+          "id": "officialtitle",
+          "properties": ["profile"],
+          "conditioned": true,
+          "size": 1
+        }
+      ],
+      "heading": "",
+      "hasRule": false,
+      "cls": "knight-official-title knight-bestiaire-officiel-marker"
+    },
+    {
+      "type": "group",
+      "id": "officialprofilegroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "officialprofilerow",
+          "properties": [],
+          "nested": [
+            {
+              "type": "text",
+              "id": "officialweakpoint",
+              "properties": ["pointfaible"],
+              "text": null,
+              "fallback": "-",
+              "heading": "Point faible",
+              "hasRule": false,
+              "conditioned": true,
+              "markdown": true,
+              "cls": "knight-official-weakpoint"
+            },
+            {
+              "type": "table",
+              "id": "officialaspects",
+              "properties": ["aspects"],
+              "headers": ["CHAIR", "BÊTE", "MACHINE", "DAME", "MASQUE"],
+              "calculate": false,
+              "hasRule": false,
+              "conditioned": true,
+              "markdown": true,
+              "cls": "knight-official-aspects"
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-official-profile-row"
+        }
+      ],
+      "heading": "Aspects",
+      "hasRule": false,
+      "cls": "knight-official-section knight-official-profile-section"
+    },
+    {
+      "type": "group",
+      "id": "officialderivedgroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "officialcombatrow",
+          "properties": [],
+          "nested": [
+            {"type": "property", "id": "officialdefense", "properties": ["defense"], "fallback": "-", "display": "Défense"},
+            {"type": "property", "id": "officialreaction", "properties": ["reaction"], "fallback": "-", "display": "Réaction"},
+            {"type": "property", "id": "officialinitiative", "properties": ["initiative"], "fallback": "-", "display": "Initiative"},
+            {"type": "property", "id": "officialps", "properties": ["ps"], "fallback": "-", "display": "PS", "conditioned": true},
+            {"type": "property", "id": "officialpa", "properties": ["pa"], "fallback": "-", "display": "PA", "conditioned": true},
+            {"type": "property", "id": "officialpe", "properties": ["pe"], "fallback": "-", "display": "PE", "conditioned": true},
+            {"type": "property", "id": "officialcdf", "properties": ["cdf"], "fallback": "-", "display": "CdF", "conditioned": true},
+            {"type": "property", "id": "officialshield", "properties": ["bouclier"], "fallback": "-", "display": "Bouclier", "conditioned": true},
+            {"type": "property", "id": "officialcohesion", "properties": ["cohesion"], "fallback": "-", "display": "Cohésion", "conditioned": true},
+            {"type": "property", "id": "officialoverflow", "properties": ["debordement"], "fallback": "-", "display": "Débordement", "conditioned": true}
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-official-combat-row"
+        }
+      ],
+      "heading": "Valeurs dérivées",
+      "hasRule": false,
+      "cls": "knight-official-section knight-official-derived-section"
+    },
+    {
+      "type": "group",
+      "id": "officialexceptionalgroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialexceptional",
+          "properties": ["aspects_exceptionnels"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "cls": "knight-official-exceptional knight-combat-colored-names"
+        }
+      ],
+      "heading": "AE",
+      "hasRule": false,
+      "cls": "knight-official-section knight-official-exceptional-section"
+    },
+    {
+      "type": "group",
+      "id": "officialcapacitiesgroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialcapacities",
+          "properties": ["capacites"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "dice": false,
+          "cls": "knight-official-capacities knight-combat-colored-names"
+        }
+      ],
+      "heading": "Capacités",
+      "hasRule": false,
+      "cls": "knight-official-section knight-official-capacities-section"
+    },
+    {
+      "type": "group",
+      "id": "officialweaponsgroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialweapons",
+          "properties": ["armes"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "cls": "knight-official-weapons knight-combat-colored-names"
+        }
+      ],
+      "heading": "Armes",
+      "hasRule": false,
+      "cls": "knight-official-section knight-official-weapons-section"
+    }
+  ],
+  "cssProperties": {
+    "propertyNameFontColor": "#ffffff",
+    "traitsNameFontColor": "#9dbbe0"
+  },
+  "name": "Knight Bestiaire Officiel",
+  "id": "d91f4a8c2e70"
+}
