@@ -1,14 +1,14 @@
+![[coterie-manticore-banner.png]]
 > [!warning] Attention — Spoilers de campagne
 > Ce site contient les comptes rendus, personnages, lieux, révélations et événements de la campagne Knight  **La Geste de la fin des temps**.
 > Si vous participez à cette campagne dans un autre groupe ou souhaitez la découvrir comme joueur, nous vous recommandons de ne pas poursuivre votre lecture.
 
-![[coterie-manticore-banner.png]]
-# Bienvenue sur le site de la Coterie Manticore !
+# <center>Bienvenue sur le site de la Coterie Manticore</center>
 
-Mission en cours : [[Mission 2]]
-Prochaine Session : 
+> [!info]
+> Mission en cours : [[Mission 2]]
+> Prochaine Session :  16-10-2026
 
----
 ## À explorer 
 
 → [[campagne]] 
@@ -19,4 +19,4 @@ Prochaine Session :
 ---
 ## Liens externes
 
-- Site JDR Système [https://knight-jdr-systeme.fr/fr/](https://knight-jdr-systeme.fr/fr/ "Knight JDR Système")
+→ Site JDR Système [https://knight-jdr-systeme.fr/fr/](https://knight-jdr-systeme.fr/fr/ "Knight JDR Système")
