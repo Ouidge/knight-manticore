@@ -22,7 +22,7 @@ PJ:
 
 ## Ordres
 
-- [ ] prendre contact avec les rebuts locaux et les convaincre de laisser la milice de Naples engager sa puissance à leurs côtés
+- [ ] Prendre contact avec les rebuts locaux et les convaincre de laisser la milice de Naples engager sa puissance à leurs côtés
 - [ ] Localiser un maximum d'œuvres d'art 
 
 ## Rencontres
