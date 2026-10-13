@@ -30,7 +30,7 @@ PJ:
 - Celeste Casarini
 - Paolo Van Kemps
 - Silvio Luditore - R.I.P. 💀
-- [[__public/personnages/pnj/Cesare Di Marzio|Cesare Di Marzio]]
+- [[Cesare Di Marzio]]
 - [[Saul Arentino]]
 - Graziella Santoni
 - Denis De La Barthe
