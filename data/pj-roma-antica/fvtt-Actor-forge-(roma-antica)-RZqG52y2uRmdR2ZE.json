@@ -1705,9 +1705,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646059,
+        "modifiedTime": 1790587646059,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.weapons-standard.df9dd63546eda43e",
         "duplicateSource": null,
         "exportSource": null
@@ -1802,7 +1802,7 @@
         "effets": {
           "liste": [],
           "raw": [
-            "percearmure 40"
+            "percearmure 4"
           ],
           "custom": [],
           "chargeur": null,
@@ -1850,9 +1850,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646059,
+        "modifiedTime": 1791625479057,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.weapons-standard.62a75eda8200a5e8",
         "duplicateSource": null,
         "exportSource": null
@@ -1993,9 +1993,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646060,
+        "modifiedTime": 1790587646060,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.weapons-standard.1495ae299d871c7a",
         "duplicateSource": null,
         "exportSource": null
@@ -2059,9 +2059,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646060,
+        "modifiedTime": 1790587646060,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.ai-advantages-base.45787622eb2d442b",
         "duplicateSource": null,
         "exportSource": null
@@ -2125,9 +2125,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646060,
+        "modifiedTime": 1790587646060,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.ai-advantages-base.358da02769b1b209",
         "duplicateSource": null,
         "exportSource": null
@@ -2223,9 +2223,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646060,
+        "modifiedTime": 1790587646060,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.ai-disadvantages-base.52316ff1f167fe0e",
         "duplicateSource": null,
         "exportSource": null
@@ -2256,9 +2256,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null
+        "createdTime": 1790587646061,
+        "modifiedTime": 1790587646061,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN"
       }
     },
     {
@@ -2284,9 +2284,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null
+        "createdTime": 1790587646061,
+        "modifiedTime": 1790587646061,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN"
       }
     },
     {
@@ -2384,9 +2384,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null
+        "createdTime": 1790587646061,
+        "modifiedTime": 1790587646061,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN"
       },
       "_id": "fSqJGUFrvarlMRdE",
       "folder": null,
@@ -2416,9 +2416,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646061,
+        "modifiedTime": 1790587646061,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": null,
         "duplicateSource": null,
         "exportSource": null
@@ -2444,9 +2444,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646062,
+        "modifiedTime": 1790587646062,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": null,
         "duplicateSource": null,
         "exportSource": null
@@ -2472,9 +2472,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646062,
+        "modifiedTime": 1790587646062,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": null,
         "duplicateSource": null,
         "exportSource": null
@@ -2537,9 +2537,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646062,
+        "modifiedTime": 1790587646062,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.knight-advantages-base.f6882b64983f7460",
         "duplicateSource": null,
         "exportSource": null
@@ -2604,9 +2604,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646062,
+        "modifiedTime": 1790587646062,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.knight-advantages-base.1e537496b3d9ab22",
         "duplicateSource": null,
         "exportSource": null
@@ -2703,9 +2703,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646063,
+        "modifiedTime": 1790587646063,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.knight-disadvantages-base.d04abb0992821c05",
         "duplicateSource": null,
         "exportSource": null
@@ -2796,9 +2796,9 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "coreVersion": "14.365",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646064,
+        "modifiedTime": 1790587646064,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": "Compendium.knight-compendium.section-disadvantages-base.4SE2TlCrU6UvrMr9",
         "duplicateSource": null,
         "exportSource": null
@@ -2836,18 +2836,18 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646064,
+        "modifiedTime": 1790587646064,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "exportSource": null
       }
     },
     {
-      "name": "Admin Knight Korrigan (1)",
+      "name": "Leprechaun (1)",
       "type": "contact",
       "img": "systems/knight/assets/icons/contact.svg",
       "system": {
-        "description": ""
+        "description": "<p>Admin Knight Korrigan </p>"
       },
       "_id": "FpsTcUsqvJ8mW51X",
       "effects": [],
@@ -2862,9 +2862,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646064,
+        "modifiedTime": 1790591179496,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": null,
         "duplicateSource": null,
         "exportSource": null
@@ -2890,9 +2890,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "createdTime": 1790587646064,
+        "modifiedTime": 1790587646064,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": null,
         "duplicateSource": null,
         "exportSource": null
@@ -5714,9 +5714,9 @@
         "coreVersion": "14.365",
         "systemId": "knight",
         "systemVersion": "3.58.35",
-        "createdTime": null,
+        "createdTime": 1790587646065,
         "modifiedTime": 1790587748162,
-        "lastModifiedBy": null,
+        "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": null,
         "duplicateSource": null,
         "exportSource": null

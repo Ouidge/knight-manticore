@@ -490,6 +490,256 @@ body .statblock.knight-bestiaire-officiel .column {
   padding: 0 !important;
 }
 
+/* ========================================================================== */
+/* Knight PNJ Officiel — palette mandarine et dorée                          */
+/* ========================================================================== */
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)) {
+  --knight-pnj-accent: #e6ad83;
+  --knight-pnj-mandarin: #e6ad83;
+  --knight-pnj-link: #efc17f;
+  --knight-pnj-dark: #111a27;
+  --knight-pnj-cell: #293d4a;
+  --knight-pnj-title: #182b38;
+  display: block !important;
+  width: min(100%, 980px) !important;
+  max-width: 980px !important;
+  margin-inline: auto !important;
+  overflow: hidden !important;
+  border-left: 7px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-dark) !important;
+  color: #f4f7fb !important;
+  font-size: 0.82rem !important;
+  line-height: 1.28 !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  :is(.statblock-content-container, .statblock-content, .column) {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: var(--knight-pnj-dark) !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column {
+  display: grid !important;
+  grid-template-columns: 92px minmax(0, 1fr) !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column > .heading-container.knight-pnj-official-title {
+  grid-column: 1 / -1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0.42rem 0.7rem !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-title) !important;
+  color: #fff !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column > .heading-container.knight-pnj-official-title h1 {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #fff !important;
+  font-size: 1.08rem !important;
+  font-weight: 900 !important;
+  line-height: 1.12 !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column > .group-container:has(> h3.section-header) {
+  grid-column: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 92px !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-accent) !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column > .group-container:has(> h3.section-header) > h3.section-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0.38rem 0.24rem !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #fff !important;
+  font-size: 0.68rem !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column > :is(
+    .knight-pnj-official-profile-row,
+    .knight-pnj-official-combat-row,
+    .traits-container
+  ) {
+  grid-column: 2 !important;
+  display: block !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-dark) !important;
+  color: #fff !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-profile-row {
+  display: grid !important;
+  grid-template-columns: minmax(140px, 1fr) minmax(0, 5fr) !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-profile-row > .statblock-inline-item {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-profile-row > .statblock-inline-item:only-child {
+  grid-column: 1 / -1 !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-profile-row .table-item {
+  border-right: 1px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-accent) !important;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-profile-row .statblock-table-header,
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-profile-row .section-header.point-faible,
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-combat-row .property-name {
+  background: var(--knight-pnj-accent) !important;
+  color: #fff !important;
+  font-weight: 850 !important;
+  text-align: center !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-combat-row {
+  display: grid !important;
+  grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-combat-row > .statblock-inline-item {
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-right: 1px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-cell) !important;
+  text-align: center !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-combat-row .line {
+  display: grid !important;
+  grid-template-rows: minmax(1.55rem, auto) minmax(1.7rem, auto) !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .knight-pnj-official-combat-row .statblock-markdown {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 1.7rem !important;
+  margin: 0 !important;
+  padding: 0.24rem 0.12rem !important;
+  background: var(--knight-pnj-cell) !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column > .traits-container,
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column > .traits-container > .traits-container {
+  grid-column: 2 !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-dark) !important;
+  color: #fff !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  .column > .traits-container .statblock-trait-prop {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0.34rem 0.5rem !important;
+  box-sizing: border-box !important;
+  border: 0 !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--knight-pnj-accent) 72%, transparent) !important;
+  background: var(--knight-pnj-dark) !important;
+  color: #fff !important;
+}
+
+body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  :is(p, span, strong, em) {
+  color: inherit !important;
+}
+
+@media (max-width: 720px) {
+  body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    .knight-pnj-official-combat-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media print {
+  body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)) {
+    --knight-pnj-dark: #fff;
+    --knight-pnj-cell: #fff;
+    color: #111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    .knight-pnj-official-combat-row {
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+  }
+}
+
 body .statblock.knight-bestiaire-officiel .column > * {
   width: 100% !important;
   max-width: none !important;
@@ -5649,5 +5899,1478 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-bars)
   .markdown-preview-view:has(.statblock.knight-bestiaire-officiel)
     :is(.edit-block-button, .copy-code-button) {
     display: none !important;
+  }
+}
+
+/* Rendu final PNJ officiel : reprendre la structure éprouvée du Bestiaire,
+   en ciblant le DOM réel généré par Fantasy Statblocks. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout) {
+  --knight-pnj-accent: #e6ad83;
+  --knight-pnj-mandarin: #e6ad83;
+  --knight-pnj-link: #efc17f;
+  --knight-pnj-dark: #111a27;
+  --knight-pnj-cell: #293d4a;
+  display: block !important;
+  width: min(100%, 980px) !important;
+  max-width: 980px !important;
+  margin-inline: auto !important;
+  overflow: hidden !important;
+  border: 2px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-dark) !important;
+  color: #f4f7fb !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  > div.column {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > * {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  grid-column: 1 / -1 !important;
+  justify-self: stretch !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > .heading-container.knight-pnj-official-title {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0.42rem 0.7rem !important;
+  border: 0 !important;
+  border-bottom: 2px solid var(--knight-pnj-accent) !important;
+  background: #182b38 !important;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  .heading-container.knight-pnj-official-title :is(h1, h1 *) {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: #fff !important;
+  font-family: "Arial Narrow", "Roboto Condensed", var(--font-interface) !important;
+  font-size: 1.08rem !important;
+  font-weight: 900 !important;
+  line-height: 1.12 !important;
+  text-align: center !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > :is(.subheading-container, .subheading),
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div:has(> .subheading) {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0.12rem 0.5rem 0.24rem !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--knight-pnj-accent) !important;
+  background: var(--knight-pnj-dark) !important;
+  color: #f4f7fb !important;
+  font-size: 0.72rem !important;
+  font-style: italic !important;
+  text-align: center !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  :is(.subheading-container, .subheading) * {
+  color: #f4f7fb !important;
+  -webkit-text-fill-color: #f4f7fb !important;
+}
+
+/* Les titres de section deviennent des séparateurs pleine largeur, comme
+   dans Knight Bestiaire Officiel. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.group-container:has(> h3.section-header) {
+  display: block !important;
+  grid-column: 1 / -1 !important;
+  justify-self: stretch !important;
+  align-self: stretch !important;
+  width: 100% !important;
+  max-width: none !important;
+  flex-basis: 100% !important;
+  height: 3px !important;
+  min-height: 3px !important;
+  margin: 0.5rem 0 0.22rem !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  background: var(--knight-pnj-accent) !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.group-container > h3.section-header {
+  display: none !important;
+}
+
+/* Aucun filet au milieu des tables Aspects et Combat. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.group-container:has(> h3.section-header:is(.aspects, .combat)) {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+/* Aspects : aligner le point faible et les cinq aspects sur une seule ligne. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects) {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 5fr) !important;
+  align-items: stretch !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  > div.statblock-inline-item {
+  display: block !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  grid-row: 1 !important;
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  > div.statblock-inline-item:first-child {
+  grid-column: 1 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  > div.statblock-inline-item:nth-child(2) {
+  grid-column: 2 !important;
+  width: 100% !important;
+}
+
+/* Si Point faible est absent, la table devient le premier enfant : elle doit
+   alors prendre toute la rangée au lieu de rester dans la petite colonne 1. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  > div.statblock-inline-item:first-child:has(.statblock-table.aspects) {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  > div.statblock-inline-item.group-container:empty {
+  display: none !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  > div.statblock-inline-item.group-container:empty
+  + div.statblock-inline-item.group-container {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  .statblock-item-container:has(.statblock-table.aspects),
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  .table-container {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  .statblock-table.aspects {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  grid-auto-flow: column !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  gap: 0.25rem !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  .statblock-table.aspects > .table-item {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  grid-column: auto !important;
+  grid-row: 1 !important;
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  text-align: center !important;
+}
+
+/* Les propriétés de combat sont des enfants de .inline-container dans le
+   DOM réel ; leur placement doit rester automatique dans la grille. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.line.defense) {
+  display: grid !important;
+  grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+  grid-auto-flow: row !important;
+  align-items: stretch !important;
+  gap: 0.28rem !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0.35rem !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.line.defense)
+  > div.statblock-inline-item.property-container:not(:empty) {
+  display: block !important;
+  flex: none !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  div.column > div.inline-container:has(.line.defense) .line {
+  display: grid !important;
+  grid-template-rows: auto 1fr !important;
+  grid-template-columns: 1fr !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  :is(.statblock-table-header, .property-name, .section-header.point-faible) {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0.22rem 0.2rem !important;
+  box-sizing: border-box !important;
+  background: var(--knight-pnj-accent) !important;
+  color: #fff !important;
+  font-size: 0.75rem !important;
+  font-weight: 850 !important;
+  line-height: 1.1 !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  :is(.statblock-table.aspects .table-item, .line) {
+  overflow: hidden !important;
+  border: 1px solid color-mix(in srgb, var(--knight-pnj-accent) 65%, transparent) !important;
+  background: var(--knight-pnj-cell) !important;
+  color: #f4f7fb !important;
+}
+
+/* Empêcher le rouge du thème et supprimer les largeurs de cellule qui
+   rétrécissent les descriptions des traits. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  :is(.column > .traits-container, .column > .statblock-trait-prop,
+      .column > .traits-container > .statblock-trait-prop) {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0.38rem 0.62rem !important;
+  box-sizing: border-box !important;
+  border: 0 !important;
+  background: var(--knight-pnj-dark) !important;
+  color: #f4f7fb !important;
+  overflow: visible !important;
+}
+
+/* Le premier trait peut recevoir une enveloppe supplémentaire du plugin ;
+   neutraliser ses dimensions et conserver nom + description sur toute la ligne. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits)
+  div.column > div.statblock-item-container.traits-container,
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits)
+  div.column > div.statblock-item-container.statblock-trait-prop,
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits)
+  div.column > div.statblock-item-container.traits-container
+  > div.statblock-item-container.statblock-trait-prop {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0.34rem 0.5rem !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  background: var(--knight-pnj-dark) !important;
+  color: #f4f7fb !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits)
+  div.column div.statblock-trait-prop div.property.trait {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  line-height: 1.28 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits)
+  div.column div.statblock-trait-prop div.property.trait > div.property-name.trait-name,
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits)
+  div.column div.statblock-trait-prop div.property.trait > div.property-name.trait-name * {
+  display: inline !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 0.3rem 0 0 !important;
+  padding: 0 !important;
+  color: var(--knight-pnj-accent) !important;
+  -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+  font-weight: 800 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits)
+  div.column div.statblock-trait-prop
+  :is(.statblock-markdown, .statblock-markdown p, .property.trait > p) {
+  display: inline !important;
+  width: auto !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  color: #f4f7fb !important;
+  -webkit-text-fill-color: #f4f7fb !important;
+  line-height: 1.28 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker)
+  .statblock-nested-traits {
+  margin-inline-start: 0 !important;
+  padding-inline-start: 0 !important;
+  text-indent: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker)
+  .statblock-item-container.traits-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-first-trait-indent)
+  div.column > div.statblock-item-container.traits-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  :is(p, span, em, strong, .statblock-markdown, .line, .trait) {
+  color: #f4f7fb !important;
+  overflow-wrap: anywhere;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  :is(.trait-name, .trait-name p, .property-name.trait-name, .knight-damage-value,
+      a.internal-link) {
+  color: var(--knight-pnj-accent) !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+  :is(.trait-name, .trait-name p, .property-name.trait-name) {
+  font-weight: 800 !important;
+}
+
+@media (max-width: 720px) {
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+    div.column > div.inline-container:has(.line.defense) {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media print {
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout) {
+    --knight-pnj-dark: #fff;
+    --knight-pnj-cell: #fff;
+    color: #111 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-layout)
+    :is(p, span, em, strong, .statblock-markdown, .line, .trait) {
+    color: #111 !important;
+  }
+}
+
+/* Retirer les barres orange décoratives ajoutées par le plugin. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-bars)::before,
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-bars)::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-bars)
+  > div.bar,
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-bars)
+  div.bar[class*="svelte-"] {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Dernière passe ciblée : les cls des traits peuvent disparaître à
+   l'aplatissement. Ne pas dépendre de .statblock-trait-prop pour la largeur. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits-2)
+  div.column > :is(
+    .traits-container,
+    .statblock-trait-prop,
+    .statblock-item-container.traits-container,
+    .statblock-item-container.statblock-trait-prop
+  ),
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits-2)
+  div.column :is(.traits-container, .statblock-trait-prop) > .property.trait,
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits-2)
+  div.column > .property.trait {
+  display: block !important;
+  grid-column: 1 / -1 !important;
+  grid-row: auto !important;
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  float: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits-2)
+  div.column .property.trait > .property-name.trait-name,
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits-2)
+  div.column .property.trait > .property-name.trait-name * {
+  display: inline !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 0.3rem 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: var(--knight-pnj-accent) !important;
+  -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+  font-weight: 800 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-traits-2)
+  div.column .property.trait
+  :is(.statblock-markdown, .statblock-markdown p, p) {
+  display: inline !important;
+  width: auto !important;
+  max-width: none !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+  color: #f4f7fb !important;
+  -webkit-text-fill-color: #f4f7fb !important;
+  line-height: 1.28 !important;
+}
+
+/* Finition des tables et du bandeau titre, sur le modèle du Bestiaire. */
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  .heading-container.knight-pnj-official-title {
+  display: flex !important;
+  flex-flow: row wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  .heading-container.knight-pnj-official-title .flex-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  max-width: none !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  .heading-container.knight-pnj-official-title
+  :is(.subheading, .subheading-container, [class*="subheading"]) {
+  display: inline !important;
+  align-self: center !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  color: var(--knight-pnj-accent) !important;
+  -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+  font-size: 0.82rem !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  .heading-container.knight-pnj-official-title
+  :is(.subheading, .subheading-container, [class*="subheading"])::before {
+  content: " — " !important;
+  color: var(--knight-pnj-accent) !important;
+  -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.statblock-table.aspects) {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 5fr) !important;
+  gap: 0 !important;
+  column-gap: 0 !important;
+  row-gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.statblock-table.aspects):has(> div.statblock-inline-item.text-container:empty) {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  > div.statblock-inline-item.text-container:empty {
+  display: none !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  > div.statblock-inline-item.text-container:empty
+  + div.statblock-inline-item.table-container {
+  grid-column: 1 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  :is(.table-container, .statblock-item-container.table-container) {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  .statblock-table.aspects {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  grid-auto-flow: row !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.statblock-table.aspects)
+  .statblock-table.aspects > .table-item {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  width: auto !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.line.defense) {
+  display: flex !important;
+  flex-flow: row nowrap !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.line.defense)
+  > div.statblock-inline-item.property-container:has(.property-name) {
+  display: block !important;
+  flex: 1 1 0 !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.line.defense)
+  > div.statblock-inline-item.property-container:not(:has(.property-name)) {
+  display: none !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.line.defense)
+  > div.statblock-inline-item.property-container
+  > div.statblock-item-container.property-container {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+  div.column > div.inline-container:has(.line.defense) .line {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto 1fr !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  border: 0 !important;
+}
+
+@media (max-width: 720px) {
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+    div.column > div.inline-container:has(.line.defense) {
+    flex-flow: row wrap !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-tables)
+    div.column > div.inline-container:has(.line.defense)
+    > div.statblock-inline-item.property-container:has(.property-name) {
+    flex: 1 1 25% !important;
+    width: 25% !important;
+  }
+}
+
+  /* Titre PNJ : même inline + groupe d'identité imbriqué que le Bestiaire. */
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-inline)
+    div.column > div.inline-container.knight-pnj-official-title-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-bottom: 2px solid var(--knight-pnj-accent) !important;
+    background: #182b38 !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-inline)
+    div.column > div.inline-container.knight-pnj-official-title-row
+    > div.statblock-inline-item.group-container.knight-pnj-official-title {
+    display: flex !important;
+    flex-flow: row wrap !important;
+    align-items: baseline !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0.42rem 0.7rem !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-inline)
+    .group-container.knight-pnj-official-title
+    > :is(.heading-container, .subheading-container) {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-inline)
+    .group-container.knight-pnj-official-title
+    .heading-container h1 {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #fff !important;
+    font-family: "Arial Narrow", "Roboto Condensed", var(--font-interface) !important;
+    font-size: 1.08rem !important;
+    font-weight: 900 !important;
+    line-height: 1.12 !important;
+    text-align: center !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-inline)
+    .group-container.knight-pnj-official-title
+    .subheading-container,
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-inline)
+    .group-container.knight-pnj-official-title
+    .subheading-container * {
+    color: var(--knight-pnj-accent) !important;
+    -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+    font-size: 0.82rem !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-inline)
+    .group-container.knight-pnj-official-title
+    .subheading-container::before {
+    content: "—" !important;
+    margin-right: 0.4rem !important;
+    color: var(--knight-pnj-accent) !important;
+    -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+  }
+
+  /* L'inline peut perdre sa cls à l'import ; le cibler par son groupe identité. */
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-width)
+    div.column > div.inline-container:has(.group-container.knight-pnj-official-title) {
+    display: block !important;
+    grid-column: 1 / -1 !important;
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-width)
+    div.column > div.inline-container:has(.group-container.knight-pnj-official-title)
+    > .statblock-inline-item.group-container.knight-pnj-official-title {
+    display: flex !important;
+    flex: 0 0 100% !important;
+    flex-flow: row nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-column: 1 / -1 !important;
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0.42rem 0.7rem !important;
+    overflow: visible !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-width)
+    .group-container.knight-pnj-official-title
+    > :is(.heading-container, .subheading-container) {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: max-content !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-title-width)
+    .group-container.knight-pnj-official-title
+    .heading-container h1 {
+    display: block !important;
+    width: auto !important;
+    min-width: max-content !important;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+  }
+
+  /* Règles structurelles finales : les classes personnalisées du inline sont
+     parfois perdues à l'import, mais heading + subheading restent présents. */
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(.heading-container h1):has(.subheading-container) {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border-bottom: 2px solid var(--knight-pnj-accent) !important;
+    background: #182b38 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(.heading-container h1):has(.subheading-container)
+    > .statblock-inline-item.group-container {
+    display: flex !important;
+    flex: 0 1 auto !important;
+    flex-flow: row nowrap !important;
+    align-items: baseline !important;
+    justify-content: center !important;
+    width: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    padding: 0.42rem 0.7rem !important;
+    overflow: visible !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(.heading-container h1):has(.subheading-container)
+    .heading-container,
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(.heading-container h1):has(.subheading-container)
+    .subheading-container {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: baseline !important;
+    width: auto !important;
+    max-width: none !important;
+    min-width: max-content !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(.heading-container h1):has(.subheading-container)
+    .heading-container h1 {
+    display: block !important;
+    width: auto !important;
+    min-width: max-content !important;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(.heading-container h1):has(.subheading-container)
+    .subheading-container,
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(.heading-container h1):has(.subheading-container)
+    .subheading-container * {
+    color: var(--knight-pnj-accent) !important;
+    -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+    font-size: 0.82rem !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(.heading-container h1):has(.subheading-container)
+    .subheading-container::before {
+    content: "—" !important;
+    margin-right: 0.4rem !important;
+    color: var(--knight-pnj-accent) !important;
+    -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+  }
+
+  /* Les lignes ne séparent que les sections, jamais les entrées individuelles. */
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-final-lines)
+    :is(.statblock-trait-prop, .traits-container, .column > .statblock-trait-prop) {
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Ne pas dépendre du nom de classe attribué au subheading par le plugin. */
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(h1) {
+    display: flex !important;
+    flex-flow: row nowrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border-bottom: 2px solid var(--knight-pnj-accent) !important;
+    background: #182b38 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(h1) > .statblock-inline-item.group-container {
+    display: flex !important;
+    flex: 0 0 auto !important;
+    flex-flow: row nowrap !important;
+    align-items: baseline !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+    padding: 0.42rem 0.7rem !important;
+    overflow: visible !important;
+    background: transparent !important;
+    white-space: nowrap !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(h1)
+    :is(.heading-container, .subheading-container, .subheading, [class*="subheading"]) {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: baseline !important;
+    width: auto !important;
+    min-width: max-content !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(h1) h1 {
+    display: block !important;
+    width: auto !important;
+    min-width: max-content !important;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    color: #fff !important;
+    text-align: center !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(h1)
+    :is(.subheading-container, .subheading, [class*="subheading"], .subheading-container *, .subheading *) {
+    color: var(--knight-pnj-accent) !important;
+    -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+    font-size: 0.82rem !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+  }
+
+  /* Le premier trait est parfois encapsulé dans un wrapper avec padding propre. */
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.statblock-item-container.traits-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.statblock-item-container.traits-container
+    > div.statblock-item-container.statblock-trait-prop,
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.statblock-item-container.statblock-trait-prop {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0.34rem 0.62rem !important;
+    box-sizing: border-box !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Neutraliser l'indentation ajoutée au wrapper interne des traits. */
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    .statblock-nested-traits,
+  html body div.statblock:has(.knight-bestiaire-officiel-marker)
+    .statblock-nested-traits {
+    margin-left: 0 !important;
+    margin-inline-start: 0 !important;
+    padding-left: 0 !important;
+    padding-inline-start: 0 !important;
+    text-indent: 0 !important;
+  }
+
+  /* Les liens restent dorés, y compris au survol, sans soulignement. */
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    a.internal-link,
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    a.internal-link:is(:hover, :focus, :active) {
+    color: var(--knight-pnj-link) !important;
+    -webkit-text-fill-color: var(--knight-pnj-link) !important;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    text-decoration-color: transparent !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+    div.column > div.inline-container:has(h1)
+    :is(.subheading-container, .subheading, [class*="subheading"])::before {
+    content: "—" !important;
+    margin-right: 0.4rem !important;
+    color: var(--knight-pnj-accent) !important;
+    -webkit-text-fill-color: var(--knight-pnj-accent) !important;
+  }
+
+  /* Un group transmet sa cls au heading enfant : le renderer place ce heading
+     directement dans .column, comme pour Knight Bestiaire Officiel. */
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-profile-title)
+    div.column > .heading-container.knight-pnj-official-title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0.42rem 0.7rem !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-bottom: 2px solid var(--knight-pnj-accent) !important;
+    background: #182b38 !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-palette-final)
+    :is(.trait-name, .property-name.trait-name, .knight-damage-value) {
+    color: var(--knight-pnj-mandarin) !important;
+    -webkit-text-fill-color: var(--knight-pnj-mandarin) !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-palette-final)
+    a.internal-link,
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-palette-final)
+    a.internal-link:is(:hover, :focus, :active) {
+    color: var(--knight-pnj-link) !important;
+    -webkit-text-fill-color: var(--knight-pnj-link) !important;
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    text-decoration-color: transparent !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-profile-title)
+    .heading-container.knight-pnj-official-title .flex-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-profile-title)
+    .heading-container.knight-pnj-official-title h1,
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-profile-title)
+    .heading-container.knight-pnj-official-title h1 * {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0.42rem 0.7rem !important;
+    border: 0 !important;
+    background: transparent !important;
+    white-space: nowrap !important;
+    color: #fff !important;
+    font-family: "Arial Narrow", "Roboto Condensed", var(--font-interface) !important;
+    font-size: 1.08rem !important;
+    font-style: normal !important;
+    font-weight: 900 !important;
+    line-height: 1.12 !important;
+    letter-spacing: 0.075em !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+  }
+
+/* Typographie ciblée des noms et libellés du PNJ officiel. */
+html body div.statblock:has(.knight-pnj-officiel-marker)
+  :is(
+    .knight-pnj-official-exceptional,
+    .knight-pnj-official-capacities,
+    .knight-pnj-official-weapons
+  )
+  :is(.trait-name, .property-name.trait-name),
+html body div.statblock:has(.knight-pnj-officiel-marker)
+  :is(
+    .knight-pnj-official-exceptional,
+    .knight-pnj-official-capacities,
+    .knight-pnj-official-weapons
+  )
+  :is(.trait-name, .property-name.trait-name) * {
+  font-style: normal !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker)
+  div.inline-container:has(.statblock-table.aspects)
+  .statblock-table.aspects .statblock-table-header,
+html body div.statblock:has(.knight-pnj-officiel-marker)
+  div.inline-container:has(.line.defense) .property-name {
+  font-style: italic !important;
+}
+
+html body div.statblock:has(.knight-pnj-officiel-marker)
+  div.property-name.trait-name,
+html body div.statblock:has(.knight-pnj-officiel-marker)
+  div.property-name.trait-name *,
+html body div.statblock:has(.knight-bestiaire-officiel-marker)
+  div.property-name.trait-name,
+html body div.statblock:has(.knight-bestiaire-officiel-marker)
+  div.property-name.trait-name * {
+  font-style: normal !important;
+}
+
+@media print {
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final) {
+    --knight-pnj-accent: #555;
+    --knight-pnj-mandarin: #111;
+    --knight-pnj-link: #111;
+    --knight-pnj-dark: #fff;
+    --knight-pnj-cell: #fff;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    border: 1px solid #555 !important;
+    background: #fff !important;
+    color: #111 !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    > div.column {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    .heading-container.knight-pnj-official-title {
+    background: #222 !important;
+    color: #fff !important;
+    border-bottom: 1px solid #555 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    .heading-container.knight-pnj-official-title :is(h1, h1 *) {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    div.column > div.group-container:has(> h3.section-header) {
+    height: 1px !important;
+    min-height: 1px !important;
+    max-height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #555 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    div.column > div.group-container > h3.section-header {
+    display: none !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    div.column > div.inline-container.knight-pnj-official-profile-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 5fr) !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    border-bottom: 1px solid #555 !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    .statblock-table.aspects .table-item {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    :is(.statblock-table-header, .property-name, .section-header.point-faible) {
+    background: #555 !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    div.column > div.inline-container.knight-pnj-official-combat-row {
+    display: grid !important;
+    grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    border-bottom: 1px solid #555 !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    .knight-pnj-official-combat-row > .statblock-inline-item,
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    .knight-pnj-official-combat-row .line {
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #111 !important;
+    border-color: #aaa !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    :is(.traits-container, .statblock-trait-prop, .property.trait, .statblock-markdown) {
+    background: #fff !important;
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    .statblock-trait-prop {
+    margin: 0 !important;
+    padding: 0.28rem 0.5rem !important;
+    border: 0 !important;
+    border-bottom: 1px solid #ccc !important;
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+
+  html body div.statblock:has(.knight-pnj-officiel-marker):not(#knight-pnj-print-final)
+    :is(p, span, em, strong, .trait-name, .property-name.trait-name, .knight-damage-value, a.internal-link) {
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+  }
+}
+
+@media print {
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2) {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid #555 !important;
+    background: #fff !important;
+    color: #111 !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    :is(p, span, em, strong, b, a, .statblock-markdown, .line, .trait,
+        .trait-name, .property-name, .knight-damage-value) {
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    .heading-container.knight-pnj-official-title {
+    background: #fff !important;
+    color: #111 !important;
+    border-bottom: 1px solid #555 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    .heading-container.knight-pnj-official-title :is(h1, h1 *) {
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    :is(.statblock-table-header, .line .property-name) {
+    background: #555 !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    .property-name.trait-name {
+    background: #fff !important;
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+    font-style: normal !important;
+    text-transform: none !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    :is(.statblock-table.aspects .table-item, .line, .traits-container,
+        .statblock-trait-prop, .property.trait, .statblock-markdown) {
+    background: #fff !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    .statblock-table.aspects .table-item > span:not(.statblock-table-header) .statblock-markdown,
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    .statblock-table.aspects .table-item > span:not(.statblock-table-header) p {
+    font-size: 11pt !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    .knight-pnj-official-combat-row .statblock-markdown,
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2)
+    .knight-pnj-official-combat-row .statblock-markdown p {
+    font-size: 0.82rem !important;
+  }
+}
+
+@media print {
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2) {
+    font-size: 8.2pt !important;
+    line-height: 1.12 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2)
+    :is(p, .statblock-markdown, .property.trait) {
+    font-size: 8.2pt !important;
+    line-height: 1.12 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2)
+    .heading-container.knight-pnj-official-title .heading.statblock-heading {
+    font-size: 13pt !important;
+    line-height: 1.05 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2)
+    :is(.statblock-table-header, .line .property-name, .section-header.point-faible) {
+    font-size: 6.8pt !important;
+    line-height: 1 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2)
+    :is(.statblock-table.aspects .table-item > span:not(.statblock-table-header),
+        .knight-pnj-official-combat-row .statblock-markdown) {
+    font-size: 8.5pt !important;
+    line-height: 1 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2):not(#knight-pnj-print-traits-1):not(#knight-pnj-print-traits-2)
+    :is(p, .statblock-markdown p) {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2):not(#knight-pnj-print-traits-1):not(#knight-pnj-print-traits-2)
+    div.column > div.statblock-item-container.traits-container
+    > div.statblock-item-container.statblock-trait-prop,
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2):not(#knight-pnj-print-traits-1):not(#knight-pnj-print-traits-2)
+    div.column > div.statblock-item-container.statblock-trait-prop {
+    margin: 0 !important;
+    padding: 0.13rem 0.35rem !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    line-height: 1.24 !important;
+    overflow: visible !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2):not(#knight-pnj-print-traits-1):not(#knight-pnj-print-traits-2)
+    div.column :is(.traits-container, .statblock-trait-prop)
+    :is(.property.trait, .statblock-markdown, .statblock-markdown p) {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    line-height: 1.24 !important;
+    overflow: visible !important;
+  }
+
+  html body div.statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker)):not(#knight-pnj-print-match-1):not(#knight-pnj-print-match-2):not(#knight-pnj-print-compact-1):not(#knight-pnj-print-compact-2):not(#knight-pnj-print-traits-1):not(#knight-pnj-print-traits-2)
+    .statblock-trait-prop + .statblock-trait-prop {
+    margin-top: 0 !important;
   }
 }

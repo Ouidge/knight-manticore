@@ -408,10 +408,11 @@ function generatedStatblock() {
   if (combatSheet) {
     const profileKind = isCreature ? (isBand ? "Bande" : "Créature") : "PNJ";
     const subtypeAlreadyIncludesKind = subtype && new RegExp(`^${profileKind}\\b`, "i").test(subtype);
-    const profileSuffix = subtypeAlreadyIncludesKind
-      ? subtype
-      : [profileKind, subtype].filter(Boolean).join(", ");
-    lines.push(`profile: ${yamlString(`${actor.name || "PNJ"} — ${profileSuffix}`)}`);
+    const profileSuffix = isCreature
+      ? (subtypeAlreadyIncludesKind ? subtype : [profileKind, subtype].filter(Boolean).join(", "))
+      : subtype;
+    const profile = [actor.name || "PNJ", profileSuffix].filter(Boolean).join(" — ");
+    lines.push(`profile: ${yamlString(profile)}`);
   }
   const weakPoint = htmlToMarkdown(system.pointsFaibles || system.pointfaible);
   if (weakPoint) lines.push(`pointfaible: ${yamlString(weakPoint)}`);
@@ -536,14 +537,14 @@ where file.path = this.file.path
 
   const titlePattern = /^#(?!#)\s+.*$/m;
   if (titlePattern.test(updated)) {
-    updated = updated.replace(titlePattern, `# \`= this.file.name\`\n${summary}\n\n${block}`);
+    updated = updated.replace(titlePattern, `# \`= link(this.file.name)\`\n${summary}\n\n${block}`);
   } else {
     const frontmatterEnd = updated.startsWith("---\n") ? updated.indexOf("\n---", 4) : -1;
     if (frontmatterEnd >= 0) {
       const insertionPoint = frontmatterEnd + 4;
-      updated = `${updated.slice(0, insertionPoint)}\n# \`= this.file.name\`\n${summary}\n\n${block}${updated.slice(insertionPoint)}`;
+      updated = `${updated.slice(0, insertionPoint)}\n# \`= link(this.file.name)\`\n${summary}\n\n${block}${updated.slice(insertionPoint)}`;
     } else {
-      updated = `# \`= this.file.name\`\n${summary}\n\n${block}\n\n${updated}`;
+      updated = `# \`= link(this.file.name)\`\n${summary}\n\n${block}\n\n${updated}`;
     }
   }
 
@@ -554,7 +555,7 @@ where file.path = this.file.path
 }
 
 function ensureCreatureHeader(markdown) {
-  const title = "# `= this.file.name`";
+  const title = "# `= link(this.file.name)`";
   if (/^#(?!#)\s+.*$/m.test(markdown)) return markdown.replace(/^#(?!#)\s+.*$/m, title);
   const frontmatterEnd = markdown.startsWith("---\n") ? markdown.indexOf("\n---", 4) : -1;
   if (frontmatterEnd >= 0) {

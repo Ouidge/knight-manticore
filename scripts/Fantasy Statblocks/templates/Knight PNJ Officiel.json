@@ -1,0 +1,248 @@
+{
+  "blocks": [
+    {
+      "type": "group",
+      "id": "officialpnjtitlegroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "heading",
+          "id": "officialpnjtitle",
+          "properties": ["profile"],
+          "conditioned": true,
+          "size": 1
+        }
+      ],
+      "heading": "",
+      "hasRule": false,
+      "cls": "knight-pnj-official-title knight-pnj-officiel-marker"
+    },
+    {
+      "type": "group",
+      "id": "officialpnjprofilegroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "officialpnjprofilerow",
+          "properties": [],
+          "nested": [
+            {
+              "type": "text",
+              "id": "officialpnjweakpoint",
+              "properties": ["pointfaible"],
+              "text": null,
+              "fallback": "-",
+              "heading": "Point faible",
+              "hasRule": false,
+              "conditioned": true,
+              "markdown": true,
+              "cls": "knight-pnj-official-weakpoint"
+            },
+            {
+              "type": "table",
+              "id": "officialpnjaspects",
+              "properties": ["aspects"],
+              "headers": ["CHAIR", "BÊTE", "MACHINE", "DAME", "MASQUE"],
+              "calculate": false,
+              "hasRule": false,
+              "conditioned": true,
+              "markdown": true,
+              "cls": "knight-pnj-official-aspects"
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-pnj-official-profile-row"
+        }
+      ],
+      "heading": "Aspects",
+      "hasRule": false,
+      "cls": "knight-pnj-official-section knight-pnj-official-profile-section"
+    },
+    {
+      "type": "group",
+      "id": "officialpnjcombatgroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "inline",
+          "id": "officialpnjcombatrow",
+          "properties": [],
+          "nested": [
+            {
+              "type": "property",
+              "id": "officialpnjdefense",
+              "properties": ["defense"],
+              "fallback": "-",
+              "display": "Défense"
+            },
+            {
+              "type": "property",
+              "id": "officialpnjreaction",
+              "properties": ["reaction"],
+              "fallback": "-",
+              "display": "Réaction"
+            },
+            {
+              "type": "property",
+              "id": "officialpnjinitiative",
+              "properties": ["initiative"],
+              "fallback": "-",
+              "display": "Initiative"
+            },
+            {
+              "type": "property",
+              "id": "officialpnjps",
+              "properties": ["ps"],
+              "fallback": "-",
+              "display": "PS",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "officialpnjpa",
+              "properties": ["pa"],
+              "fallback": "-",
+              "display": "PA",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "officialpnjpe",
+              "properties": ["pe"],
+              "fallback": "-",
+              "display": "PE",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "officialpnjcdf",
+              "properties": ["cdf"],
+              "fallback": "-",
+              "display": "CdF",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "officialpnjshield",
+              "properties": ["bouclier"],
+              "fallback": "-",
+              "display": "Bouclier",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "officialpnjcohesion",
+              "properties": ["cohesion"],
+              "fallback": "-",
+              "display": "Cohésion",
+              "conditioned": true
+            },
+            {
+              "type": "property",
+              "id": "officialpnjoverflow",
+              "properties": ["debordement"],
+              "fallback": "-",
+              "display": "Débordement",
+              "conditioned": true
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-pnj-official-combat-row"
+        }
+      ],
+      "heading": "Combat",
+      "hasRule": false,
+      "cls": "knight-pnj-official-section knight-pnj-official-combat-section"
+    },
+    {
+      "type": "group",
+      "id": "officialpnjaegroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialpnjae",
+          "properties": ["aspects_exceptionnels"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "cls": "knight-pnj-official-exceptional"
+        }
+      ],
+      "heading": "Aspects exceptionnels",
+      "hasRule": false,
+      "cls": "knight-pnj-official-section knight-pnj-official-exceptional-section"
+    },
+    {
+      "type": "group",
+      "id": "officialpnjcapacitiesgroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialpnjcapacities",
+          "properties": ["capacites"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "dice": false,
+          "cls": "knight-pnj-official-capacities"
+        }
+      ],
+      "heading": "Capacités",
+      "hasRule": false,
+      "cls": "knight-pnj-official-section knight-pnj-official-capacities-section"
+    },
+    {
+      "type": "group",
+      "id": "officialpnjweaponsgroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialpnjweapons",
+          "properties": ["armes"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "cls": "knight-pnj-official-weapons"
+        }
+      ],
+      "heading": "Armes",
+      "hasRule": false,
+      "cls": "knight-pnj-official-section knight-pnj-official-weapons-section"
+    },
+    {
+      "type": "group",
+      "id": "officialpnjmodulesgroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialpnjmodules",
+          "properties": ["modules"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "cls": "knight-pnj-official-modules"
+        }
+      ],
+      "heading": "Modules",
+      "hasRule": false,
+      "cls": "knight-pnj-official-section knight-pnj-official-modules-section"
+    }
+  ],
+  "cssProperties": {
+    "propertyNameFontColor": "#ffffff",
+    "traitsNameFontColor": "#e6ad83"
+  },
+  "name": "Knight PNJ Officiel",
+  "id": "d7a1c5e90342"
+}

@@ -6,8 +6,9 @@ name: Rome
 code: M2
 arc: Bête
 image: "[[M2-Rome.webp]]"
-PG:
-PX:
+PG: 14 
+PX: 12
+PH: 1
 PJ:
   - "[[Forge]]"
   - "[[Yurei]]"
@@ -36,6 +37,7 @@ PJ:
 - Salute
 - Maia 15-6
 
-#
 
 ![[M2-Fresque-Lancelot.png]]
+
+![[M3-Message.png]]
