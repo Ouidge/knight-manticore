@@ -154,7 +154,8 @@
   ],
   "cssProperties": {
     "propertyNameFontColor": "#ffffff",
-    "traitsNameFontColor": "#9dbbe0"
+    "traitsNameFontColor": "#9dbbe0",
+    "traitsNameFontStyle": "normal"
   },
   "name": "Knight Bestiaire Officiel",
   "id": "d91f4a8c2e70"

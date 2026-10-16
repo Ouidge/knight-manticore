@@ -41,6 +41,7 @@ projet/
     │       ├── knight-statblocks.css
     │       └── fiche-personnage-print.css
     ├── Macro Foundry/
+    │   ├── macro-foundry-creature-elite.js
     │   ├── macro-foundry-export-pnj.js
     │   └── macro-foundry-export-bestiaire.js
     ├── convert-foundry-knight.mjs
@@ -105,6 +106,28 @@ Pour exporter uniquement le bestiaire depuis Foundry :
 La macro exporte les acteurs de type `creature` et `bande`. Comme pour les PNJ, les
 entrées placées dans un dossier dont le nom commence par `_`, ou dans l’un de
 ses sous-dossiers, sont ignorées.
+
+### Générer une créature ou une bande élite dans Foundry
+
+Le fichier `scripts/Macro Foundry/macro-foundry-creature-elite.js` est une macro
+de type **Script** destinée au MJ, pour Foundry VTT 14 et Knight 3.58 ou plus.
+
+1. Créer une macro Script dans Foundry et y copier tout le fichier.
+2. Placer sur la scène puis sélectionner exactement un token de type `creature`
+   ou `bande`.
+3. Exécuter la macro et choisir le mode automatique ou interactif.
+4. Vérifier obligatoirement le Seigneur proposé, puis confirmer l'aperçu final.
+
+La macro conserve l'acteur original. Elle crée `Nom (élite)` dans le même dossier
+Foundry, restaure complètement ses ressources et place son nouveau token à côté
+du token source. Les capacités ajoutées sont copiées depuis les compendiums
+d'Items Knight accessibles. La macro s'interrompt si une capacité nécessaire
+est introuvable.
+
+Les acteurs générés portent le marqueur technique
+`flags.world.knightManticoreElite`. Il n'apparaît pas sur la fiche, mais reste
+présent dans l'export JSON et empêche de transformer une seconde fois le même
+acteur élite.
 
 ### Export groupé depuis Foundry
 

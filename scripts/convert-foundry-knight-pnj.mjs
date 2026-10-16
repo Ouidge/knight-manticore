@@ -132,7 +132,7 @@ function highlightedDamage(value) {
   return `<span class="knight-damage-value">${value}</span>`;
 }
 
-function compactText(value, maximum = 190) {
+function compactText(value, maximum = 256) {
   const text = htmlToMarkdown(value).replace(/\s+/g, " ").trim();
   if (text.length <= maximum) return text;
   const firstSentence = text.match(/^.*?[.!?](?:\s|$)/)?.[0]?.trim();
