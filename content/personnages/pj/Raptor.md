@@ -49,7 +49,7 @@ cssclasses:
 <div class="knight-stat-table">
 <div class="knight-stat-cells">
 <div><span>PS</span><strong>22</strong></div>
-<div><span>PEs</span><strong>55 / 60</strong></div>
+<div><span>PEs</span><strong>55 / 55</strong></div>
 <div><span>PA</span><strong>50</strong></div>
 <div><span>PE</span><strong>70</strong></div>
 <div><span>CdF</span><strong>12</strong></div>

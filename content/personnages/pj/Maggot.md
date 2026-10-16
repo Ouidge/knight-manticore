@@ -41,7 +41,7 @@ cssclasses:
 <div class="knight-portrait"><img src="../__images/pj/Maggot-portrait.png" alt="Portrait de Maggot"></div>
 <div class="knight-progression" aria-label="Progression">
 <span><strong>PG</strong> 89 / 239</span>
-<span><strong>PX</strong> 47 / 166</span>
+<span><strong>PX</strong> 31 / 166</span>
 </div>
 <div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
 <span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 3 / 6</span>
@@ -54,7 +54,7 @@ cssclasses:
 <div class="knight-combat-grid">
 <div class="knight-stat-table">
 <div class="knight-stat-cells">
-<div><span>PS</span><strong>76</strong></div>
+<div><span>PS</span><strong>79</strong></div>
 <div><span>PEs</span><strong>67 / 75</strong></div>
 <div><span>PA</span><strong>60</strong></div>
 <div><span>PE</span><strong>60</strong></div>
@@ -77,7 +77,7 @@ cssclasses:
 <h3>Chair — 8</h3>
 <div class="knight-characteristics">
 <div class="knight-characteristic"><span>Déplacement</span><strong>3</strong><small>OD 0</small></div>
-<div class="knight-characteristic"><span>Force</span><strong>7</strong><small>OD 2</small></div>
+<div class="knight-characteristic"><span>Force</span><strong>8</strong><small>OD 2</small></div>
 <div class="knight-characteristic"><span>Endurance</span><strong>3</strong><small>OD 1</small></div>
 </div></section>
 <section class="knight-domain">
@@ -136,11 +136,6 @@ cssclasses:
 
 <section class="knight-traits"><h2>Inconvénients</h2>
 <section class="knight-trait">
-<h3>Prisonnier</h3>
-<div class="knight-trait-description"><p>Le personnage est un prisonnier, recruté par le Knight directement en prison. Pour s'assurer qu'il ne tente pas de s'échapper, la section Tarasque du Knight a implanté dans le héros un micro-explosif commandé à distance capable de lui faire sauter la cervelle à la moindre incartade. En termes de jeu, la motivation majeure du personnage doit être : Retrouver la liberté. Tant que cette motivation n'a pas été accomplie, le personnage ne peut pas récupérer ou gagner de points d'espoir (les conditions de l'accomplissement de cette motivation doivent être créées en concertation avec le MJ, il peut par exemple s'agir d'un nombre de missions accomplies, d'un acte particulièrement héroïque, etc.).</p></div>
-</section>
-
-<section class="knight-trait">
 <h3>Tarasque - Fou dangereux</h3>
 <div class="knight-trait-description"><p>Même s’il n’est plus au sein de la section Tarasque, le chevalier reste surveillé par Sagramor et par les agents du Korrigan. À la moindre incartade, au moindre signe de désespoir, il est automatiquement « neutralisé » par l’explosif que la section Tarasque lui a placé dans la tête. Pour représenter cela, si au début d’une scène le personnage est à moins de 10 points d’espoir, il est automatiquement tué par l’explosif et retiré du jeu.</p></div>
 </section>
@@ -156,21 +151,21 @@ cssclasses:
 <h3 class="knight-equipment-title">Arsenal</h3>
 <table class="knight-arsenal-table"><thead><tr><th>Arme</th><th>Portée</th><th>Dégâts</th><th>Violence</th><th>Effets</th><th>Dégâts PJ</th></tr></thead>
 <tbody class="knight-weapon-group">
-<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td class="knight-damage-cell">1D6</td><td class="knight-damage-cell">1</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/silencieux">Silencieux</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">1D6 + 13</strong><small class="knight-damage-calculation-detail">Force 7 · OD Force +6</small><small class="knight-dv-bonus"><span>+1 (Silencieux — surprise, invisibilité, Ghost ou Changeling)</span></small></td></tr>
+<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/pistolet-de-service/">Pistolet de service ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td class="knight-damage-cell">1D6</td><td class="knight-damage-cell">1</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/silencieux">Silencieux</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">1D6 + 14</strong><small class="knight-damage-calculation-detail">Force 8 · OD Force +6</small><small class="knight-dv-bonus"><span>+1 (Silencieux — surprise, invisibilité, Ghost ou Changeling)</span></small></td></tr>
 <tr><td>Tir · M</td><td class="knight-damage-cell">2D6 + 6</td><td class="knight-damage-cell">1D6</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/silencieux">Silencieux</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">2D6 + 6</strong><small class="knight-dv-bonus"><span>+1 (Silencieux — surprise, invisibilité, Ghost ou Changeling)</span></small></td></tr>
 </tbody>
 <tbody class="knight-weapon-group">
-<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/marteau-epieu/">Marteau-épieu ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td class="knight-damage-cell">3D6</td><td class="knight-damage-cell">1D6</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/perce-armure">Perce armure 40</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">3D6 + 13</strong><small class="knight-damage-calculation-detail">Force 7 · OD Force +6</small></td></tr>
+<tr><td rowspan="2"><a href="https://knight-jdr-systeme.fr/fr/weapon/marteau-epieu/">Marteau-épieu ↗</a><small class="knight-weapon-mode">Contact / Tir</small></td><td>Contact · C</td><td class="knight-damage-cell">3D6</td><td class="knight-damage-cell">1D6</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/perce-armure">Perce armure 40</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">3D6 + 14</strong><small class="knight-damage-calculation-detail">Force 8 · OD Force +6</small></td></tr>
 <tr><td>Tir · CT</td><td class="knight-damage-cell">3D6 + 12</td><td class="knight-damage-cell">3D6 + 12</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/chargeur">Chargeur 1</a>, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/dégâts-continus">Dégâts continus 3</a>, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/dispersion">Dispersion 3</a>, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/lumière">Lumière 2</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">3D6 + 12</strong><small class="knight-dv-bonus"><span>Dégâts continus 3</span></small></td></tr>
 </tbody>
 <tbody class="knight-weapon-group">
-<tr><td rowspan="1"><a href="https://knight-jdr-systeme.fr/fr/module/attaque-sur-casque/">Attaque sur casque niv. 1 ↗</a></td><td>C</td><td class="knight-damage-cell">1D6</td><td class="knight-damage-cell">—</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/chargeur">Chargeur 6</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">1D6 + 13</strong><small class="knight-damage-calculation-detail">Force 7 · OD Force +6</small></td></tr>
+<tr><td rowspan="1"><a href="https://knight-jdr-systeme.fr/fr/module/attaque-sur-casque/">Attaque sur casque niv. 1 ↗</a></td><td>C</td><td class="knight-damage-cell">1D6</td><td class="knight-damage-cell">—</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/chargeur">Chargeur 6</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">1D6 + 14</strong><small class="knight-damage-calculation-detail">Force 8 · OD Force +6</small></td></tr>
 </tbody>
 <tbody class="knight-weapon-group">
-<tr><td rowspan="1"><a href="https://knight-jdr-systeme.fr/fr/module/lame-de-bras-niv-2-maggot/">Lame de bras niv. 2 Maggot ↗</a></td><td>C</td><td class="knight-damage-cell">3D6</td><td class="knight-damage-cell">1D6</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/destructeur">Destructeur</a>, Sœur, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/sur-mesure">Sur mesure</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">3D6 + 21</strong><small class="knight-damage-calculation-detail">Force 7 · OD Force +6 · Sur mesure +8</small><small class="knight-dv-bonus"><span>+2D6 (Destructeur)</span></small></td></tr>
+<tr><td rowspan="1"><a href="https://knight-jdr-systeme.fr/fr/module/lame-de-bras-niv-2-maggot/">Lame de bras niv. 2 Maggot ↗</a></td><td>C</td><td class="knight-damage-cell">3D6</td><td class="knight-damage-cell">1D6</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/destructeur">Destructeur</a>, Sœur, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/sur-mesure">Sur mesure</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">3D6 + 22</strong><small class="knight-damage-calculation-detail">Force 8 · OD Force +6 · Sur mesure +8</small><small class="knight-dv-bonus"><span>+2D6 (Destructeur)</span></small></td></tr>
 </tbody>
 <tbody class="knight-weapon-group">
-<tr><td rowspan="1"><a href="https://knight-jdr-systeme.fr/fr/module/griffes-de-combat/">Griffes de combat niv. 2 ↗</a></td><td>C</td><td class="knight-damage-cell">3D6</td><td class="knight-damage-cell">1D6</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/meurtrier">Meurtrier</a>, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/sur-mesure">Sur mesure</a>, Sœur</td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">3D6 + 21</strong><small class="knight-damage-calculation-detail">Force 7 · OD Force +6 · Sur mesure +8</small><small class="knight-dv-bonus"><span>+2D6 (Meurtrier)</span></small></td></tr>
+<tr><td rowspan="1"><a href="https://knight-jdr-systeme.fr/fr/module/griffes-de-combat/">Griffes de combat niv. 2 ↗</a></td><td>C</td><td class="knight-damage-cell">3D6</td><td class="knight-damage-cell">1D6</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/meurtrier">Meurtrier</a>, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/sur-mesure">Sur mesure</a>, Sœur</td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">3D6 + 22</strong><small class="knight-damage-calculation-detail">Force 8 · OD Force +6 · Sur mesure +8</small><small class="knight-dv-bonus"><span>+2D6 (Meurtrier)</span></small></td></tr>
 </tbody>
 <tbody class="knight-grenade-group">
 <tr class="knight-grenade-row knight-first-grenade"><td><a href="https://knight-jdr-systeme.fr/fr/weapon/grenade-intelligente/">Grenade antiblindage ↗</a></td><td>CT</td><td class="knight-damage-cell">3D6</td><td class="knight-damage-cell">3D6</td><td class="knight-effects-cell"><a class="internal knight-effect-link" href="/aides-de-jeu/effets/destructeur">Destructeur</a>, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/dispersion">Dispersion 6</a>, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/pénétrant">Pénétrant 6</a>, <a class="internal knight-effect-link" href="/aides-de-jeu/effets/perce-armure">Perce armure 20</a></td><td class="knight-calculated-damage-cell"><strong class="knight-damage-calculation">3D6</strong><small class="knight-dv-bonus"><span>+2D6 (Destructeur)</span></small></td></tr>

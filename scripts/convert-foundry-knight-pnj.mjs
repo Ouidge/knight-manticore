@@ -132,14 +132,6 @@ function highlightedDamage(value) {
   return `<span class="knight-damage-value">${value}</span>`;
 }
 
-function compactText(value, maximum = 256) {
-  const text = htmlToMarkdown(value).replace(/\s+/g, " ").trim();
-  if (text.length <= maximum) return text;
-  const firstSentence = text.match(/^.*?[.!?](?:\s|$)/)?.[0]?.trim();
-  if (firstSentence && firstSentence.length <= maximum) return firstSentence;
-  return `${text.slice(0, maximum - 1).trimEnd()}…`;
-}
-
 function capacityParameter(name) {
   return number(String(name).match(/\((\d+)\)/)?.[1]);
 }
@@ -178,7 +170,7 @@ function compactCapacityDescription(capability) {
     structured.push(`**Dégâts :** ${highlightedDamage(diceValue(capability.system.attaque.degats))}`);
     if (capability.system.attaque.portee) structured.push(`Portée ${capability.system.attaque.portee}`);
   }
-  return structured.join(" · ") || compactText(capability.system?.description) || "—";
+  return structured.join(" · ") || htmlToMarkdown(capability.system?.description) || "—";
 }
 
 function generatedBlock() {
@@ -389,7 +381,7 @@ function generatedStatblock() {
   const lines = [
     "<!-- BEGIN PNJ STATBLOCK -->",
     "```statblock",
-    `layout: ${combatSheet ? (isCreature ? "Knight Bestiaire Officiel" : "Knight PNJ Combat") : (isCreature ? "Knight Bestiaire" : "Knight PNJ")}`,
+    `layout: ${combatSheet ? (isCreature ? "Knight Bestiaire Officiel" : "Knight PNJ Officiel") : (isCreature ? "Knight Bestiaire" : "Knight PNJ")}`,
     // Les layouts PNJ et Bestiaire gèrent eux-mêmes leur structure interne.
     "columns: 1",
     "columnWidth: 810",

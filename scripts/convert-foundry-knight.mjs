@@ -190,14 +190,20 @@ function traitModifier(type, path) {
 }
 
 function actorModifier(stat) {
-  const bonuses = Object.values(system[stat]?.bonus ?? {}).reduce(
-    (sum, value) => sum + number(value),
-    0,
-  );
-  const penalties = Object.values(system[stat]?.malus ?? {}).reduce(
-    (sum, value) => sum + number(value),
-    0,
-  );
+  /* Foundry exporte déjà les effets des avantages et des inconvénients dans
+     les agrégats de l'acteur. Le convertisseur relit ensuite leurs objets afin
+     de calculer les fiches : exclure ces deux clés évite de compter deux fois
+     un bonus comme « Dur à cuire ». */
+  const aggregate = (values) =>
+    Object.entries(values ?? {}).reduce(
+      (sum, [source, value]) =>
+        ["avantages", "desavantages"].includes(source)
+          ? sum
+          : sum + number(value),
+      0,
+    );
+  const bonuses = aggregate(system[stat]?.bonus);
+  const penalties = aggregate(system[stat]?.malus);
   return bonuses - penalties;
 }
 

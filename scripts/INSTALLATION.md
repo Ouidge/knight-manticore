@@ -57,6 +57,11 @@ projet/
 
 ## Conversion
 
+Les bonus et malus issus des avantages et inconvénients sont lus depuis les
+objets correspondants. Leurs valeurs agrégées dans l'acteur Foundry sont
+ignorées afin d'éviter leur double comptage, notamment pour les PS accordés par
+« Dur à cuire ».
+
 Depuis PowerShell, dans le dossier `scripts` :
 
 ```powershell
@@ -164,8 +169,8 @@ Statblocks. Un lien vers leur fiche de combat autonome est ajouté directement
 sous le titre principal. La présentation et la tactique restent dans le corps
 de la note, dans une grille 60/40 qui
 repasse automatiquement sur une seule colonne en affichage étroit. La fiche de
-combat autonome située dans `Acteurs/PNJ/Fiches/` utilise le layout
-`Knight PNJ Combat` et reprend les aspects, les aspects exceptionnels, les
+combat autonome située dans `Acteurs/PNJ/Fiches/` utilise désormais le layout
+`Knight PNJ Officiel` et reprend les aspects, les aspects exceptionnels, les
 valeurs de combat, les capacités, les modules et les armes. Lors d'une nouvelle
 conversion, un ancien bloc délimité par `BEGIN/END PNJ STATBLOCK` est supprimé
 des notes narratives sans toucher aux notes manuelles.
@@ -407,7 +412,7 @@ La feuille de style masque automatiquement le portrait et les descriptions
 narratives. La pagination est laissée au navigateur afin d’utiliser au mieux
 l’espace disponible.
 
-## Imprimer deux fiches A5 sur une page A4
+## Imprimer plusieurs fiches PNJ / Bestiaire sur des pages A4
 
 Cette fonction utilise le plugin Obsidian **QuickAdd** et ne dépend ni d’une
 note active ni du mode édition.
@@ -420,20 +425,33 @@ note active ni du mode édition.
    `User Script`, puis sélectionner
    `QuickAdd/Impression - 2 fiches PNJ-Bestiaire A4.js`.
 4. Activer l’éclair de cette Choice puis lancer la commande depuis la palette.
-5. Choisir successivement la fiche supérieure puis la fiche inférieure.
-6. Le script crée une note portant les noms des deux fiches, par exemple
+5. Choisir successivement les fiches à imprimer. À partir de la deuxième,
+   sélectionner `✓ Terminer la sélection` lorsque la planche est complète.
+6. Le script crée une note portant les noms des fiches, par exemple
    `_Print/Impression PNJ-Bestiaire - Louve + Séraphin - A4.md`, puis l’ouvre.
    Le même intitulé est ajouté à la métadonnée `title` pour être repris par le
    PDF. Le dossier `_Print`, situé à la racine du Vault, est créé automatiquement
    s'il n'existe pas.
 
 Le sélecteur propose les fiches de combat portant `subtype: pnj`,
-`subtype: creature` ou `subtype: bande`. Il est donc possible de mélanger deux
-catégories sur la même planche.
+`subtype: creature` ou `subtype: bande`. Il est donc possible de mélanger les
+catégories et de sélectionner plus de deux fiches dans la même planche.
 7. Imprimer cette note en A4 portrait, à l’échelle 100 %, sans en-têtes ni
    pieds de page.
 
-Chaque moitié de la page correspond à une fiche A5 paysage. Les descriptions
-complètes restent présentes et le contenu est réduit à 72 %. Pour une fiche
-exceptionnellement longue, utiliser l’export standard A4 paysage afin de
-conserver une taille de lecture confortable.
+La feuille réserve automatiquement une marge de 10 mm sur les quatre côtés :
+ne pas ajouter de marge supplémentaire dans la boîte de dialogue d'impression.
+
+Les descriptions complètes restent présentes. Le statblock conserve son
+échelle réelle de 100 %, sans réduction destinée à placer davantage de fiches.
+Les textes, valeurs, libellés et en-têtes restent dimensionnés pour être lisibles
+sur papier. La pagination n'impose plus deux emplacements fixes : plusieurs
+fiches courtes peuvent partager une page, mais la lisibilité reste prioritaire.
+Une fiche plus haute que la zone imprimable peut se poursuivre sur la page
+suivante. L'impression reste toujours configurée en A4 portrait.
+
+QuickAdd copie les blocs `statblock` dans la note d'impression au lieu
+d'embarquer les notes sources. Chaque carte forme ainsi un bloc identifiable et
+conserve un pointillé de coupe entouré de 10 mm d'espace blanc et couvrant toute
+la largeur imprimable entre les marges. La planche est un instantané :
+il faut la recréer après une modification des fiches sources.
