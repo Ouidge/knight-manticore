@@ -7885,3 +7885,123 @@ html body div.statblock:has(.knight-pnj-officiel-marker)
     line-height: 1.18 !important;
   }
 }
+
+/* Valeurs vitales et défensives : priorité à la lecture pendant la partie.
+   Placée en dernier pour prendre le pas sur les règles compactes historiques. */
+@media print {
+  html body .statblock
+    :is(
+      .line.defense,
+      .line.reaction,
+      .line.initiative,
+      .line.ps,
+      .line.pa,
+      .line.pe,
+      .line.cdf,
+      .line.egide,
+      .line.bouclier
+    )
+    .statblock-markdown,
+  html body .statblock
+    :is(
+      .line.defense,
+      .line.reaction,
+      .line.initiative,
+      .line.ps,
+      .line.pa,
+      .line.pe,
+      .line.cdf,
+      .line.egide,
+      .line.bouclier
+    )
+    .statblock-markdown p {
+    font-size: 16pt !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  html body .statblock .knight-damage-value {
+    font-size: 14pt !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  html body div.statblock:not(#knight-effect-print-1):not(#knight-effect-print-2):not(#knight-effect-print-3):not(#knight-effect-print-4)
+    .knight-effect-print {
+    display: block !important;
+    margin-top: 0.8mm !important;
+    padding-top: 0.8mm !important;
+    padding-bottom: 0.8mm !important;
+    border-top: 0.25mm dotted #777 !important;
+    font-size: 8.2pt !important;
+    font-weight: 400 !important;
+    line-height: 1.24 !important;
+  }
+
+  html body div.statblock:not(#knight-effect-print-1):not(#knight-effect-print-2):not(#knight-effect-print-3):not(#knight-effect-print-4)
+    .knight-effect-print + .knight-effect-print {
+    margin-top: 0.8mm !important;
+    padding-top: 0.8mm !important;
+  }
+
+  html body div.statblock:not(#knight-effect-print-1):not(#knight-effect-print-2):not(#knight-effect-print-3):not(#knight-effect-print-4)
+    .knight-effect-print strong {
+    font-weight: 800 !important;
+  }
+
+  /* Fantasy Statblocks place la valeur dans un paragraphe enfant direct.
+     Les sélecteurs sont volontairement explicites pour rester fiables avec
+     les classes Svelte générées par le plugin. */
+  html body .statblock .line.defense > .statblock-markdown > p,
+  html body .statblock .line.reaction > .statblock-markdown > p,
+  html body .statblock .line.initiative > .statblock-markdown > p,
+  html body .statblock .line.ps > .statblock-markdown > p,
+  html body .statblock .line.pa > .statblock-markdown > p,
+  html body .statblock .line.pe > .statblock-markdown > p,
+  html body .statblock .line.cdf > .statblock-markdown > p,
+  html body .statblock .line.egide > .statblock-markdown > p,
+  html body .statblock .line.bouclier > .statblock-markdown > p {
+    font-size: 16pt !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Les anciennes règles d'impression compactes ont une spécificité élevée
+     (plusieurs :not(#id)). Cette règle finale cible le conteneur réel de la
+     rangée de combat et les dépasse explicitement, sans agrandir les cases. */
+  html body div.statblock:not(#knight-combat-score-1):not(#knight-combat-score-2):not(#knight-combat-score-3):not(#knight-combat-score-4):not(#knight-combat-score-5):not(#knight-combat-score-6)
+    div.inline-container:has(.line.defense)
+    div.line > div.statblock-markdown,
+  html body div.statblock:not(#knight-combat-score-1):not(#knight-combat-score-2):not(#knight-combat-score-3):not(#knight-combat-score-4):not(#knight-combat-score-5):not(#knight-combat-score-6)
+    div.inline-container:has(.line.defense)
+    div.line > div.statblock-markdown > p {
+    font-size: 16pt !important;
+    font-weight: 800 !important;
+    line-height: 1.05 !important;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media screen {
+  html body .statblock .knight-effect-print {
+    display: none !important;
+  }
+}
+
+/* Le layout officiel conserve un groupe de titre "Combat" entre le tableau
+   des aspects et la rangée de valeurs. Comme le titre est volontairement
+   masqué, ce groupe ne doit pas laisser un second trait de séparation. */
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+  div.column > div.group-container:has(> h3.section-header.combat) {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}

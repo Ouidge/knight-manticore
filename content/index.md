@@ -6,8 +6,8 @@
 # <center>Bienvenue sur le site de la Coterie Manticore</center>
 
 > [!info]
-> Mission en cours : [[Mission 2]]
-> Prochaine Session :  16-10-2026
+> Mission en cours : [[Mission 3]] ✅
+> Prochaine Session :  à déterminer
 
 ## À explorer 
 

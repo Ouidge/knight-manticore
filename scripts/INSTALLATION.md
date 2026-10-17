@@ -66,6 +66,23 @@ Le score d'Égide est lu depuis `system.egide.base` et apparaît dans le tableau
 des ressources de la fiche publique, à l'écran comme à l'impression. Une fiche
 sans score d'Égide affiche « — ».
 
+Pour les PNJ, créatures et bandes possédant un Masque exceptionnel majeur,
+l'initiative exportée est automatiquement fixée à `30`, conformément à
+l'effet de cet aspect exceptionnel, même si Foundry conserve `3D6` dans son
+champ d'initiative générique.
+
+À l'impression, les valeurs de Défense, Réaction, Initiative, PS, PA, PE, CdF,
+Égide et Bouclier sont renforcées et agrandies indépendamment de leurs cases
+afin de rester immédiatement lisibles en partie : 16 pt dans les statblocks et
+14 pt dans les fiches PJ publiques. Les valeurs de dégâts mises en évidence
+sont imprimées en 14 pt gras, y compris lors de l'export d'un statblock seul.
+Le ciblage des scores utilise directement les classes de propriété générées par
+Fantasy Statblocks afin de fonctionner aussi dans l'export PDF natif du plugin.
+Sous les armes des fiches PNJ et Bestiaire, chaque effet connu reçoit également
+une phrase descriptive issue du catalogue, avec remplacement de X par sa valeur
+réelle. Ces descriptions sont masquées à l'écran, où les liens restent
+disponibles, et affichées uniquement à l'impression ou dans l'export PDF.
+
 Depuis PowerShell, dans le dossier `scripts` :
 
 ```powershell
@@ -459,3 +476,11 @@ d'embarquer les notes sources. Chaque carte forme ainsi un bloc identifiable et
 conserve un pointillé de coupe entouré de 10 mm d'espace blanc et couvrant toute
 la largeur imprimable entre les marges. La planche est un instantané :
 il faut la recréer après une modification des fiches sources.
+### Version 270 — lisibilité des scores et descriptions d'effets imprimées
+
+- Les valeurs de la rangée `Défense / Réaction / Initiative / PS / PA / PE / CdF / Égide / Bouclier` sont maintenant ciblées par leur conteneur Fantasy Statblocks réel. La surcharge finale dépasse explicitement les anciennes règles compactes sans modifier la taille des cases.
+- Les descriptions d'effets réservées à l'impression utilisent la même taille de corps que les descriptions de capacités.
+- Un séparateur pointillé est ajouté entre deux descriptions d'effets successives.
+- Un séparateur identique précède désormais aussi la première description, sous la ligne récapitulative `Effets`.
+- Le groupe de titre `Combat`, déjà masqué visuellement dans le style officiel, ne génère plus une seconde ligne au-dessus des statistiques.
+

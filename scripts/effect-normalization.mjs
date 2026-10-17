@@ -132,6 +132,7 @@ export function effectPresentation(rawEffect) {
     label,
     noteTitle,
     isPublic: Boolean(noteTitle),
+    summary: catalogEntry?.summary ?? "",
     ruleUrl: catalogEntry?.url ?? (noteTitle ? `https://beta.knightools.fr/fr/effect/${ruleSlug}/` : null),
   };
 }
