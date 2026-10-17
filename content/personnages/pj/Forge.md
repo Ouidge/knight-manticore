@@ -32,18 +32,18 @@ cssclasses:
 </dl>
 <section class="knight-contacts knight-domain screen-only knight-contacts-screen">
 <h3>Contacts</h3>
-<ul><li><strong>Admin Knight Korrigan (1)</strong></li>
+<ul><li><strong>Leprechaun (1)</strong> <span>— Admin Knight Korrigan</span></li>
 <li><strong>Franklin Ilianov</strong> <span>— cousin éloigné</span></li></ul>
 </section>
 </div>
 <aside class="knight-profile-side">
 <div class="knight-portrait"><img src="../__images/pj/Forge-portrait.png" alt="Portrait de Forge"></div>
 <div class="knight-progression" aria-label="Progression">
-<span><strong>PG</strong> 69 / 239</span>
-<span><strong>PX</strong> 60 / 166</span>
+<span><strong>PG</strong> 79 / 249</span>
+<span><strong>PX</strong> 69 / 175</span>
 </div>
 <div class="knight-progression knight-personal-points" aria-label="Points de contact et d’héroïsme">
-<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 3 / 6</span>
+<span class="knight-ph"><strong title="Points d’héroïsme">PH</strong> 4 / 6</span>
 <span class="knight-pc"><strong title="Points de contact">PC</strong> 1</span>
 </div>
 </aside>
@@ -58,6 +58,7 @@ cssclasses:
 <div><span>PA</span><strong>70</strong></div>
 <div><span>PE</span><strong>60</strong></div>
 <div><span>CdF</span><strong>10</strong></div>
+<div><span>Égide</span><strong>6</strong></div>
 </div>
 </div>
 <div class="knight-stat-table">
@@ -109,7 +110,7 @@ cssclasses:
 </div></section>
 <section class="knight-contacts knight-domain print-only knight-contacts-print">
 <h3>Contacts</h3>
-<ul><li><strong>Admin Knight Korrigan (1)</strong></li>
+<ul><li><strong>Leprechaun (1)</strong> <span>— Admin Knight Korrigan</span></li>
 <li><strong>Franklin Ilianov</strong> <span>— cousin éloigné</span></li></ul>
 </section>
 </div>

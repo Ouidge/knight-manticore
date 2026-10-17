@@ -1138,6 +1138,7 @@ const guardianDefense = defenseFor(false);
 const armorReaction = reactionFor(true);
 const guardianReaction = reactionFor(false);
 const forceField = number(armorWorn ? armor?.system?.champDeForce?.base : system.equipements?.guardian?.champDeForce?.base) + weaponFlatModifier("cdf");
+const aegisScore = Math.max(0, number(system.egide?.base) + actorModifier("egide"));
 
 const out = [];
 out.push("---");
@@ -1211,6 +1212,7 @@ out.push(`<div><span>PEs</span><strong>${number(system.espoir?.value)} / ${hopeM
 out.push(`<div><span>PA</span><strong>${number(armor?.system?.armure?.base) || "—"}</strong></div>`);
 out.push(`<div><span>PE</span><strong>${number(armor?.system?.energie?.base) || "—"}</strong></div>`);
 out.push(`<div><span>CdF</span><strong>${forceField}</strong></div>`);
+out.push(`<div><span>Égide</span><strong>${aegisScore || "—"}</strong></div>`);
 out.push("</div>");
 out.push("</div>");
 out.push('<div class="knight-stat-table">');

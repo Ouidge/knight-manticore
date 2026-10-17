@@ -53,6 +53,7 @@ cssclasses:
 <div><span>PA</span><strong>50</strong></div>
 <div><span>PE</span><strong>70</strong></div>
 <div><span>CdF</span><strong>12</strong></div>
+<div><span>Égide</span><strong>—</strong></div>
 </div>
 </div>
 <div class="knight-stat-table">

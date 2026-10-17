@@ -215,7 +215,7 @@ article:has(.knight-sheet-marker) tbody tr:nth-child(even) td {
 
 .knight-stat-cells {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 0.15rem;
 }
 
@@ -1006,7 +1006,7 @@ article:has(.knight-sheet-marker) table:has(a[href*="/fr/module/"]) th:nth-child
   }
 
   .knight-stat-cells {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 0.4mm;
   }
 

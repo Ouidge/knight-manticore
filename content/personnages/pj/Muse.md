@@ -54,6 +54,7 @@ cssclasses:
 <div><span>PA</span><strong>40</strong></div>
 <div><span>PE</span><strong>80</strong></div>
 <div><span>CdF</span><strong>14</strong></div>
+<div><span>Égide</span><strong>—</strong></div>
 </div>
 </div>
 <div class="knight-stat-table">

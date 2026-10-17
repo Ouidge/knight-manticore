@@ -841,7 +841,7 @@
       }
     },
     "egide": {
-      "base": 0,
+      "base": 6,
       "value": 0,
       "bonus": {
         "user": 0,
@@ -1184,13 +1184,13 @@
       "reduction": 0
     },
     "heroisme": {
-      "value": 3,
+      "value": 4,
       "max": 6
     },
     "restrictions": {},
     "progression": {
       "gloire": {
-        "total": 239,
+        "total": 249,
         "depense": {
           "total": 0,
           "liste": {},
@@ -1218,7 +1218,7 @@
         "actuel": 55
       },
       "experience": {
-        "total": 166,
+        "total": 175,
         "depense": {
           "total": 0,
           "liste": {
@@ -13977,11 +13977,11 @@
       }
     },
     {
-      "name": "Admin Knight Korrigan (1)",
+      "name": "Leprechaun (1)",
       "type": "contact",
       "img": "systems/knight/assets/icons/contact.svg",
       "system": {
-        "description": ""
+        "description": "<p>Admin Knight Korrigan </p>"
       },
       "_id": "FpsTcUsqvJ8mW51X",
       "effects": [],
@@ -13997,7 +13997,7 @@
         "systemId": "knight",
         "systemVersion": "3.58.35",
         "createdTime": 1789024736996,
-        "modifiedTime": 1789024742563,
+        "modifiedTime": 1790591209114,
         "lastModifiedBy": "6wsFTIJxoaUnGBiN",
         "compendiumSource": null,
         "duplicateSource": null,
@@ -14046,7 +14046,7 @@
     "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679575810748,
-    "modifiedTime": 1790419577625,
+    "modifiedTime": 1792231998681,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": "Actor.5zuAo37jUrtqjAHI",
     "duplicateSource": null,

@@ -833,7 +833,7 @@
       }
     },
     "egide": {
-      "base": 0,
+      "base": 6,
       "value": 0,
       "bonus": {
         "user": 0,
@@ -1139,13 +1139,13 @@
       "reduction": 0
     },
     "heroisme": {
-      "value": 1,
+      "value": 2,
       "max": 6
     },
     "restrictions": {},
     "progression": {
       "gloire": {
-        "total": 179,
+        "total": 189,
         "depense": {
           "total": 0,
           "liste": {},
@@ -1161,7 +1161,7 @@
         "actuel": 35
       },
       "experience": {
-        "total": 121,
+        "total": 130,
         "depense": {
           "total": 0,
           "liste": {
@@ -10522,7 +10522,7 @@
     "systemVersion": "3.58.35",
     "coreVersion": "14.365",
     "createdTime": 1679599687720,
-    "modifiedTime": 1790419752313,
+    "modifiedTime": 1792231982372,
     "lastModifiedBy": "6wsFTIJxoaUnGBiN",
     "compendiumSource": null,
     "duplicateSource": null,

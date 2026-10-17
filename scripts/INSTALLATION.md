@@ -62,6 +62,10 @@ objets correspondants. Leurs valeurs agrégées dans l'acteur Foundry sont
 ignorées afin d'éviter leur double comptage, notamment pour les PS accordés par
 « Dur à cuire ».
 
+Le score d'Égide est lu depuis `system.egide.base` et apparaît dans le tableau
+des ressources de la fiche publique, à l'écran comme à l'impression. Une fiche
+sans score d'Égide affiche « — ».
+
 Depuis PowerShell, dans le dossier `scripts` :
 
 ```powershell
