@@ -2,7 +2,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { effectWikiLink } from "./effect-normalization.mjs";
+import { effectPresentation, effectWikiLink } from "./effect-normalization.mjs";
 
 const args = process.argv.slice(2);
 const inputPath = args.find((arg) => !arg.startsWith("--"));
@@ -76,6 +76,23 @@ function effectLink(rawEffect) {
   return effectWikiLink(rawEffect);
 }
 
+function escapeInlineHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function effectPrintLine(rawEffect) {
+  const effect = effectPresentation(rawEffect);
+  if (!effect?.summary) return "";
+  const parameterized = effect.value
+    ? effect.summary.replace(/\bX\b/g, effect.value)
+    : effect.summary;
+  const concise = parameterized.match(/^.*?[.!?](?:\s|$)/u)?.[0]?.trim() || parameterized;
+  return `<span class="knight-effect-print"><strong>${escapeInlineHtml(effect.label)} :</strong> ${escapeInlineHtml(concise)}</span>`;
+}
+
 function statBase(stat) {
   return number(stat?.base, number(stat?.max, number(stat?.value)));
 }
@@ -90,6 +107,13 @@ function derivedDefense() {
 
 function derivedReaction() {
   return statBase(system.reaction) + exceptionalMinorValue("machine");
+}
+
+function displayedInitiative() {
+  const majorMask = number(system.aspects?.masque?.ae?.majeur?.value);
+  if (majorMask > 0) return "30";
+  return system.initiative?.complet ||
+    `${number(system.initiative?.diceBase, number(system.initiative?.dice, 3))}D6`;
 }
 
 function aspectValue(aspect) {
@@ -174,7 +198,7 @@ function compactCapacityDescription(capability) {
 }
 
 function generatedBlock() {
-  const out = ["<!-- BEGIN FOUNDRY -->", "", "## Profil technique", "", "| Santé | Armure | Énergie | Champ de force | Défense | Réaction | Initiative |", "|---:|---:|---:|---:|---:|---:|---:|", `| ${statBase(system.sante)} | ${statBase(system.armure)} | ${statBase(system.energie)} | ${statBase(system.champDeForce)} | ${derivedDefense()} | ${derivedReaction()} | ${system.initiative?.complet || `${number(system.initiative?.diceBase, number(system.initiative?.dice, 3))}D6`} |`];
+  const out = ["<!-- BEGIN FOUNDRY -->", "", "## Profil technique", "", "| Santé | Armure | Énergie | Champ de force | Défense | Réaction | Initiative |", "|---:|---:|---:|---:|---:|---:|---:|", `| ${statBase(system.sante)} | ${statBase(system.armure)} | ${statBase(system.energie)} | ${statBase(system.champDeForce)} | ${derivedDefense()} | ${derivedReaction()} | ${displayedInitiative()} |`];
 
   out.push("", "## Aspects", "", "| Aspect | Valeur | AE mineur | AE majeur |", "|---|---:|---:|---:|");
   for (const [key, label] of [["chair", "Chair"], ["bete", "Bête"], ["machine", "Machine"], ["dame", "Dame"], ["masque", "Masque"]]) {
@@ -368,13 +392,15 @@ function generatedStatblock() {
   const weapons = items.filter((item) => item.type === "arme").map((weapon) => {
     const effects = [...(weapon.system?.effets?.raw ?? []), ...(weapon.system?.effets?.custom ?? [])];
     const damage = realWeaponDamage(weapon);
+    const printedEffects = effects.map(effectPrintLine).filter(Boolean);
     const details = [
       `**Type :** ${weapon.system?.type || "—"}`,
       `**Portée :** ${weapon.system?.portee || "—"}`,
       `**Dégâts :** ${highlightedDamage(damage.value)}${damage.breakdown ? ` *(${damage.breakdown})*` : ""}`,
       `**Violence :** ${diceValue(weapon.system?.violence)}`,
       `**Effets :** ${effects.map(effectLink).join(", ") || "—"}`,
-    ];
+      printedEffects.length ? printedEffects.join("") : "",
+    ].filter(Boolean);
     return { name: weapon.name, desc: details.join("  \n") };
   });
 
@@ -412,7 +438,7 @@ function generatedStatblock() {
   appendStatblockTraits(lines, "aspects_exceptionnels", exceptionalTraits);
   lines.push(`defense: ${derivedDefense()}`);
   lines.push(`reaction: ${derivedReaction()}`);
-  lines.push(`initiative: ${yamlString(system.initiative?.complet || `${number(system.initiative?.diceBase, number(system.initiative?.dice, 3))}D6`)}`);
+  lines.push(`initiative: ${yamlString(displayedInitiative())}`);
   if (!isBand) lines.push(`ps: ${statBase(system.sante)}`);
   lines.push(`pa: ${statBase(system.armure)}`);
   lines.push(`pe: ${statBase(system.energie)}`);
