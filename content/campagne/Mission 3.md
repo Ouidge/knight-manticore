@@ -2,7 +2,23 @@
 publish: true
 created: 2026-10-17T09:36:48.130Z
 modified: 2026-11-12T16:36:56.185Z
+published: 2026-11-12T16:36:56.185Z
 socialImage: "[[M3-Sous les nuées.webp]]"
+type: mission
+visibility: public
+status: done
+name: Sous les nuées
+code: M3
+arc: Bête
+image: "[[M3-Sous les nuées.webp]]"
+PG: 10
+PX: 9
+PH: 1
+PJ:
+  - "[[Forge]]"
+  - "[[Yurei]]"
+  - "[[Maggot]]"
+  - "[[Padre]]"
 ---
 
 # Mission 3 - Sous les nuées
