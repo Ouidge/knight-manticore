@@ -10,6 +10,7 @@ views:
     order:
       - name
       - code
+      - arc
     sort:
       - property: code
         direction: ASC
