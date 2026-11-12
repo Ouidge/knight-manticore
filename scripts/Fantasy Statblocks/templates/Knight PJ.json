@@ -290,6 +290,29 @@
         },
         {
           "type": "group",
+          "id": "knightpjeffectsreminders",
+          "properties": [],
+          "nested": [
+            {
+              "type": "traits",
+              "id": "knightpjeffectsreminderstraits",
+              "properties": [
+                "effets_resume"
+              ],
+              "fallback": "-",
+              "heading": "Rappels d’effets",
+              "markdown": true,
+              "conditioned": true,
+              "dice": false,
+              "cls": "knight-pj-effect-reminders"
+            }
+          ],
+          "heading": "",
+          "hasRule": false,
+          "cls": "knight-pj-effect-reminders-section"
+        },
+        {
+          "type": "group",
           "id": "knightpjassets",
           "properties": [],
           "nested": [

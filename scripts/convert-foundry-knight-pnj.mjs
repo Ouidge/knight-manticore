@@ -2,7 +2,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
-import { effectPresentation, effectWikiLink } from "./effect-normalization.mjs";
+import { effectPresentation, effectQuickReminder, effectWikiLink } from "./effect-normalization.mjs";
 
 const args = process.argv.slice(2);
 const inputPath = args.find((arg) => !arg.startsWith("--"));
@@ -83,14 +83,30 @@ function escapeInlineHtml(value) {
     .replaceAll(">", "&gt;");
 }
 
-function effectPrintLine(rawEffect) {
-  const effect = effectPresentation(rawEffect);
-  if (!effect?.summary) return "";
-  const parameterized = effect.value
-    ? effect.summary.replace(/\bX\b/g, effect.value)
-    : effect.summary;
-  const concise = parameterized.match(/^.*?[.!?](?:\s|$)/u)?.[0]?.trim() || parameterized;
-  return `<span class="knight-effect-print"><strong>${escapeInlineHtml(effect.label)} :</strong> ${escapeInlineHtml(concise)}</span>`;
+function effectReminderTraits(rawEffects, includedEffectKeys = new Set()) {
+  const reminders = new Map();
+  for (const rawEffect of rawEffects) {
+    const reminder = effectQuickReminder(rawEffect);
+    if (reminder && !reminders.has(reminder.key)) {
+      const status = includedEffectKeys.has(reminder.effectKey) ? "INCLUS" : "À APPLIQUER";
+      reminders.set(reminder.key, {
+        name: reminder.label,
+        desc: `${reminder.description} — **${status}**`,
+      });
+    }
+  }
+  return [...reminders.values()];
+}
+
+function weaponEffectKeys(weapon) {
+  const rawEffects = [
+    ...(weapon.system?.effets?.raw ?? []),
+    ...(weapon.system?.effets?.custom ?? []),
+  ];
+  return new Set(rawEffects.map((effect) => {
+    const presentation = effectPresentation(effect);
+    return presentation?.catalogKey || presentation?.key || "";
+  }).filter(Boolean));
 }
 
 function statBase(stat) {
@@ -99,6 +115,13 @@ function statBase(stat) {
 
 function exceptionalMinorValue(aspect) {
   return number(system.aspects?.[aspect]?.ae?.mineur?.value);
+}
+
+function exceptionalAspectValue(aspect) {
+  return Math.max(
+    number(system.aspects?.[aspect]?.ae?.mineur?.value),
+    number(system.aspects?.[aspect]?.ae?.majeur?.value),
+  );
 }
 
 function derivedDefense() {
@@ -124,32 +147,60 @@ function aspectValue(aspect) {
 function realWeaponDamage(weapon) {
   const damage = weapon.system?.degats ?? {};
   const isContact = String(weapon.system?.type).toLocaleLowerCase("fr") === "contact";
+  const effectKeys = weaponEffectKeys(weapon);
+  const includedEffectKeys = new Set();
   let fixed = number(damage.fixe);
   const breakdown = [];
 
-  if (damage.addchair && isContact) {
-    const chairBonus = Math.floor(aspectValue("chair") / 2);
+  const isWeighted = effectKeys.has("leste") && isContact;
+  if (isContact && (damage.addchair || isWeighted)) {
+    const chairBonus = isWeighted
+      ? aspectValue("chair")
+      : Math.floor(aspectValue("chair") / 2);
     fixed += chairBonus;
-    breakdown.push(`Chair/2 : ${chairBonus}`);
+    breakdown.push(`${isWeighted ? "Chair (Lesté)" : "Chair/2"} : ${chairBonus}`);
+    if (isWeighted) includedEffectKeys.add("leste");
   }
 
-  const beastExceptional = number(system.aspects?.bete?.ae?.majeur?.value);
+  const beastMinor = number(system.aspects?.bete?.ae?.mineur?.value);
+  const beastMajor = number(system.aspects?.bete?.ae?.majeur?.value);
+  const beastExceptional = beastMajor || beastMinor;
   if (isContact && beastExceptional > 0) {
-    const beast = aspectValue("bete");
-    fixed += beast + beastExceptional;
-    breakdown.push(`Bête : ${beast}`, `AE Bête : ${beastExceptional}`);
+    if (beastMajor > 0) {
+      const beast = aspectValue("bete");
+      fixed += beast;
+      breakdown.push(`Bête : ${beast}`);
+    }
+    fixed += beastExceptional;
+    breakdown.push(`AE Bête : ${beastExceptional}`);
+  }
+
+  if (effectKeys.has("precision")) {
+    const precisionBonus = Math.ceil(aspectValue("machine") / 2) + exceptionalAspectValue("machine");
+    fixed += precisionBonus;
+    breakdown.push(`Précision (Machine/2 + AE) : ${precisionBonus}`);
+    includedEffectKeys.add("precision");
+  }
+
+  if (effectKeys.has("orfevrerie")) {
+    const goldsmithBonus = Math.ceil(aspectValue("masque") / 2) + exceptionalAspectValue("masque");
+    fixed += goldsmithBonus;
+    breakdown.push(`Orfèvrerie (Masque/2 + AE) : ${goldsmithBonus}`);
+    includedEffectKeys.add("orfevrerie");
   }
 
   return {
     value: diceValue({ dice: number(damage.dice), fixe: fixed }),
     breakdown: breakdown.join(" ; "),
+    includedEffectKeys,
   };
 }
 
 function diceValue(stat = {}) {
   const dice = number(stat.dice);
   const fixed = number(stat.fixe);
-  return `${dice ? `${dice}D6` : "0"}${fixed ? ` ${fixed > 0 ? "+" : "−"} ${Math.abs(fixed)}` : ""}`;
+  if (!dice) return fixed ? String(fixed).replace("-", "−") : "0";
+  return `${dice}D6${fixed ? `${fixed > 0 ? "+" : "−"}${Math.abs(fixed)}` : ""}`;
 }
 
 function highlightedDamage(value) {
@@ -188,10 +239,10 @@ function compactCapacityDescription(capability) {
 
   const structured = [];
   if (capability.system?.degats?.has) {
-    structured.push(`**Dégâts :** ${highlightedDamage(diceValue(capability.system.degats.system))}`);
+    structured.push(`**Dégâts:** ${highlightedDamage(diceValue(capability.system.degats.system))}`);
   }
   if (capability.system?.attaque?.has) {
-    structured.push(`**Dégâts :** ${highlightedDamage(diceValue(capability.system.attaque.degats))}`);
+    structured.push(`**Dégâts:** ${highlightedDamage(diceValue(capability.system.attaque.degats))}`);
     if (capability.system.attaque.portee) structured.push(`Portée ${capability.system.attaque.portee}`);
   }
   return structured.join(" · ") || htmlToMarkdown(capability.system?.description) || "—";
@@ -332,6 +383,32 @@ function exceptionalAspectDescription(noteName, level) {
   }
 }
 
+function compactExceptionalAspectDescription(key, level, score, aspectValue) {
+  const descriptions = {
+    chair: {
+      mineur: `Réduit de ${score} les dégâts et la violence reçus. — **À APPLIQUER**`,
+      majeur: "Ignore Barrage X, Choc X et Meurtrier. — **À APPLIQUER**",
+    },
+    bete: {
+      mineur: `+${score} dégâts au contact. — **INCLUS**`,
+      majeur: `Au contact, ajoute aussi Bête (${aspectValue}) aux dégâts. — **INCLUS**`,
+    },
+    machine: {
+      mineur: `+${score} Réaction. — **INCLUS**`,
+      majeur: "Ignore invisibilité, illusions, leurres et capacités jouant sur les sens. — **À APPLIQUER**",
+    },
+    dame: {
+      mineur: "Peut reporter les dégâts sur un allié proche de même faction, à portée courte. — **À APPLIQUER**",
+      majeur: `Pour l’attaquer : test de Hargne (difficulté ${score}) ; échec = attaque impossible. — **À APPLIQUER**`,
+    },
+    masque: {
+      mineur: `+${score} Défense. — **INCLUS**`,
+      majeur: "Initiative 30, sans jet. — **INCLUS**",
+    },
+  };
+  return descriptions[key]?.[level] || "";
+}
+
 function appendStatblockTraits(lines, key, entries) {
   if (!entries.length) return;
   lines.push(`${key}:`);
@@ -368,17 +445,23 @@ function generatedStatblock() {
       exceptionalLinks.push(`[[${exceptionalAspectNotes[key]}#^mineur|${minor}]]`);
       exceptionalTraits.push({
         name: `${exceptionalAspectLabels[key].mineur} (${minor})`,
-        desc: exceptionalAspectDescription(exceptionalAspectNotes[key], "mineur") || `[[${exceptionalAspectNotes[key]}#^mineur|Consulter la description]]`,
+        desc: compactExceptionalAspectDescription(key, "mineur", minor, value)
+          || exceptionalAspectDescription(exceptionalAspectNotes[key], "mineur")
+          || `[[${exceptionalAspectNotes[key]}#^mineur|Consulter la description]]`,
       });
     }
     if (major > 0) {
       exceptionalLinks.push(`[[${exceptionalAspectNotes[key]}#^majeur|${major}+]]`);
       exceptionalTraits.push({
         name: `${exceptionalAspectLabels[key].majeur} (${major}+)`,
-        desc: exceptionalAspectDescription(exceptionalAspectNotes[key], "majeur") || `[[${exceptionalAspectNotes[key]}#^majeur|Consulter la description]]`,
+        desc: compactExceptionalAspectDescription(key, "majeur", major, value)
+          || exceptionalAspectDescription(exceptionalAspectNotes[key], "majeur")
+          || `[[${exceptionalAspectNotes[key]}#^majeur|Consulter la description]]`,
       });
     }
-    return exceptionalLinks.length ? `${value} (${exceptionalLinks.join(", ")})` : String(value);
+    const exceptionalValue = Math.max(minor, major);
+    const rollableValue = `{{aspect:${value}:${exceptionalValue}}}`;
+    return exceptionalLinks.length ? `${rollableValue} (${exceptionalLinks.join(", ")})` : rollableValue;
   });
   const capacities = items
     .filter((item) => item.type === "capacite")
@@ -389,29 +472,47 @@ function generatedStatblock() {
   const modules = items
     .filter((item) => item.type === "module")
     .map((item) => ({ name: item.name, desc: htmlToMarkdown(item.system?.description) }));
+  const allWeaponEffects = [];
+  const includedWeaponEffectKeys = new Set();
   const weapons = items.filter((item) => item.type === "arme").map((weapon) => {
     const effects = [...(weapon.system?.effets?.raw ?? []), ...(weapon.system?.effets?.custom ?? [])];
+    allWeaponEffects.push(...effects);
     const damage = realWeaponDamage(weapon);
-    const printedEffects = effects.map(effectPrintLine).filter(Boolean);
+    for (const key of damage.includedEffectKeys) includedWeaponEffectKeys.add(key);
+    const damageDisplay = `${highlightedDamage(damage.value)}${damage.breakdown ? ` *(${damage.breakdown})*` : ""}`;
+    const effectsDisplay = effects.map(effectLink).join(", ") || "—";
+    if (combatSheet) {
+      const weaponLine = [
+        `· **Type** ${weapon.system?.type || "—"}`,
+        `**Portée** ${weapon.system?.portee || "—"}`,
+        `**Dégâts** ${damageDisplay}`,
+        `**Violence** ${diceValue(weapon.system?.violence)}`,
+      ].join(" · ");
+      return {
+        name: weapon.name,
+        desc: `${weaponLine}  \n**Effets :** ${effectsDisplay}`,
+      };
+    }
     const details = [
-      `**Type :** ${weapon.system?.type || "—"}`,
-      `**Portée :** ${weapon.system?.portee || "—"}`,
-      `**Dégâts :** ${highlightedDamage(damage.value)}${damage.breakdown ? ` *(${damage.breakdown})*` : ""}`,
-      `**Violence :** ${diceValue(weapon.system?.violence)}`,
-      `**Effets :** ${effects.map(effectLink).join(", ") || "—"}`,
-      printedEffects.length ? printedEffects.join("") : "",
-    ].filter(Boolean);
+      `**Type** ${weapon.system?.type || "—"}`,
+      `**Portée** ${weapon.system?.portee || "—"}`,
+      `**Dégâts** ${damageDisplay}`,
+      `**Violence** ${diceValue(weapon.system?.violence)}`,
+      `**Effets :** ${effectsDisplay}`,
+    ];
     return { name: weapon.name, desc: details.join("  \n") };
   });
+  const effectReminders = effectReminderTraits(allWeaponEffects, includedWeaponEffectKeys);
 
   const lines = [
     "<!-- BEGIN PNJ STATBLOCK -->",
     "```statblock",
-    `layout: ${combatSheet ? (isCreature ? "Knight Bestiaire Officiel" : "Knight PNJ Officiel") : (isCreature ? "Knight Bestiaire" : "Knight PNJ")}`,
+    `layout: ${combatSheet ? "Knight Adversaire Officiel" : (isCreature ? "Knight Bestiaire" : "Knight PNJ")}`,
     // Les layouts PNJ et Bestiaire gèrent eux-mêmes leur structure interne.
     "columns: 1",
     "columnWidth: 810",
     "forceColumns: true",
+    "dice: true",
     `name: ${yamlString(actor.name || "PNJ")}`,
     `type: ${isCreature ? (isBand ? "Bande" : "Créature") : "PNJ"}`,
   ];
@@ -454,6 +555,7 @@ function generatedStatblock() {
   appendStatblockTraits(lines, "capacites", capacities);
   appendStatblockTraits(lines, "modules", modules);
   appendStatblockTraits(lines, "armes", weapons);
+  if (combatSheet) appendStatblockTraits(lines, "effets_resume", effectReminders);
   lines.push("```", "<!-- END PNJ STATBLOCK -->");
   return lines.join("\n");
 }

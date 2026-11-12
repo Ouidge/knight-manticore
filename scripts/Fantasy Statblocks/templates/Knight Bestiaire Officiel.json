@@ -150,6 +150,27 @@
       "heading": "Armes",
       "hasRule": false,
       "cls": "knight-official-section knight-official-weapons-section"
+    },
+    {
+      "type": "group",
+      "id": "officialeffectsremindergroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialeffectsreminder",
+          "properties": ["effets_resume"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "dice": false,
+          "cls": "knight-official-effect-reminders"
+        }
+      ],
+      "heading": "Rappels d’effets",
+      "hasRule": false,
+      "cls": "knight-official-section knight-official-effect-reminders-section"
     }
   ],
   "cssProperties": {

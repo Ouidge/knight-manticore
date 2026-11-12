@@ -220,6 +220,27 @@
     },
     {
       "type": "group",
+      "id": "officialpnjeffectsremindergroup",
+      "properties": [],
+      "nested": [
+        {
+          "type": "traits",
+          "id": "officialpnjeffectsreminder",
+          "properties": ["effets_resume"],
+          "fallback": "-",
+          "heading": "",
+          "conditioned": true,
+          "markdown": true,
+          "dice": false,
+          "cls": "knight-pnj-official-effect-reminders"
+        }
+      ],
+      "heading": "Rappels d’effets",
+      "hasRule": false,
+      "cls": "knight-pnj-official-section knight-pnj-official-effect-reminders-section"
+    },
+    {
+      "type": "group",
       "id": "officialpnjmodulesgroup",
       "properties": [],
       "nested": [

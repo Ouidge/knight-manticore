@@ -37,7 +37,7 @@
      thème Obsidian au lieu de la palette décorative du statblock. */
   html body div.statblock:is(
     .knight-pnj-officiel,
-    .knight-bestiaire-officiel,
+    :is(.knight-bestiaire-officiel, .knight-adversaire-officiel),
     :has(.knight-pnj-officiel-marker),
     :has(.knight-bestiaire-officiel-marker)
   ) a.internal-link {
@@ -48,7 +48,7 @@
 
   html body div.statblock:is(
     .knight-pnj-officiel,
-    .knight-bestiaire-officiel,
+    :is(.knight-bestiaire-officiel, .knight-adversaire-officiel),
     :has(.knight-pnj-officiel-marker),
     :has(.knight-bestiaire-officiel-marker)
   ) a.internal-link:hover {
@@ -513,7 +513,7 @@
 }
 
 /* Variante retenue : pas de titre général, seulement une séparation nette. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .group-container:has(> h3.section-header) {
   display: block !important;
   width: 100% !important;
@@ -526,23 +526,23 @@ body .statblock.knight-bestiaire-officiel
   background: var(--kbo-accent) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .group-container > h3.section-header {
   display: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
   border-left: 7px solid var(--kbo-accent) !important;
 }
 
 @media print {
-  body .statblock.knight-bestiaire-officiel {
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
     border-left-color: #555 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  body .statblock.knight-bestiaire-officiel
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     .column > .group-container:has(> h3.section-header) {
     height: 2px !important;
     min-height: 2px !important;
@@ -557,9 +557,9 @@ body .statblock.knight-bestiaire-officiel {
    ========================================================================== */
 
 /* La couleur suffit à identifier les liens, même au survol. */
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-links)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-links)
   a.internal-link:not(#knight-link-no-underline),
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-links)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-links)
   a.internal-link:not(#knight-link-no-underline):is(:hover, :focus, :active) {
   text-decoration: none !important;
   text-decoration-line: none !important;
@@ -569,7 +569,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-links)
 }
 
 /* Un trait unique, sans marge sombre, entre deux sections. */
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-sections)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-sections)
   div.column > div.group-container:has(> h3.section-header):not(#knight-section-line) {
   display: block !important;
   width: 100% !important;
@@ -585,7 +585,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-sections)
 }
 
 @media print {
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-final-sections)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-sections)
     div.column > div.group-container:has(> h3.section-header):not(#knight-section-line):not(#knight-print-separator):not(#knight-print-line) {
     height: 1px !important;
     min-height: 1px !important;
@@ -599,7 +599,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-sections)
 
 /* Correctif d'alignement final : d'anciennes règles plaçaient toutes les
    cellules dans la même colonne de grille. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row > .statblock-inline-item {
   grid-column: auto !important;
   grid-row: auto !important;
@@ -608,7 +608,7 @@ body .statblock.knight-bestiaire-officiel
   transform: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item {
   grid-row: 1 !important;
   position: static !important;
@@ -616,17 +616,17 @@ body .statblock.knight-bestiaire-officiel
   transform: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item:first-child {
   grid-column: 1 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item:nth-child(2) {
   grid-column: 2 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-bestiaire-aspects .statblock-table > .table-item {
   grid-column: auto !important;
   grid-row: auto !important;
@@ -636,7 +636,7 @@ body .statblock.knight-bestiaire-officiel
 }
 
 @media (max-width: 720px) {
-  body .statblock.knight-bestiaire-officiel
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     .knight-official-profile-row > .statblock-inline-item {
     grid-column: 1 !important;
     grid-row: auto !important;
@@ -649,7 +649,7 @@ body .statblock.knight-bestiaire-officiel
 /* On conserve donc un flux vertical simple et des titres horizontaux.        */
 /* ========================================================================== */
 
-body .statblock.knight-bestiaire-officiel {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
   --kbo-accent: #d6802c;
   --kbo-dark: #111a34;
   --kbo-cell: #33465b;
@@ -663,7 +663,7 @@ body .statblock.knight-bestiaire-officiel {
   color: var(--kbo-text) !important;
 }
 
-body .statblock.knight-bestiaire-officiel .column {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .column {
   display: block !important;
   width: 100% !important;
   max-width: none !important;
@@ -922,7 +922,7 @@ body .statblock:is(.knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
   }
 }
 
-body .statblock.knight-bestiaire-officiel .column > * {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .column > * {
   width: 100% !important;
   max-width: none !important;
   min-width: 0 !important;
@@ -931,7 +931,7 @@ body .statblock.knight-bestiaire-officiel .column > * {
 }
 
 /* Tous les titres de section occupent une ligne complète. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .group-container:has(> h3.section-header) {
   display: block !important;
   width: 100% !important;
@@ -942,7 +942,7 @@ body .statblock.knight-bestiaire-officiel
   background: var(--kbo-accent) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .group-container > h3.section-header {
   display: block !important;
   width: 100% !important;
@@ -960,7 +960,7 @@ body .statblock.knight-bestiaire-officiel
 }
 
 /* Profil : point faible puis cinq aspects, sur une seule ligne. */
-body .statblock.knight-bestiaire-officiel .knight-official-profile-row {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-official-profile-row {
   display: grid !important;
   grid-template-columns: minmax(145px, 1.2fr) minmax(0, 5fr) !important;
   align-items: stretch !important;
@@ -970,7 +970,7 @@ body .statblock.knight-bestiaire-officiel .knight-official-profile-row {
   background: var(--kbo-dark) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item {
   display: block !important;
   width: auto !important;
@@ -978,7 +978,7 @@ body .statblock.knight-bestiaire-officiel
   margin: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel .knight-bestiaire-aspects .statblock-table {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-bestiaire-aspects .statblock-table {
   display: grid !important;
   grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   align-items: stretch !important;
@@ -986,7 +986,7 @@ body .statblock.knight-bestiaire-officiel .knight-bestiaire-aspects .statblock-t
   width: 100% !important;
 }
 
-body .statblock.knight-bestiaire-officiel .knight-bestiaire-aspects .table-item {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-bestiaire-aspects .table-item {
   display: grid !important;
   grid-template-rows: auto 1fr !important;
   min-width: 0 !important;
@@ -995,7 +995,7 @@ body .statblock.knight-bestiaire-officiel .knight-bestiaire-aspects .table-item 
 }
 
 /* Valeurs dérivées : huit cases alignées. */
-body .statblock.knight-bestiaire-officiel .knight-official-combat-row {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-official-combat-row {
   display: grid !important;
   grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
   align-items: stretch !important;
@@ -1006,7 +1006,7 @@ body .statblock.knight-bestiaire-officiel .knight-official-combat-row {
   background: var(--kbo-dark) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row > .statblock-inline-item {
   display: block !important;
   width: auto !important;
@@ -1014,12 +1014,12 @@ body .statblock.knight-bestiaire-officiel
   margin: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row > .statblock-inline-item:empty {
   display: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-combat-row .line,
       .knight-bestiaire-aspects .table-item,
       .knight-bestiaire-identity) {
@@ -1030,7 +1030,7 @@ body .statblock.knight-bestiaire-officiel
   color: var(--kbo-text) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-combat-row .property-name,
       .knight-bestiaire-aspects .statblock-table-header,
       .knight-bestiaire-identity h3.section-header) {
@@ -1050,7 +1050,7 @@ body .statblock.knight-bestiaire-officiel
 
 /* Les traits supplémentaires sont déplacés directement dans .column par le
    plugin : ils doivent garder la largeur et le style des premiers traits. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.column > .traits-container,
       .column > .statblock-trait-prop,
       .column > .traits-container > .statblock-trait-prop) {
@@ -1067,43 +1067,43 @@ body .statblock.knight-bestiaire-officiel
   color: var(--kbo-text) !important;
 }
 
-body .statblock.knight-bestiaire-officiel .column > .traits-container {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .column > .traits-container {
   padding: 0 !important;
 }
 
 /* Palette lisible : aucun rouge hérité du thème ou d'anciens essais. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(p, span, em, strong, .statblock-markdown, .line, .trait) {
   color: var(--kbo-text) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.trait-name, .trait-name p, .property-name.trait-name,
       .knight-damage-value, a.internal-link) {
   color: var(--kbo-label) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.trait-name, .trait-name p, .property-name.trait-name) {
   font-weight: 800 !important;
 }
 
-body .statblock.knight-bestiaire-officiel a.internal-link {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) a.internal-link {
   text-decoration-color: color-mix(in srgb, var(--kbo-label) 65%, transparent) !important;
 }
 
 @media (max-width: 720px) {
-  body .statblock.knight-bestiaire-officiel .knight-official-profile-row {
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-official-profile-row {
     grid-template-columns: 1fr !important;
   }
 
-  body .statblock.knight-bestiaire-officiel .knight-official-combat-row {
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-official-combat-row {
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
 }
 
 @media print {
-  body .statblock.knight-bestiaire-officiel {
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
     --kbo-accent: #555;
     --kbo-dark: #fff;
     --kbo-cell: #fff;
@@ -1116,14 +1116,14 @@ body .statblock.knight-bestiaire-officiel a.internal-link {
     color: #111 !important;
   }
 
-  body .statblock.knight-bestiaire-officiel
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(p, span, em, strong, .statblock-markdown, .line, .trait,
         .trait-name, .trait-name p, .property-name.trait-name,
         .knight-damage-value, a.internal-link) {
     color: #111 !important;
   }
 
-  body .statblock.knight-bestiaire-officiel
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.column > .group-container > h3.section-header,
         .knight-official-combat-row .property-name,
         .knight-bestiaire-aspects .statblock-table-header,
@@ -4250,7 +4250,7 @@ body .statblock:has(.knight-bestiaire-officiel-marker)
    directs de .column. La grille doit donc être portée par .column.
    ========================================================================== */
 
-body .statblock.knight-bestiaire-officiel {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
   --kbo-accent: #ef6817;
   --kbo-dark: #111827;
   --kbo-cell: #39474d;
@@ -4269,9 +4269,9 @@ body .statblock.knight-bestiaire-officiel {
   line-height: 1.28 !important;
 }
 
-body .statblock.knight-bestiaire-officiel .statblock-content-container,
-body .statblock.knight-bestiaire-officiel .statblock-content,
-body .statblock.knight-bestiaire-officiel .column {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .statblock-content-container,
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .statblock-content,
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .column {
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
@@ -4280,7 +4280,7 @@ body .statblock.knight-bestiaire-officiel .column {
   background: var(--kbo-dark) !important;
 }
 
-body .statblock.knight-bestiaire-officiel .column {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .column {
   display: grid !important;
   grid-template-columns: 92px minmax(0, 1fr) !important;
   grid-auto-flow: row !important;
@@ -4290,7 +4290,7 @@ body .statblock.knight-bestiaire-officiel .column {
 }
 
 /* Titre général. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .heading-container.knight-official-title {
   grid-column: 1 / -1 !important;
   display: flex !important;
@@ -4304,7 +4304,7 @@ body .statblock.knight-bestiaire-officiel
   background: var(--kbo-title) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .heading-container.knight-official-title .flex-container {
   display: flex !important;
   align-items: center !important;
@@ -4314,9 +4314,9 @@ body .statblock.knight-bestiaire-officiel
   padding: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .heading-container.knight-official-title h1,
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .heading-container.knight-official-title h1 * {
   margin: 0 !important;
   padding: 0.42rem 0.7rem !important;
@@ -4334,7 +4334,7 @@ body .statblock.knight-bestiaire-officiel
 }
 
 /* Les cinq titres de section sont les group-container directs. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .group-container:has(> h3.section-header) {
   grid-column: 1 !important;
   display: flex !important;
@@ -4350,7 +4350,7 @@ body .statblock.knight-bestiaire-officiel
   background: var(--kbo-accent) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .group-container:has(> h3.section-header) > h3.section-header {
   display: flex !important;
   align-items: center !important;
@@ -4372,7 +4372,7 @@ body .statblock.knight-bestiaire-officiel
 }
 
 /* Chaque contenu suivant un titre occupe la colonne droite. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > :is(
     .knight-official-profile-row,
     .knight-official-combat-row,
@@ -4392,7 +4392,7 @@ body .statblock.knight-bestiaire-officiel
 }
 
 /* Aspects : Point faible + table des cinq aspects. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .knight-official-profile-row {
   display: grid !important;
   grid-template-columns: minmax(140px, 1fr) minmax(0, 5fr) !important;
@@ -4400,7 +4400,7 @@ body .statblock.knight-bestiaire-officiel
   gap: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item {
   width: 100% !important;
   min-width: 0 !important;
@@ -4409,12 +4409,12 @@ body .statblock.knight-bestiaire-officiel
   border: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item:only-child {
   grid-column: 1 / -1 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .text-container > .text-container {
   display: grid !important;
   grid-template-rows: minmax(1.55rem, auto) minmax(1.7rem, auto) !important;
@@ -4426,7 +4426,7 @@ body .statblock.knight-bestiaire-officiel
   background: var(--kbo-cell) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row .section-header.point-faible {
   display: flex !important;
   align-items: center !important;
@@ -4444,7 +4444,7 @@ body .statblock.knight-bestiaire-officiel
   text-transform: uppercase !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row .text-container .line {
   display: flex !important;
   align-items: center !important;
@@ -4458,9 +4458,9 @@ body .statblock.knight-bestiaire-officiel
   text-align: center !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .table-container > .table-container,
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row .statblock-table.aspects {
   display: grid !important;
   grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
@@ -4472,7 +4472,7 @@ body .statblock.knight-bestiaire-officiel
   border: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row .table-item {
   display: grid !important;
   grid-template-rows: minmax(1.55rem, auto) minmax(1.7rem, auto) !important;
@@ -4486,12 +4486,12 @@ body .statblock.knight-bestiaire-officiel
   text-align: center !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row .table-item:last-child {
   border-right: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row .statblock-table-header {
   display: flex !important;
   align-items: center !important;
@@ -4510,7 +4510,7 @@ body .statblock.knight-bestiaire-officiel
   line-height: 1.05 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row .table-item > span:not(.statblock-table-header) {
   display: flex !important;
   align-items: center !important;
@@ -4524,14 +4524,14 @@ body .statblock.knight-bestiaire-officiel
 }
 
 /* Valeurs dérivées. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .knight-official-combat-row {
   display: grid !important;
   grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
   gap: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row > .statblock-inline-item {
   grid-area: auto !important;
   display: block !important;
@@ -4545,19 +4545,19 @@ body .statblock.knight-bestiaire-officiel
   text-align: center !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row > .statblock-inline-item:empty {
   display: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row .line {
   display: grid !important;
   grid-template-rows: minmax(1.55rem, auto) minmax(1.7rem, auto) !important;
   gap: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row .property-name {
   display: flex !important;
   align-items: center !important;
@@ -4574,7 +4574,7 @@ body .statblock.knight-bestiaire-officiel
   text-transform: uppercase !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row .statblock-markdown {
   display: flex !important;
   align-items: center !important;
@@ -4589,9 +4589,9 @@ body .statblock.knight-bestiaire-officiel
 
 /* AE, Capacités et Armes : les classes personnalisées sont perdues par le
    plugin, mais leurs trois traits-container sont des enfants directs. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .traits-container,
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .traits-container > .traits-container {
   display: block !important;
   width: 100% !important;
@@ -4605,7 +4605,7 @@ body .statblock.knight-bestiaire-officiel
   color: #fff !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .traits-container .statblock-trait-prop {
   display: block !important;
   width: 100% !important;
@@ -4620,20 +4620,20 @@ body .statblock.knight-bestiaire-officiel
   color: #fff !important;
 }
 
-body .statblock.knight-bestiaire-officiel p,
-body .statblock.knight-bestiaire-officiel span,
-body .statblock.knight-bestiaire-officiel strong,
-body .statblock.knight-bestiaire-officiel em {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) p,
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) span,
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) strong,
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) em {
   color: inherit !important;
 }
 
-body .statblock.knight-bestiaire-officiel p {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) p {
   margin-top: 0 !important;
   margin-bottom: 0.2rem !important;
 }
 
 @media print {
-  body .statblock.knight-bestiaire-officiel {
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
     --kbo-accent: #555;
     --kbo-dark: #fff;
     --kbo-cell: #fff;
@@ -4644,7 +4644,7 @@ body .statblock.knight-bestiaire-officiel p {
     color: #111 !important;
   }
 
-  body .statblock.knight-bestiaire-officiel
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.column > .group-container, .property-name, .statblock-table-header,
         .section-header.point-faible) {
     color: #fff !important;
@@ -4657,7 +4657,7 @@ body .statblock.knight-bestiaire-officiel p {
 /* RÈGLES FINALES — BESTIAIRE OFFICIEL                                        */
 /* Garder ce bloc en dernier : il neutralise les variantes expérimentales.    */
 /* ========================================================================== */
-body .statblock.knight-bestiaire-officiel {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
   --kbo-accent: #d6802c;
   --kbo-dark: #111a34;
   --kbo-cell: #33465b;
@@ -4672,7 +4672,7 @@ body .statblock.knight-bestiaire-officiel {
   color: var(--kbo-text) !important;
 }
 
-body .statblock.knight-bestiaire-officiel .column {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .column {
   display: block !important;
   width: 100% !important;
   max-width: none !important;
@@ -4681,7 +4681,7 @@ body .statblock.knight-bestiaire-officiel .column {
   padding: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel .column > * {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .column > * {
   width: 100% !important;
   max-width: none !important;
   min-width: 0 !important;
@@ -4690,7 +4690,7 @@ body .statblock.knight-bestiaire-officiel .column > * {
 }
 
 /* Les grands titres de section deviennent de simples séparateurs. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .group-container:has(> h3.section-header) {
   display: block !important;
   width: 100% !important;
@@ -4703,13 +4703,13 @@ body .statblock.knight-bestiaire-officiel
   background: var(--kbo-accent) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .group-container > h3.section-header {
   display: none !important;
 }
 
 /* Point faible + cinq aspects. */
-body .statblock.knight-bestiaire-officiel .knight-official-profile-row {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-official-profile-row {
   display: grid !important;
   grid-template-columns: minmax(145px, 1.2fr) minmax(0, 5fr) !important;
   align-items: stretch !important;
@@ -4719,7 +4719,7 @@ body .statblock.knight-bestiaire-officiel .knight-official-profile-row {
   background: var(--kbo-dark) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item {
   display: block !important;
   width: auto !important;
@@ -4731,24 +4731,24 @@ body .statblock.knight-bestiaire-officiel
   transform: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item:first-child {
   grid-column: 1 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-profile-row > .statblock-inline-item:nth-child(2) {
   grid-column: 2 !important;
 }
 
-body .statblock.knight-bestiaire-officiel .knight-bestiaire-aspects .statblock-table {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-bestiaire-aspects .statblock-table {
   display: grid !important;
   grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
   gap: 0.25rem !important;
   width: 100% !important;
 }
 
-body .statblock.knight-bestiaire-officiel .knight-bestiaire-aspects .table-item {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-bestiaire-aspects .table-item {
   display: grid !important;
   grid-template-rows: auto 1fr !important;
   grid-column: auto !important;
@@ -4762,7 +4762,7 @@ body .statblock.knight-bestiaire-officiel .knight-bestiaire-aspects .table-item 
 }
 
 /* Huit valeurs dérivées sur une seule ligne. */
-body .statblock.knight-bestiaire-officiel .knight-official-combat-row {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-official-combat-row {
   display: grid !important;
   grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
   align-items: stretch !important;
@@ -4773,7 +4773,7 @@ body .statblock.knight-bestiaire-officiel .knight-official-combat-row {
   background: var(--kbo-dark) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row > .statblock-inline-item {
   display: block !important;
   width: auto !important;
@@ -4786,12 +4786,12 @@ body .statblock.knight-bestiaire-officiel
   transform: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .knight-official-combat-row > .statblock-inline-item:empty {
   display: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-combat-row .line,
       .knight-bestiaire-aspects .table-item,
       .knight-bestiaire-identity) {
@@ -4802,7 +4802,7 @@ body .statblock.knight-bestiaire-officiel
   color: var(--kbo-text) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-combat-row .property-name,
       .knight-bestiaire-aspects .statblock-table-header,
       .knight-bestiaire-identity h3.section-header) {
@@ -4821,7 +4821,7 @@ body .statblock.knight-bestiaire-officiel
 }
 
 /* Les traits suivants sont parfois remontés directement sous .column. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.column > .traits-container,
       .column > .statblock-trait-prop,
       .column > .traits-container > .statblock-trait-prop) {
@@ -4838,14 +4838,14 @@ body .statblock.knight-bestiaire-officiel
   color: var(--kbo-text) !important;
 }
 
-body .statblock.knight-bestiaire-officiel .column > .traits-container {
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .column > .traits-container {
   padding: 0 !important;
 }
 
 /* Compatibilité avec les templates déjà importés : selon la version,
    Fantasy Statblocks conserve les classes knight-bestiaire-* au lieu des
    nouvelles classes knight-official-*. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-combat-row,
       .knight-bestiaire-combat-row) {
   display: grid !important;
@@ -4861,7 +4861,7 @@ body .statblock.knight-bestiaire-officiel
   box-sizing: border-box !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-combat-row,
       .knight-bestiaire-combat-row)
   > .statblock-inline-item {
@@ -4877,7 +4877,7 @@ body .statblock.knight-bestiaire-officiel
   transform: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-profile-row,
       .knight-bestiaire-profile-row) {
   display: grid !important;
@@ -4887,7 +4887,7 @@ body .statblock.knight-bestiaire-officiel
   width: 100% !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-profile-row,
       .knight-bestiaire-profile-row)
   > .statblock-inline-item {
@@ -4900,21 +4900,21 @@ body .statblock.knight-bestiaire-officiel
   transform: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-profile-row,
       .knight-bestiaire-profile-row)
   > .statblock-inline-item:first-child {
   grid-column: 1 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-profile-row,
       .knight-bestiaire-profile-row)
   > .statblock-inline-item:nth-child(2) {
   grid-column: 2 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-aspects,
       .knight-bestiaire-aspects)
   .statblock-table {
@@ -4924,7 +4924,7 @@ body .statblock.knight-bestiaire-officiel
   gap: 0.25rem !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-aspects,
       .knight-bestiaire-aspects)
   .table-item {
@@ -4936,18 +4936,18 @@ body .statblock.knight-bestiaire-officiel
 }
 
 /* Neutraliser le rouge du thème et des anciennes variantes. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(p, span, em, strong, .statblock-markdown, .line, .trait) {
   color: var(--kbo-text) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.trait-name, .trait-name p, .property-name.trait-name,
       .knight-damage-value, a.internal-link) {
   color: var(--kbo-label) !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.trait-name, .trait-name p, .property-name.trait-name) {
   font-weight: 800 !important;
 }
@@ -4955,7 +4955,7 @@ body .statblock.knight-bestiaire-officiel
 /* Sélecteurs structurels indépendants des classes personnalisées du layout.
    Fantasy Statblocks peut renommer ou perdre cls lors de l'import, mais les
    propriétés .line.defense et la table .aspects restent toujours présentes. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.line.defense) {
   display: grid !important;
   grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
@@ -4969,7 +4969,7 @@ body .statblock.knight-bestiaire-officiel
   box-sizing: border-box !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.line.defense)
   > .statblock-inline-item {
   display: block !important;
@@ -4988,13 +4988,13 @@ body .statblock.knight-bestiaire-officiel
   opacity: 1 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.line.defense)
   > .statblock-inline-item:empty {
   display: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.line.defense)
   .line {
   display: grid !important;
@@ -5006,7 +5006,7 @@ body .statblock.knight-bestiaire-officiel
   padding: 0 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.statblock-table.aspects) {
   display: grid !important;
   grid-template-columns: minmax(145px, 1.2fr) minmax(0, 5fr) !important;
@@ -5015,7 +5015,7 @@ body .statblock.knight-bestiaire-officiel
   width: 100% !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.statblock-table.aspects)
   > .statblock-inline-item {
   display: block !important;
@@ -5027,13 +5027,13 @@ body .statblock.knight-bestiaire-officiel
   transform: none !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.statblock-table.aspects)
   > .statblock-inline-item:first-child {
   grid-column: 1 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.statblock-table.aspects)
   > .statblock-inline-item:nth-child(2) {
   grid-column: 2 !important;
@@ -5043,7 +5043,7 @@ body .statblock.knight-bestiaire-officiel
   align-self: stretch !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.statblock-table.aspects)
   > .statblock-inline-item:nth-child(2)
   :is(.statblock-item-container, .group-container, .table-container) {
@@ -5053,7 +5053,7 @@ body .statblock.knight-bestiaire-officiel
   box-sizing: border-box !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.statblock-table.aspects)
   .statblock-table.aspects {
   display: grid !important;
@@ -5065,7 +5065,7 @@ body .statblock.knight-bestiaire-officiel
   gap: 0.25rem !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.statblock-table.aspects)
   .statblock-table.aspects > .table-item {
   display: grid !important;
@@ -5079,7 +5079,7 @@ body .statblock.knight-bestiaire-officiel
   grid-row: 1 !important;
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .column > .inline-container:has(.statblock-table.aspects)
   .statblock-table.aspects .statblock-table-header {
   display: block !important;
@@ -5092,7 +5092,7 @@ body .statblock.knight-bestiaire-officiel
 
 /* Pas de soulignement entre les entrées : les séparateurs de section orange
    suffisent. */
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.statblock-trait-prop,
       .traits-container,
       .traits-container > .statblock-trait-prop,
@@ -5104,10 +5104,10 @@ body .statblock.knight-bestiaire-officiel
 /* Les anciennes règles utilisent davantage de classes et gagnent donc la
    cascade malgré !important. Ces sélecteurs reprennent la structure exacte
    produite par Fantasy Statblocks. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.traits-container
   > div.statblock-item-container.statblock-trait-prop,
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.statblock-item-container.statblock-trait-prop {
   border: 0 !important;
   border-top: 0 !important;
@@ -5117,7 +5117,7 @@ html body div.statblock.knight-bestiaire-officiel
   box-shadow: none !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   > div.statblock-inline-item.table-container {
   display: block !important;
@@ -5130,7 +5130,7 @@ html body div.statblock.knight-bestiaire-officiel
   align-self: stretch !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   > div.statblock-inline-item.table-container
   > div.statblock-item-container.table-container {
@@ -5140,7 +5140,7 @@ html body div.statblock.knight-bestiaire-officiel
   min-width: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects {
   display: grid !important;
@@ -5151,7 +5151,7 @@ html body div.statblock.knight-bestiaire-officiel
   min-width: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects > div.table-item {
   display: grid !important;
@@ -5164,7 +5164,7 @@ html body div.statblock.knight-bestiaire-officiel
 }
 
 /* Palette officielle uniforme : un orange et des gris neutres. */
-html body div.statblock.knight-bestiaire-officiel {
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
   --kbo-accent: #f07818;
   --kbo-border: #f07818;
   --kbo-title: #202629;
@@ -5179,14 +5179,14 @@ html body div.statblock.knight-bestiaire-officiel {
   background: #252b2e !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.heading-container,
       .knight-official-title,
       .column > .group-container:has(> h3.section-header)) {
   border-color: #f07818 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-combat-row .property-name,
       .knight-bestiaire-combat-row .property-name,
       .statblock-table.aspects .statblock-table-header,
@@ -5196,7 +5196,7 @@ html body div.statblock.knight-bestiaire-officiel
   color: #fff !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-combat-row .line,
       .knight-bestiaire-combat-row .line,
       .statblock-table.aspects .table-item,
@@ -5205,7 +5205,7 @@ html body div.statblock.knight-bestiaire-officiel
   border-color: #252b2e !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.column,
       .traits-container,
       .statblock-trait-prop,
@@ -5213,7 +5213,7 @@ html body div.statblock.knight-bestiaire-officiel
   background-color: #252b2e !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel a.internal-link {
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) a.internal-link {
   color: #f07818 !important;
   -webkit-text-fill-color: #f07818 !important;
   text-decoration-line: underline !important;
@@ -5222,11 +5222,11 @@ html body div.statblock.knight-bestiaire-officiel a.internal-link {
   text-underline-offset: 0.12em !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column div.statblock-table.aspects a.internal-link.data-link-text,
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column div.property.trait a.internal-link.data-link-text,
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column div.statblock-markdown a.internal-link {
   color: #f07818 !important;
   -webkit-text-fill-color: #f07818 !important;
@@ -5235,7 +5235,7 @@ html body div.statblock.knight-bestiaire-officiel
 }
 
 /* Cases jointives dans les tableaux d'aspects et de valeurs dérivées. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   :is(.knight-official-profile-row .statblock-table.aspects,
       .knight-bestiaire-profile-row .statblock-table.aspects,
       .knight-official-combat-row,
@@ -5245,9 +5245,9 @@ html body div.statblock.knight-bestiaire-officiel
   row-gap: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row,
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row {
   gap: 0 !important;
   column-gap: 0 !important;
@@ -5256,13 +5256,13 @@ html body div.statblock.knight-bestiaire-officiel
   padding: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   :is(.statblock-inline-item,
       .statblock-item-container.table-container,
       .statblock-table.aspects,
       .statblock-table.aspects > .table-item),
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row
   :is(.statblock-inline-item,
       .statblock-item-container.property-container,
@@ -5276,26 +5276,26 @@ html body div.statblock.knight-bestiaire-officiel
   box-sizing: border-box !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   .statblock-table.aspects > .table-item,
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row
   > .statblock-inline-item {
   border: 0 !important;
   border-right: 2px solid #252b2e !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   .statblock-table.aspects > .table-item:last-child,
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row
   > .statblock-inline-item:not(:has(~ .statblock-inline-item:not(:empty))) {
   border-right: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row .line {
   width: 100% !important;
   height: 100% !important;
@@ -5304,7 +5304,7 @@ html body div.statblock.knight-bestiaire-officiel
 
 /* Disposition définitive sans gouttières : Flexbox évite les espacements
    résiduels imposés aux éléments de la grille par le plugin. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row {
   display: flex !important;
   flex-flow: row nowrap !important;
@@ -5315,7 +5315,7 @@ html body div.statblock.knight-bestiaire-officiel
   padding: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row
   > div.statblock-inline-item.property-container:not(:empty) {
   display: block !important;
@@ -5328,13 +5328,13 @@ html body div.statblock.knight-bestiaire-officiel
   border: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row
   > div.statblock-inline-item.property-container:empty {
   display: none !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row
   > div.statblock-inline-item.property-container
   > div.statblock-item-container.property-container {
@@ -5345,7 +5345,7 @@ html body div.statblock.knight-bestiaire-officiel
   border: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects {
   display: flex !important;
@@ -5354,7 +5354,7 @@ html body div.statblock.knight-bestiaire-officiel
   gap: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects > div.table-item {
   display: grid !important;
@@ -5370,7 +5370,7 @@ html body div.statblock.knight-bestiaire-officiel
 /* Le moteur du plugin impose flex:none à certaines propriétés : conserver
    Flexbox ici masque toute la ligne. Le combat revient donc à une grille
    explicite, désormais sans gap, marge, padding ni doubles bordures. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row {
   display: grid !important;
   grid-template-columns: repeat(8, minmax(0, 1fr)) !important;
@@ -5383,7 +5383,7 @@ html body div.statblock.knight-bestiaire-officiel
   padding: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row
   > div.statblock-inline-item.property-container:not(:empty) {
   display: block !important;
@@ -5402,7 +5402,7 @@ html body div.statblock.knight-bestiaire-officiel
 
 /* La première entrée est enveloppée dans traits-container ; supprimer le
    retrait supplémentaire afin qu'elle s'aligne sur les suivantes. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.statblock-item-container.traits-container {
   width: 100% !important;
   max-width: none !important;
@@ -5411,10 +5411,10 @@ html body div.statblock.knight-bestiaire-officiel
   border: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.statblock-item-container.traits-container
   > div.statblock-item-container.statblock-trait-prop,
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.statblock-item-container.statblock-trait-prop {
   width: 100% !important;
   max-width: none !important;
@@ -5425,7 +5425,7 @@ html body div.statblock.knight-bestiaire-officiel
 
 /* Tableaux réellement jointifs. Le faux identifiant dans :not() augmente la
    priorité sans dépendre d'un élément réel du document. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row:not(#knight-no-gutter) {
   display: table !important;
   table-layout: fixed !important;
@@ -5436,7 +5436,7 @@ html body div.statblock.knight-bestiaire-officiel
   padding: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-combat-row:not(#knight-no-gutter)
   > div.statblock-inline-item.property-container:not(:empty) {
   display: table-cell !important;
@@ -5449,7 +5449,7 @@ html body div.statblock.knight-bestiaire-officiel
   vertical-align: top !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects:not(#knight-no-gutter) {
   display: table !important;
@@ -5461,7 +5461,7 @@ html body div.statblock.knight-bestiaire-officiel
   padding: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects:not(#knight-no-gutter)
   > div.table-item {
@@ -5477,7 +5477,7 @@ html body div.statblock.knight-bestiaire-officiel
 
 /* Les aspects contiennent deux niveaux par cellule et ne supportent pas le
    mode table-cell. Une grille explicite les garde jointifs sans chevauchement. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects:not(#knight-no-gutter):not(#knight-aspects-grid) {
   display: grid !important;
@@ -5493,7 +5493,7 @@ html body div.statblock.knight-bestiaire-officiel
   border: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects:not(#knight-no-gutter):not(#knight-aspects-grid)
   > div.table-item {
@@ -5512,7 +5512,7 @@ html body div.statblock.knight-bestiaire-officiel
   align-self: stretch !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row
   div.statblock-table.aspects:not(#knight-no-gutter):not(#knight-aspects-grid)
   > div.table-item > span {
@@ -5522,10 +5522,10 @@ html body div.statblock.knight-bestiaire-officiel
 }
 
 /* Noms des AE, capacités et armes. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column div.statblock-trait-prop
   div.property.trait > div.property-name.trait-name:not(#knight-orange-name),
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column div.statblock-trait-prop
   div.property.trait > div.property-name.trait-name:not(#knight-orange-name) * {
   color: #f07818 !important;
@@ -5534,9 +5534,9 @@ html body div.statblock.knight-bestiaire-officiel
 
 /* Le titre Point faible doit employer la même typographie que les autres
    en-têtes de caractéristiques. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   h3.section-header.point-faible:not(#knight-weakpoint-font),
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   h3.section-header.point-faible:not(#knight-weakpoint-font) * {
   font-family: var(--font-interface), "Noto Sans", "Myriad Pro", Calibri, Helvetica, Arial, sans-serif !important;
   font-size: 0.65rem !important;
@@ -5549,18 +5549,18 @@ html body div.statblock.knight-bestiaire-officiel
 }
 
 /* Aucun emplacement coloré lorsque Point faible est absent. */
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row:not(#knight-empty-weakpoint)
   > div.statblock-inline-item.text-container:empty {
   display: none !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row:not(#knight-empty-weakpoint):has(> div.statblock-inline-item.text-container:empty) {
   grid-template-columns: 1fr !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   div.column > div.inline-container.knight-official-profile-row:not(#knight-empty-weakpoint)
   > div.statblock-inline-item.text-container:empty
   + div.statblock-inline-item.table-container {
@@ -5569,8 +5569,8 @@ html body div.statblock.knight-bestiaire-officiel
 }
 
 @media print {
-  html body div.statblock.knight-bestiaire-officiel,
-  html body div.statblock.knight-bestiaire-officiel
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel),
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.column, .traits-container, .statblock-trait-prop, .property.trait) {
     background: #fff !important;
     background-color: #fff !important;
@@ -5578,7 +5578,7 @@ html body div.statblock.knight-bestiaire-officiel
     border-color: #555 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.knight-official-combat-row .property-name,
         .knight-bestiaire-combat-row .property-name,
         .statblock-table.aspects .statblock-table-header,
@@ -5588,7 +5588,7 @@ html body div.statblock.knight-bestiaire-officiel
     color: #fff !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.knight-official-combat-row .line,
         .knight-bestiaire-combat-row .line,
         .statblock-table.aspects .table-item,
@@ -5598,13 +5598,13 @@ html body div.statblock.knight-bestiaire-officiel
     color: #111 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel a.internal-link {
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) a.internal-link {
     color: #111 !important;
     -webkit-text-fill-color: #111 !important;
     text-decoration-color: #111 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.statblock-content-container,
         .statblock-content,
         .column,
@@ -5623,7 +5623,7 @@ html body div.statblock.knight-bestiaire-officiel
     border-color: #555 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.heading.statblock-heading,
         .heading.statblock-heading *,
         .statblock-markdown p,
@@ -5633,14 +5633,14 @@ html body div.statblock.knight-bestiaire-officiel
     -webkit-text-fill-color: #111 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     .column > .group-container:has(> h3.section-header) {
     background: #555 !important;
     background-color: #555 !important;
     border-color: #555 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.knight-official-combat-row .property-name,
         .knight-bestiaire-combat-row .property-name,
         .statblock-table.aspects .statblock-table-header,
@@ -5652,7 +5652,7 @@ html body div.statblock.knight-bestiaire-officiel
     border-color: #555 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.statblock-table.aspects .table-item,
         .statblock-table.aspects .table-item > span:not(.statblock-table-header),
         .knight-official-combat-row .line,
@@ -5665,8 +5665,8 @@ html body div.statblock.knight-bestiaire-officiel
   }
 
   /* Neutralisation absolue des fonds écran lors de l'impression. */
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-white),
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-white)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-white),
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-white)
     *:not(#knight-print-white) {
     background: #fff !important;
     background-color: #fff !important;
@@ -5677,7 +5677,7 @@ html body div.statblock.knight-bestiaire-officiel
     box-shadow: none !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-white)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-white)
     :is(.knight-official-combat-row .property-name,
         .knight-bestiaire-combat-row .property-name,
         .statblock-table.aspects .statblock-table-header,
@@ -5689,7 +5689,7 @@ html body div.statblock.knight-bestiaire-officiel
     border-color: #555 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-white)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-white)
     .column > .group-container:has(> h3.section-header):not(#knight-print-separator) {
     background: #555 !important;
     background-color: #555 !important;
@@ -5697,27 +5697,27 @@ html body div.statblock.knight-bestiaire-officiel
   }
 
   /* Fiche compacte, adaptée à deux statblocks sur une feuille A4. */
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact) {
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact) {
     font-size: 8.2pt !important;
     line-height: 1.12 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     :is(p, .statblock-markdown, .property.trait) {
     font-size: 8.2pt !important;
     line-height: 1.12 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     :is(p, .statblock-markdown p) {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     div.column > div.statblock-item-container.traits-container
     > div.statblock-item-container.statblock-trait-prop,
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     div.column > div.statblock-item-container.statblock-trait-prop {
     margin: 0 !important;
     padding: 0.13rem 0.35rem !important;
@@ -5731,7 +5731,7 @@ html body div.statblock.knight-bestiaire-officiel
   /* Le corps des AE, capacités et armes doit pouvoir grandir naturellement.
      On garde la petite police, mais pas l'interligne ultra-compact qui faisait
      se chevaucher accents, jambages et lignes successives dans le PDF. */
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     div.column :is(.traits-container, .statblock-trait-prop)
     :is(.property.trait, .statblock-markdown, .statblock-markdown p) {
     height: auto !important;
@@ -5741,12 +5741,12 @@ html body div.statblock.knight-bestiaire-officiel
     overflow: visible !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     .statblock-trait-prop + .statblock-trait-prop {
     margin-top: 0 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     .heading.statblock-heading {
     margin: 0 !important;
     padding: 0.18rem 0.3rem !important;
@@ -5754,14 +5754,14 @@ html body div.statblock.knight-bestiaire-officiel
     line-height: 1.05 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     :is(.statblock-table-header, .property-name, .section-header.point-faible) {
     padding: 0.12rem 0.08rem !important;
     font-size: 6.8pt !important;
     line-height: 1 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     :is(.statblock-table.aspects .table-item > span:not(.statblock-table-header),
         .knight-official-combat-row .statblock-markdown) {
     min-height: 0 !important;
@@ -5771,7 +5771,7 @@ html body div.statblock.knight-bestiaire-officiel
   }
 
   /* Rétablir les séparateurs que la neutralisation des fonds avait effacés. */
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     div.column > div.group-container:has(> h3.section-header):not(#knight-print-separator):not(#knight-print-line) {
     display: block !important;
     width: 100% !important;
@@ -5788,7 +5788,7 @@ html body div.statblock.knight-bestiaire-officiel
   /* Les groupes de titres vides peuvent être omis par le moteur d'impression.
      Porter la démarcation sur le premier contenu de chaque section garantit
      sa présence dans le PDF. */
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-compact)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-compact)
     div.column > div.group-container:has(> h3.section-header)
     + div.statblock-item-container.traits-container:not(#knight-print-content-line):not(#knight-print-content-line-2) {
     margin-top: 0.14rem !important;
@@ -5797,29 +5797,29 @@ html body div.statblock.knight-bestiaire-officiel
   }
 }
 
-body .statblock.knight-bestiaire-officiel
+body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
   .statblock-trait-prop + .statblock-trait-prop {
   margin-top: 0.2rem !important;
 }
 
 @media (max-width: 720px) {
-  body .statblock.knight-bestiaire-officiel .knight-official-profile-row {
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-official-profile-row {
     grid-template-columns: 1fr !important;
   }
 
-  body .statblock.knight-bestiaire-officiel
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     .knight-official-profile-row > .statblock-inline-item {
     grid-column: 1 !important;
     grid-row: auto !important;
   }
 
-  body .statblock.knight-bestiaire-officiel .knight-official-combat-row {
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) .knight-official-combat-row {
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   }
 }
 
 @media print {
-  body .statblock.knight-bestiaire-officiel {
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel) {
     --kbo-accent: #555;
     --kbo-dark: #fff;
     --kbo-cell: #fff;
@@ -5832,14 +5832,14 @@ body .statblock.knight-bestiaire-officiel
     color: #111 !important;
   }
 
-  body .statblock.knight-bestiaire-officiel
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(p, span, em, strong, .statblock-markdown, .line, .trait,
         .trait-name, .trait-name p, .property-name.trait-name,
         .knight-damage-value, a.internal-link) {
     color: #111 !important;
   }
 
-  body .statblock.knight-bestiaire-officiel
+  body .statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel)
     :is(.knight-official-combat-row .property-name,
         .knight-bestiaire-aspects .statblock-table-header,
         .knight-bestiaire-identity h3.section-header) {
@@ -5850,9 +5850,9 @@ body .statblock.knight-bestiaire-officiel
 }
 
 /* Priorité ultime : liens sobres et séparateurs jointifs. */
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-links):not(#knight-final-links-2)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-links):not(#knight-final-links-2)
   a.internal-link:not(#knight-link-no-underline),
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-links):not(#knight-final-links-2)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-links):not(#knight-final-links-2)
   a.internal-link:not(#knight-link-no-underline):is(:hover, :focus, :active) {
   text-decoration: none !important;
   text-decoration-line: none !important;
@@ -5861,7 +5861,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-links):not(#
   box-shadow: none !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-sections):not(#knight-final-sections-2)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-sections):not(#knight-final-sections-2)
   div.column > div.group-container:has(> h3.section-header):not(#knight-section-line) {
   display: block !important;
   width: 100% !important;
@@ -5877,7 +5877,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-sections):no
 }
 
 @media print {
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-final-sections):not(#knight-final-sections-2)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-sections):not(#knight-final-sections-2)
     div.column > div.group-container:has(> h3.section-header):not(#knight-section-line):not(#knight-print-separator):not(#knight-print-line) {
     height: 1px !important;
     min-height: 1px !important;
@@ -5890,7 +5890,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-sections):no
 }
 
 /* Point faible = première cellule du tableau des aspects. */
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
   div.column > div.inline-container.knight-official-profile-row {
   display: grid !important;
   grid-template-columns: minmax(0, 1fr) minmax(0, 5fr) !important;
@@ -5902,7 +5902,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
   padding: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
   div.column > div.inline-container.knight-official-profile-row
   > div.statblock-inline-item.text-container:not(:empty) {
   grid-column: 1 !important;
@@ -5914,7 +5914,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
   border: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
   div.column > div.inline-container.knight-official-profile-row
   > div.statblock-inline-item.text-container:not(:empty)
   + div.statblock-inline-item.table-container {
@@ -5926,7 +5926,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
   padding: 0 !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
   .knight-official-profile-row
   > .text-container:not(:empty) > .text-container {
   display: grid !important;
@@ -5939,7 +5939,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
   background: #41494d !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
   .knight-official-profile-row
   :is(.section-header.point-faible, .statblock-table.aspects .statblock-table-header) {
   display: flex !important;
@@ -5960,7 +5960,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
   text-transform: uppercase !important;
 }
 
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
   .knight-official-profile-row
   > .text-container:not(:empty) > .text-container > .line {
   display: flex !important;
@@ -5977,17 +5977,17 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
 }
 
 @media print {
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
     .knight-official-profile-row
     > .text-container:not(:empty) > .text-container,
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
     .knight-official-profile-row
     > .text-container:not(:empty) > .text-container > .line {
     background: #fff !important;
     color: #111 !important;
   }
 
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-profile)
     .knight-official-profile-row
     :is(.section-header.point-faible, .statblock-table.aspects .statblock-table-header) {
     background: #555 !important;
@@ -5998,9 +5998,9 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-profile)
 
 /* Le thème du plugin recolore le contenu interne du h3 indépendamment de son
    fond. Conserver POINT FAIBLE en blanc, comme les cinq en-têtes d'aspects. */
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-weakpoint)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-weakpoint)
   .knight-official-profile-row .section-header.point-faible,
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-weakpoint)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-weakpoint)
   .knight-official-profile-row .section-header.point-faible * {
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
@@ -6009,8 +6009,8 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-weakpoint)
 /* Fantasy Statblocks ajoute deux filets décoratifs à l'intérieur du cadre.
    Notre layout possède déjà sa propre bordure : éviter les doubles lignes en
    haut et en bas, à l'écran comme dans le PDF. */
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-frame)::before,
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-frame)::after {
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-frame)::before,
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-frame)::after {
   content: none !important;
   display: none !important;
   width: 0 !important;
@@ -6023,9 +6023,9 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-frame)::afte
 }
 
 /* Les deux filets décoratifs sont de vrais éléments ajoutés par le plugin. */
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-bars)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-bars)
   > div.bar,
-html body div.statblock.knight-bestiaire-officiel:not(#knight-final-bars)
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-final-bars)
   div.bar[class*="svelte-"] {
   display: none !important;
   width: 0 !important;
@@ -6041,10 +6041,10 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-bars)
 /* Le reset d'impression du plugin cible tous les descendants et gagnait
    encore sur le texte interne du h3. */
 @media print {
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-weakpoint-1):not(#knight-print-weakpoint-2):not(#knight-print-weakpoint-3)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-weakpoint-1):not(#knight-print-weakpoint-2):not(#knight-print-weakpoint-3)
     .knight-official-profile-row
     h3.section-header.point-faible,
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-weakpoint-1):not(#knight-print-weakpoint-2):not(#knight-print-weakpoint-3)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-weakpoint-1):not(#knight-print-weakpoint-2):not(#knight-print-weakpoint-3)
     .knight-official-profile-row
     h3.section-header.point-faible * {
     color: #fff !important;
@@ -6055,7 +6055,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-bars)
 @media print {
   /* Agrandir les chiffres sans utiliser zoom : zoom agrandissait également
      leur boîte blanche, qui mordait alors sur le bandeau des aspects. */
-  html body div.statblock.knight-bestiaire-officiel:not(#knight-print-aspects-1):not(#knight-print-aspects-2):not(#knight-print-aspects-3)
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel):not(#knight-print-aspects-1):not(#knight-print-aspects-2):not(#knight-print-aspects-3)
     .statblock-table.aspects
     .table-item > span:not(.statblock-table-header)
     .statblock-markdown p {
@@ -6078,7 +6078,7 @@ html body div.statblock.knight-bestiaire-officiel:not(#knight-final-bars)
   }
 
   /* Bouton de menu/édition ajouté par Obsidian au bloc rendu. */
-  .markdown-preview-view:has(.statblock.knight-bestiaire-officiel)
+  .markdown-preview-view:has(.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel))
     :is(.edit-block-button, .copy-code-button) {
     display: none !important;
   }
@@ -7690,7 +7690,7 @@ html body div.statblock:has(.knight-pnj-officiel-marker)
      uniquement à l'écran. */
   html body div.statblock:is(
     .knight-pnj-officiel,
-    .knight-bestiaire-officiel,
+    :is(.knight-bestiaire-officiel, .knight-adversaire-officiel),
     :has(.knight-pnj-officiel-marker),
     :has(.knight-bestiaire-officiel-marker)
   ) a.internal-link {
@@ -7701,7 +7701,7 @@ html body div.statblock:has(.knight-pnj-officiel-marker)
 
   html body div.statblock:is(
     .knight-pnj-officiel,
-    .knight-bestiaire-officiel,
+    :is(.knight-bestiaire-officiel, .knight-adversaire-officiel),
     :has(.knight-pnj-officiel-marker),
     :has(.knight-bestiaire-officiel-marker)
   ) a.internal-link:hover {
@@ -7994,7 +7994,7 @@ html body div.statblock:has(.knight-pnj-officiel-marker)
 /* Le layout officiel conserve un groupe de titre "Combat" entre le tableau
    des aspects et la rangée de valeurs. Comme le titre est volontairement
    masqué, ce groupe ne doit pas laisser un second trait de séparation. */
-html body div.statblock:is(.knight-bestiaire-officiel, .knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
+html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel, .knight-pnj-officiel, :has(.knight-pnj-officiel-marker))
   div.column > div.group-container:has(> h3.section-header.combat) {
   display: none !important;
   width: 0 !important;
@@ -8004,4 +8004,332 @@ html body div.statblock:is(.knight-bestiaire-officiel, .knight-pnj-officiel, :ha
   padding: 0 !important;
   border: 0 !important;
   background: transparent !important;
+}
+
+/* Impression d'une fiche officielle seule : une fiche haute ne doit pas être
+   reportée intégralement à la page suivante par l'ancien `avoid-page`.
+   Les planches QuickAdd possèdent leurs propres règles d'imposition et ne
+   sont donc pas concernées par cette surcharge. */
+@media print {
+  html body .markdown-preview-view:not(.knight-print-multi-a5):not(.knight-print-double-a5):not(.knight-print-pj-duplex-a5)
+    div.statblock:not(#knight-single-print-flow-1):not(#knight-single-print-flow-2):is(
+      .knight-pnj-officiel,
+      :is(.knight-bestiaire-officiel, .knight-adversaire-officiel),
+      :has(.knight-pnj-officiel-marker),
+      :has(.knight-bestiaire-officiel-marker)
+    ) {
+    break-before: auto !important;
+    page-break-before: auto !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+  }
+}
+
+/* Séparer clairement deux armes successives à l'impression. Fantasy
+   Statblocks enveloppe parfois la première entrée dans un traits-container
+   supplémentaire : les deux formes de voisinage sont donc couvertes. */
+@media print {
+  html body div.statblock
+    :is(.knight-official-weapons, .knight-pnj-official-weapons, .knight-bestiaire-weapons)
+    :is(
+      .statblock-trait-prop + .statblock-trait-prop,
+      .traits-container + .statblock-trait-prop
+    ) {
+    margin-top: 1mm !important;
+    padding-top: 1mm !important;
+    border-top: 0.3mm solid #777 !important;
+  }
+}
+
+/* Les rappels mécaniques sont destinés aux fiches imprimées. À l'écran, les
+   liens vers les notes d'effets restent la référence détaillée. */
+@media screen {
+  html body div.statblock
+    :is(
+      .knight-official-effect-reminders-section,
+      .knight-pnj-official-effect-reminders-section,
+      .knight-pj-effect-reminders-section
+    ) {
+    display: none !important;
+  }
+}
+
+@media print {
+  html body div.statblock:not(#knight-effect-reminders-final-1):not(#knight-effect-reminders-final-2)
+    :is(
+      .knight-official-effect-reminders-section,
+      .knight-pnj-official-effect-reminders-section,
+      .knight-pj-effect-reminders-section
+    ) {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-top: 0.5mm solid #555 !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  html body div.statblock:not(#knight-effect-reminders-final-1):not(#knight-effect-reminders-final-2)
+    :is(
+      .knight-official-effect-reminders-section,
+      .knight-pnj-official-effect-reminders-section,
+      .knight-pj-effect-reminders-section
+    ) > h3.section-header {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0.8mm 1.2mm !important;
+    border: 0 !important;
+    background: #eee !important;
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+    font-size: 8.2pt !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+    line-height: 1.15 !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+  }
+
+  html body div.statblock:not(#knight-effect-reminders-final-1):not(#knight-effect-reminders-final-2)
+    :is(
+      .knight-official-effect-reminders,
+      .knight-pnj-official-effect-reminders,
+      .knight-pj-effect-reminders
+    ) {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  html body div.statblock:not(#knight-effect-reminders-final-1):not(#knight-effect-reminders-final-2)
+    :is(
+      .knight-official-effect-reminders,
+      .knight-pnj-official-effect-reminders,
+      .knight-pj-effect-reminders
+    ) .statblock-trait-prop {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0.8mm 1.2mm !important;
+    border: 0 !important;
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 8.2pt !important;
+    line-height: 1.24 !important;
+  }
+
+  html body div.statblock:not(#knight-effect-reminders-final-1):not(#knight-effect-reminders-final-2)
+    :is(
+      .knight-official-effect-reminders,
+      .knight-pnj-official-effect-reminders,
+      .knight-pj-effect-reminders
+    ) .statblock-trait-prop + .statblock-trait-prop {
+    border-top: 0.25mm dotted #777 !important;
+  }
+
+  html body div.statblock:not(#knight-effect-reminders-final-1):not(#knight-effect-reminders-final-2)
+    :is(
+      .knight-official-effect-reminders,
+      .knight-pnj-official-effect-reminders,
+      .knight-pj-effect-reminders
+    ) :is(.property-name.trait-name, .property-name.trait-name *, .statblock-markdown, .statblock-markdown p) {
+    display: inline !important;
+    margin: 0 !important;
+    color: #111 !important;
+    -webkit-text-fill-color: #111 !important;
+    font-size: 8.2pt !important;
+    line-height: 1.24 !important;
+  }
+
+  html body div.statblock:not(#knight-effect-reminders-final-1):not(#knight-effect-reminders-final-2)
+    :is(
+      .knight-official-effect-reminders,
+      .knight-pnj-official-effect-reminders,
+      .knight-pj-effect-reminders
+    ) .property-name.trait-name {
+    margin-right: 0.35rem !important;
+    font-weight: 800 !important;
+  }
+}
+
+/* Rappels d'effets — DOM réel Fantasy Statblocks.
+   Placé en dernier et volontairement plus spécifique que la règle Svelte
+   générée qui impose `display: block !important`. */
+@media screen {
+  html body div.column
+    > div.statblock-item-container.group-container:has(> h3.section-header.rappels-deffets),
+  html body div.column
+    > div.statblock-item-container.traits-container:has(
+      > div.statblock-item-container.statblock-trait-prop
+      > div.property.effets_resume.trait[class*="svelte-"]
+    ),
+  html body div.column
+    > div.statblock-item-container.statblock-trait-prop:has(
+      > div.property.effets_resume.trait[class*="svelte-"]
+    ),
+  html body div.column
+    div.statblock-item-container.statblock-trait-prop
+    > div.property.effets_resume.trait[class*="svelte-"] {
+    display: none !important;
+  }
+}
+
+/* Bestiaire officiel : mêmes libellés en capitales à l'écran que sur les
+   fiches PNJ. Les rappels d'effets restent masqués hors impression. */
+@media screen {
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel, :has(.knight-bestiaire-officiel-marker))
+    :is(
+      .knight-official-exceptional,
+      .knight-official-capacities,
+      .knight-official-weapons
+    ) div.property-name.trait-name,
+  html body div.statblock:is(.knight-bestiaire-officiel, .knight-adversaire-officiel, :has(.knight-bestiaire-officiel-marker))
+    :is(
+      .knight-official-exceptional,
+      .knight-official-capacities,
+      .knight-official-weapons
+    ) div.property-name.trait-name * {
+    text-transform: uppercase !important;
+  }
+}
+
+@media print {
+  html body div.column
+    > div.statblock-item-container.group-container:has(> h3.section-header.rappels-deffets),
+  html body div.column
+    > div.statblock-item-container.traits-container:has(
+      > div.statblock-item-container.statblock-trait-prop
+      > div.property.effets_resume.trait[class*="svelte-"]
+    ),
+  html body div.column
+    > div.statblock-item-container.statblock-trait-prop:has(
+      > div.property.effets_resume.trait[class*="svelte-"]
+    ),
+  html body div.column
+    div.statblock-item-container.statblock-trait-prop
+    > div.property.effets_resume.trait[class*="svelte-"] {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  html body div.column
+    > div.statblock-item-container.traits-container:has(
+      > div.statblock-item-container.statblock-trait-prop
+      > div.property.effets_resume.trait[class*="svelte-"]
+    )
+    + div.statblock-item-container.statblock-trait-prop:has(
+      > div.property.effets_resume.trait[class*="svelte-"]
+    ),
+  html body div.column
+    > div.statblock-item-container.statblock-trait-prop:has(
+      > div.property.effets_resume.trait[class*="svelte-"]
+    )
+    + div.statblock-item-container.statblock-trait-prop:has(
+      > div.property.effets_resume.trait[class*="svelte-"]
+    ) {
+    margin-top: 0 !important;
+    padding-top: 0.8mm !important;
+    border-top: 0.25mm dotted #777 !important;
+  }
+
+  html body div.property.effets_resume.trait[class*="svelte-"]
+    > div.property-name.trait-name {
+    display: inline !important;
+    margin: 0 0.1rem 0 0 !important;
+  }
+
+  html body div.property.effets_resume.trait[class*="svelte-"]
+    > div.statblock-markdown {
+    display: inline !important;
+    margin: 0 !important;
+  }
+
+  html body div.property:is(.effets_resume, .armes, .capacites, .aspects_exceptionnels).trait
+    > div.property-name.trait-name,
+  html body div.property:is(.effets_resume, .armes, .capacites, .aspects_exceptionnels).trait
+    > div.property-name.trait-name * {
+    text-transform: uppercase !important;
+  }
+}
+
+/* Knight Adversaire Officiel — capitalisation fondée sur les propriétés
+   réellement rendues par Fantasy Statblocks. Placée en toute fin afin de ne
+   plus dépendre des anciens conteneurs spécifiques PNJ ou Bestiaire. */
+@media screen {
+  html body div.statblock:has(.knight-adversaire-officiel-marker)
+    div.property:is(.aspects_exceptionnels, .capacites, .armes, .modules).trait
+    > div.property-name.trait-name,
+  html body div.statblock:has(.knight-adversaire-officiel-marker)
+    div.property:is(.aspects_exceptionnels, .capacites, .armes, .modules).trait
+    > div.property-name.trait-name * {
+    text-transform: uppercase !important;
+  }
+}
+
+/* Export PDF d'une fiche Adversaire seule : Obsidian/Fantasy Statblocks peut
+   conserver `break-inside: avoid` sur le conteneur du bloc de code. Si la
+   fiche approche la hauteur utile, Chromium reporte alors tout le statblock
+   sur la page 2 et laisse une page 1 blanche. On libère toute la chaîne de
+   conteneurs, sans intervenir sur les planches QuickAdd. */
+@media print {
+  /* Dice Roller : la moyenne initiale reste imprimée, mais le bouton-dé
+     interactif n'a aucune utilité sur papier. */
+  html body .statblock .dice-roller > .dice-roller-button {
+    display: none !important;
+  }
+
+  html body:not(:has(.knight-print-multi-a5)):not(:has(.knight-print-double-a5)):not(:has(.knight-print-pj-duplex-a5))
+    .markdown-preview-view:has(.knight-adversaire-officiel-marker),
+  html body:not(:has(.knight-print-multi-a5)):not(:has(.knight-print-double-a5)):not(:has(.knight-print-pj-duplex-a5))
+    .markdown-preview-sizer:has(.knight-adversaire-officiel-marker),
+  html body:not(:has(.knight-print-multi-a5)):not(:has(.knight-print-double-a5)):not(:has(.knight-print-pj-duplex-a5))
+    .markdown-preview-sizer > *:has(.statblock .knight-adversaire-officiel-marker),
+  html body:not(:has(.knight-print-multi-a5)):not(:has(.knight-print-double-a5)):not(:has(.knight-print-pj-duplex-a5))
+    div:has(> .statblock > .column .knight-adversaire-officiel-marker),
+  html body:not(:has(.knight-print-multi-a5)):not(:has(.knight-print-double-a5)):not(:has(.knight-print-pj-duplex-a5))
+    .statblock:has(.knight-adversaire-officiel-marker) {
+    break-before: auto !important;
+    page-break-before: auto !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    break-after: auto !important;
+    page-break-after: auto !important;
+    page: auto !important;
+  }
+
+  /* Les anciens layouts attribuent une page nommee au panneau de lecture.
+     Lorsqu'une fiche unifiee conserve aussi une ancienne classe PNJ/Bestiaire,
+     Chromium insere une page blanche pour passer de la page par defaut a cette
+     page nommee. Neutraliser `page` sur toute la chaine supprime ce saut sans
+     toucher aux planches QuickAdd, qui restent explicitement exclues. */
+  html body:not(:has(.knight-print-multi-a5)):not(:has(.knight-print-double-a5)):not(:has(.knight-print-pj-duplex-a5))
+    :is(
+      .markdown-preview-view,
+      .markdown-preview-sizer,
+      .block-language-statblock,
+      .statblock
+    ):has(.knight-adversaire-officiel-marker) {
+    page: auto !important;
+    break-before: auto !important;
+    page-break-before: auto !important;
+  }
+
+  html body:not(:has(.knight-print-multi-a5)):not(:has(.knight-print-double-a5)):not(:has(.knight-print-pj-duplex-a5))
+    .markdown-preview-view:has(.knight-adversaire-officiel-marker)
+    :is(.markdown-preview-pusher, .mod-header, .inline-title, .metadata-container) {
+    display: none !important;
+  }
 }

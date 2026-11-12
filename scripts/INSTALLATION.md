@@ -33,6 +33,7 @@ projet/
     │   │   ├── Knight Bestiaire.json
     │   │   ├── Knight Bestiaire Combat.json
     │   │   ├── Knight Bestiaire Officiel.json
+    │   │   ├── Knight Adversaire Officiel.json
     │   │   ├── Knight PJ.json
     │   │   ├── Knight PJ Recto.json
     │   │   ├── Knight PJ Verso.json
@@ -191,7 +192,7 @@ sous le titre principal. La présentation et la tactique restent dans le corps
 de la note, dans une grille 60/40 qui
 repasse automatiquement sur une seule colonne en affichage étroit. La fiche de
 combat autonome située dans `Acteurs/PNJ/Fiches/` utilise désormais le layout
-`Knight PNJ Officiel` et reprend les aspects, les aspects exceptionnels, les
+commun `Knight Adversaire Officiel` et reprend les aspects, les aspects exceptionnels, les
 valeurs de combat, les capacités, les modules et les armes. Lors d'une nouvelle
 conversion, un ancien bloc délimité par `BEGIN/END PNJ STATBLOCK` est supprimé
 des notes narratives sans toucher aux notes manuelles.
@@ -206,6 +207,11 @@ Leur valeur est un wikilien vers un bloc de la note correspondante, par exemple
 `[[Bête exceptionnelle#^majeur|6+]]`. Pour obtenir un aperçu compact au survol,
 ajouter dans chacune des notes `Chair exceptionnelle`, `Bête exceptionnelle`,
 `Machine exceptionnelle`, `Dame exceptionnelle` et `Masque exceptionnel` :
+
+Dans les statblocks de combat, leur description est volontairement résumée en
+une consigne mécanique courte (par exemple `Initiative 30, sans jet.` pour
+Masque majeur). Les notes d’aspects conservent les descriptions détaillées et
+restent accessibles par les liens placés sur les valeurs d’AE.
 
 ```markdown
 **Bête majeure** — `= this.majeur` ^majeur
@@ -244,21 +250,23 @@ aspects, aspects exceptionnels, combat, armes, modules, puis une carte pleine
 largeur pour chaque capacité. Sur un écran étroit, les grilles internes sont
 automatiquement replacées sur une seule colonne.
 
-Dans **Fantasy Statblocks → Manage layouts**, importer les neuf fichiers du
+Dans **Fantasy Statblocks → Manage layouts**, importer les fichiers du
 dossier `scripts/Fantasy Statblocks/templates/` :
 `Knight PNJ.json`, `Knight PNJ Combat.json`, `Knight Bestiaire.json`,
-`Knight Bestiaire Combat.json`, `Knight Bestiaire Officiel.json`, `Knight PJ.json`, `Knight PJ Recto.json`,
+`Knight Bestiaire Combat.json`, `Knight Bestiaire Officiel.json`,
+`Knight PNJ Officiel.json`, `Knight Adversaire Officiel.json`, `Knight PJ.json`, `Knight PJ Recto.json`,
 `Knight PJ Verso.json` et `Knight PJ Summary.json`.
 
-`Knight Bestiaire Officiel` est une variante visuelle expérimentale de
-`Knight Bestiaire Combat`. Elle utilise exactement les mêmes propriétés
-(profil, aspects exceptionnels et liens, descriptions, combat, dégâts calculés,
-armes et capacités) mais les présente sous forme de tableau technique inspiré
-des fiches officielles. Pour l’essayer sans modifier une fiche existante,
-dupliquer la note puis remplacer uniquement :
+`Knight Adversaire Officiel` est le layout commun utilisé par les nouvelles
+fiches PNJ, créatures et bandes. Il accepte les propriétés propres à certains
+acteurs (`pointfaible`, `cohesion`, `debordement`, `modules`) mais masque les
+blocs absents. Les anciens layouts `Knight Bestiaire Officiel` et
+`Knight PNJ Officiel` sont conservés uniquement comme références.
+
+Pour migrer manuellement une ancienne fiche sans la régénérer, remplacer :
 
 ```yaml
-layout: Knight Bestiaire Officiel
+layout: Knight Adversaire Officiel
 ```
 
 L’accent est orange par défaut. La sélection automatique d’une couleur selon la
@@ -483,4 +491,233 @@ il faut la recréer après une modification des fiches sources.
 - Un séparateur pointillé est ajouté entre deux descriptions d'effets successives.
 - Un séparateur identique précède désormais aussi la première description, sous la ligne récapitulative `Effets`.
 - Le groupe de titre `Combat`, déjà masqué visuellement dans le style officiel, ne génère plus une seconde ligne au-dessus des statistiques.
+
+### Version 272 — suppression de la première page blanche
+
+- Lors de l'impression d'une fiche PNJ ou Bestiaire officielle seule, le statblock n'est plus reporté intégralement à la page suivante par la règle historique `avoid-page`.
+- Une fiche haute commence désormais sur la première page et peut continuer sur la suivante si son contenu le nécessite réellement.
+- Les planches QuickAdd multi-fiches et PJ recto-verso conservent leurs propres règles d'imposition.
+
+### Version 273 — descriptions rapides des effets
+
+- `effect-quick-reference.json` contient une première table de 31 effets réellement rencontrés dans les exports du projet.
+- `EFFETS-REFERENCE-RAPIDE.md` fournit la même table sous une forme lisible et modifiable.
+- Les fiches PNJ, Bestiaire et PJ privées imprimées utilisent la description rapide quand elle existe.
+- Les notes d'effets continuent d'utiliser la description officielle complète de `effect-catalog.json`.
+- Pour un effet non encore résumé, le convertisseur conserve provisoirement le repli sur la première phrase officielle.
+
+### Version 274 — séparation des armes à l'impression
+
+- Un trait continu discret sépare maintenant deux armes successives dans les fiches PNJ et Bestiaire officielles.
+- La règle prend en charge l'enveloppe supplémentaire que Fantasy Statblocks ajoute parfois autour de la première arme.
+
+### Version 275 — rappels d'effets centralisés
+
+- Les descriptions rapides ne sont plus répétées sous chaque arme.
+- Une section imprimée `Rappels d'effets`, placée après les armes, regroupe chaque effet une seule fois.
+- Deux valeurs différentes d'un même effet restent distinctes, par exemple `Choc 1` et `Choc 4`.
+- `Ignore armure`, `Ignore CdF` et `Deux mains` sont considérés comme autosuffisants et ne reçoivent pas de rappel.
+- La section est disponible dans les layouts `Knight Bestiaire Officiel`, `Knight PNJ Officiel` et `Knight PJ`, mais reste masquée à l'écran.
+- Les templates Fantasy Statblocks doivent être réimportés et les fiches doivent être régénérées.
+
+### Version 283 — reconstruction propre des rappels
+
+- Cette version repart directement de la version 275, sans reprendre les essais CSS des versions 276 à 282.
+- Le masquage à l'écran et l'affichage à l'impression ciblent le DOM réel de Fantasy Statblocks (`rappels-deffets` et `effets_resume`).
+- La spécificité du sélecteur dépasse explicitement la règle Svelte `display: block !important` identifiée dans l'inspecteur.
+- Les rappels imprimés sont séparés par des pointillés et leur nom reste proche de la description.
+- Les noms des effets, armes et aspects exceptionnels conservent leur casse d'origine à l'impression.
+
+### Version 284 — séparateurs d'impression PNJ
+
+- Le Bestiaire conserve ses séparateurs existants.
+- Sur `Knight PNJ Officiel`, les pointillés des rappels d'effets sont dessinés par un pseudo-élément d'impression, afin de ne plus dépendre des bordures neutralisées par le layout.
+- La pagination reste naturelle : les fiches longues peuvent continuer sur une seconde page sans réduction de la taille du texte.
+
+### Version 285 — ligne d'arme synthétique PNJ
+
+- Dans `Knight PNJ Officiel`, chaque arme affiche sur une même ligne : nom, type, portée, dégâts et violence, séparés par des points médians.
+- Les dégâts conservent leur mise en évidence agrandie.
+- La liste des effets reste seule sur la ligne suivante.
+- Le Bestiaire Officiel et les autres formats de fiches ne sont pas modifiés.
+
+### Version 286 — suppression du pointillé parasite PNJ
+
+- Le pseudo-élément expérimental de la version 284 est supprimé : selon le montage du layout PNJ, il pouvait apparaître au-dessus du titre de la fiche.
+- La présentation synthétique des armes introduite en version 285 est conservée.
+- Les rappels d'effets PNJ restent lisibles, sans séparateur forcé pour le moment.
+
+### Version 287 — résumés compacts des aspects exceptionnels
+
+- Les dix descriptions d’aspects exceptionnels (mineurs et majeurs) deviennent
+  des consignes mécaniques courtes adaptées à la consultation en partie et à
+  l’impression.
+- Les valeurs utiles sont injectées dans le résumé, par exemple `+6 Réaction`
+  ou `test de Hargne (difficulté 4)`.
+- Masque majeur est réduit à `Initiative 30, sans jet.`.
+- Les liens placés dans la ligne des aspects continuent de donner accès aux
+  descriptions détaillées.
+
+### Version 288 — libellés imprimés en majuscules
+
+- À l’impression et dans l’export PDF, les noms des aspects exceptionnels,
+  capacités, armes et rappels d’effets sont affichés en majuscules.
+- Les descriptions restent en casse normale et l’affichage à l’écran n’est pas
+  modifié.
+
+### Version 289 — libellés Bestiaire en majuscules à l’écran
+
+- Dans `Knight Bestiaire Officiel`, les noms des aspects exceptionnels,
+  capacités et armes sont également affichés en majuscules à l’écran, comme
+  dans `Knight PNJ Officiel`.
+- Les rappels d’effets restent masqués à l’écran.
+
+### Version 290 — layout officiel commun PNJ et Bestiaire
+
+- Ajout du layout unique `Knight Adversaire Officiel`, fondé sur la structure
+  stable du Bestiaire Officiel.
+- Les fiches PNJ, créatures et bandes générées utilisent désormais ce même
+  layout, ce même style et la même impression.
+- Point faible, Cohésion, Débordement et Modules sont conditionnels : leur
+  absence ne crée pas de case vide.
+- Les armes utilisent dans tous les cas la présentation synthétique sur deux
+  lignes : caractéristiques, puis effets.
+- `Knight PNJ Officiel` et `Knight Bestiaire Officiel` restent fournis comme
+  références, mais ne sont plus sélectionnés par le convertisseur.
+
+### Version 291 — capitalisation du layout commun
+
+- La capitalisation à l’écran ne dépend plus des anciens conteneurs du
+  Bestiaire Officiel.
+- Dans `Knight Adversaire Officiel`, les noms des aspects exceptionnels,
+  capacités, armes et modules sont ciblés directement par leurs propriétés
+  Fantasy Statblocks et s’affichent en majuscules.
+
+### Version 292 — rappel Silencieux raccourci
+
+- Le rappel rapide imprimé de `Silencieux` devient :
+  `En attaque surprise ou invisible, ajoute Discrétion aux dégâts ; PNJ : Masque/2 + AE.`
+- La note détaillée de l’effet et son lien ne sont pas modifiés.
+
+### Version 293 — dégâts de Bête exceptionnelle mineure
+
+- Les armes de contact ajoutent désormais le score de Bête exceptionnelle
+  mineure à leurs dégâts fixes.
+- Avec Bête exceptionnelle majeure, le calcul conserve l’ajout du score de
+  Bête ainsi que celui de l’aspect exceptionnel.
+- Le détail du calcul indique séparément `Bête` et `AE Bête`.
+
+### Version 294 — repères d’application des AE
+
+- Chaque description compacte d’aspect exceptionnel se termine désormais par
+  `INCLUS` lorsque son effet est déjà intégré aux valeurs calculées de la fiche.
+- Les effets qui doivent être gérés pendant la partie se terminent par
+  `À APPLIQUER`.
+- Les deux repères sont mis en gras pour rester immédiatement visibles à
+  l’écran comme à l’impression.
+
+### Version 295 — valeurs fixes sans zéro artificiel
+
+- Une Violence ou des Dégâts sans dé mais avec un bonus fixe affichent
+  directement cette valeur : `1` au lieu de `0 + 1`.
+- Une valeur fixe négative suit la même règle, par exemple `−1`.
+
+### Version 296 — suppression de la page blanche avant une fiche seule
+
+- Lors de l’export PDF d’une fiche `Knight Adversaire Officiel` seule, les
+  règles de pagination héritées des conteneurs Obsidian/Fantasy Statblocks sont
+  neutralisées sur toute la chaîne du bloc.
+- Une fiche tenant sur une page n’est plus reportée intégralement en page 2.
+- Les planches QuickAdd multi-fiches et recto-verso ne sont pas concernées.
+- Les libellés d’armes `Type:`, `Dégâts:` et `Violence:` n’ont plus d’espace
+  avant les deux-points.
+- Les additions fixes de Dégâts et de Violence sont compactées : `3D6+9` au
+  lieu de `3D6 + 9`.
+
+### Version 297 — ligne d’arme sans deux-points
+
+- Les libellés `Type`, `Portée`, `Dégâts` et `Violence` ne sont plus suivis
+  de deux-points dans les fiches générées.
+- Exemple : `Type contact · Portée longue · Dégâts 6D6 · Violence 1`.
+
+### Version 298 — page blanche avant une fiche Adversaire
+
+- L’impression d’une fiche seule neutralise désormais aussi la page CSS nommée
+  héritée des anciens layouts PNJ/Bestiaire.
+- Chromium ne doit donc plus insérer une page A4 vide avant le statblock unifié
+  `Knight Adversaire Officiel`.
+
+### Version 299 — jets de Dégâts et de Violence
+
+- Le layout `Knight Adversaire Officiel` intègre désormais Dice Roller sur la
+  section Armes.
+- Les formules en D6, telles que `3D6+9` ou `5D6`, restent visibles et peuvent
+  être lancées indépendamment d’un clic.
+- Les dégâts, la violence et l’initiative en dés affichent leur moyenne au
+  chargement (`|avg`), puis se lancent normalement au clic. Une initiative
+  fixe comme `30` reste du texte simple.
+- Les cinq scores d’aspect sont cliquables : le jet lance autant de D6 que le
+  score et compte comme réussites les résultats pairs (2, 4 et 6). La valeur
+  initiale entre parenthèses est donc la moyenne de réussites.
+- À l’impression, les moyennes restent visibles mais l’icône de dé est masquée.
+
+### Version 301 — effets inclus dans les dégâts
+
+- Les fiches Adversaire ajoutent automatiquement aux dégâts les bonus PNJ de
+  `Précision` (`Machine/2`, arrondi au supérieur) et d’`Orfèvrerie`
+  (`Masque/2`, arrondi au supérieur).
+- `Lesté` remplace automatiquement le bonus `Chair/2` d’une arme de contact par
+  la valeur entière de Chair.
+- Le détail placé après les dégâts indique chaque bonus effectivement intégré.
+- Dans les rappels d’effets, les effets déjà calculés portent **INCLUS** ; les
+  effets conditionnels ou dépendant du déroulement du combat portent
+  **À APPLIQUER**.
+
+### Version 302 — réussites automatiques des AE
+
+- Les jets d’aspect ajoutent désormais le score d’AE aux réussites obtenues
+  avec les dés pairs. Leur moyenne initiale vaut donc `aspect/2 + AE`.
+- Pour un PNJ, `Précision` ajoute `Machine/2` arrondi au supérieur **plus l’AE
+  Machine** aux dégâts.
+- Pour un PNJ, `Orfèvrerie` ajoute `Masque/2` arrondi au supérieur **plus l’AE
+  Masque** aux dégâts.
+
+### Version 303 — moyenne correcte des jets d’aspect
+
+- La moyenne d’un aspect est calculée explicitement avec la formule
+  `aspect/2 + AE`, au lieu de laisser Dice Roller additionner la valeur moyenne
+  des faces des D6.
+- Exemple : Chair 16 avec AE 6 affiche `16 (moy. 14)`.
+- Le véritable jet reste cliquable et compte les résultats 2, 4 et 6 comme des
+  réussites, auxquels l’AE est ajouté automatiquement.
+- La règle générique des dégâts ignore désormais les formules conditionnelles
+  des jets d’aspect.
+
+### Version 304 — moyenne d’aspect compacte
+
+- Le libellé `moy.` est supprimé : Chair 16 avec AE 6 affiche simplement
+  `16 (14) (6+)`.
+- Pour un aspect impair, la moitié moyenne est arrondie à l’entier supérieur
+  avant d’ajouter l’AE : aspect 15 avec AE 4 affiche `15 (12)`.
+
+### Version 305 — suppression des parenthèses vides
+
+- Les jets d’aspect utilisent à nouveau leur résultat moyen Dice Roller, mais
+  restent isolés de la règle générique des dégâts.
+- L’écran affiche par exemple `16 (14 + icône de dé) (6+)`.
+- L’impression masque seulement l’icône et conserve `16 (14) (6+)`, sans paire
+  de parenthèses vide.
+- Dans les réglages de Dice Roller, sélectionner **Round Results → Ceiling**
+  (arrondi supérieur). Cela transforme notamment la moyenne `6,5` d’un aspect
+  13 en `7`, sans modifier les résultats entiers des véritables jets.
+
+### Version 306 — moyenne réelle des réussites d’aspect
+
+- Pour les aspects uniquement, le parseur emploie un dé personnalisé à six
+  faces `[0,0,0,1,1,1]`. Les trois faces à `1` représentent les résultats pairs
+  du D6 : chaque dé a donc une moyenne de `0,5` réussite.
+- L’AE est toujours ajoutée comme réussites automatiques. Chair 16 avec AE 6
+  affiche ainsi `14`, puis produit au clic le nombre réel de réussites.
+- Les dégâts, la violence et l’initiative restent des D6 ordinaires et leur
+  calcul n’est pas modifié.
 

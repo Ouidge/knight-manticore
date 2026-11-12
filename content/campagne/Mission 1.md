@@ -59,7 +59,7 @@ La horde finit par se disperser dans les montagnes. C'est une victoire douce-am�
 A leur retour à Camelot, ils en apprennent davantage sur la chevaleresse en armure à partir des images prises par le drone : une certaine [[__public/personnages/pnj/Fiona Intyre|Fiona Intyre]] de la coterie de **Vraess**, et portée disparue pendant une mission en Europe...
 
 ---
-![[Histoire_Tumulus.png|1024]]
+![[M1-Histoire_Tumulus.png|1024]]
 
 
 

@@ -4,6 +4,16 @@ const EFFECT_CATALOG = JSON.parse(
   fs.readFileSync(new URL("./effect-catalog.json", import.meta.url), "utf8"),
 );
 
+const EFFECT_QUICK_REFERENCE = JSON.parse(
+  fs.readFileSync(new URL("./effect-quick-reference.json", import.meta.url), "utf8"),
+);
+
+const SELF_EXPLANATORY_EFFECTS = new Set([
+  "deuxmains",
+  "ignorearmure",
+  "ignorecdf",
+]);
+
 const EFFECT_DEFINITIONS = {
   antianatheme: ["Anti-Anathème", false],
   antivehicule: ["Anti-véhicule", false],
@@ -133,6 +143,7 @@ export function effectPresentation(rawEffect) {
     noteTitle,
     isPublic: Boolean(noteTitle),
     summary: catalogEntry?.summary ?? "",
+    quick: EFFECT_QUICK_REFERENCE[catalogKey] ?? EFFECT_QUICK_REFERENCE[key] ?? "",
     ruleUrl: catalogEntry?.url ?? (noteTitle ? `https://beta.knightools.fr/fr/effect/${ruleSlug}/` : null),
   };
 }
@@ -144,4 +155,25 @@ export function effectWikiLink(rawEffect) {
   return effect.label === target
     ? `[[${target}]]`
     : `[[${target}|${effect.label}]]`;
+}
+
+export function effectQuickReminder(rawEffect) {
+  const effect = effectPresentation(rawEffect);
+  if (!effect || SELF_EXPLANATORY_EFFECTS.has(effect.catalogKey) || SELF_EXPLANATORY_EFFECTS.has(effect.key)) {
+    return null;
+  }
+  const source = effect.quick || effect.summary;
+  if (!source) return null;
+  const parameterized = effect.value
+    ? source.replace(/\bX\b/g, effect.value)
+    : source;
+  const description = effect.quick
+    ? parameterized
+    : parameterized.match(/^.*?[.!?](?:\s|$)/u)?.[0]?.trim() || parameterized;
+  return {
+    key: `${effect.catalogKey || effect.key}:${effect.value}`,
+    effectKey: effect.catalogKey || effect.key,
+    label: effect.label,
+    description,
+  };
 }

@@ -13,7 +13,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { effectPresentation } from "./effect-normalization.mjs";
+import { effectPresentation, effectQuickReminder } from "./effect-normalization.mjs";
 
 const inputPath = process.argv[2];
 if (!inputPath || ["-h", "--help"].includes(inputPath)) {
@@ -520,6 +520,20 @@ function effectsMarkdown(effects = [], separator = ", ") {
     return `[${label}](/aides-de-jeu/effets/${quartzNoteSlug(noteTitle)})`;
   });
   return rendered.join(separator) || "—";
+}
+
+function effectReminderItems(rawEffects) {
+  const reminders = new Map();
+  for (const rawEffect of rawEffects) {
+    const reminder = effectQuickReminder(rawEffect);
+    if (reminder && !reminders.has(reminder.key)) {
+      reminders.set(reminder.key, {
+        name: reminder.label,
+        system: { description: reminder.description },
+      });
+    }
+  }
+  return [...reminders.values()];
 }
 
 function arsenalSection(groups) {
@@ -1437,8 +1451,10 @@ function pjStatblock(layout) {
     }));
     statblockTraits(lines, "skills", armorCapabilities);
     statblockTraits(lines, "modules", displayedModules, moduleMechanicalSummary);
+    const allWeaponEffects = [];
     statblockTraits(lines, "armes", uniquelyNamedStatblockWeapons(weapons), (weapon) => {
       const effects = [...(weapon.system?.effets?.raw ?? []), ...(weapon.system?.effets?.custom ?? [])];
+      allWeaponEffects.push(...effects);
       return [
         `Type : ${weapon.system?.type || "—"}`,
         `Portée : ${weapon.system?.portee || "—"}`,
@@ -1447,6 +1463,7 @@ function pjStatblock(layout) {
         effects.length ? `Effets : ${effectsMarkdown(effects)}` : "",
       ].filter(Boolean).join(" · ");
     }, (weapon) => weapon.statblockName);
+    statblockTraits(lines, "effets_resume", effectReminderItems(allWeaponEffects));
   }
 
   const summaryNamesOnly = layout === "Knight PJ Summary" ? () => "" : null;
